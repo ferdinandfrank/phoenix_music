@@ -27,9 +27,8 @@ elixir((mix) => {
 
     // JS files
     mix.webpack([
-        'app.js',
         'theme.js',
-        'views/view.home.js',
+        'view.home.js',
         'custom.js',
         'jquery.fastLiveFilter.js',
         'theme.init.js',
