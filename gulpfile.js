@@ -2,6 +2,8 @@ const elixir = require('laravel-elixir');
 
 require('laravel-elixir-vue-2');
 
+var assetsPath = 'public/assets/';
+
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -14,6 +16,23 @@ require('laravel-elixir-vue-2');
  */
 
 elixir((mix) => {
-    mix.sass('app.scss')
-       .webpack('app.js');
+        // Sass files
+        mix.sass([
+        'app.scss',
+        'theme-elements.css',
+        'theme-animate.css',
+        'skin.css',
+        'custom.css'
+    ], assetsPath + 'css/app.css');
+
+    // JS files
+    mix.webpack([
+        'app.js',
+        'theme.js',
+        'views/view.home.js',
+        'custom.js',
+        'jquery.fastLiveFilter.js',
+        'theme.init.js',
+
+    ], assetsPath + 'js/app.js');
 });
