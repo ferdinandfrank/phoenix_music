@@ -1,0 +1,101 @@
+/* ==========================================================================
+   Colors
+   ========================================================================== */
+/**
+ * Table of Contents:
+ *
+ *  1. Declarations
+ *  2. Collections
+ *  3. Helper Classes
+ *  4. Typography
+ *  5. Progress Bars / Loader
+ */
+
+/*********************
+  1. Declarations
+**********************/
+
+$white: #fff !default;
+$white-smooth: #f2f2f2 !default;
+
+$grey: #555 !default;
+$grey-dark: #1D2127 !default;
+$grey-medium: #808697 !default;
+$grey-light: #d8d8d8 !default;
+
+$black: #171717 !default;
+$black-smooth: #262626 !default;
+
+$dark-color: $black !default;
+$dark-inverse-color: $white;
+
+$primary-color: #b2120f !default;
+$primary-inverse-color: $white !default;
+
+$secondary-color: #e38b24 !default;
+$secondary-inverse-color: $white !default;
+
+$tertiary-color: #abf773 !default;
+$tertiary-inverse-color: $white !default;
+
+$default-color: #ebebeb !default;
+$default-inverse-color: #777 !default;
+
+$disabled-color: #ebebeb !default;
+$disabled-inverse-color: #999 !default;
+
+$muted-color: #999 !default;
+
+$success-color: #47a447 !default;
+$success-inverse-color: $white !default;
+
+$warning-color: #ed9c28 !default;
+$warning-inverse-color: $white !default;
+
+$error-color: #d2322d !default;
+$error-inverse-color: $white !default;
+
+$info-color: #f0820a !default;
+$info-inverse-color: $white !default;
+
+$website-color: $secondary-color !default;
+$facebook-color: #3B5998 !default;
+$twitter-color: #1da1f2 !default;
+$instagram-color: #405de6 !default;
+$linkedin-color: #0077b5 !default;
+$github-color: #333 !default;
+$youtube-color: #e52d27 !default;
+
+/*********************
+  2. Collections
+**********************/
+$colors-list: (primary $primary-color $primary-inverse-color) (secondary $secondary-color $secondary-inverse-color) (tertiary $tertiary-color $tertiary-inverse-color) (success $success-color $success-inverse-color) (warning $warning-color $warning-inverse-color) (error $error-color $error-inverse-color) (info $info-color $info-inverse-color) (dark $dark-color $dark-inverse-color);
+
+/*********************
+  3. Helper Classes
+**********************/
+@each $state in $colors-list {
+    .#{nth($state,1)} {
+        color: #{nth($state,2)} !important;
+    }
+}
+
+@each $state in $colors-list {
+    .bg-#{nth($state,1)} {
+        background-color: #{nth($state,2)} !important;
+    }
+}
+
+/*********************
+  4. Typography
+**********************/
+$link-color: $primary-color !default;
+$text-color: $grey !default;
+$heading-color: $grey-dark !default;
+$heading-link-hover-color: $primary-color !default;
+
+/*********************
+  5. Progress Bars / Loader
+**********************/
+$loader-background-color: $grey-light;
+$loader-line-color: $primary-color;

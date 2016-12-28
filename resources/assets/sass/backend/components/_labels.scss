@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Labels
+   ========================================================================== */
+/**
+ * Table of Contents:
+ *
+ *  1. Declarations
+ *  2. General
+ *  3. Colored Labels
+ */
+
+/*********************
+  1. Declarations
+**********************/
+
+/*********************
+  2. General
+**********************/
+.label {
+    font-weight: normal;
+    padding: 0 .7em;
+    background: $label-default-background-color;
+    color: $label-default-text-color !important;
+    @extend .x-small;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+.label-sm {
+    font-size: 50%;
+}
+
+/*********************
+  3. Colored Labels
+**********************/
+@each $state in $colors-list {
+    .label-#{nth($state,1)} {
+        background: #{nth($state,2)};
+        color: #{nth($state,3)} !important;
+    }
+}

@@ -1,0 +1,72 @@
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Table of Contents:
+ *
+ *  1. Declarations
+ *  2. General
+ *  3. Headings
+ *  4. Links
+ *  5. Icons
+ */
+/*********************
+  1. Declarations
+**********************/
+$icon-featured-padding: 20px;
+$icon-featured-font-size: 1.5rem;
+
+/*********************
+  2. General
+**********************/
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+    color: $text-color;
+    font-weight: 300;
+}
+
+
+
+/*********************
+  3. Headings
+**********************/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $heading-color;
+}
+
+
+/*********************
+  3. Links
+**********************/
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    color: $heading-color;
+
+    &:hover {
+        color: $heading-link-hover-color;
+    }
+}
+
+/*********************
+  4. Icons
+**********************/
+.icon-featured {
+    padding: $icon-featured-padding;
+    border: 2px solid;
+    font-size: $icon-featured-font-size;
+    border-radius: 50px;
+}

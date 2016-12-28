@@ -1,0 +1,177 @@
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+/**
+ * Table of Contents:
+ *
+ *  1. Declarations
+ *  2. General
+ *  3. Button Group
+ *  4. Disabled Buttons
+ *  5. Social Buttons
+ *  6. Available Buttons
+ */
+
+/*********************
+  1. Declarations
+**********************/
+$button-border-width: 2px;
+$button-padding: 8px 14px;
+
+$button-group-margin: 10px;
+
+$social-buttons-size: 30px;
+
+$available-button-width: 120px;
+
+/*********************
+  2. General
+**********************/
+.btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $button-padding;
+    color: $button-default-text-color;
+    font-weight: 600;
+    white-space: nowrap;
+    border: $button-border-width solid $button-default-background-color;
+    border-radius: 5px;
+    background-color: $button-default-background-color;
+    cursor: pointer;
+    @include transition(all 0.3s);
+
+    &.active,
+    &:active {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    &:focus,
+    &:active:focus,
+    &.active:focus {
+        outline: none;
+    }
+
+    &:hover,
+    &:active,
+    &.hover,
+    &.active {
+        color: $button-default-background-color;
+        background-color: transparent;
+    }
+
+    i:first-child {
+        margin-right: 5px;
+    }
+
+    i:last-child {
+        margin-left: 5px;
+    }
+
+    &.btn-transparent {
+
+        color: $button-default-background-color;
+        background-color: transparent;
+
+        &:hover,
+        &:active,
+        &.hover,
+        &.active {
+            background-color: $button-default-background-color;
+            color: $button-default-text-color;
+        }
+    }
+}
+
+/*********************
+  3. Button Group
+**********************/
+.btn-group {
+    margin: $button-group-margin;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/*********************
+  4. Disabled Buttons
+**********************/
+.btn:disabled {
+    background: $button-disabled-background-color;
+    border-color: $button-disabled-background-color;
+    cursor: not-allowed;
+    color: $button-disabled-text-color;
+}
+
+/*********************
+  5. Social Buttons
+**********************/
+.social-buttons {
+
+    li {
+        margin: 0 2px;
+        float: left;
+
+        a {
+            @include transition(all 0.2s ease);
+            background: $white-smooth;
+            border-radius: 100%;
+            display: block;
+            height: $social-buttons-size;
+            line-height: $social-buttons-size;
+            width: $social-buttons-size;
+            text-align: center;
+            color: $social-buttons-text-color;
+            text-decoration: none;
+        }
+
+        &.facebook a:hover {
+            background: $facebook-color;
+            color: $social-buttons-hover-text-color;
+        }
+
+        &.twitter a:hover {
+            background: $twitter-color;
+            color: $social-buttons-hover-text-color;
+        }
+
+        &.youtube a:hover {
+            background: $youtube-color;
+            color: $social-buttons-hover-text-color;
+        }
+
+        &.instagram a:hover {
+            background: $instagram-color;
+            color: $social-buttons-hover-text-color;
+        }
+
+        &.linkedin a:hover {
+            background: $linkedin-color;
+            color: $social-buttons-hover-text-color;
+        }
+
+        &.github a:hover {
+            background: $github-color;
+            color: $social-buttons-hover-text-color;
+        }
+
+        &.url a:hover {
+            background: $website-color;
+            color: $social-buttons-hover-text-color;
+        }
+    }
+}
+
+/*********************
+  6. Available Buttons
+**********************/
+.available_button {
+    display: inline-block;
+    width: $available-button-width;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+    }
+}

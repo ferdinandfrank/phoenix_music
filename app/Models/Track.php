@@ -3,7 +3,13 @@
 namespace App\Models;
 
 
+use App\Http\Middleware\VisitCounter;
+use Laravel\Scout\Searchable;
+
 class Track extends SlugModel {
+
+    use Searchable;
+    use HasResourceRoutes;
 
     /**
      * The database table used by the model.
@@ -28,7 +34,6 @@ class Track extends SlugModel {
         'title',
         'description',
         'composer_id',
-        'category_id',
         'album_id',
         'file',
         'length',
@@ -53,40 +58,80 @@ class Track extends SlugModel {
     }
 
     /**
-     * Gets the corresponding user instance, which is the author of the post.
+     * Gets the corresponding user instance, which is the composer of the track.
      *
-     * @return User
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function composer() {
         return $this->belongsTo(User::class, 'composer_id');
     }
 
     /**
+     * Gets the categories relationship.
      *
-     *
-     * @return Category
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function category() {
-        return $this->belongsTo(Category::class, 'category_id');
+    public function categories() {
+        return $this->belongsToMany(Category::class, 'track_categories')->withTimestamps();
     }
 
     /**
+     * Gets the album relationship of the track.
      *
-     *
-     * @return Album
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function album() {
         return $this->belongsTo(Album::class, 'album_id');
     }
 
+    /**
+     * Gets the image link of the track.
+     *
+     * @param $value
+     *
+     * @return string
+     */
     public function getImageAttribute($value) {
         if (empty($value)) {
             return asset('assets/images/covers/cover_default.jpg');
         }
-        return asset('assets/images/covers/' . $value);
+        return $value;
     }
 
-    public function getFileAttribute($value) {
-        return asset('assets/audio/' . $value);
+    /**
+     * Gets the post's views relationships.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function views() {
+        return $this->hasMany(TrackViews::class);
     }
+
+    /**
+     * Gets the post's views count.
+     *
+     * @return int
+     */
+    public function getViewsCount() {
+        return VisitCounter::getTrackViewsCount($this);
+    }
+
+    /**
+     * Checks if the track is licensable.
+     *
+     * @return bool
+     */
+    public function isLicensable() {
+        return !empty($this->audiojungle) || !empty($this->stye);
+    }
+
+    /**
+     * Checks if the track is buyable.
+     *
+     * @return bool
+     */
+    public function isBuyable() {
+        return !empty($this->cdbaby) || !empty($this->amazon) || !empty($this->itunes);
+    }
+
 }

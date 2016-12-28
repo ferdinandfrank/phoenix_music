@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use DB;
+
 
 /**
  * App\Models\Settings
@@ -39,19 +41,19 @@ class Settings extends BaseModel {
 
 
     public static function pageTitle() {
-        return self::getByName('page_title');
+        return self::getByName('title');
     }
 
     public static function pageKeywords() {
-        return self::getByName('page_keywords');
+        return self::getByName('keywords');
     }
 
     public static function pageDescription() {
-        return self::getByName('page_description');
+        return self::getByName('description');
     }
 
     public static function pageAuthor() {
-        return self::getByName('page_author');
+        return self::getByName('author');
     }
 
     public static function amazon() {
@@ -86,10 +88,6 @@ class Settings extends BaseModel {
         return self::getByName('youtube');
     }
 
-    public static function about() {
-        return self::getByName('about');
-    }
-
     public static function textAudiojungle() {
         return self::getByName('text_audiojungle');
     }
@@ -106,7 +104,29 @@ class Settings extends BaseModel {
         return self::getByName('email_admin');
     }
 
+    public static function imprint() {
+        return self::getByName('imprint');
+    }
 
+    public static function cover() {
+        return self::getByName('cover');
+    }
+
+    public static function logo() {
+        return self::getByName('logo');
+    }
+
+    public static function favicon() {
+        return self::getByName('favicon');
+    }
+
+    public static function introVideo() {
+        return self::getByName('intro_video');
+    }
+
+    public static function background() {
+        return self::getByName('background');
+    }
 
     /**
      * Gets the value settings by name.
@@ -116,6 +136,27 @@ class Settings extends BaseModel {
      */
     public static function getByName($settingName) {
         return self::where('key', $settingName)->pluck('value')->first();
+    }
+
+    /**
+     * Updates the model in the database.
+     *
+     * @param  array $attributes
+     *
+     * @return bool
+     */
+    public static function updateAll(array $attributes = []) {
+        DB::transaction(function () use ($attributes) {
+            foreach ($attributes as $attribute => $value) {
+                $setting = Settings::where('key', $attribute)->first();
+                if (!empty($setting)) {
+                    $setting->value = $value;
+                    $setting->update();
+                }
+            }
+        });
+
+        return true;
     }
 
 }

@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Menues
+   ========================================================================== */
+/**
+ * Table of Contents:
+ *
+ *  1. Declarations
+ *  2. Main Navigation
+ */
+
+/*********************
+  1. Declarations
+**********************/
+$menu-item-padding: 12px 25px;
+$menu-item-active-border-width: 2px;
+
+/*********************
+  2. Main Navigation
+**********************/
+ul.nav-main {
+    margin: 0 $sidebar-border-width 0 0;
+    list-style-type: none;
+    padding: 0;
+
+    li {
+        a {
+            font-size: $font-size-small;
+            color: $menu-item-text-color;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            display: flex;
+            padding: $menu-item-padding;
+            align-items: center;
+
+            &:hover,
+            &:focus {
+                background-color: #21262d;
+            }
+        }
+
+        span:not(.label) {
+            flex: 1;
+        }
+
+        i {
+            font-size: $font-size-large;
+            width: 1.1em;
+            margin-right: 0.5em;
+        }
+
+        &.nav-active {
+            > a {
+                box-shadow: $menu-item-active-border-width 0 0 $menu-item-active-border-color inset;
+
+                &:hover {
+                    color: $menu-item-text-color;
+                }
+            }
+
+            & > i {
+                color: $primary-color;
+            }
+
+        }
+    }
+
+}

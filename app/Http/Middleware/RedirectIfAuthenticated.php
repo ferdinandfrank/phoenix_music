@@ -3,22 +3,46 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\Auth\Guard;
 
-class RedirectIfAuthenticated
-{
+/**
+ * RedirectIfAuthenticated
+ * -----------------------
+ * Middleware to redirect authenticated user.
+ *
+ * @author  Ferdinand Frank
+ * @version 1.0
+ * @package App\Http\Middleware
+ */
+class RedirectIfAuthenticated {
+
     /**
-     * Handle an incoming request.
+     * The Guard implementation.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @param  string|null  $guard
+     * @var Guard
+     */
+    protected $auth;
+
+    /**
+     * Create a new filter instance.
+     *
+     * @param  Guard $auth
+     */
+    public function __construct(Guard $auth) {
+        $this->auth = $auth;
+    }
+
+    /**
+     * Handles an incoming request and redirects the user if he's authenticated.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure                 $next
+     *
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = null)
-    {
-        if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+    public function handle($request, Closure $next) {
+        if ($this->auth->check()) {
+            return redirect('/admin');
         }
 
         return $next($request);

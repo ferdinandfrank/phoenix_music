@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+/**
+ * Table of Contents:
+ *
+ *  1. Declarations
+ *  2. General
+ */
+
+/*********************
+  1. Declarations
+**********************/
+$pagination-margin: 40px 0 20px;
+$pagination-item-margin-horizontal: 5px;
+$pagination-navigation-item-padding: 6px 24px;
+
+/*********************
+  2. General
+**********************/
+.pagination {
+    margin: $pagination-margin 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+
+    > li {
+        margin: 0 $pagination-item-margin-horizontal;
+
+        &:last-child, &:first-child {
+            margin: 0 ($pagination-item-margin-horizontal * 4);
+
+            > * {
+                padding: $pagination-navigation-item-padding;
+            }
+        }
+
+        > * {
+            @extend .btn, .btn-secondary;
+        }
+
+        &.active > * {
+            @extend .btn-primary;
+        }
+
+        &.disabled > * {
+            @extend .btn-disabled;
+        }
+    }
+}

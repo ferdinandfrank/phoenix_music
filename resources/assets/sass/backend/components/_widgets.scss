@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Widgets
+   ========================================================================== */
+/**
+ * Table of Contents:
+ *
+ *  1. Declarations
+ *  2. General
+ */
+
+/*********************
+  1. Declarations
+**********************/
+$widget-icon-padding: 16px 12px;
+$widget-icon-font-size: 2.5rem;
+$widget-icon-margin-right: 20px;
+
+/*********************
+  2. General
+**********************/
+.widget {
+    display: flex;
+    align-items: center;
+
+    .widget-icon {
+        font-size: $widget-icon-font-size;
+        background: $widget-icon-background-color;
+        border-radius: 100%;
+        padding: $widget-icon-padding;
+        color: $widget-icon-text-color;
+        margin-right: $widget-icon-margin-right;
+    }
+
+    .widget-content {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+
+            > * {
+                margin: 0;
+                font-weight: $font-weight-normal;
+            }
+        }
+
+    }
+}

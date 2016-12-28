@@ -160,4 +160,21 @@ class LocalDate extends Carbon {
 
         return Lang::choice('date.' . $unit . '_' . $transId, $count, ['count' => $count]);
     }
+
+    /**
+     * Gets the day string in a readable format.
+     *
+     * @return array|null|string
+     */
+    public function dayDiffForHumans() {
+        if ($this->isToday()) {
+            return Lang::get('date.today');
+        } elseif ($this->isTomorrow()) {
+            return Lang::get('date.tomorrow');
+        } elseif ($this->isYesterday()) {
+            return Lang::get('date.yesterday');
+        }
+
+        return $this->toDateString();
+    }
 }

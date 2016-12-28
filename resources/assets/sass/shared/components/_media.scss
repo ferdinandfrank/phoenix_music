@@ -1,0 +1,82 @@
+/* ==========================================================================
+   Media
+   ========================================================================== */
+/**
+ * Table of Contents:
+ *
+ *  1. Declarations
+ *  2. Images
+ *  3. Videos
+ */
+
+/*********************
+  1. Declarations
+**********************/
+$avatar-size: 120px;
+$avatar-size-small: 50px;
+$avatar-size-x-small: 35px;
+$avatar-size-large: 200px;
+
+/*********************
+  2. Images
+**********************/
+.avatar {
+    width: $avatar-size;
+    height: $avatar-size;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    position: relative;
+
+    &.large {
+        width: $avatar-size-large;
+        height: $avatar-size-large;
+    }
+
+    &.small {
+        width: $avatar-size-small;
+        height: $avatar-size-small;
+    }
+
+    &.x-small {
+        width: $avatar-size-x-small;
+        height: $avatar-size-x-small;
+    }
+
+    &.center {
+        margin: 0 auto;
+    }
+}
+
+.thumbnail {
+    width: 100%;
+    border: 2px solid $white;
+}
+
+.img-responsive {
+    width: 100% !important;
+}
+
+.img-center {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+}
+
+/*********************
+  3. Videos
+**********************/
+video.fullscreen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}

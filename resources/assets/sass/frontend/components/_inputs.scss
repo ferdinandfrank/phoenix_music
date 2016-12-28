@@ -1,0 +1,225 @@
+/* ==========================================================================
+   Inputs
+   ========================================================================== */
+/**
+ * Table of Contents:
+ *
+ *  1. Declarations
+ *  2. General
+ *  3. Placeholder
+ *  4. Form Group
+ *  5. Form Group Addon
+ */
+
+/*********************
+  1. Declarations
+**********************/
+$input-font-size: $font-size;
+$input-font-weight: 500;
+$input-height: 35px;
+$input-border-width: 1px;
+$input-padding: 0 16px;
+$input-border-radius: 4px;
+
+$input-addon-icon-size: 1rem;
+$input-group-margin: 25px 0 15px 0;
+
+$input-label-font-size: 0.9rem;
+
+$textarea-min-height: $input-height * 4;
+
+/*********************
+  2. General
+**********************/
+
+input,
+textarea,
+input[type="submit"]:focus,
+button:focus {
+    outline: none;
+}
+
+label,
+input,
+button,
+select,
+textarea {
+    @include appearance(none);
+    vertical-align: top;
+    margin: 0;
+    border-radius: 0;
+    font-size: inherit;
+    line-height: normal;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    @include appearance(none);
+}
+
+input[type="checkbox"] {
+    @include appearance(checkbox);
+    margin: 0;
+}
+
+input[type="radio"] {
+    @include appearance(radio);
+    margin: 0;
+}
+
+.form-control {
+    background-color: $input-background-color;
+    padding: $input-padding;
+    font-size: $input-font-size;
+    font-weight: $input-font-weight;
+    color: $input-text-color;
+    width: 100%;
+    height: $input-height;
+    margin: 0;
+    flex: 1;
+    text-overflow: ellipsis;
+    border: $input-border-width solid $input-border-color;
+    box-shadow: none !important;
+    border-radius: $input-border-radius;
+
+    &.has-addon {
+        border-right: none;
+    }
+}
+
+textarea.form-control {
+    padding: 14px 16px;
+    min-height: $textarea-min-height;
+    resize: vertical;
+    overflow: auto;
+    text-transform: none;
+}
+
+.ie8 .form-control {
+    line-height: $input-height;
+}
+
+.form-control:focus {
+    outline: none;
+}
+
+/*********************
+  3. Placeholder
+**********************/
+
+:-moz-placeholder {
+    font-size: $input-font-size;
+    font-weight: $input-font-weight;
+    color: $input-placeholder-color;
+}
+
+::-moz-placeholder {
+    font-size: $input-font-size;
+    font-weight: $input-font-weight;
+    color: $input-placeholder-color;
+}
+
+:-ms-input-placeholder {
+    font-size: $input-font-size;
+    font-weight: $input-font-weight;
+    color: $input-placeholder-color;
+}
+
+::-webkit-input-placeholder {
+    font-size: $input-font-size;
+    font-weight: $input-font-weight;
+    color: $input-placeholder-color;
+}
+
+input:focus:-moz-placeholder {
+    color: transparent !important;
+}
+
+input:focus::-moz-placeholder {
+    color: transparent !important;
+}
+
+/*********************
+  4. Form Group
+**********************/
+.form-group {
+    position: relative;
+    display: flex;
+    margin: $input-group-margin;
+
+    * {
+        @include transition(border-color ease-in-out .15s);
+        @include transition(box-shadow ease-in-out .15s);
+    }
+
+    label {
+        font-size: $input-label-font-size;
+        color: $input-label-color;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: $input-height / -1.8;
+
+        &:after {
+            display: block;
+            content: "";
+            position: absolute;
+            top: $input-height * 1.6;
+            opacity: 0;
+            white-space: nowrap;
+            transition: .2s opacity ease-out, .2s color ease-out;
+        }
+    }
+
+    &.active {
+
+        label {
+            color: $input-active-border-color;
+        }
+
+        .form-control, .form-group-addon  {
+            border-color: $input-active-border-color;
+            box-shadow: none;
+        }
+    }
+
+    &.has-success, &.has-error {
+        label:after {
+            content: attr(data-message);
+            opacity: 1;
+            font-size: $input-label-font-size - 0.1rem;
+        }
+    }
+
+    &.has-error {
+        label {
+            color: $error-color;
+
+            &:after {
+                color: $error-color;
+            }
+        }
+
+        .form-control, .form-group-addon  {
+            border-color: $error-color;
+            box-shadow: none;
+        }
+    }
+
+    &.has-success {
+        label {
+            color: $success-color;
+
+            &:after {
+                color: $success-color;
+            }
+        }
+
+        .form-control, .form-group-addon  {
+            border-color: $success-color;
+            box-shadow: none;
+        }
+    }
+
+}

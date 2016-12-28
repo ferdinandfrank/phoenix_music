@@ -70,7 +70,7 @@ class UrlGenerator {
      * @return string
      */
     public static function audiojungle($slug) {
-        return "http://audiojungle.net/item/$slug?ref=PhoenixMusic";
+        return "http://audiojungle.net/$slug?ref=PhoenixMusic";
     }
 
     /**

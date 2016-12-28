@@ -1,0 +1,143 @@
+/* ==========================================================================
+   Colors
+   ========================================================================== */
+/**
+ * Table of Contents:
+ *
+ *  1. Declarations
+ *  2. Inputs
+ *  3. Sidebar
+ *  4. Header
+ *  5. Buttons
+ *  6. Labels
+ *  7. Panels
+ *  8. Tables
+ *  9. Dropdowns
+ * 10. Modals
+ * 11. Widgets
+ * 12. Lists
+ */
+
+/*********************
+  1. Declarations
+**********************/
+$body-color: #ecedf0;
+
+/*********************
+  2. Inputs
+**********************/
+$input-color: $grey;
+$input-background-color: $white;
+$input-border-color: $grey-light;
+
+$input-active-border-color: $info-color;
+
+$select-search-choice-background-color: $primary-color;
+$select-search-choice-text-color: $primary-inverse-color;
+
+$datetimepicker-active-background-color: $primary-color;
+$datetimepicker-active-text-color: $white-smooth;
+$datetimepicker-btn-hover-background-color: $primary-color;
+$datetimepicker-btn-disabled-color: $disabled-color;
+
+/*********************
+  3. Sidebar
+**********************/
+$sidebar-background: $grey-dark;
+$sidebar-border-color: #2F3139;
+$sidebar-toggle-background: #171717;
+$sidebar-toggle-color: #C3C3C3;
+$sidebar-toggle-hover-color: $primary-color;
+$sidebar-color: #33363F;
+$sidebar-title-color: lighten($grey-dark, 15%);
+$sidebar-text-color: $grey-light;
+$sidebar-separator-color: lighten($grey-dark, 5%);
+
+$menu-item-active-border-color: $primary-color;
+
+/*********************
+  4. Header
+**********************/
+$header-background-gradient-start: $default-color 0%;
+$header-background-gradient-end: $white 45%;
+$header-border-bottom-color: $default-color;
+
+$header-buttons-text-color: $grey;
+$header-buttons-background-color: transparent;
+$header-buttons-hover-text-color: $dark-color;
+$header-buttons-hover-background-color: $grey-light;
+$header-buttons-badge-background-color: $secondary-color;
+$header-buttons-badge-text-color: $secondary-inverse-color;
+
+$header-separator-background-color: $grey-light;
+$header-separator-background-gradient-color: $white-smooth;
+
+$sub-header-background: $dark-color;
+$sub-header-border-bottom-color: $grey-dark;
+$sub-header-border-left-color: $grey-dark;
+$sub-header-color: $grey-light;
+$sub-header-title-color: $white;
+$sub-header-title-border-color: $primary-color;
+$sub-header-sidebar-toggle-hover-color: $sidebar-toggle-hover-color;
+
+$menu-item-text-color: $grey-light;
+$menu-item-arrow-color: $grey-light;
+
+/*********************
+  5. Buttons
+**********************/
+$button-default-background-color: $primary-color !default;
+$button-default-text-color: $white !default;
+
+$button-disabled-background-color: $white-smooth !default;
+$button-disabled-text-color: $grey-light !default;
+
+/*********************
+  6. Labels
+**********************/
+$label-default-background-color: $secondary-color !default;
+$label-default-text-color: $white !default;
+
+/*********************
+  7. Panels
+**********************/
+$panel-heading-background-color: #f6f6f6;
+$panel-content-background-color: #fdfdfd;
+$panel-title-color: $grey-dark;
+$panel-subtitle-color: $grey-medium;
+$panel-buttons-border-color: $white-smooth;
+
+/*********************
+  8. Tables
+**********************/
+$table-row-border-color: $grey-light;
+$table-row-background-color: transparent;
+$table-striped-odd-row-background-color: $white-smooth;
+
+/*********************
+  9. Dropdowns
+**********************/
+$dropdown-background-color: $white;
+$dropdown-item-text-color: $grey;
+$dropdown-item-hover-background-color: $primary-color;
+$dropdown-item-hover-text-color: $primary-inverse-color;
+
+/*********************
+  10. Modals
+**********************/
+$modal-background-color: $white-smooth;
+
+/*********************
+  11. Widgets
+**********************/
+$widget-icon-background-color: $primary-color;
+$widget-icon-text-color: $primary-inverse-color;
+
+/*********************
+  12. Lists
+**********************/
+$notification-list-border-color: $grey-light;
+$notification-list-unread-background-color: $white-smooth;
+$notification-list-title-color: $secondary-color;
+$notification-list-text-color: $text-color;
+$notification-list-date-color: $muted-color;

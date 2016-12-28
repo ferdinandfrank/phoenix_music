@@ -1,0 +1,209 @@
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+/**
+ * Table of Contents:
+ *
+ *  1. Declarations
+ *  2. Sections
+ *  3. Header
+ *  4. Footer
+ *  5. Sidebar
+ */
+
+/*********************
+  1. Declarations
+**********************/
+$header-width: 255px;
+$header-padding-vertical: 30px;
+$header-padding-horizontal: 15px;
+$header-logo-width: 200px;
+$header-horizontal-logo-width: 150px;
+$header-toggle-font-size: 1.5rem;
+
+$content-padding-top: 20px;
+
+$nav-pills-font-size: 0.9rem;
+$nav-pills-border-radius: 4px;
+$nav-pills-font-weight: 700;
+$nav-pills-padding: 15px 13px;
+$nav-pills-light-padding: 10px 13px;
+
+$hr-margin: 20px 0;
+
+/*********************
+  2. Sections
+**********************/
+html, body, .body, .main {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+}
+
+body {
+    background: $body-background-color;
+    overflow-x: hidden;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main {
+    padding-left: $header-width + $header-padding-horizontal;
+    padding-top: $content-padding-top;
+    background-size: 100% 100%;
+    background: no-repeat fixed center;
+
+    @media #{$small-down} {
+        padding-left: 0;
+        padding-top: 150px;
+    }
+}
+
+hr {
+    background-image: -webkit-linear-gradient(left, transparent, $grey-light, transparent);
+    background-image: linear-gradient(to right, transparent, $grey-light, transparent);
+    border: 0;
+    height: 1px;
+    margin: $hr-margin;
+
+    &.solid {
+        background: $grey-light;
+    }
+}
+
+/*********************
+  3. Header
+**********************/
+.header {
+    position: fixed;
+    z-index: 2;
+    padding: $header-padding-vertical $header-padding-horizontal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: $header-width;
+    height: 100%;
+    background: $header-background-color;
+
+    .header-control {
+        position: relative;
+        width: 100%;
+    }
+
+    .navbar-toggle {
+        display: none;
+    }
+
+    .header-logo {
+        text-align: center;
+
+        img {
+            width: $header-logo-width;
+        }
+    }
+
+    .header-nav {
+        margin: 20px 10px;
+        width: 100%;
+
+        .nav-pills {
+
+            > li {
+                display: block;
+                margin: 2px 0;
+
+                &.active > a {
+                    background: $nav-pills-hover-background-color;
+                    color: $nav-pills-hover-text-color;
+                }
+
+                &.extensible > a:after {
+                    content: '\f054';
+                    font-family: FontAwesome;
+                    float: right;
+                }
+
+                > a {
+                    display: block;
+                    border-radius: $nav-pills-border-radius;
+                    font-size: $nav-pills-font-size;
+                    font-weight: $nav-pills-font-weight;
+                    padding: $nav-pills-padding;
+                    text-transform: uppercase;
+                    background: $nav-pills-background-color;
+                    color: $nav-pills-text-color;
+
+                    &:hover {
+                        background: $nav-pills-hover-background-color;
+                        color: $nav-pills-hover-text-color;
+                    }
+                }
+            }
+
+            &.light {
+
+                > li > a {
+                    padding: $nav-pills-light-padding;
+                    font-size: 0.7rem;
+                    font-weight: 400;
+
+                    &:hover {
+                        background: $nav-pills-light-hover-background-color;
+                    }
+                }
+            }
+
+            &.nav-links > li > a:before {
+                content: '\f054';
+                font-family: FontAwesome;
+                margin-right: 10px;
+                color: $nav-links-icon-color;
+            }
+
+        }
+
+    }
+    
+    @media #{$small-down} {
+        width: 100%;
+        padding: $header-padding-vertical 0;
+        height: auto;
+        background: $header-background-horizontal-color;
+
+        .navbar-toggle {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: $header-padding-horizontal;
+            font-size: $header-toggle-font-size;
+            color: $header-toggle-color;
+            cursor: pointer;
+            display: block;
+
+            &:hover {
+                color: $header-toggle-hover-color;
+            }
+        }
+
+        .header-logo img {
+            width: $header-horizontal-logo-width;
+        }
+
+        .header-nav, .main-nav {
+            display: none;
+        }
+
+        &.extended {
+
+            .main-nav {
+                display: block;
+                text-align: center;
+            }
+        }
+    }
+}
+

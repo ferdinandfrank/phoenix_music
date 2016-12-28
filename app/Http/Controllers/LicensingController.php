@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\Track;
 
 class LicensingController extends Controller {
@@ -12,6 +11,6 @@ class LicensingController extends Controller {
         $styeTracks = Track::whereNotNull('stye')->get();
         $audiojungleTracks = Track::whereNotNull('audiojungle')->get();
 
-        return view('licensing', compact('styeTracks', 'audiojungleTracks'));
+        return view('frontend.licensing.index', compact('styeTracks', 'audiojungleTracks'));
     }
 }

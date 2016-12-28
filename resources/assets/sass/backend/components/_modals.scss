@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Modals
+   ========================================================================== */
+/**
+ * Table of Contents:
+ *
+ *  1. Declarations
+ *  2. General
+ */
+
+/*********************
+  1. Declarations
+**********************/
+$modal-width: 80vw;
+$modal-large-width: 85vw;
+$modal-medium-width: 50vw;
+$modal-small-width: 30vw;
+
+$modal-padding: 20px 40px;
+$modal-border-radius: 5px;
+
+$modal-close-font-size: 30px;
+
+/*********************
+  2. General
+**********************/
+.modal-mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-transition: opacity .3s ease;
+    transition: opacity .3s ease;
+}
+
+.modal-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: $modal-width;
+    background: $modal-background-color;
+    padding: $modal-padding;
+    border-radius: $modal-border-radius;
+
+    &.modal-lg {
+        width: $modal-large-width !important;
+    }
+
+    &.modal-md {
+        width: $modal-medium-width !important;
+    }
+
+    &.modal-sm {
+        width: $modal-small-width !important;
+    }
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+
+        .close {
+            background: none;
+            border: none;
+            font-size: $modal-close-font-size;
+            padding: 0;
+            margin: 0;
+            height: auto;
+            cursor: pointer;
+        }
+    }
+
+    .modal-footer {
+        @extend .btn-group;
+    }
+}

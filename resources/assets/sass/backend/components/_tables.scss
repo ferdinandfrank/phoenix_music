@@ -1,0 +1,74 @@
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Table of Contents:
+ *
+ *  1. Declarations
+ *  2. General
+ *  3. Striped
+ */
+
+/*********************
+  1. Declarations
+**********************/
+$table-data-padding: 8px;
+
+/*********************
+  2. General
+**********************/
+.table {
+    width: 100%;
+    background: transparent;
+    border-spacing: 0;
+
+    tr {
+        background-color: $table-row-background-color;
+    }
+
+    thead {
+        tr > th {
+            padding: $table-data-padding;
+            vertical-align: bottom;
+            text-align: left;
+            border-bottom: 2px solid $table-row-border-color;
+        }
+    }
+
+    tbody {
+        td {
+            padding: $table-data-padding;
+            vertical-align: top;
+            border-top: 1px solid $table-row-border-color;
+
+            &.no-border {
+                border-top: none;
+            }
+
+            &.bold-border {
+                border-top-width: 2px;
+            }
+
+            &.btn-group {
+                justify-content: center;
+
+                > .btn {
+                    margin-top: 0 !important;
+                    margin-bottom: 0 !important;
+                }
+            }
+        }
+
+        tr:first-child td {
+            border-top: 0;
+        }
+    }
+
+}
+
+/*********************
+  3. Striped
+**********************/
+.table.striped > tbody > tr:nth-of-type(odd) {
+    background-color: $table-striped-odd-row-background-color;
+}

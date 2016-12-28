@@ -1,47 +1,24 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Be right back.</title>
+@extends('errors.layout')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@section('title', trans('messages.503.title'))
 
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                color: #B0BEC5;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato', sans-serif;
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 72px;
-                margin-bottom: 40px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Be right back.</div>
+@section('content')
+    <div class="container m-t-50 m-b-50">
+        <div class="row">
+            <div class="col xs-12 center">
+                <h1>{{ trans('messages.503.title') }}</h1>
+                <p>{{ trans('messages.503.content') }}</p>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+@stop
+
+@push('js')
+<script>
+    $(document).ready(function () {
+        new VueModel({
+            el: '#content-wrapper'
+        });
+    });
+</script>
+@endpush

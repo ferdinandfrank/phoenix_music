@@ -3,7 +3,12 @@
 namespace App\Models;
 
 
+use Laravel\Scout\Searchable;
+
 class Category extends SlugModel {
+
+    use Searchable;
+    use HasResourceRoutes;
 
     /**
      * The database table used by the model.
@@ -32,11 +37,11 @@ class Category extends SlugModel {
     }
 
     /**
-     * Gets the posts, that the user created.
+     * Get the posts relationship.
      *
-     * @return Track
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function tracks() {
-        return $this->hasMany(Track::class, 'category_id');
+        return $this->belongsToMany(Track::class, 'track_categories')->withTimestamps();
     }
 }

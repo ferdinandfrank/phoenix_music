@@ -17,7 +17,13 @@ class CreateAlbumsTable extends Migration {
             $table->string('slug')->unique();
             $table->string('title');
             $table->text('description')->nullable();
+            $table->text('tags')->nullable();
             $table->string('image')->nullable();
+            $table->string('audiojungle')->nullable();
+            $table->string('stye')->nullable();
+            $table->string('cdbaby')->nullable();
+            $table->string('amazon')->nullable();
+            $table->string('itunes')->nullable();
             $table->date('published_at');
             $table->timestamps();
         });

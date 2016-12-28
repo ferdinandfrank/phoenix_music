@@ -6,3 +6,15 @@
 Homestead.json
 Homestead.yaml
 .env
+
+Thumbs.db
+composer.lock
+yarn.lock
+phpunit.xml
+
+.idea
+.project
+.DS_Store
+npm-debug.log
+/storage/*.index
+

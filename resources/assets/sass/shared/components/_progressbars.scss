@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Progress Bars
+   ========================================================================== */
+/**
+ * Table of Contents:
+ *
+ *  1. Declarations
+ *  2. Loader
+ */
+
+/*********************
+  1. Declarations
+**********************/
+$loader-line-width: 5px;
+$loader-size: 25px;
+
+/*********************
+  2. Loader
+**********************/
+
+.loader {
+    border: $loader-line-width solid $loader-background-color;
+    border-top: $loader-line-width solid $loader-line-color;
+    border-radius: 50%;
+    width: $loader-size;
+    height: $loader-size;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

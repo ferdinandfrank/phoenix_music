@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Colors
+   ========================================================================== */
+/**
+ * Table of Contents:
+ *
+ *  1. Declarations
+ *  2. Buttons
+ *  3. Layout
+ *  4. Lists
+ *  5. Inputs
+ */
+
+/*********************
+  1. Declarations
+**********************/
+$body-background-color: black !default;
+$text-color: $grey-light;
+$heading-color: $white-smooth;
+$link-color: $text-color;
+
+/*********************
+  2. Buttons
+**********************/
+$button-default-background-color: $primary-color !default;
+$button-default-text-color: $white !default;
+
+$button-disabled-background-color: $disabled-color !default;
+$button-disabled-text-color: $grey !default;
+
+$social-buttons-background-color: $white-smooth;
+$social-buttons-text-color: $dark-color;
+$social-buttons-hover-text-color: $white;
+
+/*********************
+  3. Layout
+**********************/
+$header-background-color: rgba(0, 0, 0, 0.3);
+$header-background-horizontal-color: rgba(0, 0, 0, 0.7);
+$header-toggle-color: $primary-color;
+$header-toggle-hover-color: $grey-light;
+
+$nav-pills-text-color: $white-smooth;
+$nav-pills-hover-text-color: $primary-inverse-color;
+$nav-pills-background-color: transparent;
+$nav-pills-hover-background-color: $primary-color;
+
+$nav-pills-light-hover-background-color: rgba(255, 255, 255, 0.1);
+
+$nav-links-icon-color: $primary-color;
+
+/*********************
+  4. Lists
+**********************/
+$breadcrumb-item-text-color: $grey-light;
+$breadcrumb-active-item-text-color: $white;
+$breadcrumb-active-item-border-color: $primary-color;
+
+$category-list-title-text-color: $white-smooth;
+$category-list-item-text-color: $grey-light;
+$category-list-item-background: $nav-pills-background-color;
+$category-list-item-hover-background: $nav-pills-hover-background-color;
+$category-list-item-hover-text-color: $nav-pills-hover-text-color;
+
+$portfolio-list-item-border-color: $white;
+$portfolio-list-item-category-background-color: $primary-color;
+
+/*********************
+  5. Inputs
+**********************/
+$input-text-color: $grey-dark !default;
+$input-background-color: $white !default;
+$input-placeholder-color: $grey-light !default;
+$input-border-color: $grey !default;
+$input-label-color: $white-smooth !default;
+$input-active-border-color: $primary-color !default;

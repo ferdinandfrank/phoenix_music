@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Phoenix Music',
+    'name' => env('APP_NAME', 'Phoenix Music'),
 
     /*
     |--------------------------------------------------------------------------
@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => env('APP_LOCALE', 'en'),
 
     /*
     |--------------------------------------------------------------------------
@@ -163,25 +163,26 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        /*
-         * Package Service Providers...
-         */
-
-        //
 
         /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+//        App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        \App\Providers\ScoutServiceProvider::class,
 
-        /**
-         * Vendor Service Providers...
-         */
+        /*
+        * Vendor Service Providers...
+        */
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+        TalvBansal\MediaManager\Providers\MediaManagerServiceProvider::class,
+        TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        MartinLindhe\VueInternationalizationGenerator\GeneratorProvider::class,
+        Intervention\Image\ImageServiceProvider::class
 
     ],
 
@@ -230,6 +231,12 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /*
+         * Vendor Aliases
+         */
+        'Excel'        => Maatwebsite\Excel\Facades\Excel::class,
+        'Image'        => Intervention\Image\Facades\Image::class,
 
         /*
          * Custom Aliases

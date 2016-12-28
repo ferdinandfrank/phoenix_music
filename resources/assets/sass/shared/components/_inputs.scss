@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Inputs
+   ========================================================================== */
+/**
+ * Table of Contents:
+ *
+ *  1. Declarations
+ *  2. Codearea
+ */
+
+/*********************
+  1. Declarations
+**********************/
+
+/*********************
+  2. Codearea
+**********************/
+.ce-element--type-image:not(.img-center), .ce-element--type-video:not(.img-center) {
+    display: block;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}

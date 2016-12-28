@@ -3,7 +3,12 @@
 namespace App\Models;
 
 
+use Laravel\Scout\Searchable;
+
 class Album extends SlugModel {
+
+    use Searchable;
+    use HasResourceRoutes;
 
     /**
      * The database table used by the model.
@@ -27,6 +32,13 @@ class Album extends SlugModel {
     protected $fillable = [
         'title',
         'description',
+        'tags',
+        'image',
+        'audiojungle',
+        'stye',
+        'cdbaby',
+        'amazon',
+        'itunes',
         'published_at'
     ];
 
@@ -45,6 +57,38 @@ class Album extends SlugModel {
      * @return Track
      */
     public function tracks() {
-        return $this->hasMany(Track::class, 'category_id');
+        return $this->hasMany(Track::class, 'album_id');
+    }
+
+    /**
+     * Checks if the track is licensable.
+     *
+     * @return bool
+     */
+    public function isLicensable() {
+        return !empty($this->audiojungle) || !empty($this->stye);
+    }
+
+    /**
+     * Checks if the track is buyable.
+     *
+     * @return bool
+     */
+    public function isBuyable() {
+        return !empty($this->cdbaby) || !empty($this->amazon) || !empty($this->itunes);
+    }
+
+    /**
+     * Gets the image link of the track.
+     *
+     * @param $value
+     *
+     * @return string
+     */
+    public function getImageAttribute($value) {
+        if (empty($value)) {
+            return asset('assets/images/covers/cover_default.jpg');
+        }
+        return $value;
     }
 }

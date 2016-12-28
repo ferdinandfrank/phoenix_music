@@ -18,7 +18,6 @@ class CreateTracksTable extends Migration {
             $table->string('title');
             $table->text('description')->nullable();
             $table->unsignedInteger('composer_id')->index();
-            $table->unsignedInteger('category_id')->nullable();
             $table->unsignedInteger('album_id')->nullable();
             $table->string('file');
             $table->string('length');
@@ -38,12 +37,6 @@ class CreateTracksTable extends Migration {
                 ->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-
-            $table->foreign('category_id')
-                ->references('id')
-                ->on('categories')
-                ->onUpdate('cascade')
-                ->onDelete('set null');
 
             $table->foreign('album_id')
                 ->references('id')
