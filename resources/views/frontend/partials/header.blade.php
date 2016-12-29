@@ -102,6 +102,6 @@
         @endif
     </ul>
     <p class="center small main-nav">
-        <icon icon="{{ config('icons.copyright') }}"></icon> {{ \App\Utils\LocalDate::now()->year }} {{ Settings::pageTitle() }}
+        <icon icon="{{ config('icons.copyright') }}"></icon> {{ LocalDate::now()->year }} {{ Settings::pageTitle() }}
     </p>
 </header>

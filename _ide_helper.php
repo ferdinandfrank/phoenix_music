@@ -12042,6 +12042,2203 @@ namespace {
     }
 
 
+    class LocalDate extends EpicArrow\LocalDate\Facades\LocalDateFacade{
+        
+        /**
+         * Format the instance as date and time.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toDateTimeString(){
+            return LocalDate::toDateTimeString();
+        }
+        
+        /**
+         * Format the instance as time.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toTimeString(){
+            return LocalDate::toTimeString();
+        }
+        
+        /**
+         * Format the instance as an age integer.
+         *
+         * @return int 
+         * @static 
+         */
+        public static function toAge(){
+            return LocalDate::toAge();
+        }
+        
+        /**
+         * Format the instance as an localized date string.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toDateString(){
+            return LocalDate::toDateString();
+        }
+        
+        /**
+         * Format the instance as an localized date string including the weekday.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toWeekDateString(){
+            return LocalDate::toWeekDateString();
+        }
+        
+        /**
+         * Format the instance as a range of date and time, where the instance is treated as the date range start and the
+         * give parameter as the range end.
+         *
+         * @param \LocalDate $endDate
+         * @return string 
+         * @static 
+         */
+        public static function toDateTimeRangeString($endDate){
+            return LocalDate::toDateTimeRangeString($endDate);
+        }
+        
+        /**
+         * Get the difference in a human readable format in the current locale.
+         * 
+         * When comparing a value in the past to default now:
+         * 1 hour ago
+         * 5 months ago
+         * When comparing a value in the future to default now:
+         * 1 hour from now
+         * 5 months from now
+         * When comparing a value in the past to another value:
+         * 1 hour before
+         * 5 months before
+         * When comparing a value in the future to another value:
+         * 1 hour after
+         * 5 months after
+         *
+         * @param LocalDateCarbon|null $other
+         * @param bool $absolute removes time difference modifiers ago, after, etc
+         * @return string 
+         * @static 
+         */
+        public static function diffForHumans($other = null, $absolute = false){
+            return LocalDate::diffForHumans($other, $absolute);
+        }
+        
+        /**
+         * Gets the day string in a readable format.
+         *
+         * @return array|null|string 
+         * @static 
+         */
+        public static function dayDiffForHumans(){
+            return LocalDate::dayDiffForHumans();
+        }
+        
+        /**
+         * Create a Carbon instance from a DateTime one
+         *
+         * @param \DateTime $dt
+         * @return static 
+         * @static 
+         */
+        public static function instance($dt){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::instance($dt);
+        }
+        
+        /**
+         * Create a carbon instance from a string.  This is an alias for the
+         * constructor that allows better fluent syntax as it allows you to do
+         * Carbon::parse('Monday next week')->fn() rather than
+         * (new Carbon('Monday next week'))->fn()
+         *
+         * @param string|null $time
+         * @param \DateTimeZone|string|null $tz
+         * @return static 
+         * @static 
+         */
+        public static function parse($time = null, $tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::parse($time, $tz);
+        }
+        
+        /**
+         * Get a Carbon instance for the current date and time
+         *
+         * @param \DateTimeZone|string|null $tz
+         * @return static 
+         * @static 
+         */
+        public static function now($tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::now($tz);
+        }
+        
+        /**
+         * Create a Carbon instance for today
+         *
+         * @param \DateTimeZone|string|null $tz
+         * @return static 
+         * @static 
+         */
+        public static function today($tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::today($tz);
+        }
+        
+        /**
+         * Create a Carbon instance for tomorrow
+         *
+         * @param \DateTimeZone|string|null $tz
+         * @return static 
+         * @static 
+         */
+        public static function tomorrow($tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::tomorrow($tz);
+        }
+        
+        /**
+         * Create a Carbon instance for yesterday
+         *
+         * @param \DateTimeZone|string|null $tz
+         * @return static 
+         * @static 
+         */
+        public static function yesterday($tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::yesterday($tz);
+        }
+        
+        /**
+         * Create a Carbon instance for the greatest supported date.
+         *
+         * @return \Carbon\Carbon 
+         * @static 
+         */
+        public static function maxValue(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::maxValue();
+        }
+        
+        /**
+         * Create a Carbon instance for the lowest supported date.
+         *
+         * @return \Carbon\Carbon 
+         * @static 
+         */
+        public static function minValue(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::minValue();
+        }
+        
+        /**
+         * Create a new Carbon instance from a specific date and time.
+         * 
+         * If any of $year, $month or $day are set to null their now() values
+         * will be used.
+         * 
+         * If $hour is null it will be set to its now() value and the default values
+         * for $minute and $second will be their now() values.
+         * If $hour is not null then the default values for $minute and $second
+         * will be 0.
+         *
+         * @param int|null $year
+         * @param int|null $month
+         * @param int|null $day
+         * @param int|null $hour
+         * @param int|null $minute
+         * @param int|null $second
+         * @param \DateTimeZone|string|null $tz
+         * @return static 
+         * @static 
+         */
+        public static function create($year = null, $month = null, $day = null, $hour = null, $minute = null, $second = null, $tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::create($year, $month, $day, $hour, $minute, $second, $tz);
+        }
+        
+        /**
+         * Create a Carbon instance from just a date. The time portion is set to now.
+         *
+         * @param int|null $year
+         * @param int|null $month
+         * @param int|null $day
+         * @param \DateTimeZone|string|null $tz
+         * @return static 
+         * @static 
+         */
+        public static function createFromDate($year = null, $month = null, $day = null, $tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::createFromDate($year, $month, $day, $tz);
+        }
+        
+        /**
+         * Create a Carbon instance from just a time. The date portion is set to today.
+         *
+         * @param int|null $hour
+         * @param int|null $minute
+         * @param int|null $second
+         * @param \DateTimeZone|string|null $tz
+         * @return static 
+         * @static 
+         */
+        public static function createFromTime($hour = null, $minute = null, $second = null, $tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::createFromTime($hour, $minute, $second, $tz);
+        }
+        
+        /**
+         * Create a Carbon instance from a specific format
+         *
+         * @param string $format
+         * @param string $time
+         * @param \DateTimeZone|string|null $tz
+         * @throws InvalidArgumentException
+         * @return static 
+         * @static 
+         */
+        public static function createFromFormat($format, $time, $tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::createFromFormat($format, $time, $tz);
+        }
+        
+        /**
+         * Create a Carbon instance from a timestamp
+         *
+         * @param int $timestamp
+         * @param \DateTimeZone|string|null $tz
+         * @return static 
+         * @static 
+         */
+        public static function createFromTimestamp($timestamp, $tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::createFromTimestamp($timestamp, $tz);
+        }
+        
+        /**
+         * Create a Carbon instance from an UTC timestamp
+         *
+         * @param int $timestamp
+         * @return static 
+         * @static 
+         */
+        public static function createFromTimestampUTC($timestamp){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::createFromTimestampUTC($timestamp);
+        }
+        
+        /**
+         * Get a copy of the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function copy(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::copy();
+        }
+        
+        /**
+         * Set the instance's year
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function year($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::year($value);
+        }
+        
+        /**
+         * Set the instance's month
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function month($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::month($value);
+        }
+        
+        /**
+         * Set the instance's day
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function day($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::day($value);
+        }
+        
+        /**
+         * Set the instance's hour
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function hour($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::hour($value);
+        }
+        
+        /**
+         * Set the instance's minute
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function minute($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::minute($value);
+        }
+        
+        /**
+         * Set the instance's second
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function second($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::second($value);
+        }
+        
+        /**
+         * Set the date and time all together
+         *
+         * @param int $year
+         * @param int $month
+         * @param int $day
+         * @param int $hour
+         * @param int $minute
+         * @param int $second
+         * @return static 
+         * @static 
+         */
+        public static function setDateTime($year, $month, $day, $hour, $minute, $second = 0){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::setDateTime($year, $month, $day, $hour, $minute, $second);
+        }
+        
+        /**
+         * Set the time by time string
+         *
+         * @param string $time
+         * @return static 
+         * @static 
+         */
+        public static function setTimeFromTimeString($time){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::setTimeFromTimeString($time);
+        }
+        
+        /**
+         * Set the instance's timestamp
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function timestamp($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::timestamp($value);
+        }
+        
+        /**
+         * Alias for setTimezone()
+         *
+         * @param \DateTimeZone|string $value
+         * @return static 
+         * @static 
+         */
+        public static function timezone($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::timezone($value);
+        }
+        
+        /**
+         * Alias for setTimezone()
+         *
+         * @param \DateTimeZone|string $value
+         * @return static 
+         * @static 
+         */
+        public static function tz($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::tz($value);
+        }
+        
+        /**
+         * Set the instance's timezone from a string or object
+         *
+         * @param \DateTimeZone|string $value
+         * @return static 
+         * @static 
+         */
+        public static function setTimezone($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::setTimezone($value);
+        }
+        
+        /**
+         * Get the first day of week
+         *
+         * @return int 
+         * @static 
+         */
+        public static function getWeekStartsAt(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::getWeekStartsAt();
+        }
+        
+        /**
+         * Set the first day of week
+         *
+         * @param int
+         * @static 
+         */
+        public static function setWeekStartsAt($day){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::setWeekStartsAt($day);
+        }
+        
+        /**
+         * Get the last day of week
+         *
+         * @return int 
+         * @static 
+         */
+        public static function getWeekEndsAt(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::getWeekEndsAt();
+        }
+        
+        /**
+         * Set the first day of week
+         *
+         * @param int
+         * @static 
+         */
+        public static function setWeekEndsAt($day){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::setWeekEndsAt($day);
+        }
+        
+        /**
+         * Get weekend days
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getWeekendDays(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::getWeekendDays();
+        }
+        
+        /**
+         * Set weekend days
+         *
+         * @param array
+         * @static 
+         */
+        public static function setWeekendDays($days){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::setWeekendDays($days);
+        }
+        
+        /**
+         * Set a Carbon instance (real or mock) to be returned when a "now"
+         * instance is created.  The provided instance will be returned
+         * specifically under the following conditions:
+         *   - A call to the static now() method, ex. Carbon::now()
+         *   - When a null (or blank string) is passed to the constructor or parse(), ex. new Carbon(null)
+         *   - When the string "now" is passed to the constructor or parse(), ex. new Carbon('now')
+         * 
+         * Note the timezone parameter was left out of the examples above and
+         * has no affect as the mock value will be returned regardless of its value.
+         * 
+         * To clear the test instance call this method using the default
+         * parameter of null.
+         *
+         * @param \Carbon\Carbon|null $testNow
+         * @static 
+         */
+        public static function setTestNow($testNow = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::setTestNow($testNow);
+        }
+        
+        /**
+         * Get the Carbon instance (real or mock) to be returned when a "now"
+         * instance is created.
+         *
+         * @return static the current instance used for testing
+         * @static 
+         */
+        public static function getTestNow(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::getTestNow();
+        }
+        
+        /**
+         * Determine if there is a valid test instance set. A valid test instance
+         * is anything that is not null.
+         *
+         * @return bool true if there is a test instance, otherwise false
+         * @static 
+         */
+        public static function hasTestNow(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::hasTestNow();
+        }
+        
+        /**
+         * Determine if there is a relative keyword in the time string, this is to
+         * create dates relative to now for test instances. e.g.: next tuesday
+         *
+         * @param string $time
+         * @return bool true if there is a keyword, otherwise false
+         * @static 
+         */
+        public static function hasRelativeKeywords($time){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::hasRelativeKeywords($time);
+        }
+        
+        /**
+         * Get the translator instance in use
+         *
+         * @return \Carbon\TranslatorInterface 
+         * @static 
+         */
+        public static function getTranslator(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::getTranslator();
+        }
+        
+        /**
+         * Set the translator instance to use
+         *
+         * @param \Carbon\TranslatorInterface $translator
+         * @static 
+         */
+        public static function setTranslator($translator){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::setTranslator($translator);
+        }
+        
+        /**
+         * Get the current translator locale
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getLocale(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::getLocale();
+        }
+        
+        /**
+         * Set the current translator locale
+         *
+         * @param string $locale
+         * @static 
+         */
+        public static function setLocale($locale){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::setLocale($locale);
+        }
+        
+        /**
+         * Format the instance with the current locale.  You can set the current
+         * locale using setlocale() http://php.net/setlocale.
+         *
+         * @param string $format
+         * @return string 
+         * @static 
+         */
+        public static function formatLocalized($format){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::formatLocalized($format);
+        }
+        
+        /**
+         * Reset the format used to the default when type juggling a Carbon instance to a string
+         *
+         * @static 
+         */
+        public static function resetToStringFormat(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::resetToStringFormat();
+        }
+        
+        /**
+         * Set the default format used when type juggling a Carbon instance to a string
+         *
+         * @param string $format
+         * @static 
+         */
+        public static function setToStringFormat($format){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::setToStringFormat($format);
+        }
+        
+        /**
+         * Format the instance as a readable date
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toFormattedDateString(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::toFormattedDateString();
+        }
+        
+        /**
+         * Format the instance with day, date and time
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toDayDateTimeString(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::toDayDateTimeString();
+        }
+        
+        /**
+         * Format the instance as ATOM
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toAtomString(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::toAtomString();
+        }
+        
+        /**
+         * Format the instance as COOKIE
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toCookieString(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::toCookieString();
+        }
+        
+        /**
+         * Format the instance as ISO8601
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toIso8601String(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::toIso8601String();
+        }
+        
+        /**
+         * Format the instance as RFC822
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toRfc822String(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::toRfc822String();
+        }
+        
+        /**
+         * Format the instance as RFC850
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toRfc850String(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::toRfc850String();
+        }
+        
+        /**
+         * Format the instance as RFC1036
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toRfc1036String(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::toRfc1036String();
+        }
+        
+        /**
+         * Format the instance as RFC1123
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toRfc1123String(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::toRfc1123String();
+        }
+        
+        /**
+         * Format the instance as RFC2822
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toRfc2822String(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::toRfc2822String();
+        }
+        
+        /**
+         * Format the instance as RFC3339
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toRfc3339String(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::toRfc3339String();
+        }
+        
+        /**
+         * Format the instance as RSS
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toRssString(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::toRssString();
+        }
+        
+        /**
+         * Format the instance as W3C
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toW3cString(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::toW3cString();
+        }
+        
+        /**
+         * Determines if the instance is equal to another
+         *
+         * @param \Carbon\Carbon $dt
+         * @return bool 
+         * @static 
+         */
+        public static function eq($dt){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::eq($dt);
+        }
+        
+        /**
+         * Determines if the instance is not equal to another
+         *
+         * @param \Carbon\Carbon $dt
+         * @return bool 
+         * @static 
+         */
+        public static function ne($dt){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::ne($dt);
+        }
+        
+        /**
+         * Determines if the instance is greater (after) than another
+         *
+         * @param \Carbon\Carbon $dt
+         * @return bool 
+         * @static 
+         */
+        public static function gt($dt){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::gt($dt);
+        }
+        
+        /**
+         * Determines if the instance is greater (after) than or equal to another
+         *
+         * @param \Carbon\Carbon $dt
+         * @return bool 
+         * @static 
+         */
+        public static function gte($dt){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::gte($dt);
+        }
+        
+        /**
+         * Determines if the instance is less (before) than another
+         *
+         * @param \Carbon\Carbon $dt
+         * @return bool 
+         * @static 
+         */
+        public static function lt($dt){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::lt($dt);
+        }
+        
+        /**
+         * Determines if the instance is less (before) or equal to another
+         *
+         * @param \Carbon\Carbon $dt
+         * @return bool 
+         * @static 
+         */
+        public static function lte($dt){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::lte($dt);
+        }
+        
+        /**
+         * Determines if the instance is between two others
+         *
+         * @param \Carbon\Carbon $dt1
+         * @param \Carbon\Carbon $dt2
+         * @param bool $equal Indicates if a > and < comparison should be used or <= or >=
+         * @return bool 
+         * @static 
+         */
+        public static function between($dt1, $dt2, $equal = true){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::between($dt1, $dt2, $equal);
+        }
+        
+        /**
+         * Get the closest date from the instance.
+         *
+         * @param \Carbon\Carbon $dt1
+         * @param \Carbon\Carbon $dt2
+         * @return static 
+         * @static 
+         */
+        public static function closest($dt1, $dt2){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::closest($dt1, $dt2);
+        }
+        
+        /**
+         * Get the farthest date from the instance.
+         *
+         * @param \Carbon\Carbon $dt1
+         * @param \Carbon\Carbon $dt2
+         * @return static 
+         * @static 
+         */
+        public static function farthest($dt1, $dt2){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::farthest($dt1, $dt2);
+        }
+        
+        /**
+         * Get the minimum instance between a given instance (default now) and the current instance.
+         *
+         * @param \Carbon\Carbon|null $dt
+         * @return static 
+         * @static 
+         */
+        public static function min($dt = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::min($dt);
+        }
+        
+        /**
+         * Get the maximum instance between a given instance (default now) and the current instance.
+         *
+         * @param \Carbon\Carbon|null $dt
+         * @return static 
+         * @static 
+         */
+        public static function max($dt = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::max($dt);
+        }
+        
+        /**
+         * Determines if the instance is a weekday
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function isWeekday(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::isWeekday();
+        }
+        
+        /**
+         * Determines if the instance is a weekend day
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function isWeekend(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::isWeekend();
+        }
+        
+        /**
+         * Determines if the instance is yesterday
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function isYesterday(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::isYesterday();
+        }
+        
+        /**
+         * Determines if the instance is today
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function isToday(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::isToday();
+        }
+        
+        /**
+         * Determines if the instance is tomorrow
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function isTomorrow(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::isTomorrow();
+        }
+        
+        /**
+         * Determines if the instance is in the future, ie. greater (after) than now
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function isFuture(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::isFuture();
+        }
+        
+        /**
+         * Determines if the instance is in the past, ie. less (before) than now
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function isPast(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::isPast();
+        }
+        
+        /**
+         * Determines if the instance is a leap year
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function isLeapYear(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::isLeapYear();
+        }
+        
+        /**
+         * Checks if the passed in date is the same day as the instance current day.
+         *
+         * @param \Carbon\Carbon $dt
+         * @return bool 
+         * @static 
+         */
+        public static function isSameDay($dt){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::isSameDay($dt);
+        }
+        
+        /**
+         * Checks if this day is a Sunday.
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function isSunday(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::isSunday();
+        }
+        
+        /**
+         * Checks if this day is a Monday.
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function isMonday(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::isMonday();
+        }
+        
+        /**
+         * Checks if this day is a Tuesday.
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function isTuesday(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::isTuesday();
+        }
+        
+        /**
+         * Checks if this day is a Wednesday.
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function isWednesday(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::isWednesday();
+        }
+        
+        /**
+         * Checks if this day is a Thursday.
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function isThursday(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::isThursday();
+        }
+        
+        /**
+         * Checks if this day is a Friday.
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function isFriday(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::isFriday();
+        }
+        
+        /**
+         * Checks if this day is a Saturday.
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function isSaturday(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::isSaturday();
+        }
+        
+        /**
+         * Add years to the instance. Positive $value travel forward while
+         * negative $value travel into the past.
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function addYears($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::addYears($value);
+        }
+        
+        /**
+         * Add a year to the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function addYear($value = 1){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::addYear($value);
+        }
+        
+        /**
+         * Remove a year from the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function subYear($value = 1){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::subYear($value);
+        }
+        
+        /**
+         * Remove years from the instance.
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function subYears($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::subYears($value);
+        }
+        
+        /**
+         * Add months to the instance. Positive $value travels forward while
+         * negative $value travels into the past.
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function addMonths($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::addMonths($value);
+        }
+        
+        /**
+         * Add a month to the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function addMonth($value = 1){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::addMonth($value);
+        }
+        
+        /**
+         * Remove a month from the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function subMonth($value = 1){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::subMonth($value);
+        }
+        
+        /**
+         * Remove months from the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function subMonths($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::subMonths($value);
+        }
+        
+        /**
+         * Add months without overflowing to the instance. Positive $value
+         * travels forward while negative $value travels into the past.
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function addMonthsNoOverflow($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::addMonthsNoOverflow($value);
+        }
+        
+        /**
+         * Add a month with no overflow to the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function addMonthNoOverflow($value = 1){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::addMonthNoOverflow($value);
+        }
+        
+        /**
+         * Remove a month with no overflow from the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function subMonthNoOverflow($value = 1){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::subMonthNoOverflow($value);
+        }
+        
+        /**
+         * Remove months with no overflow from the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function subMonthsNoOverflow($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::subMonthsNoOverflow($value);
+        }
+        
+        /**
+         * Add days to the instance. Positive $value travels forward while
+         * negative $value travels into the past.
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function addDays($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::addDays($value);
+        }
+        
+        /**
+         * Add a day to the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function addDay($value = 1){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::addDay($value);
+        }
+        
+        /**
+         * Remove a day from the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function subDay($value = 1){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::subDay($value);
+        }
+        
+        /**
+         * Remove days from the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function subDays($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::subDays($value);
+        }
+        
+        /**
+         * Add weekdays to the instance. Positive $value travels forward while
+         * negative $value travels into the past.
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function addWeekdays($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::addWeekdays($value);
+        }
+        
+        /**
+         * Add a weekday to the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function addWeekday($value = 1){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::addWeekday($value);
+        }
+        
+        /**
+         * Remove a weekday from the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function subWeekday($value = 1){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::subWeekday($value);
+        }
+        
+        /**
+         * Remove weekdays from the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function subWeekdays($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::subWeekdays($value);
+        }
+        
+        /**
+         * Add weeks to the instance. Positive $value travels forward while
+         * negative $value travels into the past.
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function addWeeks($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::addWeeks($value);
+        }
+        
+        /**
+         * Add a week to the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function addWeek($value = 1){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::addWeek($value);
+        }
+        
+        /**
+         * Remove a week from the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function subWeek($value = 1){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::subWeek($value);
+        }
+        
+        /**
+         * Remove weeks to the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function subWeeks($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::subWeeks($value);
+        }
+        
+        /**
+         * Add hours to the instance. Positive $value travels forward while
+         * negative $value travels into the past.
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function addHours($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::addHours($value);
+        }
+        
+        /**
+         * Add an hour to the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function addHour($value = 1){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::addHour($value);
+        }
+        
+        /**
+         * Remove an hour from the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function subHour($value = 1){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::subHour($value);
+        }
+        
+        /**
+         * Remove hours from the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function subHours($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::subHours($value);
+        }
+        
+        /**
+         * Add minutes to the instance. Positive $value travels forward while
+         * negative $value travels into the past.
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function addMinutes($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::addMinutes($value);
+        }
+        
+        /**
+         * Add a minute to the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function addMinute($value = 1){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::addMinute($value);
+        }
+        
+        /**
+         * Remove a minute from the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function subMinute($value = 1){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::subMinute($value);
+        }
+        
+        /**
+         * Remove minutes from the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function subMinutes($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::subMinutes($value);
+        }
+        
+        /**
+         * Add seconds to the instance. Positive $value travels forward while
+         * negative $value travels into the past.
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function addSeconds($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::addSeconds($value);
+        }
+        
+        /**
+         * Add a second to the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function addSecond($value = 1){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::addSecond($value);
+        }
+        
+        /**
+         * Remove a second from the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function subSecond($value = 1){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::subSecond($value);
+        }
+        
+        /**
+         * Remove seconds from the instance
+         *
+         * @param int $value
+         * @return static 
+         * @static 
+         */
+        public static function subSeconds($value){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::subSeconds($value);
+        }
+        
+        /**
+         * Get the difference in years
+         *
+         * @param \Carbon\Carbon|null $dt
+         * @param bool $abs Get the absolute of the difference
+         * @return int 
+         * @static 
+         */
+        public static function diffInYears($dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::diffInYears($dt, $abs);
+        }
+        
+        /**
+         * Get the difference in months
+         *
+         * @param \Carbon\Carbon|null $dt
+         * @param bool $abs Get the absolute of the difference
+         * @return int 
+         * @static 
+         */
+        public static function diffInMonths($dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::diffInMonths($dt, $abs);
+        }
+        
+        /**
+         * Get the difference in weeks
+         *
+         * @param \Carbon\Carbon|null $dt
+         * @param bool $abs Get the absolute of the difference
+         * @return int 
+         * @static 
+         */
+        public static function diffInWeeks($dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::diffInWeeks($dt, $abs);
+        }
+        
+        /**
+         * Get the difference in days
+         *
+         * @param \Carbon\Carbon|null $dt
+         * @param bool $abs Get the absolute of the difference
+         * @return int 
+         * @static 
+         */
+        public static function diffInDays($dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::diffInDays($dt, $abs);
+        }
+        
+        /**
+         * Get the difference in days using a filter closure
+         *
+         * @param \Closure $callback
+         * @param \Carbon\Carbon|null $dt
+         * @param bool $abs Get the absolute of the difference
+         * @return int 
+         * @static 
+         */
+        public static function diffInDaysFiltered($callback, $dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::diffInDaysFiltered($callback, $dt, $abs);
+        }
+        
+        /**
+         * Get the difference in hours using a filter closure
+         *
+         * @param \Closure $callback
+         * @param \Carbon\Carbon|null $dt
+         * @param bool $abs Get the absolute of the difference
+         * @return int 
+         * @static 
+         */
+        public static function diffInHoursFiltered($callback, $dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::diffInHoursFiltered($callback, $dt, $abs);
+        }
+        
+        /**
+         * Get the difference by the given interval using a filter closure
+         *
+         * @param \Carbon\CarbonInterval $ci An interval to traverse by
+         * @param \Closure $callback
+         * @param \Carbon\Carbon|null $dt
+         * @param bool $abs Get the absolute of the difference
+         * @return int 
+         * @static 
+         */
+        public static function diffFiltered($ci, $callback, $dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::diffFiltered($ci, $callback, $dt, $abs);
+        }
+        
+        /**
+         * Get the difference in weekdays
+         *
+         * @param \Carbon\Carbon|null $dt
+         * @param bool $abs Get the absolute of the difference
+         * @return int 
+         * @static 
+         */
+        public static function diffInWeekdays($dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::diffInWeekdays($dt, $abs);
+        }
+        
+        /**
+         * Get the difference in weekend days using a filter
+         *
+         * @param \Carbon\Carbon|null $dt
+         * @param bool $abs Get the absolute of the difference
+         * @return int 
+         * @static 
+         */
+        public static function diffInWeekendDays($dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::diffInWeekendDays($dt, $abs);
+        }
+        
+        /**
+         * Get the difference in hours
+         *
+         * @param \Carbon\Carbon|null $dt
+         * @param bool $abs Get the absolute of the difference
+         * @return int 
+         * @static 
+         */
+        public static function diffInHours($dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::diffInHours($dt, $abs);
+        }
+        
+        /**
+         * Get the difference in minutes
+         *
+         * @param \Carbon\Carbon|null $dt
+         * @param bool $abs Get the absolute of the difference
+         * @return int 
+         * @static 
+         */
+        public static function diffInMinutes($dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::diffInMinutes($dt, $abs);
+        }
+        
+        /**
+         * Get the difference in seconds
+         *
+         * @param \Carbon\Carbon|null $dt
+         * @param bool $abs Get the absolute of the difference
+         * @return int 
+         * @static 
+         */
+        public static function diffInSeconds($dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::diffInSeconds($dt, $abs);
+        }
+        
+        /**
+         * The number of seconds since midnight.
+         *
+         * @return int 
+         * @static 
+         */
+        public static function secondsSinceMidnight(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::secondsSinceMidnight();
+        }
+        
+        /**
+         * The number of seconds until 23:23:59.
+         *
+         * @return int 
+         * @static 
+         */
+        public static function secondsUntilEndOfDay(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::secondsUntilEndOfDay();
+        }
+        
+        /**
+         * Resets the time to 00:00:00
+         *
+         * @return static 
+         * @static 
+         */
+        public static function startOfDay(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::startOfDay();
+        }
+        
+        /**
+         * Resets the time to 23:59:59
+         *
+         * @return static 
+         * @static 
+         */
+        public static function endOfDay(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::endOfDay();
+        }
+        
+        /**
+         * Resets the date to the first day of the month and the time to 00:00:00
+         *
+         * @return static 
+         * @static 
+         */
+        public static function startOfMonth(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::startOfMonth();
+        }
+        
+        /**
+         * Resets the date to end of the month and time to 23:59:59
+         *
+         * @return static 
+         * @static 
+         */
+        public static function endOfMonth(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::endOfMonth();
+        }
+        
+        /**
+         * Resets the date to the first day of the year and the time to 00:00:00
+         *
+         * @return static 
+         * @static 
+         */
+        public static function startOfYear(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::startOfYear();
+        }
+        
+        /**
+         * Resets the date to end of the year and time to 23:59:59
+         *
+         * @return static 
+         * @static 
+         */
+        public static function endOfYear(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::endOfYear();
+        }
+        
+        /**
+         * Resets the date to the first day of the decade and the time to 00:00:00
+         *
+         * @return static 
+         * @static 
+         */
+        public static function startOfDecade(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::startOfDecade();
+        }
+        
+        /**
+         * Resets the date to end of the decade and time to 23:59:59
+         *
+         * @return static 
+         * @static 
+         */
+        public static function endOfDecade(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::endOfDecade();
+        }
+        
+        /**
+         * Resets the date to the first day of the century and the time to 00:00:00
+         *
+         * @return static 
+         * @static 
+         */
+        public static function startOfCentury(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::startOfCentury();
+        }
+        
+        /**
+         * Resets the date to end of the century and time to 23:59:59
+         *
+         * @return static 
+         * @static 
+         */
+        public static function endOfCentury(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::endOfCentury();
+        }
+        
+        /**
+         * Resets the date to the first day of week (defined in $weekStartsAt) and the time to 00:00:00
+         *
+         * @return static 
+         * @static 
+         */
+        public static function startOfWeek(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::startOfWeek();
+        }
+        
+        /**
+         * Resets the date to end of week (defined in $weekEndsAt) and time to 23:59:59
+         *
+         * @return static 
+         * @static 
+         */
+        public static function endOfWeek(){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::endOfWeek();
+        }
+        
+        /**
+         * Modify to the next occurrence of a given day of the week.
+         * 
+         * If no dayOfWeek is provided, modify to the next occurrence
+         * of the current day of the week.  Use the supplied consts
+         * to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int|null $dayOfWeek
+         * @return static 
+         * @static 
+         */
+        public static function next($dayOfWeek = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::next($dayOfWeek);
+        }
+        
+        /**
+         * Modify to the previous occurrence of a given day of the week.
+         * 
+         * If no dayOfWeek is provided, modify to the previous occurrence
+         * of the current day of the week.  Use the supplied consts
+         * to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int|null $dayOfWeek
+         * @return static 
+         * @static 
+         */
+        public static function previous($dayOfWeek = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::previous($dayOfWeek);
+        }
+        
+        /**
+         * Modify to the first occurrence of a given day of the week
+         * in the current month. If no dayOfWeek is provided, modify to the
+         * first day of the current month.  Use the supplied consts
+         * to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int|null $dayOfWeek
+         * @return static 
+         * @static 
+         */
+        public static function firstOfMonth($dayOfWeek = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::firstOfMonth($dayOfWeek);
+        }
+        
+        /**
+         * Modify to the last occurrence of a given day of the week
+         * in the current month. If no dayOfWeek is provided, modify to the
+         * last day of the current month.  Use the supplied consts
+         * to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int|null $dayOfWeek
+         * @return static 
+         * @static 
+         */
+        public static function lastOfMonth($dayOfWeek = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::lastOfMonth($dayOfWeek);
+        }
+        
+        /**
+         * Modify to the given occurrence of a given day of the week
+         * in the current month. If the calculated occurrence is outside the scope
+         * of the current month, then return false and no modifications are made.
+         * 
+         * Use the supplied consts to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int $nth
+         * @param int $dayOfWeek
+         * @return mixed 
+         * @static 
+         */
+        public static function nthOfMonth($nth, $dayOfWeek){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::nthOfMonth($nth, $dayOfWeek);
+        }
+        
+        /**
+         * Modify to the first occurrence of a given day of the week
+         * in the current quarter. If no dayOfWeek is provided, modify to the
+         * first day of the current quarter.  Use the supplied consts
+         * to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int|null $dayOfWeek
+         * @return static 
+         * @static 
+         */
+        public static function firstOfQuarter($dayOfWeek = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::firstOfQuarter($dayOfWeek);
+        }
+        
+        /**
+         * Modify to the last occurrence of a given day of the week
+         * in the current quarter. If no dayOfWeek is provided, modify to the
+         * last day of the current quarter.  Use the supplied consts
+         * to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int|null $dayOfWeek
+         * @return static 
+         * @static 
+         */
+        public static function lastOfQuarter($dayOfWeek = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::lastOfQuarter($dayOfWeek);
+        }
+        
+        /**
+         * Modify to the given occurrence of a given day of the week
+         * in the current quarter. If the calculated occurrence is outside the scope
+         * of the current quarter, then return false and no modifications are made.
+         * 
+         * Use the supplied consts to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int $nth
+         * @param int $dayOfWeek
+         * @return mixed 
+         * @static 
+         */
+        public static function nthOfQuarter($nth, $dayOfWeek){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::nthOfQuarter($nth, $dayOfWeek);
+        }
+        
+        /**
+         * Modify to the first occurrence of a given day of the week
+         * in the current year. If no dayOfWeek is provided, modify to the
+         * first day of the current year.  Use the supplied consts
+         * to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int|null $dayOfWeek
+         * @return static 
+         * @static 
+         */
+        public static function firstOfYear($dayOfWeek = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::firstOfYear($dayOfWeek);
+        }
+        
+        /**
+         * Modify to the last occurrence of a given day of the week
+         * in the current year. If no dayOfWeek is provided, modify to the
+         * last day of the current year.  Use the supplied consts
+         * to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int|null $dayOfWeek
+         * @return static 
+         * @static 
+         */
+        public static function lastOfYear($dayOfWeek = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::lastOfYear($dayOfWeek);
+        }
+        
+        /**
+         * Modify to the given occurrence of a given day of the week
+         * in the current year. If the calculated occurrence is outside the scope
+         * of the current year, then return false and no modifications are made.
+         * 
+         * Use the supplied consts to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int $nth
+         * @param int $dayOfWeek
+         * @return mixed 
+         * @static 
+         */
+        public static function nthOfYear($nth, $dayOfWeek){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::nthOfYear($nth, $dayOfWeek);
+        }
+        
+        /**
+         * Modify the current instance to the average of a given instance (default now) and the current instance.
+         *
+         * @param \Carbon\Carbon|null $dt
+         * @return static 
+         * @static 
+         */
+        public static function average($dt = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::average($dt);
+        }
+        
+        /**
+         * Check if its the birthday. Compares the date/month values of the two dates.
+         *
+         * @param \Carbon\Carbon|null $dt The instance to compare with or null to use current day.
+         * @return bool 
+         * @static 
+         */
+        public static function isBirthday($dt = null){
+            //Method inherited from \Carbon\Carbon            
+            return LocalDate::isBirthday($dt);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function getLastErrors(){
+            //Method inherited from \DateTime            
+            return LocalDate::getLastErrors();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function format($format){
+            //Method inherited from \DateTime            
+            return LocalDate::format($format);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function modify($modify){
+            //Method inherited from \DateTime            
+            return LocalDate::modify($modify);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function add($interval){
+            //Method inherited from \DateTime            
+            return LocalDate::add($interval);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function sub($interval){
+            //Method inherited from \DateTime            
+            return LocalDate::sub($interval);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function getTimezone(){
+            //Method inherited from \DateTime            
+            return LocalDate::getTimezone();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function getOffset(){
+            //Method inherited from \DateTime            
+            return LocalDate::getOffset();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function setTime($hour, $minute, $second = null){
+            //Method inherited from \DateTime            
+            return LocalDate::setTime($hour, $minute, $second);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function setDate($year, $month, $day){
+            //Method inherited from \DateTime            
+            return LocalDate::setDate($year, $month, $day);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function setISODate($year, $week, $day = null){
+            //Method inherited from \DateTime            
+            return LocalDate::setISODate($year, $week, $day);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function setTimestamp($unixtimestamp){
+            //Method inherited from \DateTime            
+            return LocalDate::setTimestamp($unixtimestamp);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function getTimestamp(){
+            //Method inherited from \DateTime            
+            return LocalDate::getTimestamp();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function diff($object, $absolute = null){
+            //Method inherited from \DateTime            
+            return LocalDate::diff($object, $absolute);
+        }
+        
+    }
+
+
     class Settings extends \App\Models\Settings{
         
     }

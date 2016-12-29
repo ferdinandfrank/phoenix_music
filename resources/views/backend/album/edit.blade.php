@@ -115,7 +115,7 @@
 
                             <form-date-input name="published_at" :required="true"
                                              lang-key="album"
-                                             value="{{ $album->published_at ?? \App\Utils\LocalDate::now() }}"></form-date-input>
+                                             value="{{ $album->published_at ?? LocalDate::now() }}"></form-date-input>
 
                             <div class="btn-group center">
                                 @if($isEditPage)

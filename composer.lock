@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9b2928dad425543b5219103219e921a0",
-    "content-hash": "bbe734f7d9535e73b69f057287bda4c4",
+    "hash": "6a20697f4f9654e22df98597ede4b4c4",
+    "content-hash": "d7e36b3f6207b91695c04b08b54ee7b6",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -732,6 +732,50 @@
                 "parser"
             ],
             "time": "2014-09-09 13:34:57"
+        },
+        {
+            "name": "epicarrow/local-date",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/EpicArrow/local-date.git",
+                "reference": "6ab27831634930fc270359ba5af88773289109da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/EpicArrow/local-date/zipball/6ab27831634930fc270359ba5af88773289109da",
+                "reference": "6ab27831634930fc270359ba5af88773289109da",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EpicArrow\\LocalDate\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "EpicArrow",
+                    "email": "ferdinand-frank@web.de"
+                }
+            ],
+            "description": "An extension of the Carbon date format to use localization within a Laravel installation.",
+            "keywords": [
+                "carbon",
+                "date",
+                "i18",
+                "language",
+                "laravel",
+                "localization"
+            ],
+            "time": "2016-12-29 20:53:45"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1499,20 +1543,21 @@
         },
         {
             "name": "martinlindhe/laravel-vue-i18n-generator",
-            "version": "0.1.7",
+            "version": "0.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/martinlindhe/laravel-vue-i18n-generator.git",
-                "reference": "baa633c4ecbe23c58932e22c499a9976705ce518"
+                "reference": "9079c9b3b7e9a803f0ffb5f10678cb5d33805db5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/martinlindhe/laravel-vue-i18n-generator/zipball/baa633c4ecbe23c58932e22c499a9976705ce518",
-                "reference": "baa633c4ecbe23c58932e22c499a9976705ce518",
+                "url": "https://api.github.com/repos/martinlindhe/laravel-vue-i18n-generator/zipball/9079c9b3b7e9a803f0ffb5f10678cb5d33805db5",
+                "reference": "9079c9b3b7e9a803f0ffb5f10678cb5d33805db5",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "~5.1",
+                "illuminate/console": "~5.1.0|~5.2.0|~5.3.0",
+                "illuminate/support": "~5.1.0|~5.2.0|~5.3.0",
                 "php": ">=5.5.0"
             },
             "require-dev": {
@@ -1540,7 +1585,7 @@
                 "laravel",
                 "vue-i18n"
             ],
-            "time": "2016-11-01 08:42:41"
+            "time": "2016-12-29 20:38:11"
         },
         {
             "name": "mockery/mockery",
@@ -2185,23 +2230,24 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.4",
+            "version": "v5.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "545ce9136690cea74f98f86fbb9c92dd9ab1a756"
+                "reference": "cd142238a339459b10da3d8234220963f392540c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/545ce9136690cea74f98f86fbb9c92dd9ab1a756",
-                "reference": "545ce9136690cea74f98f86fbb9c92dd9ab1a756",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/cd142238a339459b10da3d8234220963f392540c",
+                "reference": "cd142238a339459b10da3d8234220963f392540c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "mockery/mockery": "~0.9.1"
+                "mockery/mockery": "~0.9.1",
+                "symfony/phpunit-bridge": "~3.2"
             },
             "type": "library",
             "extra": {
@@ -2234,7 +2280,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2016-11-24 01:01:23"
+            "time": "2016-12-29 10:02:40"
         },
         {
             "name": "symfony/class-loader",
@@ -4037,16 +4083,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.4",
+            "version": "5.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "af91da3f2671006ff5d0628023de3b7ac4d1ef09"
+                "reference": "50fd2be8f3e23e91da825f36f08e5f9633076ffe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/af91da3f2671006ff5d0628023de3b7ac4d1ef09",
-                "reference": "af91da3f2671006ff5d0628023de3b7ac4d1ef09",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/50fd2be8f3e23e91da825f36f08e5f9633076ffe",
+                "reference": "50fd2be8f3e23e91da825f36f08e5f9633076ffe",
                 "shasum": ""
             },
             "require": {
@@ -4115,7 +4161,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-12-13 16:19:44"
+            "time": "2016-12-28 07:18:51"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Utils\LocalDate;
+use LocalDate;
 use Illuminate\Database\Eloquent\Model;
 
 abstract class BaseModel extends Model {
