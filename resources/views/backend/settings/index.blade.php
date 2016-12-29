@@ -45,45 +45,45 @@
                             </div>
                         </panel>
                     </div>
-                    <div class="col xs-12 md-6">
+                    <div class="col xs-12">
                         <panel title="{{ trans('labels.networks') }}">
                             <div class="row">
-                                <div class="col xs-12">
+                                <div class="col xs-12 md-6">
                                     <form-input name="facebook"
                                                 :show-placeholder="true"
                                                 value="{{ $settings['facebook']}}"></form-input>
                                 </div>
-                                <div class="col xs-12">
+                                <div class="col xs-12 md-6">
                                     <form-input name="youtube"
                                                 :show-placeholder="true"
                                                 value="{{ $settings['youtube']}}"></form-input>
                                 </div>
-                                <div class="col xs-12">
+                                <div class="col xs-12 md-6">
                                     <form-input name="twitter"
                                                 :show-placeholder="true"
                                                 value="{{ $settings['twitter']}}"></form-input>
                                 </div>
-                                <div class="col xs-12">
+                                <div class="col xs-12 md-6">
                                     <form-input name="stye"
                                                 :show-placeholder="true"
                                                 value="{{ $settings['stye']}}"></form-input>
                                 </div>
-                                <div class="col xs-12">
+                                <div class="col xs-12 md-6">
                                     <form-input name="audiojungle"
                                                 :show-placeholder="true"
                                                 value="{{ $settings['audiojungle']}}"></form-input>
                                 </div>
-                                <div class="col xs-12">
+                                <div class="col xs-12 md-6">
                                     <form-input name="cdbaby"
                                                 :show-placeholder="true"
                                                 value="{{ $settings['cdbaby']}}"></form-input>
                                 </div>
-                                <div class="col xs-12">
+                                <div class="col xs-12 md-6">
                                     <form-input name="iTunes"
                                                 :show-placeholder="true"
                                                 value="{{ $settings['iTunes']}}"></form-input>
                                 </div>
-                                <div class="col xs-12">
+                                <div class="col xs-12 md-6">
                                     <form-input name="amazon"
                                                 :show-placeholder="true"
                                                 value="{{ $settings['amazon']}}"></form-input>
@@ -91,9 +91,17 @@
                             </div>
                         </panel>
                     </div>
-                    <div class="col xs-12 md-6">
+                    <div class="col xs-12">
                         <panel title="{{ trans('labels.advanced_settings') }}">
                             <div class="row">
+                                <div class="col xs-12 md-6">
+                                    <form-codearea name="text_stye" help-path="{{ route('help') }}"
+                                                   value="{{ $settings['text_stye'] }}"></form-codearea>
+                                </div>
+                                <div class="col xs-12 md-6">
+                                    <form-codearea name="text_audiojungle" help-path="{{ route('help') }}"
+                                                   value="{{ $settings['text_audiojungle'] }}"></form-codearea>
+                                </div>
                                 <div class="col xs-12">
                                     <form-textarea name="keywords" value="{{ $settings['keywords']}}"></form-textarea>
                                 </div>

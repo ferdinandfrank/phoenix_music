@@ -113,4 +113,10 @@ return [
 
     'attributes' => [],
 
+    'password' => [
+        'email' => [
+            'exists' => 'Diese E-Mail Adresse ist im System nicht registriert.'
+        ]
+    ]
+
 ];

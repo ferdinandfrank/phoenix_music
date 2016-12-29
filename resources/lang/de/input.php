@@ -26,13 +26,15 @@ return [
     'instagram'   => 'Instagram Name',
     'audiojungle' => 'Audiojungle Slug',
 
-    'title'         => 'Webseite Titel',
-    'author'        => 'Verantwortlicher Autor der Webseite',
-    'email_contact' => 'Kontakt E-Mail Adresse',
-    'email_admin'   => 'Technische Kontakt E-Mail Adresse',
-    'description'   => 'Beschreibung',
-    'imprint'       => 'Impressum der Webseite',
-    'keywords'      => 'Schlüsselwörter',
+    'title'            => 'Webseite Titel',
+    'author'           => 'Verantwortlicher Autor der Webseite',
+    'email_contact'    => 'Kontakt E-Mail Adresse',
+    'email_admin'      => 'Technische Kontakt E-Mail Adresse',
+    'description'      => 'Beschreibung',
+    'imprint'          => 'Impressum der Webseite',
+    'keywords'         => 'Schlüsselwörter',
+    'text_stye'        => 'Individueller Text über SongsToYourEyes',
+    'text_audiojungle' => 'Individueller Text über AudioJungle',
 
     'track' => [
         'title'        => 'Titel',

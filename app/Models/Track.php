@@ -50,6 +50,22 @@ class Track extends SlugModel {
     ];
 
     /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public function toSearchableArray() {
+        $array = [
+            'id'          => $this->id,
+            'title'       => $this->title,
+            'description' => $this->description,
+            'tags'        => $this->tags
+        ];
+
+        return $array;
+    }
+
+    /**
      * Gets the attribute name of the model, that shall be used for the slug of the model.
      *
      * @return string
@@ -96,6 +112,7 @@ class Track extends SlugModel {
         if (empty($value)) {
             return asset('assets/images/cover_default.jpg');
         }
+
         return $value;
     }
 

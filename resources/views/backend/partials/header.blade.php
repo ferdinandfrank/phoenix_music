@@ -14,6 +14,13 @@
                     <icon icon="{{ config('icons.frontend') }}"></icon>
                 </a>
             </li>
+            @foreach(config('app.locales') as $locale => $country)
+                @if(!App::isLocale($locale))
+                    <li><a href="{{ localizeRoute($locale) }}" title="{{ $country }}">
+                            <img src="{{ asset('assets/images/flag_' . App::getLocale() . '.png') }}" />
+                        </a></li>
+                @endif
+            @endforeach
             <li v-on:click="markNotifications">
                 <dropdown activate="#notifications-menu" :constrain-width="false"
                           :class="!notificationsMarked ? '{{ count(Auth::user()->unreadNotifications) ? 'with-badge' : '' }}' : ''">

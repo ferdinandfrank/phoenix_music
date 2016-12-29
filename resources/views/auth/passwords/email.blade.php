@@ -10,7 +10,7 @@
     <section class="window-center col xs-12 sm-8 sm-offset-2 md-6 md-offset-3 lg-4 lg-offset-4">
 
         <div class="center">
-            <img src="{{ \App\Models\Settings::logo() }}" height="120" alt="{{ Settings::pageTitle() }}"/>
+            <img src="{{ Settings::logo() }}" height="120" alt="{{ Settings::pageTitle() }}"/>
         </div>
 
         <panel border="top" color="primary">
@@ -33,7 +33,7 @@
 
                 <div class="center flex-column">
                     <a href="{{ route('login') }}" class="link">{{ trans('action.login') }}</a>
-                    <a href="{{ route('blog') }}" class="link">{{ trans('common.back_to_blog') }}</a>
+                    <a href="{{ route('home') }}" class="link">{{ trans('action.back_to_website') }}</a>
                 </div>
 
             </ajax-form>

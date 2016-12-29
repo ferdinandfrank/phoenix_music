@@ -13,7 +13,7 @@
             <img src="{{ \App\Models\Settings::logo() }}" height="120" alt="{{ Settings::pageTitle() }}"/>
         </div>
 
-        <panel border="top" color="primary" title="{{ trans('action.reset_password') }}">
+        <panel border="top" color="primary">
             <ajax-form
                     redirect="{{ route('admin') }}"
                     action="{{ route('password.reset.store') }}"
@@ -28,7 +28,9 @@
                 <form-input name="email" :required="true" value="{{ $email or old('email') }}"
                             icon="{{ config('icons.user') }}"></form-input>
 
-                <form-input name="password" type="password" :required="true"
+                <form-input name="password"
+                            :max-length="{{ config('validation.user.password.max') }}"
+                            type="password" :required="true"
                             icon="{{ config('icons.password') }}"></form-input>
 
                 <form-input name="password_confirmation" type="password" :required="true"
@@ -42,7 +44,7 @@
 
                 <div class="center flex-column">
                     <a href="{{ route('login') }}" class="link">{{ trans('action.login') }}</a>
-                    <a href="{{ route('blog') }}" class="link">{{ trans('common.back_to_blog') }}</a>
+                    <a href="{{ route('home') }}" class="link">{{ trans('action.back_to_website') }}</a>
                 </div>
 
             </ajax-form>

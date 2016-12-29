@@ -38,6 +38,7 @@ class User extends SlugModel implements AuthenticatableContract, AuthorizableCon
         'name',
         'birthday',
         'role',
+        'user_type',
         'about',
         'image',
         'email',

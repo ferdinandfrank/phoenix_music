@@ -10,22 +10,22 @@
             <div class="col xs-12 md-6">
 
                 <h2>{{ trans('labels.who_is_name', ['name' => Settings::pageTitle()]) }} ?</h2>
-                <p class="large">{!! \App\Models\Settings::pageDescription() !!}</p>
+                <p class="large">{!! Settings::pageDescription() !!}</p>
 
                 <div class="row">
                     <div class="col xs-12">
-                        <a class="block center" href="{{ \App\Utils\UrlGenerator::audiojungle(\App\Models\Settings::audiojungle()) }}">
+                        <a class="block center" href="{{ \App\Utils\UrlGenerator::audiojungle(Settings::audiojungle()) }}">
                             <i class="icon-featured tertiary fa fa-star"></i>
                             <h4 class="tertiary">{{ trans('labels.audiojungle_exclusive_author') }}</h4>
                         </a>
-                        <p>{{ \App\Models\Settings::textAudiojungle() }}</p>
+                        {!! Settings::textAudiojungle() !!}
                     </div>
                     <div class="col xs-12">
-                        <a class="block center" href="{{ \App\Utils\UrlGenerator::stye(\App\Models\Settings::stye()) }}">
+                        <a class="block center" href="{{ \App\Utils\UrlGenerator::stye(Settings::stye()) }}">
                             <i class="icon-featured secondary fa fa-star"></i>
                             <h4 class="secondary">{{ trans('labels.under_contract_with_stye') }}</h4>
                         </a>
-                        <p>{{ \App\Models\Settings::textStye() }}</p>
+                        {!! Settings::textStye() !!}
                     </div>
                 </div>
             </div>
@@ -38,9 +38,11 @@
                                     <div class="image" style="background-image: url({{ $user->image }})"></div>
                                     <div class="details">
                                         <p class="title">{{ $user->name }}</p>
+                                        @if(!empty($user->role))
                                         <div class="categories">
                                             <span>{{ $user->role }}</span>
                                         </div>
+                                        @endif
                                     </div>
                                 </a>
                             </li>

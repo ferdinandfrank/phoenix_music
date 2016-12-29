@@ -25,13 +25,18 @@ import panel from "./components/Panel.vue";
 import phoenixAudio from "./components/PhoenixAudio.vue";
 
 Vue.use(VueInternationalization);
-// TODO: Make dynamic
-Vue.config.lang = 'de';
+
+let supportedLocales = ['en', 'de'];
+
+let locale = window.location.pathname.split('/')[1];
+if (locale == null || supportedLocales.indexOf(locale) < 0) {
+    locale = supportedLocales[0];
+}
+Vue.config.lang = locale;
 
 Object.keys(locales).forEach(function (lang) {
     Vue.locale(lang, locales[lang])
 });
-
 
 Vue.component('ajax-form', ajaxForm);
 

@@ -7,10 +7,10 @@ return [
     'youtube'       => 'fa fa-fw fa-youtube',
     'copyright'     => 'fa fa-fw fa-copyright',
     'linkedin'      => 'fa fa-fw fa-linkedin',
-    'website'       => 'fa fa-fw fa-globe',
+    'url'           => 'fa fa-fw fa-globe',
     'github'        => 'fa fa-fw fa-github',
     'dashboard'     => 'fa fa-fw fa-home',
-    'track'          => 'fa fa-fw fa-music',
+    'track'         => 'fa fa-fw fa-music',
     'album'         => 'fa fa-fw fa-bandcamp',
     'comments'      => 'fa fa-fw fa-comments',
     'tag'           => 'fa fa-fw fa-tags',
@@ -46,5 +46,5 @@ return [
     'statistics'    => 'fa fa-fw fa-bar-chart',
     'views'         => 'fa fa-fw fa-eye',
     'frontend'      => 'fa fa-fw fa-window-maximize',
-    'email' => 'fa fa-fw fa-envelope'
+    'email'         => 'fa fa-fw fa-envelope'
 ];

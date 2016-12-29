@@ -75,6 +75,13 @@
         </ul>
     </nav>
     <ul class="social-buttons main-nav">
+        @foreach(config('app.locales') as $locale => $country)
+            @if(!App::isLocale($locale))
+                <li><a href="{{ localizeRoute($locale) }}" title="{{ $country }}">
+                        <img src="{{ asset('assets/images/flag_' . App::getLocale() . '.png') }}" />
+                    </a></li>
+            @endif
+        @endforeach
         @if(!empty(Settings::facebook()))
             <li class="facebook"><a href="{{ UrlGenerator::facebook(Settings::facebook()) }}" target="_blank"
                                     title="Facebook">

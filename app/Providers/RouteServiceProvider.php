@@ -51,14 +51,21 @@ class RouteServiceProvider extends ServiceProvider {
      * @return void
      */
     protected function mapWebRoutes(Request $request) {
+        $params = [
+            'middleware' => 'web',
+            'namespace'  => $this->namespace,
+        ];
+
         $locale = $request->segment(1);
+        if (array_key_exists($locale, config('app.locales'))) {
+            $params['prefix'] = $locale;
+        } else {
+            $locale = config('app.fallback_locale');
+        }
+
         \App::setLocale($locale);
 
-        Route::group([
-            'middleware' => 'web',
-            'prefix' => $locale,
-            'namespace'  => $this->namespace,
-        ], function ($router) {
+        Route::group($params, function ($router) {
             require base_path('routes/web.php');
         });
     }

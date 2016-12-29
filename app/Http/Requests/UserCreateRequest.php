@@ -35,7 +35,7 @@ class UserCreateRequest extends FormRequest {
                 'required',
                 'email',
                 'max:' . config('validation.user.email.max'),
-                Rule::unique('users')->ignore($this->user->id),
+                Rule::unique('users')
             ],
             'user_type' => 'required',
             'birthday'  => 'date',

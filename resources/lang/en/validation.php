@@ -114,4 +114,10 @@ return [
 
     'attributes' => [],
 
+    'password' => [
+        'email' => [
+            'exists' => 'This email address does not exist on the system.'
+        ]
+    ]
+
 ];

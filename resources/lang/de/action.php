@@ -45,9 +45,9 @@ return [
     'delete_track' => 'Track löschen',
     'show_track'   => 'Track anzeigen',
 
-    'create_category' => 'Category erstellen',
-    'edit_category'   => 'Category bearbeiten',
-    'delete_category' => 'Category löschen',
+    'create_category' => 'Kategorie erstellen',
+    'edit_category'   => 'Kategorie bearbeiten',
+    'delete_category' => 'Kategorie löschen',
 
     'create_user' => 'User erstellen',
     'edit_user'   => 'User bearbeiten',

@@ -120,6 +120,8 @@
                             <div class="btn-group center">
                                 @if($isEditPage)
                                     <form-button action="{{ $album->getDestroyPath() }}"
+                                                 alert-key="album"
+                                                 object-name="{{ $album->title }}"
                                                  redirect="{{ $album->getIndexPath() }}">
                                         <icon icon="{{ config('icons.delete') }}"></icon>
                                         <span>{{ trans('action.delete_album') }}</span>

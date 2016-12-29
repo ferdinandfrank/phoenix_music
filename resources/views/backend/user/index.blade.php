@@ -44,7 +44,7 @@
                                 @endcan
                                 @can('delete', $user)
                                     <form-button action="{{ $user->getDestroyPath() }}"
-                                                 object-name="{{ $user->display_name }}"
+                                                 object-name="{{ $user->name }}"
                                                  alert-key="user" remove="#user-{{ $user->id }}"
                                                  size="xs">
                                         <icon icon="{{ config('icons.delete') }}"></icon>

@@ -45,6 +45,8 @@
                     <div class="btn-group center">
                         @if($isEditPage)
                             <form-button action="{{ $category->getDestroyPath() }}"
+                                         alert-key="category"
+                                         object-name="{{ $category->title }}"
                                          redirect="{{ $category->getIndexPath() }}">
                                 <icon icon="{{ config('icons.delete') }}"></icon>
                                 <span>{{ trans('action.delete_category') }}</span>

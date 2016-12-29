@@ -66,3 +66,29 @@ function isRoute($routeKey) {
     return Request::url() == route($routeKey);
 }
 
+/**
+ * Localizes the current requested path to the specified locale.
+ *
+ * @param null|string $locale
+ *
+ * @return string
+ */
+function localizeRoute($locale = null) {
+    $path = Request::path();
+    $currentLocale = App::getLocale();
+    $defaultLocale = config('app.fallback_locale');
+
+    if (substr($path, 0, strlen($currentLocale)) == $currentLocale) {
+        $path = substr($path, strlen($currentLocale));
+    }
+
+    if ($locale != $defaultLocale && !empty($locale) && array_key_exists($locale, config('app.locales'))) {
+        $path = $locale . '/' . $path;
+    }
+
+    if (substr($path, 0, 1) != '/') {
+        $path = '/' . $path;
+    }
+
+    return $path;
+}

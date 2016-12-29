@@ -43,7 +43,7 @@ class RegistrationEmail extends Mailable {
     public function build() {
 
         return $this
-            ->subject('Deine Registrierung bei ' . Settings::pageTitle())
+            ->subject(\Lang::get('email.registration_subject', ['name' => Settings::pageTitle()]))
             ->view('emails.registration')
             ->with([
                 'user'     => $this->user,

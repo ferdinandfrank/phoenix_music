@@ -33,6 +33,8 @@ return [
     'description'   => 'Description',
     'imprint'       => 'Imprint of the page',
     'keywords'      => 'Keywords',
+    'text_stye'        => 'Individual text about SongsToYourEyes',
+    'text_audiojungle' => 'Individual text about AudioJungle',
 
     'track' => [
         'title'        => 'Title',

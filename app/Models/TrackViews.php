@@ -2,19 +2,6 @@
 
 namespace App\Models;
 
-/**
- * App\Models\PostViews
-
-*
-*@property int $post_id
- * @property int $views_count
- * @property string $date
- * @property \App\Models\Post $post
- * @method static \Illuminate\Database\Query\Builder|\App\Models\TrackViews wherePostId($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\TrackViews whereViewsCount($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\TrackViews whereDate($value)
- * @mixin \Eloquent
- */
 class TrackViews extends BaseModel {
 
     /**

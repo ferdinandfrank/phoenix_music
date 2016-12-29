@@ -38,6 +38,8 @@ $sub-header-title-font-size: 20;
 $sub-header-title-padding: 0 10px;
 $sub-header-sidebar-toggle-margin: 0 0 0 10px;
 
+$header-buttons-img-size: 20px;
+
 $scrollbar-width: 5px;
 
 $sidebar-width: 270px;
@@ -142,6 +144,13 @@ html {
             color: $header-buttons-text-color;
             background: $header-buttons-background-color;
             cursor: pointer;
+
+            img {
+                width: $header-buttons-img-size;
+                height: $header-buttons-img-size;
+                border-radius: 50%;
+                vertical-align: middle;
+            }
 
             &:hover, &.active {
                 color: $header-buttons-hover-text-color;

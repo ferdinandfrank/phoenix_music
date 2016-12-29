@@ -413,6 +413,8 @@ export default {
             "description": "Beschreibung",
             "imprint": "Impressum der Webseite",
             "keywords": "Schlüsselwörter",
+            "text_stye": "Individueller Text über SongsToYourEyes",
+            "text_audiojungle": "Individueller Text über AudioJungle",
             "track": {
                 "title": "Titel",
                 "description": "Beschreibung",
@@ -1109,6 +1111,8 @@ export default {
             "description": "Description",
             "imprint": "Imprint of the page",
             "keywords": "Keywords",
+            "text_stye": "Individual text about SongsToYourEyes",
+            "text_audiojungle": "Individual text about AudioJungle",
             "track": {
                 "title": "Title",
                 "description": "Description",

@@ -3,5 +3,5 @@
 return [
     'composer'     => 0,
     'manager'     => 1,
-    'admin'       => 3,
+    'admin'       => 2,
 ];

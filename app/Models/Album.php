@@ -42,6 +42,21 @@ class Album extends SlugModel {
     ];
 
     /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public function toSearchableArray() {
+        $array = [
+            'id'          => $this->id,
+            'title'       => $this->title,
+            'description' => $this->description,
+        ];
+
+        return $array;
+    }
+
+    /**
      * Gets the attribute name of the model, that shall be used for the slug of the model.
      *
      * @return string

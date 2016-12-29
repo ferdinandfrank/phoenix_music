@@ -180,6 +180,8 @@
                             <div class="btn-group center">
                                 @if($isEditPage)
                                     <form-button action="{{ $track->getDestroyPath() }}"
+                                                 alert-key="track"
+                                                 object-name="{{ $track->title }}"
                                                  redirect="{{ $track->getIndexPath() }}">
                                         <icon icon="{{ config('icons.delete') }}"></icon>
                                         <span>{{ trans('action.delete_track') }}</span>

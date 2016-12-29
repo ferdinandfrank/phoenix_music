@@ -126,6 +126,12 @@ $available-button-width: 120px;
             text-decoration: none;
         }
 
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+        }
+
         &.facebook a:hover {
             background: $facebook-color;
             color: $social-buttons-hover-text-color;

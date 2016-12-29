@@ -37,7 +37,7 @@
                                                 <form-input name="name"
                                                             :required="true"
                                                             :max-length="{{ config('validation.user.name.max') }}"
-                                                            value="{{ $user->first_name }}"></form-input>
+                                                            value="{{ $user->name }}"></form-input>
                                             </div>
                                             <div class="col xs-12 lg-6">
                                                 <form-input name="email" type="email" value="{{ $user->email }}"
@@ -155,6 +155,8 @@
                             <div class="btn-group center">
                                 @if($isEditPage)
                                     <form-button action="{{ $user->getDestroyPath() }}"
+                                                 object-name="{{ $user->name }}"
+                                                 alert-key="user"
                                                  redirect="{{ $user->getIndexPath() }}">
                                         <icon icon="{{ config('icons.delete') }}"></icon>
                                         <span>{{ trans('action.delete_user') }}</span>
