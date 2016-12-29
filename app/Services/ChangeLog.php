@@ -26,7 +26,7 @@ class ChangeLog {
      */
     public static function get($count = 10) {
         $output = [];
-        exec("git log -$count" , $output);
+        exec("git log -$count", $output);
 
         return collect(self::parseLog($output));
     }

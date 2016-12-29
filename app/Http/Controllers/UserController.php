@@ -15,7 +15,7 @@ use Gate;
 /**
  * UserController
  * -----------------------
- * Controller to handle the logic of the 'user' / 'author' routes.
+ * Controller to handle the logic of the 'user' / 'composer' routes.
  *
  * @author  Ferdinand Frank
  * @version 1.0
@@ -43,6 +43,7 @@ class UserController extends Controller {
      */
     public function show(User $user) {
         $user->load('tracks');
+
         return view('frontend.team.show', compact('user'));
     }
 
@@ -57,10 +58,7 @@ class UserController extends Controller {
             return redirect()->back();
         }
 
-        $user = new User();
-        $isEditPage = false;
-
-        return view('backend.user.edit', compact('user', 'isEditPage'));
+        return $this->showEditForm(new User());
     }
 
     /**
@@ -74,8 +72,10 @@ class UserController extends Controller {
         if (Gate::denies('update', $user)) {
             return redirect()->back();
         }
-        $isEditPage = true;
+        return $this->showEditForm($user, true);
+    }
 
+    private function showEditForm(User $user, $isEditPage = false) {
         return view('backend.user.edit', compact('user', 'isEditPage'));
     }
 
@@ -148,6 +148,7 @@ class UserController extends Controller {
 
         if ($deleteSuccess) {
             \Notification::send(User::minManager()->get(), (new UserDeletedNotification($user, \Auth::user())));
+
             return response()->json(true);
         } else {
             return response()->json(getJsonError(), 500);

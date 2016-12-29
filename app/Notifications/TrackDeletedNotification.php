@@ -2,18 +2,15 @@
 
 namespace App\Notifications;
 
-use App\Models\NewsletterSubscriber;
-use App\Models\Post;
 use App\Models\Track;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 /**
  * TrackDeletedNotification
  * -----------------------
- * Notifies an user if an user deleted a post.
+ * Notifies an user if an user deleted a track.
  *
  * @author  Ferdinand Frank
  * @version 1.0
@@ -30,7 +27,7 @@ class TrackDeletedNotification extends Notification {
      * Creates a new notification instance.
      *
      * @param Track $track
-     * @param User $user
+     * @param User  $user
      */
     public function __construct(Track $track, User $user) {
         $this->track = $track;
@@ -57,9 +54,9 @@ class TrackDeletedNotification extends Notification {
      */
     public function toArray($notifiable) {
         return [
-            'user' => $this->user->name,
+            'user'   => $this->user->name,
             'author' => $this->track->composer->name,
-            'title' => $this->track->title
+            'title'  => $this->track->title
         ];
     }
 }

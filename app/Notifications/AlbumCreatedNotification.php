@@ -2,18 +2,15 @@
 
 namespace App\Notifications;
 
-use App\Models\NewsletterSubscriber;
-use App\Models\Post;
 use App\Models\Album;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 /**
  * AlbumCreatedNotification
  * -----------------------
- * Notifies an user if an user created a post.
+ * Notifies an user if an user created an album.
  *
  * @author  Ferdinand Frank
  * @version 1.0
@@ -57,8 +54,8 @@ class AlbumCreatedNotification extends Notification {
      */
     public function toArray($notifiable) {
         return [
-            'user' => $this->uploader->name,
-            'key' => $this->album->getRouteKey(),
+            'user'  => $this->uploader->name,
+            'key'   => $this->album->getRouteKey(),
             'title' => $this->album->title
         ];
     }

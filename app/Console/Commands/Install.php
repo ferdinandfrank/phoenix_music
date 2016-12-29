@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 /**
  * Install
  * -----------------------
- * Console command to install the portfolio with all the mandatory information and setting.
+ * Console command to install the portfolio with all the mandatory information and settings.
  *
  * @author  Ferdinand Frank
  * @version 1.0

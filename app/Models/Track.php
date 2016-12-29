@@ -6,6 +6,55 @@ namespace App\Models;
 use App\Http\Middleware\VisitCounter;
 use Laravel\Scout\Searchable;
 
+/**
+ * App\Models\Track
+ *
+ * @property int                                                                    $id
+ * @property string                                                                 $slug
+ * @property string                                                                 $title
+ * @property string                                                                 $description
+ * @property int                                                                    $composer_id
+ * @property int                                                                    $album_id
+ * @property string                                                                 $file
+ * @property string                                                                 $length
+ * @property int                                                                    $bpm
+ * @property string                                                                 $tags
+ * @property string                                                                 $image
+ * @property string                                                                 $audiojungle
+ * @property string                                                                 $stye
+ * @property string                                                                 $cdbaby
+ * @property string                                                                 $amazon
+ * @property string                                                                 $itunes
+ * @property string                                                                 $youtube
+ * @property \Carbon\Carbon                                                         $published_at
+ * @property \Carbon\Carbon                                                         $created_at
+ * @property \Carbon\Carbon                                                         $updated_at
+ * @property-read \App\Models\User                                                  $composer
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Category[]   $categories
+ * @property-read \App\Models\Album                                                 $album
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\TrackViews[] $views
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track whereSlug($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track whereTitle($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track whereComposerId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track whereAlbumId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track whereFile($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track whereLength($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track whereBpm($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track whereTags($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track whereImage($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track whereAudiojungle($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track whereStye($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track whereCdbaby($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track whereAmazon($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track whereItunes($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track whereYoutube($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track wherePublishedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Track whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class Track extends SlugModel {
 
     use Searchable;

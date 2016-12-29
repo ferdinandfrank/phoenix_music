@@ -6,6 +6,15 @@ use App;
 use Carbon\Carbon;
 use Lang;
 
+/**
+ * LocalDate
+ * -----------------------
+ * Date class to present readable dates.
+ *
+ * @author  Ferdinand Frank
+ * @version 1.0
+ * @package App\Utils
+ */
 class LocalDate extends Carbon {
 
     /**
@@ -79,25 +88,21 @@ class LocalDate extends Carbon {
 
     /**
      * Get the difference in a human readable format in the current locale.
-     *
      * When comparing a value in the past to default now:
      * 1 hour ago
      * 5 months ago
-     *
      * When comparing a value in the future to default now:
      * 1 hour from now
      * 5 months from now
-     *
      * When comparing a value in the past to another value:
      * 1 hour before
      * 5 months before
-     *
      * When comparing a value in the future to another value:
      * 1 hour after
      * 5 months after
      *
      * @param Carbon|null $other
-     * @param bool $absolute removes time difference modifiers ago, after, etc
+     * @param bool        $absolute removes time difference modifiers ago, after, etc
      *
      * @return string
      */

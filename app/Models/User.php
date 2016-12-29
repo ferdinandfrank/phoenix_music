@@ -11,6 +11,60 @@ use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Notifications\RoutesNotifications;
 
+/**
+ * App\Models\User
+ *
+ * @property int                                                                                              $id
+ * @property string                                                                                           $slug
+ * @property string                                                                                           $name
+ * @property string                                                                                           $email
+ * @property string                                                                                           $password
+ * @property int
+ *           $user_type
+ * @property \Carbon\Carbon                                                                                   $birthday
+ * @property string                                                                                           $role
+ * @property string                                                                                           $about
+ * @property string                                                                                           $image
+ * @property string                                                                                           $url
+ * @property string                                                                                           $twitter
+ * @property string                                                                                           $facebook
+ * @property string                                                                                           $github
+ * @property string                                                                                           $linkedin
+ * @property string
+ *           $instagram
+ * @property string
+ *           $remember_token
+ * @property \Carbon\Carbon
+ *           $created_at
+ * @property \Carbon\Carbon
+ *           $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Track[]                                $tracks
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\App\Models\DatabaseNotification[]
+ *                $notifications
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\App\Models\DatabaseNotification[]
+ *                $unreadNotifications
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereSlug($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereEmail($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User wherePassword($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereUserType($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereBirthday($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereRole($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereAbout($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereImage($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereUrl($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereTwitter($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereFacebook($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereGithub($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereLinkedin($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereInstagram($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereRememberToken($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User minManager()
+ * @mixin \Eloquent
+ */
 class User extends SlugModel implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract {
 
     use Authenticatable, Authorizable, CanResetPassword, RoutesNotifications, HasDatabaseNotifications, HasResourceRoutes;

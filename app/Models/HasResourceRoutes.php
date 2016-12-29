@@ -80,10 +80,9 @@ trait HasResourceRoutes {
 
     /**
      * Builds a resource route based upon the route parents of the model and the action param.
-
-*
-* @param string    $action
-     * @param bool $isEditingRoute
+     *
+     * @param string $action
+     * @param bool   $isEditingRoute
      *
      * @return string
      */
@@ -120,11 +119,10 @@ trait HasResourceRoutes {
 
     /**
      * Gets the route id of the model.
-
-*
-*@param Model $model
      *
-*@return mixed
+     * @param Model $model
+     *
+     * @return mixed
      */
     private function getBasicRouteId($model) {
         return $model->getTable();

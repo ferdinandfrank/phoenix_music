@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use Illuminate\Support\Facades\DB;
 
 
@@ -40,7 +41,7 @@ abstract class SlugModel extends BaseModel {
     protected static function boot() {
         parent::boot();
         static::saving(
-            function($model) {
+            function ($model) {
                 if (empty($model->slug)) {
                     $slug = $model->createUniqueSlug();
                     $model->slug = $slug;
@@ -78,6 +79,7 @@ abstract class SlugModel extends BaseModel {
      * Finds a slug model by its primary key or its slug name.
      *
      * @param $key
+     *
      * @return SlugModel
      */
     public static function findByKey($key) {

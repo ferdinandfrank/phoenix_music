@@ -18,7 +18,7 @@ use Settings;
 /**
  * AlbumController
  * -----------------------
- * Controller to handle the logic for the 'track' routes.
+ * Controller to handle the logic for the 'album' routes.
  *
  * @author  Ferdinand Frank
  * @version 1.0
@@ -29,7 +29,7 @@ class AlbumController extends Controller {
     /**
      * Displays a listing of the albums.
      *
-     * @return \Illuminate\View\View The page with the track listing.
+     * @return \Illuminate\View\View The page with the album listing.
      */
     public function index() {
         $albums = Album::withCount('tracks')->paginate(config('portfolio.backend.pagination_entries_per_page'));
@@ -38,51 +38,62 @@ class AlbumController extends Controller {
     }
 
     /**
-     * Shows the form to create a new track.
+     * Shows the form to create a new album.
      *
-     * @return \Illuminate\View\View The page to create a new track.
+     * @return \Illuminate\View\View The page to create a new album.
      */
     public function create() {
-        $album = new Album();
-        $isEditPage = false;
+        if (Gate::denies('store', Album::class)) {
+            return redirect()->back();
+        }
 
-        return response()->view('backend.album.edit', compact('album', 'isEditPage'));
+        return $this->showEditForm(new Album());
     }
 
     /**
-     * Shows the form to edit the specified track.
+     * Shows the form to edit the specified album.
      *
-     * @param  Album $album The track to edit.
+     * @param  Album $album The album to edit.
      *
-     * @return \Illuminate\View\View The page to edit the specified track.
+     * @return \Illuminate\View\View The page to edit the specified album.
      */
     public function edit(Album $album) {
-        $isEditPage = true;
+        if (Gate::denies('update', $album)) {
+            return redirect()->back();
+        }
 
-        return response()->view('backend.album.edit', compact('album', 'isEditPage'));
+        return $this->showEditForm($album, true);
+    }
+
+    private function showEditForm(Album $album, $isEditPage = false) {
+        return view('backend.album.edit', compact('album', 'isEditPage'));
     }
 
     /**
-     * Displays the details page of the specified track.
+     * Displays the details page of the specified album.
      *
-     * @param Album $album The track to show the detail page.
+     * @param Album $album The album to show the detail page.
      *
-     * @return \Illuminate\View\View The details page of the specified track or the last page the user visited if the
-     *                               track has not been published and the user has no permission to view it.
+     * @return \Illuminate\View\View The details page of the specified album.
      */
     public function show(Album $album) {
         $album->load('tracks.categories');
+
         return response()->view('frontend.album.show', compact('album'));
     }
 
     /**
-     * Stores a new track with the specified data in the database.
+     * Stores a new album with the specified data in the database.
      *
-     * @param AlbumCreateRequest $request The data to create a new track.
+     * @param AlbumCreateRequest $request The data to create a new album.
      *
-     * @return \Illuminate\Http\JsonResponse The stored track.
+     * @return \Illuminate\Http\JsonResponse The stored album.
      */
     public function store(AlbumCreateRequest $request) {
+        if (Gate::denies('store', Album::class)) {
+            return redirect()->back();
+        }
+
         $album = Album::create($request->all());
 
         if (!empty($album)) {
@@ -95,10 +106,10 @@ class AlbumController extends Controller {
     /**
      * Updates the specified track in the database.
      *
-     * @param AlbumUpdateRequest $request The data to update the track.
-     * @param Album              $album    The track to update.
+     * @param AlbumUpdateRequest $request The data to update the album.
+     * @param Album              $album   The album to update.
      *
-     * @return \Illuminate\Http\JsonResponse The updated track.
+     * @return \Illuminate\Http\JsonResponse The updated album.
      */
     public function update(AlbumUpdateRequest $request, Album $album) {
         if (Gate::denies('update', $album)) {
@@ -117,11 +128,11 @@ class AlbumController extends Controller {
     }
 
     /**
-     * Deletes the specified track in the database.
+     * Deletes the specified album in the database.
      *
-     * @param Album $album The track to delete.
+     * @param Album $album The album to delete.
      *
-     * @return \Illuminate\Http\JsonResponse {@code true} if the specified track was deleted successfully, {@code
+     * @return \Illuminate\Http\JsonResponse {@code true} if the specified album was deleted successfully, {@code
      *                                       false} otherwise.
      */
     public function destroy(Album $album) {
@@ -133,6 +144,7 @@ class AlbumController extends Controller {
 
         if ($deleteSuccess) {
             \Notification::send(User::all(), (new AlbumDeletedNotification($album, Auth::user())));
+
             return response()->json(true);
         } else {
             return response()->json(getJsonError(), 500);

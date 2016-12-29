@@ -2,12 +2,8 @@
 
 namespace App\Notifications;
 
-use App\Models\Category;
-use App\Models\NewsletterSubscriber;
-use App\Models\Post;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 /**
@@ -31,7 +27,7 @@ class UserCreatedNotification extends Notification {
      * Creates a new notification instance.
      *
      * @param User $user
-     * @param User     $creator
+     * @param User $creator
      */
     public function __construct(User $user, User $creator) {
         $this->user = $user;

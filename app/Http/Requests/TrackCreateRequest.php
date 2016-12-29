@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 /**
  * TrackCreateRequest
  * -----------------------
- * Handles the rules for the request to create a new post.
+ * Handles the rules for the request to create a new track.
  *
  * @author  Ferdinand Frank
  * @version 1.0

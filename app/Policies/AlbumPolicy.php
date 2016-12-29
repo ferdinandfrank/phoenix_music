@@ -2,7 +2,6 @@
 
 namespace App\Policies;
 
-use App\Models\Post;
 use App\Models\Album;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
@@ -10,7 +9,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 /**
  * AlbumPolicy
  * -----------------------
- * Handles the permissions on a post.
+ * Handles the permissions on an album.
  *
  * @author  Ferdinand Frank
  * @version 1.0
@@ -21,7 +20,7 @@ class AlbumPolicy {
     use HandlesAuthorization;
 
     /**
-     * Determines if the specified post can be updated by the user.
+     * Determines if the specified album can be updated by the user.
      *
      * @param    $user
      *
@@ -32,7 +31,7 @@ class AlbumPolicy {
     }
 
     /**
-     * Determines if the specified post can be updated by the user.
+     * Determines if the specified album can be updated by the user.
      *
      * @param    $user
      * @param    $album
@@ -44,7 +43,7 @@ class AlbumPolicy {
     }
 
     /**
-     * Determines if the specified post can be deleted by the user.
+     * Determines if the specified album can be deleted by the user.
      *
      * @param    $user
      * @param    $album

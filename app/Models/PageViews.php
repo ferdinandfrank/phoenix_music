@@ -5,9 +5,9 @@ namespace App\Models;
 /**
  * App\Models\PageViews
  *
- * @property int $id
- * @property int $views_count
- * @property string $date
+ * @property int            $id
+ * @property int            $views_count
+ * @property \Carbon\Carbon $date
  * @method static \Illuminate\Database\Query\Builder|\App\Models\PageViews whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\PageViews whereViewsCount($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\PageViews whereDate($value)

@@ -14,8 +14,24 @@ use App\Notifications\CategoryUpdatedNotification;
 use Auth;
 use Gate;
 
+/**
+ * CategoryController
+ * -----------------------
+ * Controller to handle the logic for the 'category' routes.
+ *
+ * @author  Ferdinand Frank
+ * @version 1.0
+ * @package App\Http\Controllers
+ */
 class CategoryController extends Controller {
 
+    /**
+     * Displays the details page of the specified category.
+     *
+     * @param Category $category The category to show the detail page.
+     *
+     * @return \Illuminate\View\View The details page of the specified album.
+     */
     public function show(Category $category) {
         $tracks = Track::with('categories')->get();
         $categories = Category::all();
@@ -41,10 +57,11 @@ class CategoryController extends Controller {
      * @return \Illuminate\View\View The create page for a new category.
      */
     public function create() {
-        $category = new Category();
-        $isEditPage = false;
+        if (Gate::denies('store', Category::class)) {
+            return redirect()->back();
+        }
 
-        return view('backend.category.edit', compact('category', 'isEditPage'));
+        return $this->showEditForm(new Category());
     }
 
     /**
@@ -81,8 +98,11 @@ class CategoryController extends Controller {
         if (Gate::denies('update', $category)) {
             return redirect()->back();
         }
-        $isEditPage = true;
 
+        return $this->showEditForm($category, true);
+    }
+
+    private function showEditForm(Category $category, $isEditPage = false) {
         return view('backend.category.edit', compact('category', 'isEditPage'));
     }
 
@@ -104,7 +124,8 @@ class CategoryController extends Controller {
         $success = $category->save();
 
         if ($success && count($dirty) > 0) {
-            \Notification::send(User::all(), (new CategoryUpdatedNotification($category, Auth::user(), array_keys($dirty))));
+            \Notification::send(User::all(),
+                (new CategoryUpdatedNotification($category, Auth::user(), array_keys($dirty))));
         }
 
         return response()->json($category);
@@ -127,6 +148,7 @@ class CategoryController extends Controller {
 
         if ($deleteSuccess) {
             \Notification::send(User::all(), (new CategoryDeletedNotification($category, Auth::user())));
+
             return response()->json(true);
         } else {
             return response()->json(getJsonError(), 500);

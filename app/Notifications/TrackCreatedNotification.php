@@ -2,18 +2,15 @@
 
 namespace App\Notifications;
 
-use App\Models\NewsletterSubscriber;
-use App\Models\Post;
 use App\Models\Track;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 /**
  * TrackCreatedNotification
  * -----------------------
- * Notifies an user if an user created a post.
+ * Notifies an user if an user created a track.
  *
  * @author  Ferdinand Frank
  * @version 1.0
@@ -57,10 +54,10 @@ class TrackCreatedNotification extends Notification {
      */
     public function toArray($notifiable) {
         return [
-            'user' => $this->uploader->name,
-            'key' => $this->track->getRouteKey(),
+            'user'   => $this->uploader->name,
+            'key'    => $this->track->getRouteKey(),
             'author' => $this->track->composer->name,
-            'title' => $this->track->title
+            'title'  => $this->track->title
         ];
     }
 }

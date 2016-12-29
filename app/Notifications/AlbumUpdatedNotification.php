@@ -2,18 +2,15 @@
 
 namespace App\Notifications;
 
-use App\Models\NewsletterSubscriber;
-use App\Models\Post;
 use App\Models\Album;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 /**
  * AlbumUpdatedNotification
  * -----------------------
- * Notifies an user if an user updated a album.
+ * Notifies an user if an user updated an album.
  *
  * @author  Ferdinand Frank
  * @version 1.0
@@ -60,9 +57,9 @@ class AlbumUpdatedNotification extends Notification {
      */
     public function toArray($notifiable) {
         return [
-            'user' => $this->user->name,
-            'key' => $this->album->getRouteKey(),
-            'title' => $this->album->title,
+            'user'    => $this->user->name,
+            'key'     => $this->album->getRouteKey(),
+            'title'   => $this->album->title,
             'updated' => implode(", ", $this->updated)
         ];
     }

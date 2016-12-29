@@ -63,11 +63,10 @@ class LoginController extends Controller {
 
     /**
      * Logs the user out of the application.
-
      *
-*@param  Request $request
+     * @param  Request $request
      *
-*@return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function logout(Request $request) {
         $this->guard()->logout();

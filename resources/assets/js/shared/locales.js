@@ -42,9 +42,9 @@ export default {
             "edit_track": "Track bearbeiten",
             "delete_track": "Track löschen",
             "show_track": "Track anzeigen",
-            "create_category": "Category erstellen",
-            "edit_category": "Category bearbeiten",
-            "delete_category": "Category löschen",
+            "create_category": "Kategorie erstellen",
+            "edit_category": "Kategorie bearbeiten",
+            "delete_category": "Kategorie löschen",
             "create_user": "User erstellen",
             "edit_user": "User bearbeiten",
             "delete_user": "User löschen",
@@ -373,6 +373,7 @@ export default {
             "salutation": "Mit freundlichen Grüßen",
             "contact_subject": "Neue Kontaktnachricht auf der Webseite",
             "contact_text": "eine neue Kontaktnachricht wurde auf der Webseite verfasst.",
+            "registration_subject": "Deine Registrierung bei {name}",
             "registration_text": "für dich wurde soeben ein Account auf der Seite {title} erstellt. Bitte melde dich mit den folgenden Daten an und ändere dein Passwort.",
             "password_text": "du hast eine Zurücksetzung deines Passworts auf der Seite {title} angefordert. Bitte klicke auf den folgenden Button, um dein Passwort zu ändern."
         },
@@ -694,7 +695,12 @@ export default {
                     "rule-name": "custom-message"
                 }
             },
-            "attributes": []
+            "attributes": [],
+            "password": {
+                "email": {
+                    "exists": "Diese E-Mail Adresse ist im System nicht registriert."
+                }
+            }
         }
     },
     "en": {
@@ -1071,6 +1077,7 @@ export default {
             "salutation": "Best Regards",
             "contact_subject": "New contact message on your website",
             "contact_text": "a new contact message has been submitted on the website.",
+            "registration_subject": "Your Registration at {name}",
             "registration_text": "an account has been created for you on the website {title}. Please sign in with the following data and change your password as soon as possible.",
             "password_text": "you have requested a reset of your password on the website {title}. Please click the following button to change your password."
         },
@@ -1393,7 +1400,12 @@ export default {
                     "rule-name": "custom-message"
                 }
             },
-            "attributes": []
+            "attributes": [],
+            "password": {
+                "email": {
+                    "exists": "This email address does not exist on the system."
+                }
+            }
         }
     }
 }

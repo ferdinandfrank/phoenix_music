@@ -3,11 +3,8 @@
 namespace App\Notifications;
 
 use App\Models\Category;
-use App\Models\NewsletterSubscriber;
-use App\Models\Post;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 /**
@@ -58,7 +55,7 @@ class CategoryDeletedNotification extends Notification {
      */
     public function toArray($notifiable) {
         return [
-            'user' => $this->user->name,
+            'user'  => $this->user->name,
             'title' => $this->category->title
         ];
     }

@@ -8,13 +8,13 @@ use DB;
 /**
  * App\Models\Settings
  *
- * @mixin \Eloquent
- * @property integer $id
+ * @property int    $id
  * @property string $key
  * @property string $value
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings whereKey($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings whereValue($value)
+ * @mixin \Eloquent
  */
 class Settings extends BaseModel {
 
@@ -132,6 +132,7 @@ class Settings extends BaseModel {
      * Gets the value settings by name.
      *
      * @param string $settingName
+     *
      * @return string
      */
     public static function getByName($settingName) {

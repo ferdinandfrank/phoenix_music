@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 /**
  * TrackUpdateRequest
  * -----------------------
- * Handles the rules for the request to update a post.
+ * Handles the rules for the request to update a track.
  *
  * @author  Ferdinand Frank
  * @version 1.0

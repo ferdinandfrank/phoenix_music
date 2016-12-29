@@ -2,18 +2,15 @@
 
 namespace App\Notifications;
 
-use App\Models\NewsletterSubscriber;
-use App\Models\Post;
 use App\Models\Album;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 /**
  * AlbumDeletedNotification
  * -----------------------
- * Notifies an user if an user deleted a post.
+ * Notifies an user if an user deleted an album.
  *
  * @author  Ferdinand Frank
  * @version 1.0
@@ -30,7 +27,7 @@ class AlbumDeletedNotification extends Notification {
      * Creates a new notification instance.
      *
      * @param Album $album
-     * @param User $user
+     * @param User  $user
      */
     public function __construct(Album $album, User $user) {
         $this->album = $album;
@@ -57,7 +54,7 @@ class AlbumDeletedNotification extends Notification {
      */
     public function toArray($notifiable) {
         return [
-            'user' => $this->user->name,
+            'user'  => $this->user->name,
             'title' => $this->album->title
         ];
     }

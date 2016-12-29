@@ -7,7 +7,7 @@ namespace App\Utils;
  * -----------------------
  * Generates urls to specific pages.
  *
- * @author Ferdinand Frank
+ * @author  Ferdinand Frank
  * @version 1.0
  * @package App\Utils
  */
@@ -17,6 +17,7 @@ class UrlGenerator {
      * Creates the url to a facebook page.
      *
      * @param $slug
+     *
      * @return string
      */
     public static function facebook($slug) {
@@ -27,6 +28,7 @@ class UrlGenerator {
      * Creates the url to a twitter page.
      *
      * @param $slug
+     *
      * @return string
      */
     public static function twitter($slug) {
@@ -37,6 +39,7 @@ class UrlGenerator {
      * Creates the url to a instagram page.
      *
      * @param $slug
+     *
      * @return string
      */
     public static function instagram($slug) {
@@ -47,6 +50,7 @@ class UrlGenerator {
      * Creates the url to a github page.
      *
      * @param $slug
+     *
      * @return string
      */
     public static function github($slug) {
@@ -57,6 +61,7 @@ class UrlGenerator {
      * Creates the url to a linkedin page.
      *
      * @param $slug
+     *
      * @return string
      */
     public static function linkedin($slug) {
@@ -67,6 +72,7 @@ class UrlGenerator {
      * Creates the url to a audiojungle page.
      *
      * @param $slug
+     *
      * @return string
      */
     public static function audiojungle($slug) {
@@ -77,6 +83,7 @@ class UrlGenerator {
      * Creates the url to a stye page.
      *
      * @param $slug
+     *
      * @return string
      */
     public static function stye($slug) {
@@ -87,6 +94,7 @@ class UrlGenerator {
      * Creates the url to a cdbaby page.
      *
      * @param $slug
+     *
      * @return string
      */
     public static function cdbaby($slug) {
@@ -97,6 +105,7 @@ class UrlGenerator {
      * Creates the url to a amazon page.
      *
      * @param $slug
+     *
      * @return string
      */
     public static function amazon($slug) {
@@ -107,6 +116,7 @@ class UrlGenerator {
      * Creates the url to a iTunes page.
      *
      * @param $slug
+     *
      * @return string
      */
     public static function iTunes($slug) {
@@ -117,6 +127,7 @@ class UrlGenerator {
      * Creates the url to a youtube page.
      *
      * @param $slug
+     *
      * @return string
      */
     public static function youtube($slug) {

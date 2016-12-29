@@ -40,10 +40,10 @@ class CheckForMaintenanceMode extends Original {
      * Handles an incoming request and checks if the user has permission to access the pages if the application is in
      * maintenance mode.
      *
-* @param  \Illuminate\Http\Request $request
-     * @param  \Closure            $next
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure                 $next
      *
-*@return mixed
+     * @return mixed
      * @throws \Symfony\Component\HttpKernel\Exception\HttpException
      */
     public function handle($request, Closure $next) {

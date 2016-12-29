@@ -25,7 +25,7 @@ class StatisticsController extends Controller {
     /**
      * Displays the statistics page.
      *
-     * @return \Illuminate\View\View The tools page.
+     * @return \Illuminate\View\View The statistics page.
      */
     public function index() {
         dispatch(new StoreVisitCounts());

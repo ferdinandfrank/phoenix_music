@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 /**
  * AlbumCreateRequest
  * -----------------------
- * Handles the rules for the request to create a new post.
+ * Handles the rules for the request to create a new album.
  *
  * @author  Ferdinand Frank
  * @version 1.0

@@ -2,12 +2,9 @@
 
 namespace App\Notifications;
 
-use App\Models\NewsletterSubscriber;
-use App\Models\Post;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 /**
@@ -31,8 +28,8 @@ class CategoryUpdatedNotification extends Notification {
      * Creates a new notification instance.
      *
      * @param Category $category
-     * @param User  $user
-     * @param array $updated
+     * @param User     $user
+     * @param array    $updated
      */
     public function __construct(Category $category, User $user, array $updated) {
         $this->category = $category;
@@ -60,9 +57,9 @@ class CategoryUpdatedNotification extends Notification {
      */
     public function toArray($notifiable) {
         return [
-            'user' => $this->user->name,
-            'key' => $this->category->getRouteKey(),
-            'title' => $this->category->title,
+            'user'    => $this->user->name,
+            'key'     => $this->category->getRouteKey(),
+            'title'   => $this->category->title,
             'updated' => implode(", ", $this->updated)
         ];
     }

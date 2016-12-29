@@ -6,6 +6,15 @@ use App\Models\Album;
 use App\Models\Category;
 use App\Models\Track;
 
+/**
+ * LibraryController
+ * -----------------------
+ * Controller to handle the logic for the frontend 'track' routes.
+ *
+ * @author  Ferdinand Frank
+ * @version 1.0
+ * @package App\Http\Controllers
+ */
 class LibraryController extends Controller {
 
     /**

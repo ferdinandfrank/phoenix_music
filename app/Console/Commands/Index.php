@@ -8,7 +8,7 @@ use Illuminate\Console\Command;
 /**
  * Index
  * -----------------------
- * Console command to build the site index for searching.
+ * Console command to build the page index for searching.
  *
  * @author  Ferdinand Frank
  * @version 1.0
@@ -48,7 +48,7 @@ class Index extends Command {
     }
 
     /**
-     * Creates the search index for the posts table.
+     * Creates the search index for the tracks table.
      */
     public function createTracksIndex() {
         $this->logger->comment('Indexing tracks table and saving it to /storage/tracks.index...');
@@ -57,7 +57,7 @@ class Index extends Command {
     }
 
     /**
-     * Creates the search index for the posts table.
+     * Creates the search index for the albums table.
      */
     public function createAlbumsIndex() {
         $this->logger->comment('Indexing albums table and saving it to /storage/albums.index...');

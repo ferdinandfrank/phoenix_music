@@ -5,6 +5,24 @@ namespace App\Models;
 
 use Laravel\Scout\Searchable;
 
+/**
+ * App\Models\Category
+ *
+ * @property int                                                               $id
+ * @property string                                                            $slug
+ * @property string                                                            $title
+ * @property string                                                            $description
+ * @property \Carbon\Carbon                                                    $created_at
+ * @property \Carbon\Carbon                                                    $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Track[] $tracks
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Category whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Category whereSlug($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Category whereTitle($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Category whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Category whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Category whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class Category extends SlugModel {
 
     use Searchable;
@@ -28,7 +46,7 @@ class Category extends SlugModel {
     ];
 
     /**
-     * Get the indexable data array for the model.
+     * Gets the indexable data array for the model.
      *
      * @return array
      */

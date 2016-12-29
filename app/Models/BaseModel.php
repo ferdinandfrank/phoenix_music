@@ -43,6 +43,7 @@ abstract class BaseModel extends Model {
      * Returns a timestamp as a local DateTime object.
      *
      * @param  mixed $value
+     *
      * @return LocalDate
      */
     protected function asDateTime($value) {

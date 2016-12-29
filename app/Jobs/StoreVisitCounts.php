@@ -17,11 +17,13 @@ use Illuminate\Contracts\Queue\ShouldQueue;
  * -----------------------
  * Reads the visit counts from all count files and stores them in the database.
  * -----------------------
- * @author Ferdinand Frank
+ *
+ * @author  Ferdinand Frank
  * @version 1.0
  * @package App\Jobs
  */
 class StoreVisitCounts implements ShouldQueue {
+
     use InteractsWithQueue, Queueable, SerializesModels;
 
     /**

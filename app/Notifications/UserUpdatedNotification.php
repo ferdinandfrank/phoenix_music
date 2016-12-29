@@ -2,12 +2,8 @@
 
 namespace App\Notifications;
 
-use App\Models\Category;
-use App\Models\NewsletterSubscriber;
-use App\Models\Post;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 /**
@@ -60,8 +56,8 @@ class UserUpdatedNotification extends Notification {
      */
     public function toArray($notifiable) {
         return [
-            'key' => $this->user->getRouteKey(),
-            'user' => $this->creator->name,
+            'key'     => $this->user->getRouteKey(),
+            'user'    => $this->creator->name,
             'updated' => implode(", ", $this->updated)
         ];
     }

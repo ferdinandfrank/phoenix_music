@@ -4,6 +4,40 @@ namespace App\Models;
 
 use Laravel\Scout\Searchable;
 
+/**
+ * App\Models\Album
+ *
+ * @property int                                                               $id
+ * @property string                                                            $slug
+ * @property string                                                            $title
+ * @property string                                                            $description
+ * @property string                                                            $tags
+ * @property string                                                            $image
+ * @property string                                                            $audiojungle
+ * @property string                                                            $stye
+ * @property string                                                            $cdbaby
+ * @property string                                                            $amazon
+ * @property string                                                            $itunes
+ * @property \Carbon\Carbon                                                    $published_at
+ * @property \Carbon\Carbon                                                    $created_at
+ * @property \Carbon\Carbon                                                    $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Track[] $tracks
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Album whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Album whereSlug($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Album whereTitle($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Album whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Album whereTags($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Album whereImage($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Album whereAudiojungle($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Album whereStye($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Album whereCdbaby($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Album whereAmazon($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Album whereItunes($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Album wherePublishedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Album whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Album whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class Album extends SlugModel {
 
     use Searchable;
@@ -42,7 +76,7 @@ class Album extends SlugModel {
     ];
 
     /**
-     * Get the indexable data array for the model.
+     * Gets the indexable data array for the model.
      *
      * @return array
      */
@@ -66,16 +100,16 @@ class Album extends SlugModel {
     }
 
     /**
-     * Gets the posts, that the user created.
+     * Gets the album's tracks.
      *
-     * @return Track
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function tracks() {
         return $this->hasMany(Track::class, 'album_id');
     }
 
     /**
-     * Checks if the track is licensable.
+     * Checks if the album is licensable.
      *
      * @return bool
      */
@@ -84,7 +118,7 @@ class Album extends SlugModel {
     }
 
     /**
-     * Checks if the track is buyable.
+     * Checks if the album is buyable.
      *
      * @return bool
      */
@@ -93,7 +127,7 @@ class Album extends SlugModel {
     }
 
     /**
-     * Gets the image link of the track.
+     * Gets the image link of the album.
      *
      * @param $value
      *
@@ -103,6 +137,7 @@ class Album extends SlugModel {
         if (empty($value)) {
             return asset('assets/images/cover_default.jpg');
         }
+
         return $value;
     }
 }

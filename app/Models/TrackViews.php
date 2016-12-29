@@ -2,6 +2,21 @@
 
 namespace App\Models;
 
+/**
+ * App\Models\TrackViews
+ *
+ * @property int                    $id
+ * @property int                    $track_id
+ * @property int                    $views_count
+ * @property \Carbon\Carbon         $date
+ * @property-read \App\Models\Track $track
+ * @property-read mixed             $page
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\TrackViews whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\TrackViews whereTrackId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\TrackViews whereViewsCount($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\TrackViews whereDate($value)
+ * @mixin \Eloquent
+ */
 class TrackViews extends BaseModel {
 
     /**
