@@ -67,7 +67,7 @@
                             </div>
                             <div class="widget-content">
                                 <div class="title">
-                                    <h3><strong>{{ \App\Http\Middleware\VisitCounter::getTotalPageViewsCount() }}</strong> {{ trans('labels.visits') }}</h3>
+                                    <h3>{{ trans_choice('param_labels.visit', $totalVisits, ['visits' => $totalVisits]) }}</h3>
                                     <p>{{ trans('labels.total') }}</p>
                                 </div>
                             </div>
@@ -82,7 +82,7 @@
                             </div>
                             <div class="widget-content">
                                 <div class="title">
-                                    <h3><strong>{{ \App\Http\Middleware\VisitCounter::getTotalPageViewsCount(Carbon\Carbon::now()) }}</strong> {{ trans('labels.visits') }}</h3>
+                                    <h3>{{ trans_choice('param_labels.visit', $todayVisits, ['visits' => $todayVisits]) }}</h3>
                                     <p>{{ trans('date.today') }}</p>
                                 </div>
                             </div>

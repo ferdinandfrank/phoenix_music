@@ -12,7 +12,7 @@
                 <img src="{{ $user->image }}" class="thumbnail" alt="">
             </div>
             <div class="col xs-12 md-6">
-                <h1 class="m-b-none">{{ $user->name }} ({{ $user->birthday->toAge() }})</h1>
+                <h1 class="m-b-none">{{ $user->name }} @if(!empty($user->birthday)){{ $user->birthday->toAge() }}) @endif</h1>
                 <h3 class="primary m-none">{{ $user->role }}</h3>
                 <hr class="solid">
                 {!! $user->about !!}

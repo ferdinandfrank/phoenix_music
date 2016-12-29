@@ -1,11 +1,10 @@
 @extends('backend.layout')
 
 @section('title', trans('labels.tools'))
-@section('description', Settings::blogDescriptionShort())
 
 @section('breadcrumb')
-    <li><span>{{ trans('labels.dashboard') }}</span></li>
-    <li><span>{{ trans('labels.tools') }}</span></li>
+    <li><a href="{{ route('admin') }}">{{ trans('labels.dashboard') }}</a></li>
+    <li><a href="{{ route('tools.index') }}">{{ trans('labels.tools') }}</a></li>
 @stop
 
 @section('content')
@@ -14,7 +13,7 @@
             <div class="col xs-12">
             @if($status === 1)
                 <panel title="{{ trans('action.enable_maintenance_mode') }}">
-                    <p>{{ trans('common.enable_maintenance_mode_description') }}</p>
+                    <p>{{ trans('descriptions.enable_maintenance_mode') }}</p>
                     <div class="btn-group flex-reverse">
                         <form-button :confirm="true" alert-key="enable_maintenance_mode"
                                      redirect="{{ route('tools.index') }}"
@@ -27,7 +26,7 @@
                 </panel>
             @else
                 <panel title="{{ trans('action.disable_maintenance_mode') }}">
-                    <p>{{ trans('common.disable_maintenance_mode_description') }}</p>
+                    <p>{{ trans('descriptions.disable_maintenance_mode') }}</p>
                     <div class="btn-group flex-reverse">
                         <form-button :confirm="true" alert-key="disable_maintenance_mode"
                                      redirect="{{ route('tools.index') }}"
@@ -43,7 +42,7 @@
         @endcan
         <div class="col xs-12">
             <panel title="{{ trans('action.export_data') }}">
-                <p>{{ trans('common.export_data_description') }}</p>
+                <p>{{ trans('descriptions.export_data') }}</p>
                 <div class="btn-group flex-reverse">
                     <form method="POST" action="{{ route('tools.download_archive') }}">
                         {{ csrf_field() }}
@@ -57,7 +56,7 @@
         </div>
         <div class="col xs-12">
             <panel title="{{ trans('action.manage_log') }}">
-                <p>{{ trans('common.manage_log_description') }}</p>
+                <p>{{ trans('descriptions.manage_log') }}</p>
                 <div class="btn-group flex-reverse">
                     <form method="POST" action="{{ route('tools.download_log') }}">
                         {{ csrf_field() }}
@@ -77,7 +76,7 @@
         </div>
         <div class="col xs-12">
             <panel title="{{ trans('action.create_database_backup') }}">
-                <p>{{ trans('common.create_database_backup_description') }}</p>
+                <p>{{ trans('descriptions.create_database_backup') }}</p>
                 <div class="btn-group flex-reverse">
                     <form-button alert-key="create_backup" action="{{ route('tools.backup') }}"
                                  color="primary" method="POST">
@@ -88,7 +87,7 @@
         </div>
         <div class="col xs-12">
             <panel title="{{ trans('action.reset_index') }}">
-                <p>{{ trans('common.reset_index_description') }}</p>
+                <p>{{ trans('descriptions.reset_index') }}</p>
                 <div class="btn-group flex-reverse">
                     <form-button alert-key="reset_index" action="{{ route('tools.reset_index') }}"
                                  color="primary" method="POST">
@@ -99,7 +98,7 @@
         </div>
         <div class="col xs-12">
             <panel title="{{ trans('action.clear_cache') }}">
-                <p>{{ trans('common.clear_cache_description') }}</p>
+                <p>{{ trans('descriptions.clear_cache') }}</p>
                 <div class="btn-group flex-reverse">
                     <form-button :confirm="true" alert-key="clear_cache" action="{{ route('tools.cache_clear') }}" color="warning" method="POST">
                         <i class="{{ config('icons.refresh') }}"></i> <span>{{ trans('action.clear_cache') }}</span>

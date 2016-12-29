@@ -76,6 +76,9 @@
                     <a href="{{ \App\Utils\UrlGenerator::iTunes($track->iTunes) }}" class="available_button" target="_blank"><img alt="iTunes" src="{{ asset('assets/images/logos/available_on_itunes.png') }}" /></a>
                 @endif
                 @endif
+                @if (!empty($track->youtube))
+                    <a href="{{ \App\Utils\UrlGenerator::youtube($track->youtube) }}" class="available_button" target="_blank"><img alt="youtube" src="{{ asset('assets/images/logos/available_on_youtube.png') }}" /></a>
+                @endif
             </div>
         </div>
     </div>

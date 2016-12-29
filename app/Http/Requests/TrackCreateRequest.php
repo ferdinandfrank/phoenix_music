@@ -29,9 +29,19 @@ class TrackCreateRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'title'    => 'required|max:' . config('validation.track.title.max'),
-            'description' => 'required|max:' . config('validation.track.description.max'),
-            'tags'     => 'max:' . config('validation.track.tags.max')
+            'title'        => 'required|max:' . config('validation.track.title.max'),
+            'composer_id'  => 'required|exists:users,id',
+            'album_id'     => 'exists:albums,id',
+            'file'         => 'required',
+            'length'       => 'required',
+            'bpm'          => 'required|integer',
+            'audiojungle'  => 'max:' . config('validation.track.audiojungle.max'),
+            'stye'         => 'max:' . config('validation.track.stye.max'),
+            'cdbaby'       => 'max:' . config('validation.track.cdbaby.max'),
+            'amazon'       => 'max:' . config('validation.track.amazon.max'),
+            'itunes'       => 'max:' . config('validation.track.itunes.max'),
+            'youtube'      => 'max:' . config('validation.track.youtube.max'),
+            'published_at' => 'required|date',
         ];
     }
 }

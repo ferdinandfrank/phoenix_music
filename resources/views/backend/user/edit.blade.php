@@ -1,7 +1,6 @@
 @extends('backend.layout')
 
 @section('title', $isEditPage ? trans('action.edit_user') : trans('action.create_user'))
-@section('description', Settings::blogDescriptionShort())
 
 @section('breadcrumb')
     <li><a href="{{ route('admin') }}">{{ trans('labels.dashboard') }}</a></li>
@@ -21,33 +20,24 @@
             method="{{ $isEditPage ? 'PUT' : 'POST' }}"
             alert-key="user"
             redirect="{{ $user->getIndexPath() }}"
-            object-name="{{ $user->display_name }}">
+            object-name="{{ $user->name }}">
         <div class="row">
             <div class="col md-8 xs-12">
                 <div class="row">
                     <div class="col xs-12">
 
                         @if($isEditPage)
-                            <panel title="{{ trans('action.edit_user') }}: {{ $user->display_name }}"
+                            <panel title="{{ trans('action.edit_user') }}: {{ $user->name }}"
                                    subtitle="{{ $user->updated_at ? trans('param_labels.last_edited', ['date' => $user->updated_at->toDateString(), 'time' => $user->updated_at->toTimeString()]) : '' }}">
                                 @else
                                     <panel title="{{ trans('action.create_user') }}">
                                         @endif
                                         <div class="row">
-                                            <div class="col xs-12 lg-6">
-                                                <form-input name="first_name"
-                                                            :max-length="{{ config('validation.user.first_name.max') }}"
-                                                            value="{{ $user->first_name }}"></form-input>
-                                            </div>
-                                            <div class="col xs-12 lg-6">
-                                                <form-input name="last_name"
-                                                            :max-length="{{ config('validation.user.last_name.max') }}"
-                                                            value="{{ $user->last_name }}"></form-input>
-                                            </div>
                                             <div class="col xs-12">
-                                                <form-input name="display_name" value="{{ $user->display_name }}"
-                                                            :max-length="{{ config('validation.user.display_name.max') }}"
-                                                            :required="true"></form-input>
+                                                <form-input name="name"
+                                                            :required="true"
+                                                            :max-length="{{ config('validation.user.name.max') }}"
+                                                            value="{{ $user->first_name }}"></form-input>
                                             </div>
                                             <div class="col xs-12 lg-6">
                                                 <form-input name="email" type="email" value="{{ $user->email }}"
@@ -58,63 +48,63 @@
                                                 <form-date-input name="birthday"
                                                                  value="{{ $user->birthday }}"></form-date-input>
                                             </div>
-                                            <div class="col xs-12 lg-6">
-                                                <form-select name="gender" :required="true">
-                                                    <option value="m" {{ $user->gender != 'w' ? 'selected' : '' }}>{{ trans('labels.male') }}</option>
-                                                    <option value="w" {{ $user->gender == 'w' ? 'selected' : '' }}>{{ trans('labels.female') }}</option>
-                                                </form-select>
-                                            </div>
                                             @can('update-roles', $user)
                                                 <div class="col xs-12 lg-6">
-                                                    <form-select name="user_type" lang-key="user" :required="true">
+                                                    <form-select name="user_type" :required="true">
                                                         @foreach(config('user_type') as $userType => $id)
                                                             <option value="{{ $id }}" {{ $user->user_type == $id ? 'selected' : '' }}>{{ trans('input.user_types.' . $userType) }}</option>
                                                         @endforeach
                                                     </form-select>
                                                 </div>
                                                 <div class="col xs-12 lg-6">
-                                                    <form-input name="job"
-                                                                :max-length="{{ config('validation.user.job.max') }}"
-                                                                value="{{ $user->job }}"></form-input>
+                                                    <form-input name="role"
+                                                                :max-length="{{ config('validation.user.role.max') }}"
+                                                                value="{{ $user->role }}"></form-input>
                                                 </div>
                                             @endcan
                                             <div class="col xs-12">
-                                                <form-textarea name="bio" lang-key="user"
-                                                               value="{{ $user->bio }}"></form-textarea>
+                                                <form-codearea name="about" lang-key="user"
+                                                               value="{{ $user->about }}"></form-codearea>
                                             </div>
                                         </div>
                                     </panel>
                     </div>
                     <div class="col xs-12">
-                        <panel title="{{ trans('labels.social_networks') }}">
+                        <panel title="{{ trans('labels.networks') }}">
                             <div class="row">
                                 <div class="col xs-12 lg-6">
                                     <form-input name="url"
+                                                :show-placeholder="true"
                                                 :max-length="{{ config('validation.user.url.max') }}"
                                                 value="{{ $user->url }}"></form-input>
                                 </div>
                                 <div class="col xs-12 lg-6">
                                     <form-input name="twitter"
+                                                :show-placeholder="true"
                                                 :max-length="{{ config('validation.user.twitter.max') }}"
                                                 value="{{ $user->twitter }}"></form-input>
                                 </div>
                                 <div class="col xs-12 lg-6">
                                     <form-input name="facebook"
+                                                :show-placeholder="true"
                                                 :max-length="{{ config('validation.user.facebook.max') }}"
                                                 value="{{ $user->facebook }}"></form-input>
                                 </div>
                                 <div class="col xs-12 lg-6">
                                     <form-input name="github"
+                                                :show-placeholder="true"
                                                 :max-length="{{ config('validation.user.github.max') }}"
                                                 value="{{ $user->github }}"></form-input>
                                 </div>
                                 <div class="col xs-12 lg-6">
                                     <form-input name="linkedin"
+                                                :show-placeholder="true"
                                                 :max-length="{{ config('validation.user.linkedin.max') }}"
                                                 value="{{ $user->linkedin }}"></form-input>
                                 </div>
                                 <div class="col xs-12 lg-6">
                                     <form-input name="instagram"
+                                                :show-placeholder="true"
                                                 :max-length="{{ config('validation.user.instagram.max') }}"
                                                 value="{{ $user->instagram }}"></form-input>
                                 </div>
@@ -127,7 +117,7 @@
                 <div class="row">
                     <div class="col sm-12">
                         <panel title="{{ trans('action.choose_avatar') }}">
-                            <input name="avatar" type="hidden" v-model="avatar"/>
+                            <input name="image" type="hidden" v-model="avatar"/>
                             <div class="center m-b-10 m-t-10">
                                 <img v-if="avatar" class="avatar" :src="avatar">
                                 <span v-else class="text-muted small">{{ trans('messages.no_avatar') }}</span>
@@ -149,7 +139,9 @@
                             <panel title="{{ trans('action.change_password') }}">
                                 <div class="row">
                                     <div class="col xs-12 lg-6">
-                                        <form-input type="password" name="password"></form-input>
+                                        <form-input type="password"
+                                                    :max-length="{{ config('validation.user.password.max') }}"
+                                                    name="password"></form-input>
                                     </div>
                                     <div class="col xs-12 lg-6">
                                         <form-input type="password" name="password_confirmation"></form-input>

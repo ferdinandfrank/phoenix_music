@@ -32,7 +32,6 @@ class AlbumController extends Controller {
      * @return \Illuminate\View\View The page with the track listing.
      */
     public function index() {
-
         $albums = Album::withCount('tracks')->paginate(config('portfolio.backend.pagination_entries_per_page'));
 
         return response()->view('backend.album.index', compact('albums'));
@@ -47,7 +46,7 @@ class AlbumController extends Controller {
         $album = new Album();
         $isEditPage = false;
 
-        return response()->view('backend.album.edit', compact('track', 'isEditPage'));
+        return response()->view('backend.album.edit', compact('album', 'isEditPage'));
     }
 
     /**
@@ -60,7 +59,7 @@ class AlbumController extends Controller {
     public function edit(Album $album) {
         $isEditPage = true;
 
-        return response()->view('backend.album.edit', compact('track', 'isEditPage'));
+        return response()->view('backend.album.edit', compact('album', 'isEditPage'));
     }
 
     /**
@@ -84,8 +83,7 @@ class AlbumController extends Controller {
      * @return \Illuminate\Http\JsonResponse The stored track.
      */
     public function store(AlbumCreateRequest $request) {
-        $album = Auth::user()->albums()->create($request->all());
-        $album->categories()->sync($request->get('categories', []));
+        $album = Album::create($request->all());
 
         if (!empty($album)) {
             \Notification::send(User::all(), (new AlbumCreatedNotification($album, Auth::user())));
@@ -115,10 +113,6 @@ class AlbumController extends Controller {
             \Notification::send(User::all(), (new AlbumUpdatedNotification($album, Auth::user(), array_keys($dirty))));
         }
 
-        if ($request->has('categories')) {
-            $album->categories()->sync($request->get('categories'));
-        }
-
         return response()->json($album, $success ? 200 : 500);
     }
 
@@ -135,7 +129,6 @@ class AlbumController extends Controller {
             return redirect()->back();
         }
 
-        $album->categories()->detach();
         $deleteSuccess = $album->delete();
 
         if ($deleteSuccess) {
@@ -144,23 +137,5 @@ class AlbumController extends Controller {
         } else {
             return response()->json(getJsonError(), 500);
         }
-    }
-
-    /**
-     * Shows a preview of all possible preview layouts.
-     *
-     * @param Album|null $album The track of which the previews shall be shown. If this is set to {@code null} a random
-     *                        track will be fetched from the database.
-     *
-     * @return \Illuminate\View\View The page with all possible preview layouts.
-     */
-    public function showPreviewLayouts(Album $album = null) {
-        if ($album->id == 0) {
-            $album = Album::inRandomOrder()->first();
-        }
-
-        $categories = Category::all();
-
-        return response()->view("frontend.track.preview_preview", compact('track', 'categories'));
     }
 }

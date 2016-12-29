@@ -29,6 +29,7 @@ class CreateTracksTable extends Migration {
             $table->string('cdbaby')->nullable();
             $table->string('amazon')->nullable();
             $table->string('itunes')->nullable();
+            $table->string('youtube')->nullable();
             $table->date('published_at');
             $table->timestamps();
 

@@ -42,7 +42,7 @@
                 </ul>
             </div>
             <div class="col xs-12 md-3">
-                <input class="form-control" id="search_input" placeholder="{{ trans('action.search_track') }}...">
+                <input class="form-control" id="search_input" placeholder="{{ trans('action.search') }}...">
             </div>
         </div>
         <hr>

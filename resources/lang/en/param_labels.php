@@ -1,6 +1,7 @@
 <?php
 
 return [
-    'last_edited' => 'Last edited on :date at :time'
+    'last_edited' => 'Last edited on :date at :time',
+    'visit' => ':visits Visit|:visits Visits'
 
 ];

@@ -30,16 +30,22 @@ class UserCreateRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'name' => 'required|max:' . config('validation.user.name.max'),
-            'email'        => [
+            'name'      => 'required|max:' . config('validation.user.name.max'),
+            'email'     => [
                 'required',
                 'email',
                 'max:' . config('validation.user.email.max'),
-                Rule::unique('users'),
+                Rule::unique('users')->ignore($this->user->id),
             ],
-            'user_type'    => 'required',
-            'facebook'     => 'max:' . config('validation.user.facebook.max'),
-            'job'          => 'max:' . config('validation.user.job.max')
+            'user_type' => 'required',
+            'birthday'  => 'date',
+            'url'       => 'url|max:' . config('validation.user.url.max'),
+            'twitter'   => 'max:' . config('validation.user.twitter.max'),
+            'facebook'  => 'max:' . config('validation.user.facebook.max'),
+            'github'    => 'max:' . config('validation.user.github.max'),
+            'linkedin'  => 'max:' . config('validation.user.linkedin.max'),
+            'instagram' => 'max:' . config('validation.user.instagram.max'),
+            'role'      => 'max:' . config('validation.user.role.max')
         ];
     }
 }

@@ -10,6 +10,7 @@ use App\Models\Track;
 use App\Models\User;
 use App\Notifications\CategoryCreatedNotification;
 use App\Notifications\CategoryDeletedNotification;
+use App\Notifications\CategoryUpdatedNotification;
 use Auth;
 use Gate;
 
@@ -97,8 +98,14 @@ class CategoryController extends Controller {
         if (Gate::denies('update', $category)) {
             return redirect()->back();
         }
-        $category->fill($request->toArray())->save();
-        $category->save();
+
+        $category->fill($request->all());
+        $dirty = $category->getDirty();
+        $success = $category->save();
+
+        if ($success && count($dirty) > 0) {
+            \Notification::send(User::all(), (new CategoryUpdatedNotification($category, Auth::user(), array_keys($dirty))));
+        }
 
         return response()->json($category);
     }

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\VisitCounter;
 use App\Services\ChangeLog;
+use Carbon\Carbon;
 
 /**
  * HomeController
@@ -24,6 +26,9 @@ class HomeController extends Controller {
 
         $changeLog = ChangeLog::get();
 
+        $totalVisits = VisitCounter::getTotalPageViewsCount();
+        $todayVisits = VisitCounter::getTotalPageViewsCount(Carbon::now());
+
         // Retrieve information about the server
         $system = [
             'url' => $_SERVER['HTTP_HOST'],
@@ -38,6 +43,6 @@ class HomeController extends Controller {
                 file_exists(storage_path('posts.index')) ? filemtime(storage_path('posts.index')) : false)
         ];
 
-        return view('backend.home.index', compact('system', 'changeLog'));
+        return view('backend.home.index', compact('system', 'changeLog', 'todayVisits', 'totalVisits'));
     }
 }

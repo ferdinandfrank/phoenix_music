@@ -14,7 +14,7 @@
                @blur="deactivate"
                @input="onInput">
 
-        <button type="submit" v-if="icon && addonSubmit"class="form-group-addon" style="cursor: pointer">
+        <button type="submit" v-if="icon && addonSubmit" class="form-group-addon" style="cursor: pointer">
             <icon :icon="icon"></icon>
         </button>
         <span v-if="icon && !addonSubmit" class="form-group-addon">

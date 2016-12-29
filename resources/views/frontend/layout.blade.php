@@ -9,8 +9,8 @@
 @stop
 
 @section('main')
-    <main class="main" style="{{ !Request::is('/') ? "background-image: url(". Settings::background() .")" : '' }}">
-        @if(!Request::is('/'))
+    <main class="main" style="{{ !isRoute('home') ? "background-image: url(". Settings::background() .")" : '' }}">
+        @if(!isRoute('home'))
             <section class="page-header">
                 <div class="container">
                     <div class="row">

@@ -110,7 +110,11 @@ module.exports = {
             if (this.langKey) {
                 langKey = this.langKey + '.' + this.name;
             }
-            return this.$t('input.' + langKey);
+            let label = this.$t('input.' + langKey);
+            if (this.required) {
+                label += ' *';
+            }
+            return label;
         },
 
         // The placeholder text of the input, based upon the property 'name' or the property 'langKey', if it is set.

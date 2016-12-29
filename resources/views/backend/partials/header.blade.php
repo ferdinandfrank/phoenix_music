@@ -55,7 +55,7 @@
                 <ul class="list-unstyled">
                     <li class="divider"></li>
                     <li @if (Request::is('user')) class="active" @endif>
-                        <a href="{{ Auth::user()->getEditPath() }}">
+                        <a href="{{ Auth::user()->getPath() }}">
                             <icon icon="{{ config('icons.user') }}"></icon>
                             {{ trans('labels.profile') }}
                         </a>

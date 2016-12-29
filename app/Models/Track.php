@@ -45,6 +45,7 @@ class Track extends SlugModel {
         'cdbaby',
         'amazon',
         'itunes',
+        'youtube',
         'published_at'
     ];
 
@@ -93,7 +94,7 @@ class Track extends SlugModel {
      */
     public function getImageAttribute($value) {
         if (empty($value)) {
-            return asset('assets/images/covers/cover_default.jpg');
+            return asset('assets/images/cover_default.jpg');
         }
         return $value;
     }

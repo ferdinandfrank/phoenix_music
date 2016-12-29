@@ -27,7 +27,7 @@
                         <tr id="category-{{ $category->id }}">
                             <td>{{ $category->id }}</td>
                             <td>
-                                <a href="{{ $category->getEditPath() }}">
+                                <a class="link" href="{{ $category->getEditPath() }}">
                                     {{ $category->title }}
                                 </a>
                             </td>

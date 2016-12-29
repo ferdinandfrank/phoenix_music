@@ -50,29 +50,43 @@
                             <div class="row">
                                 <div class="col xs-12">
                                     <form-input name="facebook"
+                                                :show-placeholder="true"
                                                 value="{{ $settings['facebook']}}"></form-input>
                                 </div>
                                 <div class="col xs-12">
                                     <form-input name="youtube"
+                                                :show-placeholder="true"
                                                 value="{{ $settings['youtube']}}"></form-input>
                                 </div>
                                 <div class="col xs-12">
-                                    <form-input name="twitter" value="{{ $settings['twitter']}}"></form-input>
+                                    <form-input name="twitter"
+                                                :show-placeholder="true"
+                                                value="{{ $settings['twitter']}}"></form-input>
                                 </div>
                                 <div class="col xs-12">
-                                    <form-input name="stye" value="{{ $settings['stye']}}"></form-input>
+                                    <form-input name="stye"
+                                                :show-placeholder="true"
+                                                value="{{ $settings['stye']}}"></form-input>
                                 </div>
                                 <div class="col xs-12">
-                                    <form-input name="audiojungle" value="{{ $settings['audiojungle']}}"></form-input>
+                                    <form-input name="audiojungle"
+                                                :show-placeholder="true"
+                                                value="{{ $settings['audiojungle']}}"></form-input>
                                 </div>
                                 <div class="col xs-12">
-                                    <form-input name="cdbaby" value="{{ $settings['cdbaby']}}"></form-input>
+                                    <form-input name="cdbaby"
+                                                :show-placeholder="true"
+                                                value="{{ $settings['cdbaby']}}"></form-input>
                                 </div>
                                 <div class="col xs-12">
-                                    <form-input name="iTunes" value="{{ $settings['iTunes']}}"></form-input>
+                                    <form-input name="iTunes"
+                                                :show-placeholder="true"
+                                                value="{{ $settings['iTunes']}}"></form-input>
                                 </div>
                                 <div class="col xs-12">
-                                    <form-input name="amazon" value="{{ $settings['amazon']}}"></form-input>
+                                    <form-input name="amazon"
+                                                :show-placeholder="true"
+                                                value="{{ $settings['amazon']}}"></form-input>
                                 </div>
                             </div>
                         </panel>

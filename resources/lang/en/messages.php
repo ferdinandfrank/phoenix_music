@@ -1,9 +1,10 @@
 <?php
 
 return [
-    'no_avatar'                 => 'No avatar selected...',
-    'no_image'                  => 'No image selected...',
-    'no_video' => 'No video selected...',
+    'no_avatar' => 'No avatar selected...',
+    'no_image'  => 'No image selected...',
+    'no_video'  => 'No video selected...',
+    'no_file'   => 'No file selected...',
 
     '404' => [
         'title'   => '404 - Page Not Found!',

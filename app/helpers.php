@@ -55,3 +55,14 @@ function removeQueryString($string) {
     return $string;
 }
 
+/**
+ * Checks if the current path is the path of the specified key's route.
+ *
+ * @param string $routeKey The key of the route to check.
+ *
+ * @return bool {@code true} if the current path is equal to the specified key's route.
+ */
+function isRoute($routeKey) {
+    return Request::url() == route($routeKey);
+}
+

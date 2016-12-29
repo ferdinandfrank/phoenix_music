@@ -11,27 +11,27 @@
     </div>
     <nav class="header-nav main-nav">
         <ul class="nav-pills">
-            <li class="@if (Request::is('/')) active @endif">
+            <li class="@if (isRoute('home')) active @endif">
                 <a href="{{ route('home') }}">
                     {{ trans('labels.home') }}
                 </a>
             </li>
-            <li class="@if (Request::is('library*')) active @endif">
+            <li class="@if (isRoute('library')) active @endif">
                 <a href="{{ route('library') }}">
                     {{ trans('labels.library') }}
                 </a>
             </li>
-            <li class="@if (Request::is('licensing')) active @endif">
+            <li class="@if (isRoute('licensing')) active @endif">
                 <a href="{{ route('licensing') }}">
                     {{ trans('labels.licensing') }}
                 </a>
             </li>
-            <li class="@if (Request::is('team*')) active @endif">
+            <li class="@if (isRoute('team')) active @endif">
                 <a href="{{ route('team') }}">
                     {{ trans('labels.about_us') }}
                 </a>
             </li>
-            <li class="@if (Request::is('contact')) active @endif">
+            <li class="@if (isRoute('contact')) active @endif">
                 <a href="{{ route('contact') }}">
                     {{ trans('labels.contact_us') }}
                 </a>

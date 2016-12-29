@@ -1,55 +1,65 @@
 @extends('backend.layout')
 
-@section('title', trans('labels.posts'))
-@section('description', Settings::blogDescriptionShort())
+@section('title', trans('labels.tracks'))
 
 @section('breadcrumb')
     <li><a href="{{ route('admin') }}">{{ trans('labels.dashboard') }}</a></li>
-    <li><a href="{{ route('posts.index') }}">{{ trans('labels.posts') }}</a></li>
+    <li><a href="{{ route('tracks.index') }}">{{ trans('labels.tracks') }}</a></li>
 @stop
 
 @section('content')
     <div class="row">
         <div class="col">
-            <panel title="{{ trans('labels.posts') }}" subtitle="{{ trans('common.posts_index_description') }}...">
+            <panel title="{{ trans('labels.tracks') }}" subtitle="{{ trans('descriptions.tracks_index') }}...">
                 <table class="table striped">
                     <thead>
                     <tr>
                         <th>#</th>
                         <th>{{ trans('labels.title') }}</th>
-                        <th>{{ trans('labels.author') }}</th>
-                        <th>{{ trans('labels.status') }}</th>
+                        <th>{{ trans('labels.composer') }}</th>
+                        <th>{{ trans('labels.album') }}</th>
+                        <th>{{ trans('labels.category') }}</th>
                         <th>{{ trans('labels.visits') }}</th>
-                        <th>{{ trans('labels.created_at') }}</th>
-                        <th>{{ trans('labels.updated_at') }}</th>
                         <th>{{ trans('labels.published_at') }}</th>
                         <th class="center">{{ trans('labels.actions') }}</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach ($posts as $post)
-                        <tr id="post-{{ $post->id }}">
-                            <td>{{ $post->id }}</td>
+                    @foreach ($tracks as $track)
+                        <tr id="track-{{ $track->id }}">
+                            <td>{{ $track->id }}</td>
                             <td>
-                                <a href="{{ $post->getPath() }}">
-                                    {{ $post->title }}
+                                <a class="link" href="{{ $track->getPath() }}">
+                                    {{ $track->title }}
                                 </a>
                             </td>
-                            <td><a href="#">{{ $post->author->display_name }}</a></td>
-                            <td>{!! $post->getPresenter()->getStatusLabel() !!}</td>
-                            <td>{{ $post->getViewsCount() }}</td>
-                            <td>{{ $post->created_at->diffForHumans() }}</td>
-                            <td>{{ !empty($post->updated_at) ? $post->updated_at->diffForHumans() : '-' }}</td>
-                            <td>{{ !empty($post->published_at) ? $post->published_at->diffForHumans() : '-' }}</td>
+                            <td><a class="link"
+                                   href="{{ $track->composer->getPath() }}">{{ $track->composer->name }}</a></td>
+                            <td>{{ !empty($track->album) ? $track->album->title : '-' }}</td>
+                            <td>
+                                @if(count($track->categories))
+                                    @foreach($track->categories as $category)
+                                        <a href="{{ $category->getPath() }}" class="link">{{ $category->title }}</a>
+                                        @if(!$loop->last)
+                                            ,
+                                        @endif
+                                    @endforeach
+                                @else
+                                    -
+                                @endif
+                            </td>
+                            <td>{{ $track->getViewsCount() }}</td>
+                            <td>{{ $track->published_at->diffForHumans() }}</td>
                             <td class="btn-group">
-                                @can('update', $post)
-                                    <a href="{{ $post->getEditPath() }}" class="btn btn-xs btn-success">
+                                @can('update', $track)
+                                    <a href="{{ $track->getEditPath() }}" class="btn btn-xs btn-success">
                                         <icon icon="{{ config('icons.edit') }}"></icon>
                                     </a>
                                 @endcan
-                                @can('delete', $post)
-                                    <form-button action="{{ $post->getDestroyPath() }}" object-name="{{ $post->title }}"
-                                                 alert-key="post" remove="#post-{{ $post->id }}"
+                                @can('delete', $track)
+                                    <form-button action="{{ $track->getDestroyPath() }}"
+                                                 object-name="{{ $track->title }}"
+                                                 alert-key="track" remove="#track-{{ $track->id }}"
                                                  size="xs">
                                         <icon icon="{{ config('icons.delete') }}"></icon>
                                     </form-button>
@@ -59,11 +69,11 @@
                     @endforeach
                     </tbody>
                 </table>
-                {{ $posts->links() }}
+                {{ $tracks->links() }}
                 <div class="btn-group flex-reverse m-t-20">
-                    <a href="{{ route('posts.create') }}" class="btn btn-success">
+                    <a href="{{ route('tracks.create') }}" class="btn btn-success">
                         <icon icon="{{ config('icons.add') }}"></icon>
-                        <span>{{ trans('action.create_post') }}</span>
+                        <span>{{ trans('action.upload_track') }}</span>
                     </a>
                 </div>
             </panel>
@@ -72,11 +82,11 @@
 @stop
 
 @push('js')
-    <script>
-        $(document).ready(function () {
-            new VueModel({
-                el: '#content-wrapper'
-            });
+<script>
+    $(document).ready(function () {
+        new VueModel({
+            el: '#content-wrapper'
         });
-    </script>
+    });
+</script>
 @endpush

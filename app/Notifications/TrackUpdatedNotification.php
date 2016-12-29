@@ -60,7 +60,7 @@ class TrackUpdatedNotification extends Notification {
      */
     public function toArray($notifiable) {
         return [
-            'user' => $this->user->display_name,
+            'user' => $this->user->name,
             'author' => $this->track->composer->name,
             'key' => $this->track->getRouteKey(),
             'title' => $this->track->title,

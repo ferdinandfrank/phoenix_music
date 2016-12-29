@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TrackCreateRequest;
 use App\Http\Requests\TrackUpdateRequest;
+use App\Models\Album;
 use App\Models\Category;
 use App\Models\Track;
 use App\Models\User;
@@ -33,7 +34,7 @@ class TrackController extends Controller {
      */
     public function index() {
 
-        $tracks = Track::with(['views', 'author'])->paginate(config('portfolio.backend.pagination_entries_per_page'));
+        $tracks = Track::with(['views', 'composer', 'album', 'categories'])->paginate(config('portfolio.backend.pagination_entries_per_page'));
 
         return view('backend.track.index', compact('tracks'));
     }
@@ -44,10 +45,15 @@ class TrackController extends Controller {
      * @return \Illuminate\View\View The page to create a new track.
      */
     public function create() {
-        $track = new Track();
-        $isEditPage = false;
+        return $this->showEditForm(new Track());
+    }
 
-        return view('backend.track.edit', compact('track', 'isEditPage'));
+    public function showEditForm(Track $track, $isEditPage = false) {
+        $composers = User::all();
+        $categories = Category::all();
+        $albums = Album::all();
+
+        return view('backend.track.edit', compact('track', 'isEditPage', 'categories', 'composers', 'albums'));
     }
 
     /**
@@ -58,9 +64,7 @@ class TrackController extends Controller {
      * @return \Illuminate\View\View The page to edit the specified track.
      */
     public function edit(Track $track) {
-        $isEditPage = true;
-
-        return view('backend.track.edit', compact('track', 'isEditPage'));
+        return $this->showEditForm($track, true);
     }
 
     /**
@@ -84,7 +88,7 @@ class TrackController extends Controller {
      * @return \Illuminate\Http\JsonResponse The stored track.
      */
     public function store(TrackCreateRequest $request) {
-        $track = Auth::user()->tracks()->create($request->all());
+        $track = Track::create($request->all());
         $track->categories()->sync($request->get('categories', []));
 
         if (!empty($track)) {

@@ -1,7 +1,6 @@
 @extends('backend.layout')
 
 @section('title', trans('labels.users'))
-@section('description', Settings::blogDescriptionShort())
 
 @section('breadcrumb')
     <li><a href="{{ route('admin') }}">{{ trans('labels.dashboard') }}</a></li>
@@ -11,17 +10,16 @@
 @section('content')
     <div class="row">
         <div class="col">
-            <panel title="{{ trans('labels.users') }}" subtitle="{{ trans('common.users_index_description') }}...">
+            <panel title="{{ trans('labels.users') }}" subtitle="{{ trans('descriptions.users_index') }}...">
                 <table class="table striped">
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>{{ trans('labels.display_name') }}</th>
-                        <th>{{ trans('labels.email') }}</th>
-                        <th>{{ trans('labels.birthday') }}</th>
-                        <th>{{ trans('labels.gender') }}</th>
-                        <th>{{ trans('labels.user_type') }}</th>
-                        <th>{{ trans('labels.job') }}</th>
+                        <th>{{ trans('input.name') }}</th>
+                        <th>{{ trans('input.email') }}</th>
+                        <th>{{ trans('input.birthday') }}</th>
+                        <th>{{ trans('input.user_type') }}</th>
+                        <th>{{ trans('input.role') }}</th>
                         <th class="center">{{ trans('labels.actions') }}</th>
                     </tr>
                     </thead>
@@ -31,14 +29,13 @@
                             <td>{{ $user->id }}</td>
                             <td>
                                 <a href="{{ $user->getPath() }}">
-                                    {{ $user->display_name }}
+                                    {{ $user->name }}
                                 </a>
                             </td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->birthday ? $user->birthday->toDateString() : '-' }}</td>
-                            <td>{{ $user->getGenderName() }}</td>
-                            <td>{{ trans('input.user_types.' . array_search($user->user_type, config('user_type'))) }}</td>
-                            <td>{{ $user->job ?? '-' }}</td>
+                            <td>{{ $user->getTypeAsString() }}</td>
+                            <td>{{ $user->role ?? '-' }}</td>
                             <td class="btn-group">
                                 @can('update', $user)
                                     <a href="{{ $user->getEditPath() }}" class="btn btn-xs btn-success">

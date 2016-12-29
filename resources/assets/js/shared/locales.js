@@ -1,11 +1,706 @@
 export default {
+    "de": {
+        "action": {
+            "show_all": "Alle anzeigen",
+            "sort_tracks_by_category": "Nach Kategorie sortieren",
+            "sort_by_shop": "Nach Shop sortieren",
+            "sort_by_type": "Nach Typ sortieren",
+            "get_it_now": "Jetzt downloaden",
+            "to_website": "Website anzeigen",
+            "sign_in_now": "Jetzt anmelden",
+            "reset_password": "Passwort zurücksetzen",
+            "send": "Senden",
+            "login": "Login",
+            "back_to_website": "Zurück zur Website",
+            "read_more": "Weiterlesen",
+            "logout": "Logout",
+            "change_password": "Passwort ändern",
+            "forgot_password": "Passwort vergessen",
+            "send_reset_link": "Passwort Reset Link senden",
+            "search": "Suchen",
+            "edit_profile": "Profil bearbeiten",
+            "save": "Speichern",
+            "publish": "Veröffentlichen",
+            "cancel": "Abbrechen",
+            "enable_maintenance_mode": "Wartungsmodus aktivieren",
+            "disable_maintenance_mode": "Wartungsmodus deaktivieren",
+            "export_data": "Daten exportieren",
+            "download_log": "Log-Datei downloaden",
+            "manage_log": "Log-Datei verwalten",
+            "clear_log": "Log-Datei zurücksetzen",
+            "create_database_backup": "Datenbank Backup erstellen",
+            "clear_cache": "Cache leeren",
+            "reset_index": "Suchindex zurücksetzen",
+            "choose_avatar": "Avatar auswählen",
+            "choose_logo": "Logo auswählen",
+            "choose_cover": "Coverbild auswählen",
+            "choose_favicon": "Favicon auswählen",
+            "choose_intro_video": "Intro Video auswählen",
+            "choose_file": "Datei auswählen",
+            "upload_track": "Track hochladen",
+            "create_track": "Track erstellen",
+            "edit_track": "Track bearbeiten",
+            "delete_track": "Track löschen",
+            "show_track": "Track anzeigen",
+            "create_category": "Category erstellen",
+            "edit_category": "Category bearbeiten",
+            "delete_category": "Category löschen",
+            "create_user": "User erstellen",
+            "edit_user": "User bearbeiten",
+            "delete_user": "User löschen",
+            "show_user": "User anzeigen",
+            "create_album": "Album erstellen",
+            "edit_album": "Album bearbeiten",
+            "delete_album": "Album löschen",
+            "show_album": "Album anzeigen"
+        },
+        "alert": {
+            "error": {
+                "delete": {
+                    "title": "Sorry",
+                    "content": "Beim Löschen von {name} ist ein unbekannter Fehler aufgetreten. Bitte versuche es noch einmal."
+                },
+                "post": {
+                    "title": "Sorry!",
+                    "content": "Beim Erstellen ist ein unbekannter Fehler aufgetreten. Bitte versuche es noch einmal."
+                },
+                "put": {
+                    "title": "Sorry!",
+                    "content": "Beim Aktualisieren von {name} ist ein unbekannter Fehler aufgetreten. Bitte versuche es noch einmal."
+                }
+            },
+            "default": {
+                "delete": {
+                    "title": "Gelöscht",
+                    "content": "{name} wurde erfolgreich gelöscht."
+                },
+                "post": {
+                    "title": "Gespeichert",
+                    "content": "Die Daten wurden gespeichert."
+                },
+                "put": {
+                    "title": "Gespeichert",
+                    "content": "Die Änderungen an {name} wurden gespeichert."
+                }
+            },
+            "password_reset": {
+                "post": {
+                    "title": "Password zurückgesetzt",
+                    "content": "Dein Passwort wurde erfolgreich zurückgesetzt."
+                }
+            },
+            "password_forgot": {
+                "post": {
+                    "title": "E-Mail gesendet!",
+                    "content": "Wir haben dir eine E-Mail zum Zurücksetzen deines Passworts zugeschickt."
+                }
+            },
+            "track": {
+                "post": {
+                    "title": "Track hochgeladen",
+                    "content": "Der Track wurde gespeichert."
+                },
+                "put": {
+                    "title": "Track aktualisiert",
+                    "content": "Die Änderungen an dem Track {name} wurden gespeichert."
+                },
+                "delete": {
+                    "title": "Track gelöscht",
+                    "content": "Der Track {name} wurde erfolgreich gelöscht."
+                }
+            },
+            "category": {
+                "post": {
+                    "title": "Kategorie erstellt",
+                    "content": "Die Kategorie wurde gespeichert."
+                },
+                "put": {
+                    "title": "Kategorie aktualisiert",
+                    "content": "Die Änderungen an der Kategorie {name} wurden gespeichert."
+                },
+                "delete": {
+                    "title": "Kategorie gelöscht",
+                    "content": "Die Kategorie {name} wurde erfolgreich gelöscht."
+                }
+            },
+            "user": {
+                "post": {
+                    "title": "Benutzer erstellt",
+                    "content": "Der Benutzer wurde gespeichert."
+                },
+                "put": {
+                    "title": "Benutzer aktualisiert",
+                    "content": "Die Änderungen an dem Benutzer {name} wurden gespeichert."
+                },
+                "delete": {
+                    "title": "Benutzer gelöscht",
+                    "content": "Der Benutzer {name} wurde erfolgreich gelöscht."
+                }
+            },
+            "contact": {
+                "post": {
+                    "title": "Danke!",
+                    "content": "Wir werden deine Nachricht innerhalb der nächsten Tage lesen."
+                }
+            },
+            "settings": {
+                "put": {
+                    "title": "Einstellungen aktualisiert",
+                    "content": "Die Einstellungen wurden gespeichert."
+                }
+            },
+            "enable_maintenance_mode": {
+                "post": {
+                    "title": "Wartungsmodus aktiviert",
+                    "content": "Der Wartungsmodus wurde aktiviert. Besucher werden nun auf eine Wartungsseite weitergeleitet."
+                }
+            },
+            "disable_maintenance_mode": {
+                "post": {
+                    "title": "Wartungsmodus deaktiviert",
+                    "content": "Der Wartungsmodus wurde deaktiviert. Besucher können nun wieder den regulären Inhalt der Website sehen."
+                }
+            },
+            "clear_cache": {
+                "post": {
+                    "title": "Cache gelöscht",
+                    "content": "Der Cache der Webseite wurde gelöscht."
+                }
+            },
+            "clear_log": {
+                "post": {
+                    "title": "Log-Datei zurückgesetzt",
+                    "content": "Der Inhalt der Log-Datei wurde erfolgreich gelöscht."
+                }
+            },
+            "reset_index": {
+                "post": {
+                    "title": "Suchindex zurückgesetzt",
+                    "content": "Der Suchindex wurde zurückgesetzt."
+                }
+            },
+            "create_backup": {
+                "post": {
+                    "title": "Datenbank Backup erstellt",
+                    "content": "Ein Backup Skript der Datenbank wurde gespeichert."
+                }
+            }
+        },
+        "auth": {
+            "failed": "Die E-Mail Adresse oder das Passwort ist falsch.",
+            "throttle": "Zu viele Versuche. Bitte versuche es in {seconds} nocheinmal.",
+            "forgot_my_password": "Passwort vergessen"
+        },
+        "confirm": {
+            "default": {
+                "delete": {
+                    "title": "Löschen",
+                    "content": "Möchtest du {name} wirklich löschen?",
+                    "accept": "Ja",
+                    "cancel": "Nein"
+                },
+                "post": {
+                    "title": "Erstellen",
+                    "content": "Möchtest du das Objekt mit diesen Eingaben erstellen?",
+                    "accept": "Ja",
+                    "cancel": "Nein"
+                },
+                "put": {
+                    "title": "Aktualisieren",
+                    "content": "Möchtest du {name} mit diesen Eingaben aktualisieren?",
+                    "accept": "Ja",
+                    "cancel": "Nein"
+                }
+            },
+            "track": {
+                "delete": {
+                    "title": "Track löschen",
+                    "content": "Möchtest du den Track {name} wirklich löschen?"
+                }
+            },
+            "category": {
+                "delete": {
+                    "title": "Kategorie löschen",
+                    "content": "Möchtest du die Kategorie {name} wirklich löschen?"
+                }
+            },
+            "enable_maintenance_mode": {
+                "post": {
+                    "title": "Wartungsmodus aktivieren",
+                    "content": "Möchtest du den Wartungsmodus wirklich aktivieren? Benutzer können den Blog dann nicht mehr sehen und werden auf eine Benachrichtigungsseite weitergeleitet.",
+                    "accept": "Ja",
+                    "cancel": "Nein"
+                }
+            },
+            "disable_maintenance_mode": {
+                "post": {
+                    "title": "Wartungsmodus aufheben",
+                    "content": "Möchtest du den Wartungsmodus wirklich aufheben? Benutzer können den Blog danach wieder regulär sehen.",
+                    "accept": "Ja",
+                    "cancel": "Nein"
+                }
+            },
+            "clear_cache": {
+                "post": {
+                    "title": "Cache löschen",
+                    "content": "Möchtest du den Cache wirklich löschen? Es kann zu langen Ladezeiten für die Benutzer kommen, während der Cache gelöscht wird.",
+                    "accept": "Ja",
+                    "cancel": "Nein"
+                }
+            }
+        },
+        "date": {
+            "today": "Heute",
+            "tomorrow": "Morgen",
+            "yesterday": "Gestern",
+            "now": "Jetzt",
+            "start": "Start",
+            "end": "Ende",
+            "afternoon_suffix": "Uhr",
+            "morning_suffix": "Uhr",
+            "next_month": "Nächster Monat",
+            "prev_month": "Vorheriger Monat",
+            "select_year": "Wähle ein Jahr",
+            "select_month": "Wähle einen Monat",
+            "months": {
+                "jan": "Januar",
+                "feb": "Februar",
+                "mar": "März",
+                "apr": "April",
+                "may": "Mai",
+                "jun": "Juni",
+                "jul": "Juli",
+                "aug": "August",
+                "sep": "September",
+                "oct": "Oktober",
+                "nov": "November",
+                "dec": "Dezember"
+            },
+            "months_short": {
+                "jan": "Jan",
+                "feb": "Feb",
+                "mar": "Mär",
+                "apr": "Apr",
+                "may": "Mai",
+                "jun": "Jun",
+                "jul": "Jul",
+                "aug": "Aug",
+                "sep": "Sep",
+                "oct": "Okt",
+                "nov": "Nov",
+                "dec": "Dez"
+            },
+            "weekdays": {
+                "mon": "Montag",
+                "tue": "Dienstag",
+                "wed": "Mittwoch",
+                "thu": "Donnerstag",
+                "fri": "Freitag",
+                "sat": "Samstag",
+                "sun": "Sonntag"
+            },
+            "weekdays_short": {
+                "mon": "Mon",
+                "tue": "Die",
+                "wed": "Mit",
+                "thu": "Don",
+                "fri": "Frei",
+                "sat": "Sam",
+                "sun": "Son"
+            },
+            "count_year": "{count} Jahr|{count} Jahre",
+            "count_month": "{count} Monat|{count} Monate",
+            "count_week": "{count} Woche|{count} Wochen",
+            "count_day": "{count} Tag|{count} Tage",
+            "count_hour": "{count} Stunde|{count} Stunden",
+            "count_minute": "{count} Minute|{count} Minuten",
+            "count_second": "{count} Sekunde|{count} Sekunden",
+            "year_from_now": "Noch {count} Jahr|Noch {count} Jahre",
+            "year_ago": "Vor {count} Jahr|Vor {count} Jahren",
+            "year_after": "Nach {count} Jahr|Nach {count} Jahren",
+            "year_before": "Vor {count} Jahr|Vor {count} Jahren",
+            "month_from_now": "Noch {count} Monat|Noch {count} Monate",
+            "month_ago": "Vor {count} Monat|Vor {count} Monaten",
+            "month_after": "Nach {count} Monat|Nach {count} Monaten",
+            "month_before": "Vor {count} Monat|Vor {count} Monaten",
+            "week_from_now": "Noch {count} Woche|Noch {count} Wochen",
+            "week_ago": "Vor {count} Woche|Vor {count} Wochen",
+            "week_after": "Nach {count} Woche|Nach {count} Wochen",
+            "week_before": "Vor {count} Woche|Vor {count} Wochen",
+            "day_from_now": "Noch {count} Tag|Noch {count} Tage",
+            "day_ago": "Vor {count} Tag|Vor {count} Tagen",
+            "day_after": "Nach {count} Tag|Nach {count} Tagen",
+            "day_before": "Vor {count} Tag|Vor {count} Tagen",
+            "hour_from_now": "Noch {count} Stunde|Noch {count} Stunden",
+            "hour_ago": "Vor {count} Stunde|Vor {count} Stunden",
+            "hour_after": "Nach {count} Stunde|Nach {count} Stunden",
+            "hour_before": "Vor {count} Stunde|Vor {count} Stunden",
+            "minute_from_now": "Noch {count} Minute|Noch {count} Minute",
+            "minute_ago": "Vor {count} Minute|Vor {count} Minuten",
+            "minute_after": "Nach {count} Minute|Nach {count} Minuten",
+            "minute_before": "Vor {count} Minute|Vor {count} Minuten",
+            "second_from_now": "Noch {count} Sekunde|Noch {count} Sekunde",
+            "second_ago": "Vor {count} Sekunde|Vor {count} Sekunden",
+            "second_after": "Nach {count} Sekunde|Nach {count} Sekunden",
+            "second_before": "Vor {count} Sekunde|Vor {count} Sekunden"
+        },
+        "defaults": {
+            "no_album": "Kein Album"
+        },
+        "descriptions": {
+            "licensing": "Wenn Du einen unserer Track in Deinem Projekt verwenden möchtest, musst Du entweder auf Audiojungle oder auf SongsToYourEyes eine Lizenz erwerben. Benötigst Du eine speziell auf Dein Projekt angepasste Komposition, so kannst Du uns gerne kontaktieren.",
+            "licensing_on_audiojungle": "Die folgenden Tracks\/Sounds sind auf AudioJungle verfügbar",
+            "licensing_on_stye": "Die folgenden Tracks\/Sounds sind auf SongsToYourEyes verfügbar",
+            "contact": "Du kannst uns gerne jederzeit kontaktieren, wenn Du Fragen oder Anmerkungen haben solltest. Wir freuen uns außerdem über jede Art von Feedback.",
+            "categories_index": "Hier findest Du eine Liste aller erstellten Kategorien",
+            "tracks_index": "Hier findest Du eine Liste aller erstellten Tracks",
+            "users_index": "Hier findest Du eine Liste aller Komponisten",
+            "albums_index": "Hier findest Du eine Liste aller erstellten Alben",
+            "logo": "Das Logo erscheint in der Navigationsleiste und in den versendeten E-Mails an oberster Stelle..",
+            "cover": "Dieses Bild dient im Frontend als Hintergrundbild.",
+            "favicon": "Das Favicon ist das Bild, welches im Browsertab neben dem Seitentitel angezeigt wird. Das Favicon muss eine \".png\" Datei sein.",
+            "intro_video": "Dieses Video wird auf der Startseite des Frontends abgespielt.",
+            "enable_maintenance_mode": "Aktiviere den Wartungsmodus, um den Blog auf offline zu setzen und Wartungsarbeiten vorzunehmen. Ist er aktiviert, so sehen die Besucher des Blogs eine \"503 - Be Back Soon\" Seite. Alle Administratoren können dabei weiterhin alle Backend und Frontend Seiten einsehen.",
+            "disable_maintenance_mode": "Deaktiviere den Wartungsmodus, um den Blog für alle Besucher wieder zur Verfügung zu stellen. Momentan sehen die Besucher des Blogs eine \"503 - Be Back Soon\" Seite. Alle Administratoren können im Moment weiterhin alle Backend und Frontend Seiten einsehen.",
+            "export_data": "Lade die Daten der Datenbank als Excel Datei herunter, um diese lokal auf Deinem Computer zu speichern.",
+            "manage_log": "Die Log-Datei enthält alle aufgetretenen Fehler, sowie deren Ursachen.",
+            "clear_cache": "Caching der Daten verbessert die Performance des Systems, aber kann zu Problemen führen, wenn neue Features getestet werden und es sich alte Daten im Cache befinden. Um deshalb den Cache zu leeren klicke den folgenden Button.",
+            "reset_index": "Der Suchindex ist dafür zuständig, dass bestimmte Daten der Datenbank von der Suche erfasst werden können. Um diesen zurückzusetzen klicke den folgenden Button.",
+            "create_database_backup": "Erstelle ein Backup Skript der Datenbank, um bei einem Datenverlust die alten Daten der Datenbank wieder aufspielen zu können."
+        },
+        "email": {
+            "greeting": "Hallo",
+            "salutation": "Mit freundlichen Grüßen",
+            "contact_subject": "Neue Kontaktnachricht auf der Webseite",
+            "contact_text": "eine neue Kontaktnachricht wurde auf der Webseite verfasst.",
+            "registration_text": "für dich wurde soeben ein Account auf der Seite {title} erstellt. Bitte melde dich mit den folgenden Daten an und ändere dein Passwort.",
+            "password_text": "du hast eine Zurücksetzung deines Passworts auf der Seite {title} angefordert. Bitte klicke auf den folgenden Button, um dein Passwort zu ändern."
+        },
+        "help": {
+            "codearea": {
+                "title": "Hilfe zur CodeArea",
+                "subtitle": "Die CodeArea ist ein \"WYSIWYG (What You See Is What You Get)\" Editor. Über diesen kannst du einen Inhalt so erstellen, wie dieser auch später live aussehen wird. Im Folgenden findest du eine kleine Hilfestellung über die möglichen Einstellungsmöglichkeiten.",
+                "description": "\r\n            Durch einen Klick in ein CodeArea Feld öffnet sich eine Toolpalette mit dessen Hilfe man den Inhalt bearbeiten kann. Diese Optionen sind weitgehend selbsterklärend.\r\n            Sollte die benötigte Einstellungsmöglichkeit hier nicht vorzufinden sein, so kann man durch einen Klick auf das lila Symbol am unteren linken Bildschirmrand weitere Einstellungen vornehmen.\r\n            Solltest du das lila Symbol nicht sehen, so vergewissere dich, dass du in die CodeArea in den Bereich geklickt hast, den du bearbeiten möchtest.\r\n            Nach dem Klick auf das Symbol poppt ein Fenster auf. Hier kann man für den ausgewählten Bereich zum einem unter \"Code\" den Codeblock direkt mittels HTML bearbeiten und zum anderem\r\n            unter \"Attributes (Zahnrad)\" bestimmte Klassen festlegen. \r\n            Um für den ausgewählten Block Klassen festzulegen klicke in das Feld \"Name\" und gebe den Wert \"class\" ein. Nun kannst du im Feld \"Value\" der selben Zeile bestimmte Klassen definieren.\r\n            Möchtest du mehrere Klassen definieren, so trenne diese mittels einem Leerzeichen. Die folgenden Klassen können definiert werden:\r\n            <h5>Ausrichtung<\/h5>\r\n            <ul>\r\n                <li><em><b>img-center<\/b><\/em> Zentriert das ausgewählte Bild<\/li>\r\n                <li><em><b>center<\/b><\/em> Zentriert den ausgewählten Text<\/li>\r\n                <li><em><b>right-align<\/b><\/em> Richtet den ausgewählten Text nach rechts aus<\/li>\r\n                <li><em><b>left-align<\/b><\/em> Richtet den ausgewählten Text nach link aus<\/li>\r\n                <li><em><b>justify<\/b><\/em> Formiert den ausgewählten Text im Blocksatz<\/li>\r\n            <\/ul>\r\n            \r\n            <h5>Schriftgröße<\/h5>\r\n            <ul>\r\n                <li><em><b>x-large<\/b><\/em> Ändert die Schriftgröße des ausgewählten Textes auf sehr groß<\/li>\r\n                <li><em><b>large<\/b><\/em> Ändert die Schriftgröße des ausgewählten Textes auf groß<\/li>\r\n                <li><em><b>normal<\/b><\/em> Ändert die Schriftgröße des ausgewählten Textes auf die Standardgröße<\/li>\r\n                <li><em><b>small<\/b><\/em> Ändert die Schriftgröße des ausgewählten Textes auf sehr klein<\/li>\r\n                <li><em><b>x-small<\/b><\/em> Ändert die Schriftgröße des ausgewählten Textes auf sehr klein<\/li>\r\n                <li><em><b>lowercase<\/b><\/em> Wandelt den ausgewählten Text in Kleinbuchstaben um<\/li>\r\n                <li><em><b>uppercase<\/b><\/em> Wandelt den ausgewählten Text in Großbuchstaben um<\/li>\r\n            <\/ul>\r\n            \r\n            <h5>Farben<\/h5>\r\n            <ul>\r\n                <li><em><b>error<\/b><\/em> <span class=\"error\">Ändert die Schriftfarbe des ausgewählten Textes in die Standard Fehlerfarbe<\/span><\/li>\r\n                <li><em><b>success<\/b><\/em> <span class=\"success\">Ändert die Schriftfarbe des ausgewählten Textes in die Standard Erfolgsfarbe<\/span><\/li>\r\n                <li><em><b>muted<\/b><\/em> <span class=\"muted\">Ändert die Schriftfarbe des ausgewählten Textes in ein leichtes Grau<\/span><\/li>\r\n                <li><em><b>primary<\/b><\/em> <span class=\"primary\">Ändert die Schriftfarbe des ausgewählten Textes in die Primärfarbe<\/span><\/li>\r\n                <li><em><b>secondary<\/b><\/em> <span class=\"secondary\">Ändert die Schriftfarbe des ausgewählten Textes in die Standard Sekundärfarbe<\/span><\/li>\r\n            <\/ul>\r\n        "
+            }
+        },
+        "input": {
+            "search": "Suche",
+            "password": "Passwort",
+            "password_confirmation": "Passwort bestätigen",
+            "email": "E-Mail Adresse",
+            "birthday": "Geburtsdatum",
+            "role": "Job",
+            "user_type": "Typ",
+            "remember_me": "Angemeldet bleiben",
+            "name": "Name",
+            "message": "Nachricht",
+            "url": "Webseite URL",
+            "twitter": "Twitter Name",
+            "facebook": "Facebook Slug",
+            "github": "Github Name",
+            "youtube": "YouTube Slug",
+            "stye": "SongsToYourEyes Slug",
+            "cdbaby": "CDBaby Slug",
+            "iTunes": "iTunes Slug",
+            "amazon": "Amazon Slug",
+            "linkedin": "LinkedIn Name",
+            "instagram": "Instagram Name",
+            "audiojungle": "Audiojungle Slug",
+            "title": "Webseite Titel",
+            "author": "Verantwortlicher Autor der Webseite",
+            "email_contact": "Kontakt E-Mail Adresse",
+            "email_admin": "Technische Kontakt E-Mail Adresse",
+            "description": "Beschreibung",
+            "imprint": "Impressum der Webseite",
+            "keywords": "Schlüsselwörter",
+            "track": {
+                "title": "Titel",
+                "description": "Beschreibung",
+                "tags": "Tags",
+                "composer_id": "Komponist",
+                "album_id": "Album",
+                "length": "Track Länge",
+                "bpm": "BPM",
+                "categories": "Kategorien des Tracks",
+                "published_at": "Veröffentlichungsdatum des Tracks"
+            },
+            "album": {
+                "title": "Titel",
+                "description": "Beschreibung",
+                "tags": "Tags",
+                "published_at": "Veröffentlichungsdatum des Albums"
+            },
+            "category": {
+                "title": "Titel",
+                "description": "Beschreibung"
+            },
+            "user": {
+                "about": "Über dich"
+            },
+            "user_types": {
+                "composer": "Komponist",
+                "manager": "Manager",
+                "admin": "Admin"
+            }
+        },
+        "labels": {
+            "navigation": "Navigation",
+            "home": "Home",
+            "library": "Bibliothek",
+            "profile": "Profil",
+            "tools": "Tools",
+            "settings": "Einstellungen",
+            "dashboard": "Dashboard",
+            "categories": "Kategorien",
+            "users": "Benutzer",
+            "media": "Medien",
+            "statistics": "Statistiken",
+            "help": "Hilfe",
+            "albums": "Alben",
+            "tracks": "Tracks",
+            "server_status": "Server Status",
+            "visits": "Besucher",
+            "total": "Insgesamt",
+            "changelog": "Changelog",
+            "content": "Inhalt",
+            "system_information": "Server Informationen",
+            "category": "Kategorie",
+            "actions": "Aktionen",
+            "active_mode": "Online",
+            "maintenance_mode": "Wartungsmodus",
+            "buyable": "Käuflich",
+            "licensable": "Lizensierbar",
+            "licensing": "Lizensierung",
+            "about_us": "Über uns",
+            "contact_us": "Kontakt",
+            "album_track": "Album Track",
+            "composer": "Komponist",
+            "album": "Album",
+            "track": "Track",
+            "length": "Länge",
+            "bpm": "BPM",
+            "published_at": "Veröffentlicht am",
+            "created_at": "Erstellt am",
+            "updated_at": "Bearbeitet am",
+            "tracks_count": "Enthaltene Tracks",
+            "tags": "Tags",
+            "general_contact": "Informationen & Lizensierung",
+            "technical_contact": "Technischer Kontakt",
+            "title": "Titel",
+            "description": "Beschreibung",
+            "general_settings": "Allgemeine Einstellungen",
+            "networks": "Netzwerke",
+            "advanced_settings": "Erweiterte Einstellungen",
+            "page": "Seite",
+            "date": "Datum",
+            "visit_counter": "Besucherzähler",
+            "general": "Allgemein",
+            "audiojungle_exclusive_author": "Exklusiver Autor auf Audiojungle",
+            "under_contract_with_stye": "Unter Vertrag mit SongsToYourEyes",
+            "get_in_touch": "Schreibe uns",
+            "imprint": "Impressum",
+            "who_is_name": "Wer ist {name}",
+            "the_work_of_name": "Die Tracks von {name}",
+            "the_tracks_of": "Die Tracks von {name}",
+            "use_our_tracks": "Mache dein Projekt zu etwas Epischem",
+            "licensing_on_audiojungle": "Lizensierung auf AudioJungle",
+            "licensing_on_stye": "Lizensierung auf SongsToYourEyes"
+        },
+        "messages": {
+            "no_avatar": "Kein Avatar ausgewählt...",
+            "no_image": "Kein Bild ausgewählt...",
+            "no_video": "Kein Video ausgewählt...",
+            "no_file": "Keine Datei ausgewählt...",
+            "404": {
+                "title": "404 - Seite nicht gefunden!",
+                "content": "Sorry, die angeforderte Seite existiert nicht."
+            },
+            "503": {
+                "title": "503 - Wir sind gleich zurück!",
+                "content": "Wir führen derzeit Wartungsaufgaben durch. Bitte versuche es später noch einmal."
+            }
+        },
+        "notifications": {
+            "track_created": {
+                "title": "Track hochgeladen",
+                "text": "{user} hat soeben den Track \"{title}\" von {author} hochgeladen."
+            },
+            "track_updated": {
+                "title": "Track bearbeitet",
+                "text": "{user} hat soeben die folgenden Daten des Tracks \"{title}\" von {author} bearbeitet: {updated}"
+            },
+            "track_deleted": {
+                "title": "Track gelöscht",
+                "text": "{user} hat soeben den Track \"{title}\" von {author} gelöscht."
+            },
+            "album_updated": {
+                "title": "Album bearbeitet",
+                "text": "{user} hat soeben die folgenden Daten des Albums \"{title}\" bearbeitet: {updated}"
+            },
+            "album_created": {
+                "title": "Album erstellt",
+                "text": "{user} hat soeben das Album \"{title}\" erstellt."
+            },
+            "album_deleted": {
+                "title": "Album gelöscht",
+                "text": "{user} hat soeben das Album \"{title}\" gelöscht."
+            },
+            "category_created": {
+                "title": "Kategorie erstellt",
+                "text": "Soeben hat {user} die Kategorie \"{title}\" erstellt."
+            },
+            "category_updated": {
+                "title": "Kategorie aktualisiert",
+                "text": "Soeben hat {user} die folgenden Daten der Kategorie \"{title}\" aktualisiert: {updated}"
+            },
+            "category_deleted": {
+                "title": "Kategorie gelöscht",
+                "text": "Soeben hat {user} die Kategorie \"{title}\" gelöscht."
+            },
+            "user_created": {
+                "title": "Benutzer erstellt",
+                "text": "Soeben hat {user} den Benutzer {name} erstellt."
+            },
+            "user_updated": {
+                "title": "Profil aktualisiert",
+                "text": "Soeben hat {user} die folgenden Daten in deinem Profil bearbeitet: {updated}"
+            },
+            "user_deleted": {
+                "title": "Benutzer gelöscht",
+                "text": "Soeben hat {user} den Benutzer {name} gelöscht."
+            }
+        },
+        "pagination": {
+            "previous": "&laquo; Zurück",
+            "next": "Weiter &raquo;"
+        },
+        "param_labels": {
+            "last_edited": "Zuletzt bearbeitet am {date} um {time}",
+            "visit": "{visits} Aufruf|{visits} Aufrufe"
+        },
+        "passwords": {
+            "password": "Passwords must be at least six characters and match the confirmation.",
+            "reset": "Your password has been reset!",
+            "sent": "We have e-mailed your password reset link!",
+            "token": "This password reset token is invalid.",
+            "user": "We can't find a user with that e-mail address."
+        },
+        "placeholder": {
+            "search": "Suchen...",
+            "facebook": "Bsp.: ferdinandfrank717",
+            "audiojungle": "Bsp.: item\/dramatic-suspense-intro\/19180489",
+            "stye": "Bsp.: #!details?id=4775183",
+            "cdbaby": "Bsp.: phoenixmusic2",
+            "amazon": "Bsp.: B00P7UCMC2?ie=UTF8&keywords=phoenix%20music%20the%20first%20spirit&qid=1453488466&ref_=sr_1_1&sr=8-1",
+            "iTunes": "Bsp.: phoenix-music\/id936603454",
+            "youtube": "Bsp.: watch?v=IWQbkJA9ZQs&t=2261s",
+            "url": "Bsp.: http:\/\/phoenixmusicproductions.com\/public\/team\/ferdinand-frank",
+            "twitter": "Bsp.: PhoenixMusic10",
+            "github": "Bsp.: EpicArrow",
+            "linkedin": "Bsp.: Name",
+            "instagram": "Bsp.: fitnepic",
+            "track": {
+                "title": "Gebe den Titel deines Tracks ein...",
+                "description": "Beschreibe deinen Track...",
+                "length": "Bsp.: 0:29, 0:14",
+                "bpm": "Bsp.: 128",
+                "tags": "Bsp.: aggressive, dramatic, drums, full, hit, horror, hybrid, intense",
+                "categories": "Wähle die Kategorien deines Tracks aus..."
+            },
+            "album": {
+                "title": "Gebe den Titel deines Albums ein...",
+                "description": "Beschreibe dein Album...",
+                "tags": "Bsp.: aggressive, dramatic, drums, full, hit, horror, hybrid, intense"
+            },
+            "category": {
+                "title": "Gebe den Titel deiner Kategorie ein...",
+                "description": "Beschreibe deine Kategorie..."
+            }
+        },
+        "validation": {
+            "accepted": "Das Feld {attribute} must be accepted.",
+            "active_url": "Das Feld {attribute} ist keine gültige URL.",
+            "after": "Das Feld {attribute} must be a date after {date}.",
+            "alpha": "Das Feld {attribute} may only contain letters.",
+            "alpha_dash": "Das Feld {attribute} may only contain letters, numbers, and dashes.",
+            "alpha_num": "Das Feld {attribute} may only contain letters and numbers.",
+            "array": "Das Feld {attribute} must be an array.",
+            "before": "Das Feld {attribute} must be a date before {date}.",
+            "between": {
+                "numeric": "Das Feld {attribute} must be between {min} and {max}.",
+                "file": "Das Feld {attribute} must be between {min} and {max} kilobytes.",
+                "string": "Das Feld {attribute} must be between {min} and {max} characters.",
+                "array": "Das Feld {attribute} must have between {min} and {max} items."
+            },
+            "boolean": "Das Feld {attribute} field must be true or false.",
+            "confirmed": "Das Feld {attribute} confirmation does not match.",
+            "date": "Das Feld {attribute} ist kein gültiges Datum.",
+            "date_format": "Das Feld {attribute} does not match the format {format}.",
+            "different": "Das Feld {attribute} and {other} must be different.",
+            "digits": "Das Feld {attribute} must be {digits} digits.",
+            "digits_between": "Das Feld {attribute} must be between {min} and {max} digits.",
+            "dimensions": "Das Feld {attribute} has invalid image dimensions.",
+            "distinct": "Das Feld {attribute} field has a duplicate value.",
+            "email": "Bitte gebe eine gültige E-Mail Adresse ein.",
+            "exists": "Das Feld selected {attribute} is invalid.",
+            "file": "Das Feld {attribute} must be a file.",
+            "filled": "Das Feld {attribute} field is required.",
+            "image": "Bitte wähle eine gültige Bilddatei aus.",
+            "in": "Das Feld selected {attribute} is invalid.",
+            "in_array": "Das Feld {attribute} field does not exist in {other}.",
+            "integer": "Das Feld {attribute} must be an integer.",
+            "ip": "Das Feld {attribute} must be a valid IP address.",
+            "json": "Das Feld {attribute} must be a valid JSON string.",
+            "max": {
+                "numeric": "The {attribute} may not be greater than {max}.",
+                "file": "The {attribute} may not be greater than {max} kilobytes.",
+                "string": "Bitte gebe weniger als {max} Zeichen ein.",
+                "array": "The {attribute} may not have more than {max} items."
+            },
+            "mimes": "Die Datei muss vom Typ {values} sein.",
+            "min": {
+                "numeric": "The {attribute} must be at least {min}.",
+                "file": "The {attribute} must be at least {min} kilobytes.",
+                "string": "Bitte gebe mind. {min} Zeichen ein.",
+                "array": "The {attribute} must have at least {min} items."
+            },
+            "not_in": "Das Feld selected {attribute} is invalid.",
+            "numeric": "Das Feld {attribute} must be a number.",
+            "present": "Das Feld {attribute} field must be present.",
+            "regex": "Das Feld {attribute} format is invalid.",
+            "required": "Bitte fülle dieses Feld aus.",
+            "required_if": "Das Feld {attribute} field is required when {other} is {value}.",
+            "required_unless": "Das Feld {attribute} field is required unless {other} is in {values}.",
+            "required_with": "Das Feld {attribute} field is required when {values} is present.",
+            "required_with_all": "Das Feld {attribute} field is required when {values} is present.",
+            "required_without": "Das Feld {attribute} field is required when {values} is not present.",
+            "required_without_all": "Das Feld {attribute} field is required when none of {values} are present.",
+            "same": "Das Feld {attribute} and {other} must match.",
+            "size": {
+                "numeric": "Das Feld {attribute} must be {size}.",
+                "file": "Das Feld {attribute} must be {size} kilobytes.",
+                "string": "Das Feld {attribute} must be {size} characters.",
+                "array": "Das Feld {attribute} must contain {size} items."
+            },
+            "string": "Das Feld {attribute} must be a string.",
+            "timezone": "Das Feld {attribute} must be a valid zone.",
+            "unique": "Das Feld {attribute} has already been taken.",
+            "uploaded": "Das Feld {attribute} failed to upload.",
+            "url": "Bitte gebe eine gültige URL ein.",
+            "custom": {
+                "attribute-name": {
+                    "rule-name": "custom-message"
+                }
+            },
+            "attributes": []
+        }
+    },
     "en": {
         "action": {
             "show_all": "Show All",
             "sort_tracks_by_category": "Sort tracks by category",
             "sort_by_shop": "Sort by shop",
             "sort_by_type": "Sort by type",
-            "search_track": "Search a track",
             "get_it_now": "Get it now",
             "to_website": "Open Website",
             "sign_in_now": "Sign In Now",
@@ -13,7 +708,6 @@ export default {
             "send": "Send",
             "login": "Login",
             "back_to_website": "Back to website",
-            "upload_track": "Upload Track",
             "read_more": "Read More",
             "logout": "Logout",
             "change_password": "Change Password",
@@ -22,6 +716,7 @@ export default {
             "search": "Search",
             "edit_profile": "Edit Profile",
             "save": "Save",
+            "publish": "Publish",
             "cancel": "Cancel",
             "enable_maintenance_mode": "Enable Maintenance Mode",
             "disable_maintenance_mode": "Disable Maintenance Mode",
@@ -37,6 +732,12 @@ export default {
             "choose_cover": "Choose Background Image",
             "choose_favicon": "Choose Favicon",
             "choose_intro_video": "Choose Intro Video",
+            "choose_file": "Choose File",
+            "upload_track": "Upload Track",
+            "create_track": "Create Track",
+            "edit_track": "Edit Track",
+            "delete_track": "Delete Track",
+            "show_track": "Show Track",
             "create_category": "Create Category",
             "edit_category": "Edit Category",
             "delete_category": "Delete Category",
@@ -339,16 +1040,29 @@ export default {
             "second_after": "After {count} second|After {count} seconds",
             "second_before": "{count} second ago|{count} seconds ago"
         },
+        "defaults": {
+            "no_album": "No Album"
+        },
         "descriptions": {
             "licensing": "If you are interested in using one of our tracks\/sounds in your project, you'll need to license this track\/sound either on Audiojungle or SongsToYourEyes. If you are interested in an individual track composition, that fits your project, feel free to contact us.",
             "licensing_on_audiojungle": "The following tracks\/sounds are available for licensing on AudioJungle",
             "licensing_on_stye": "The following tracks\/sounds are available for licensing on SongsToYourEyes",
             "contact": "Feel free to contact us, if you have any questions or requests about our music. We are also happy for every feedback from your side.",
             "categories_index": "Here you can see a listing of all the created track categories",
+            "tracks_index": "Here you can see a listing of all the uploaded tracks",
+            "users_index": "Here you can see a listing of all the composers",
+            "albums_index": "Here you can see a listing of all the created albums",
             "logo": "The logo will be displayed on the navigation bars, as well as on top of the sent emails.",
             "cover": "The background image will be used as the background of the frontend.",
-            "favicon": "The favicon will be displayed on the browser's page tab next to the website title.",
-            "intro_video": "The intro video will be played on the index page of the website."
+            "favicon": "The favicon will be displayed on the browser's page tab next to the website title. This should be a \".png\" file.",
+            "intro_video": "The intro video will be played on the index page of the website.",
+            "enable_maintenance_mode": "Enable the maintenance mode to redirect the visitors of the website to a \"505 - Be right back\" page. Users with the role \"admin\" or \"manager\" can still visit all pages.",
+            "disable_maintenance_mode": "Disable the maintenance mode to make the website available again for visitors.",
+            "export_data": "Export the data of the databases as an Excel file.",
+            "manage_log": "Download the log file to see if any error occurred on the website or clear the file to delete the content of the log file.",
+            "create_database_backup": "Create a backup of your database, so the data can be restored if an error occurs on the database.",
+            "reset_index": "Regenerate the search index to make the data in the database searchable.",
+            "clear_cache": "Clear the websites cache to regenerate the web routes, view files, and the general cache of the website. This may be used if an error occurred by visiting a page of the website to regenerate the file of the page."
         },
         "email": {
             "greeting": "Hello",
@@ -362,7 +1076,7 @@ export default {
             "codearea": {
                 "title": "Hilfe zur CodeArea",
                 "subtitle": "Die CodeArea ist ein \"WYSIWYG (What You See Is What You Get)\" Editor. Über diesen kannst du einen Inhalt so erstellen, wie dieser auch später live aussehen wird. Im Folgenden findest du eine kleine Hilfestellung über die möglichen Einstellungsmöglichkeiten.",
-                "description": "\r\n            Durch einen Klick in ein CodeArea Feld öffnet sich eine Toolpalette mit dessen Hilfe man den Inhalt bearbeiten kann. Diese Optionen sind weitgehend selbsterklärend.\r\n            Sollte die benötigte Einstellungsmöglichkeit hier nicht vorzufinden sein, so kann man durch einen Klick auf das lila Symbol am unteren linken Bildschirmrand weitere Einstellungen vornehmen.\r\n            Solltest du das lila Symbol nicht sehen, so vergewissere dich, dass du in die CodeArea in den Bereich geklickt hast, den du bearbeiten möchtest.\r\n            Nach dem Klick auf das Symbol poppt ein Fenster auf. Hier kann man für den ausgewählten Bereich zum einem unter \"Code\" den Codeblock direkt mittels HTML bearbeiten und zum anderem\r\n            unter \"Attributes (Zahnrad)\" bestimmte Klassen festlegen. \r\n            Um für den ausgewählten Block Klassen festzulegen klicke in das Feld \"Name\" und gebe den Wert \"class\" ein. Nun kannst du im Feld \"Value\" der selben Zeile bestimmte Klassen definieren.\r\n            Möchtest du mehrere Klassen definieren, so trenne diese mittels einem Leerzeichen. Die folgenden Klassen können definiert werden{}\r\n            <h5>Ausrichtung<\/h5>\r\n            <ul>\r\n                <li><em><b>img-center<\/b><\/em> Zentriert das ausgewählte Bild<\/li>\r\n                <li><em><b>center<\/b><\/em> Zentriert den ausgewählten Text<\/li>\r\n                <li><em><b>right-align<\/b><\/em> Richtet den ausgewählten Text nach rechts aus<\/li>\r\n                <li><em><b>left-align<\/b><\/em> Richtet den ausgewählten Text nach link aus<\/li>\r\n                <li><em><b>justify<\/b><\/em> Formiert den ausgewählten Text im Blocksatz<\/li>\r\n            <\/ul>\r\n            \r\n            <h5>Schriftgröße<\/h5>\r\n            <ul>\r\n                <li><em><b>x-large<\/b><\/em> Ändert die Schriftgröße des ausgewählten Textes auf sehr groß<\/li>\r\n                <li><em><b>large<\/b><\/em> Ändert die Schriftgröße des ausgewählten Textes auf groß<\/li>\r\n                <li><em><b>normal<\/b><\/em> Ändert die Schriftgröße des ausgewählten Textes auf die Standardgröße<\/li>\r\n                <li><em><b>small<\/b><\/em> Ändert die Schriftgröße des ausgewählten Textes auf sehr klein<\/li>\r\n                <li><em><b>x-small<\/b><\/em> Ändert die Schriftgröße des ausgewählten Textes auf sehr klein<\/li>\r\n                <li><em><b>lowercase<\/b><\/em> Wandelt den ausgewählten Text in Kleinbuchstaben um<\/li>\r\n                <li><em><b>uppercase<\/b><\/em> Wandelt den ausgewählten Text in Großbuchstaben um<\/li>\r\n            <\/ul>\r\n            \r\n            <h5>Farben<\/h5>\r\n            <ul>\r\n                <li><em><b>error<\/b><\/em> <span class=\"error\">Ändert die Schriftfarbe des ausgewählten Textes in die Standard Fehlerfarbe<\/span><\/li>\r\n                <li><em><b>success<\/b><\/em> <span class=\"success\">Ändert die Schriftfarbe des ausgewählten Textes in die Standard Erfolgsfarbe<\/span><\/li>\r\n                <li><em><b>muted<\/b><\/em> <span class=\"muted\">Ändert die Schriftfarbe des ausgewählten Textes in ein leichtes Grau<\/span><\/li>\r\n                <li><em><b>primary<\/b><\/em> <span class=\"primary\">Ändert die Schriftfarbe des ausgewählten Textes in die Primärfarbe<\/span><\/li>\r\n                <li><em><b>secondary<\/b><\/em> <span class=\"secondary\">Ändert die Schriftfarbe des ausgewählten Textes in die Standard Sekundärfarbe<\/span><\/li>\r\n            <\/ul>\r\n        "
+                "description": "\r\n            Durch einen Klick in ein CodeArea Feld öffnet sich eine Toolpalette mit dessen Hilfe man den Inhalt bearbeiten kann. Diese Optionen sind weitgehend selbsterklärend.\r\n            Sollte die benötigte Einstellungsmöglichkeit hier nicht vorzufinden sein, so kann man durch einen Klick auf das lila Symbol am unteren linken Bildschirmrand weitere Einstellungen vornehmen.\r\n            Solltest du das lila Symbol nicht sehen, so vergewissere dich, dass du in die CodeArea in den Bereich geklickt hast, den du bearbeiten möchtest.\r\n            Nach dem Klick auf das Symbol poppt ein Fenster auf. Hier kann man für den ausgewählten Bereich zum einem unter \"Code\" den Codeblock direkt mittels HTML bearbeiten und zum anderem\r\n            unter \"Attributes (Zahnrad)\" bestimmte Klassen festlegen. \r\n            Um für den ausgewählten Block Klassen festzulegen klicke in das Feld \"Name\" und gebe den Wert \"class\" ein. Nun kannst du im Feld \"Value\" der selben Zeile bestimmte Klassen definieren.\r\n            Möchtest du mehrere Klassen definieren, so trenne diese mittels einem Leerzeichen. Die folgenden Klassen können definiert werden:\r\n            <h5>Ausrichtung<\/h5>\r\n            <ul>\r\n                <li><em><b>img-center<\/b><\/em> Zentriert das ausgewählte Bild<\/li>\r\n                <li><em><b>center<\/b><\/em> Zentriert den ausgewählten Text<\/li>\r\n                <li><em><b>right-align<\/b><\/em> Richtet den ausgewählten Text nach rechts aus<\/li>\r\n                <li><em><b>left-align<\/b><\/em> Richtet den ausgewählten Text nach link aus<\/li>\r\n                <li><em><b>justify<\/b><\/em> Formiert den ausgewählten Text im Blocksatz<\/li>\r\n            <\/ul>\r\n            \r\n            <h5>Schriftgröße<\/h5>\r\n            <ul>\r\n                <li><em><b>x-large<\/b><\/em> Ändert die Schriftgröße des ausgewählten Textes auf sehr groß<\/li>\r\n                <li><em><b>large<\/b><\/em> Ändert die Schriftgröße des ausgewählten Textes auf groß<\/li>\r\n                <li><em><b>normal<\/b><\/em> Ändert die Schriftgröße des ausgewählten Textes auf die Standardgröße<\/li>\r\n                <li><em><b>small<\/b><\/em> Ändert die Schriftgröße des ausgewählten Textes auf sehr klein<\/li>\r\n                <li><em><b>x-small<\/b><\/em> Ändert die Schriftgröße des ausgewählten Textes auf sehr klein<\/li>\r\n                <li><em><b>lowercase<\/b><\/em> Wandelt den ausgewählten Text in Kleinbuchstaben um<\/li>\r\n                <li><em><b>uppercase<\/b><\/em> Wandelt den ausgewählten Text in Großbuchstaben um<\/li>\r\n            <\/ul>\r\n            \r\n            <h5>Farben<\/h5>\r\n            <ul>\r\n                <li><em><b>error<\/b><\/em> <span class=\"error\">Ändert die Schriftfarbe des ausgewählten Textes in die Standard Fehlerfarbe<\/span><\/li>\r\n                <li><em><b>success<\/b><\/em> <span class=\"success\">Ändert die Schriftfarbe des ausgewählten Textes in die Standard Erfolgsfarbe<\/span><\/li>\r\n                <li><em><b>muted<\/b><\/em> <span class=\"muted\">Ändert die Schriftfarbe des ausgewählten Textes in ein leichtes Grau<\/span><\/li>\r\n                <li><em><b>primary<\/b><\/em> <span class=\"primary\">Ändert die Schriftfarbe des ausgewählten Textes in die Primärfarbe<\/span><\/li>\r\n                <li><em><b>secondary<\/b><\/em> <span class=\"secondary\">Ändert die Schriftfarbe des ausgewählten Textes in die Standard Sekundärfarbe<\/span><\/li>\r\n            <\/ul>\r\n        "
             }
         },
         "input": {
@@ -370,9 +1084,9 @@ export default {
             "password": "Password",
             "password_confirmation": "Password Confirmation",
             "email": "E-Mail Address",
-            "gender": "Gender",
             "birthday": "Birthday",
-            "job": "Job",
+            "role": "Job",
+            "user_type": "Type",
             "remember_me": "Remember me",
             "name": "Name",
             "message": "Message",
@@ -380,13 +1094,14 @@ export default {
             "twitter": "Twitter Name",
             "facebook": "Facebook Slug",
             "github": "Github Name",
-            "youtube": "YouTube Name",
+            "youtube": "YouTube Slug",
             "stye": "SongsToYourEyes Slug",
             "cdbaby": "CDBaby Slug",
             "iTunes": "iTunes Slug",
             "amazon": "Amazon Slug",
             "linkedin": "LinkedIn Name",
             "instagram": "Instagram Name",
+            "audiojungle": "Audiojungle Slug",
             "title": "Website Title",
             "author": "Responsible Author",
             "email_contact": "Contact Email Address",
@@ -394,41 +1109,34 @@ export default {
             "description": "Description",
             "imprint": "Imprint of the page",
             "keywords": "Keywords",
-            "post": {
-                "title": "Titel",
-                "subtitle": "Untertitel",
-                "content": "Inhalt",
-                "is_draft": "Als Idee speichern?",
-                "layout": "Layout",
-                "layout_preview": "Layout der Vorschau",
-                "published_at": "Veröffentlichen am",
+            "track": {
+                "title": "Title",
+                "description": "Description",
                 "tags": "Tags",
-                "categories": "Kategorien auswählen"
+                "composer_id": "Composer",
+                "album_id": "Album",
+                "length": "Track length",
+                "bpm": "BPM",
+                "categories": "Categories of the track",
+                "published_at": "Publishing date of the track"
+            },
+            "album": {
+                "title": "Title",
+                "description": "Description",
+                "tags": "Tags",
+                "published_at": "Publishing date of the album"
             },
             "category": {
-                "title": "Titel",
-                "description": "Beschreibung"
+                "title": "Title",
+                "description": "Description"
             },
             "user": {
-                "bio": "Über dich",
-                "user_type": "Benutzer Typ"
-            },
-            "newsletter_subscriber": {
-                "email": "E-Mail Adresse des Abonnenten",
-                "source": "Quelle des Abonnenten"
+                "about": "About"
             },
             "user_types": {
-                "blogger": "Blogger",
+                "composer": "Composer",
                 "manager": "Manager",
-                "admin": "Admin",
-                "super_admin": "Super Admin"
-            },
-            "newsletter": {
-                "email": "E-Mail Adresse",
-                "subject": "Betreff des Newsletters",
-                "content": "Inhalt des Newsletters",
-                "sources": "Empfänger des Newsletters",
-                "sent_at": "Sendezeitpunkt des Newsletters"
+                "admin": "Admin"
             }
         },
         "labels": {
@@ -470,6 +1178,7 @@ export default {
             "published_at": "Published at",
             "created_at": "Created at",
             "updated_at": "Updated at",
+            "tracks_count": "Number of tracks",
             "tags": "Tags",
             "general_contact": "Information & Licensing Contact",
             "technical_contact": "Technical Contact",
@@ -478,6 +1187,10 @@ export default {
             "general_settings": "General Settings",
             "networks": "Networks",
             "advanced_settings": "Advanced Settings",
+            "page": "Page",
+            "date": "Date",
+            "visit_counter": "Visit Counter",
+            "general": "General",
             "audiojungle_exclusive_author": "Exclusive author on Audiojungle",
             "under_contract_with_stye": "Under contract with SongsToYourEyes",
             "get_in_touch": "Get in touch",
@@ -485,13 +1198,15 @@ export default {
             "who_is_name": "Who is {name}",
             "the_work_of_name": "The work of {name}",
             "the_tracks_of": "The tracks of {name}",
-            "use_our_tracks": "Use our tracks in your projects",
+            "use_our_tracks": "Make your project epic",
             "licensing_on_audiojungle": "Licensing on AudioJungle",
             "licensing_on_stye": "Licensing on SongsToYourEyes"
         },
         "messages": {
             "no_avatar": "No avatar selected...",
             "no_image": "No image selected...",
+            "no_video": "No video selected...",
+            "no_file": "No file selected...",
             "404": {
                 "title": "404 - Page Not Found!",
                 "content": "Sorry, the requested page doesn't exist."
@@ -508,11 +1223,15 @@ export default {
             },
             "track_updated": {
                 "title": "Track updated",
-                "text": "{user} has just updated the following data on the track \"{title}\" by {author} {} {updated}"
+                "text": "{user} has just updated the following data on the track \"{title}\" by {author}: {updated}"
             },
             "track_deleted": {
                 "title": "Track deleted",
                 "text": "{user} has just deleted the track \"{title}\" by {author}."
+            },
+            "category_updated": {
+                "title": "Category updated",
+                "text": "{user} has just updated the following data on the category \"{title}\": {updated}"
             },
             "category_created": {
                 "title": "Category created",
@@ -522,13 +1241,25 @@ export default {
                 "title": "Category deleted",
                 "text": "{user} has just deleted the category \"{title}\"."
             },
+            "album_updated": {
+                "title": "Album updated",
+                "text": "{user} has just updated the following data on the album \"{title}\": {updated}"
+            },
+            "album_created": {
+                "title": "Album created",
+                "text": "{user} has just created the album \"{title}\"."
+            },
+            "album_deleted": {
+                "title": "Album deleted",
+                "text": "{user} has just deleted the album \"{title}\"."
+            },
             "user_created": {
                 "title": "User created",
                 "text": "{user} has just created the user {name}."
             },
             "user_updated": {
                 "title": "User updated",
-                "text": "{user} has just updated the following data on your profile{} {updated}"
+                "text": "{user} has just updated the following data on your profile: {updated}"
             },
             "user_deleted": {
                 "title": "User deleted",
@@ -540,7 +1271,8 @@ export default {
             "next": "Next &raquo;"
         },
         "param_labels": {
-            "last_edited": "Last edited on {date} at {time}"
+            "last_edited": "Last edited on {date} at {time}",
+            "visit": "{visits} Visit|{visits} Visits"
         },
         "passwords": {
             "password": "Passwords must be at least six characters and match the confirmation.",
@@ -551,12 +1283,30 @@ export default {
         },
         "placeholder": {
             "search": "Suchen...",
-            "post": {
-                "title": "Gebe einen Titel für deine Post ein...",
-                "subtitle": "Gebe deinem Post einen Untertitel...",
-                "content": "Füge den Inhalt deines Posts ein....",
-                "tags": "Gebe die Tags für deinen Post ein...",
-                "categories": "Klicke, um Kategorien auszuwählen..."
+            "facebook": "Ex.: ferdinandfrank717",
+            "audiojungle": "Ex.: item\/dramatic-suspense-intro\/19180489",
+            "stye": "Ex.: #!details?id=4775183",
+            "cdbaby": "Ex.: phoenixmusic2",
+            "amazon": "Ex.: B00P7UCMC2?ie=UTF8&keywords=phoenix%20music%20the%20first%20spirit&qid=1453488466&ref_=sr_1_1&sr=8-1",
+            "iTunes": "Ex.: phoenix-music\/id936603454",
+            "youtube": "Ex.: watch?v=IWQbkJA9ZQs&t=2261s",
+            "url": "Ex.: http:\/\/phoenixmusicproductions.com\/public\/team\/ferdinand-frank",
+            "twitter": "Ex.: PhoenixMusic10",
+            "github": "Ex.: EpicArrow",
+            "linkedin": "Ex.: Name",
+            "instagram": "Ex.: fitnepic",
+            "track": {
+                "title": "Enter the title of your track...",
+                "description": "Describe your track...",
+                "length": "Ex.: 0:29, 0:14",
+                "bpm": "Ex.: 128",
+                "tags": "Ex.: aggressive, dramatic, drums, full, hit, horror, hybrid, intense",
+                "categories": "Select the corresponding track categories..."
+            },
+            "album": {
+                "title": "Enter the title of your album...",
+                "description": "Describe your album...",
+                "tags": "Ex.: aggressive, dramatic, drums, full, hit, horror, hybrid, intense"
             },
             "category": {
                 "title": "Enter a title for your track category...",
@@ -603,8 +1353,8 @@ export default {
                 "string": "The {attribute} may not be greater than {max} characters.",
                 "array": "The {attribute} may not have more than {max} items."
             },
-            "mimes": "The {attribute} must be a file of type{} {values}.",
-            "mimetypes": "The {attribute} must be a file of type{} {values}.",
+            "mimes": "The {attribute} must be a file of type: {values}.",
+            "mimetypes": "The {attribute} must be a file of type: {values}.",
             "min": {
                 "numeric": "The {attribute} must be at least {min}.",
                 "file": "The {attribute} must be at least {min} kilobytes.",

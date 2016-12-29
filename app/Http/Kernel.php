@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\Localization;
 use App\Http\Middleware\VisitCounter;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -14,12 +15,7 @@ class Kernel extends HttpKernel {
      * @var array
      */
     protected $middleware = [
-        Middleware\CheckForMaintenanceMode::class,
-        Middleware\EncryptCookies::class,
-        \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-        \Illuminate\Session\Middleware\StartSession::class,
-        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        Middleware\VerifyCsrfToken::class,
+        Middleware\CheckForMaintenanceMode::class
     ];
 
     /**
@@ -29,8 +25,13 @@ class Kernel extends HttpKernel {
      */
     protected $middlewareGroups = [
         'web' => [
-            \Illuminate\Routing\Middleware\SubstituteBindings::class,
-
+            Localization::class,
+            Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            \Illuminate\Session\Middleware\StartSession::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            Middleware\VerifyCsrfToken::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class
         ],
 
         'api' => [

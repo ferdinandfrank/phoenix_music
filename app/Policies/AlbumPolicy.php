@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\Post;
-use App\Models\Track;
+use App\Models\Album;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -35,11 +35,11 @@ class AlbumPolicy {
      * Determines if the specified post can be updated by the user.
      *
      * @param    $user
-     * @param    $track
+     * @param    $album
      *
      * @return bool
      */
-    public function update(User $user, Track $track) {
+    public function update(User $user, Album $album) {
         return $user->isType("manager") || $user->isType("admin");
     }
 
@@ -47,11 +47,11 @@ class AlbumPolicy {
      * Determines if the specified post can be deleted by the user.
      *
      * @param    $user
-     * @param    $track
+     * @param    $album
      *
      * @return bool
      */
-    public function delete(User $user, Track $track) {
+    public function delete(User $user, Album $album) {
         return $user->isType("manager") || $user->isType("admin");
     }
 }

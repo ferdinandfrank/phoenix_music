@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <h2 class="primary mt-lg">{{ trans('labels.get_in_touch') }}!</h2>
-            <p class="large">{{ trans('texts.contact_description') }}</p>
+            <p class="large">{{ trans('descriptions.contact') }}</p>
             <div class="col xs-12 md-8">
                 <ajax-form
                         alert-key="contact"
