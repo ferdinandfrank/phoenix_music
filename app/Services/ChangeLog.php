@@ -3,7 +3,6 @@
 namespace App\Services;
 
 use App\Models\Commit;
-use App\Utils\LocalDate;
 use Illuminate\Support\Collection;
 
 /**
@@ -52,7 +51,7 @@ class ChangeLog {
             } else if (strpos($line, 'Author') === 0) {
                 $commit->author = substr($line, strlen('Author:') + 1);
             } else if (strpos($line, 'Date') === 0) {
-                $commit->date = LocalDate::parse(substr($line, strlen('Date:') + 3));
+                $commit->date = \LocalDate::parse(substr($line, strlen('Date:') + 3));
             } elseif (strpos($line, 'Merge') === 0) {
                 $commit->merge = substr($line, strlen('Merge:') + 1);
                 $commit->merge = explode(' ', $commit->merge);

@@ -4,12 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Middleware\VisitCounter;
 use App\Jobs\StoreVisitCounts;
-use App\Models\PageViews;
-use App\Models\Post;
-use App\Models\PostViews;
-use App\Utils\LocalDate;
-use Carbon\Carbon;
-use File;
 
 /**
  * StatisticsController

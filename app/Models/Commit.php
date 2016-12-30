@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Models;
+use EpicArrow\LocalDate\LocalDate;
 
-use App\Utils\LocalDate;
 
 /**
  * Commit

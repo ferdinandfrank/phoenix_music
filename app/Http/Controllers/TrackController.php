@@ -11,10 +11,8 @@ use App\Models\User;
 use App\Notifications\TrackCreatedNotification;
 use App\Notifications\TrackDeletedNotification;
 use App\Notifications\TrackUpdatedNotification;
-use App\Utils\LocalDate;
 use Auth;
 use Gate;
-use Settings;
 
 /**
  * TrackController

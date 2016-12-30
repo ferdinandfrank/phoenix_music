@@ -5,15 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AlbumCreateRequest;
 use App\Http\Requests\AlbumUpdateRequest;
 use App\Models\Album;
-use App\Models\Category;
 use App\Models\User;
 use App\Notifications\AlbumCreatedNotification;
 use App\Notifications\AlbumDeletedNotification;
 use App\Notifications\AlbumUpdatedNotification;
-use App\Utils\LocalDate;
 use Auth;
 use Gate;
-use Settings;
 
 /**
  * AlbumController
