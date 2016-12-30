@@ -27,6 +27,7 @@ export default {
             "export_data": "Daten exportieren",
             "download_log": "Log-Datei downloaden",
             "manage_log": "Log-Datei verwalten",
+            "send_test_mail": "Test E-Mail senden",
             "clear_log": "Log-Datei zurücksetzen",
             "create_database_backup": "Datenbank Backup erstellen",
             "clear_cache": "Cache leeren",
@@ -183,6 +184,12 @@ export default {
                 "post": {
                     "title": "Datenbank Backup erstellt",
                     "content": "Ein Backup Skript der Datenbank wurde gespeichert."
+                }
+            },
+            "send_test_mail": {
+                "post": {
+                    "title": "Test E-Mail versendet",
+                    "content": "Eine Testnachricht wurde erfolgreich an info@phoenixmusicproductions.com versendet."
                 }
             }
         },
@@ -366,7 +373,8 @@ export default {
             "manage_log": "Die Log-Datei enthält alle aufgetretenen Fehler, sowie deren Ursachen.",
             "clear_cache": "Caching der Daten verbessert die Performance des Systems, aber kann zu Problemen führen, wenn neue Features getestet werden und es sich alte Daten im Cache befinden. Um deshalb den Cache zu leeren klicke den folgenden Button.",
             "reset_index": "Der Suchindex ist dafür zuständig, dass bestimmte Daten der Datenbank von der Suche erfasst werden können. Um diesen zurückzusetzen klicke den folgenden Button.",
-            "create_database_backup": "Erstelle ein Backup Skript der Datenbank, um bei einem Datenverlust die alten Daten der Datenbank wieder aufspielen zu können."
+            "create_database_backup": "Erstelle ein Backup Skript der Datenbank, um bei einem Datenverlust die alten Daten der Datenbank wieder aufspielen zu können.",
+            "send_test_mail": "Sende eine Test E-Mail an die Sender E-Mail Adresse der Website \"info@phoenixmusicproductions.com\", um die E-Mail Einstellungen zu testen."
         },
         "email": {
             "greeting": "Hallo",
@@ -375,6 +383,8 @@ export default {
             "contact_text": "eine neue Kontaktnachricht wurde auf der Webseite verfasst.",
             "registration_subject": "Deine Registrierung bei {name}",
             "registration_text": "für dich wurde soeben ein Account auf der Seite {title} erstellt. Bitte melde dich mit den folgenden Daten an und ändere dein Passwort.",
+            "test_subject": "Testnachricht von {name}",
+            "test_text": "Testnachricht",
             "password_text": "du hast eine Zurücksetzung deines Passworts auf der Seite {title} angefordert. Bitte klicke auf den folgenden Button, um dein Passwort zu ändern."
         },
         "help": {
@@ -731,6 +741,7 @@ export default {
             "export_data": "Export Data",
             "download_log": "Download Log File",
             "manage_log": "Manage Log File",
+            "send_test_mail": "Send Test Email",
             "clear_log": "Clear Log File",
             "create_database_backup": "Create Database Backup",
             "clear_cache": "Clear Cache",
@@ -887,6 +898,12 @@ export default {
                 "post": {
                     "title": "Database backup created",
                     "content": "A backup script has been stored on your file storage."
+                }
+            },
+            "send_test_mail": {
+                "post": {
+                    "title": "Test Email sent",
+                    "content": "A test email has been successfully sent to info@phoenixmusicproductions.com."
                 }
             }
         },
@@ -1070,7 +1087,8 @@ export default {
             "manage_log": "Download the log file to see if any error occurred on the website or clear the file to delete the content of the log file.",
             "create_database_backup": "Create a backup of your database, so the data can be restored if an error occurs on the database.",
             "reset_index": "Regenerate the search index to make the data in the database searchable.",
-            "clear_cache": "Clear the websites cache to regenerate the web routes, view files, and the general cache of the website. This may be used if an error occurred by visiting a page of the website to regenerate the file of the page."
+            "clear_cache": "Clear the websites cache to regenerate the web routes, view files, and the general cache of the website. This may be used if an error occurred by visiting a page of the website to regenerate the file of the page.",
+            "send_test_mail": "Send a test mail to the application's sender email address \"info@phoenixmusicproductions.com\" to check the email configurations."
         },
         "email": {
             "greeting": "Hello",
@@ -1079,6 +1097,8 @@ export default {
             "contact_text": "a new contact message has been submitted on the website.",
             "registration_subject": "Your Registration at {name}",
             "registration_text": "an account has been created for you on the website {title}. Please sign in with the following data and change your password as soon as possible.",
+            "test_subject": "Test Message by {name}",
+            "test_text": "Test message",
             "password_text": "you have requested a reset of your password on the website {title}. Please click the following button to change your password."
         },
         "help": {

@@ -148,4 +148,11 @@ return [
         ]
     ],
 
+    'send_test_mail' => [
+        'post' => [
+            'title'   => 'Test Email sent',
+            'content' => 'A test email has been successfully sent to ' . config('mail.from.address') . '.'
+        ]
+    ],
+
 ];

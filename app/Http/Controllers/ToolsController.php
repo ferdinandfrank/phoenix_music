@@ -72,6 +72,14 @@ class ToolsController extends Controller {
     }
 
     /**
+     * Sends a test mail to the application's sender email address to test the email settings.
+     */
+    public function sendTestMail() {
+        \Mail::to(config('mail.from.address'))
+            ->send(new App\Mail\TestEmail());
+    }
+
+    /**
      * Clears the applications cache.
      *
      * @return \Illuminate\Http\JsonResponse {@code true} if the operation was successful, {@code false} otherwise.

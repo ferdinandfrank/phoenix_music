@@ -20,4 +20,5 @@ return [
     'clear_cache'              => 'Caching der Daten verbessert die Performance des Systems, aber kann zu Problemen führen, wenn neue Features getestet werden und es sich alte Daten im Cache befinden. Um deshalb den Cache zu leeren klicke den folgenden Button.',
     'reset_index'              => 'Der Suchindex ist dafür zuständig, dass bestimmte Daten der Datenbank von der Suche erfasst werden können. Um diesen zurückzusetzen klicke den folgenden Button.',
     'create_database_backup'   => 'Erstelle ein Backup Skript der Datenbank, um bei einem Datenverlust die alten Daten der Datenbank wieder aufspielen zu können.',
+    'send_test_mail'           => 'Sende eine Test E-Mail an die Sender E-Mail Adresse der Website "' . config('mail.from.address') . '", um die E-Mail Einstellungen zu testen.'
 ];

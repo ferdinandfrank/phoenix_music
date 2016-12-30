@@ -147,4 +147,11 @@ return [
         ]
     ],
 
+    'send_test_mail' => [
+        'post' => [
+            'title'   => 'Test E-Mail versendet',
+            'content' => 'Eine Testnachricht wurde erfolgreich an ' . config('mail.from.address') . ' versendet.'
+        ]
+    ],
+
 ];

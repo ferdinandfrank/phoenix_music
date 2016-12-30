@@ -19,5 +19,6 @@ return [
     'manage_log'               => 'Download the log file to see if any error occurred on the website or clear the file to delete the content of the log file.',
     'create_database_backup'   => 'Create a backup of your database, so the data can be restored if an error occurs on the database.',
     'reset_index'              => 'Regenerate the search index to make the data in the database searchable.',
-    'clear_cache'              => 'Clear the websites cache to regenerate the web routes, view files, and the general cache of the website. This may be used if an error occurred by visiting a page of the website to regenerate the file of the page.'
+    'clear_cache'              => 'Clear the websites cache to regenerate the web routes, view files, and the general cache of the website. This may be used if an error occurred by visiting a page of the website to regenerate the file of the page.',
+    'send_test_mail'           => 'Send a test mail to the application\'s sender email address "' . config('mail.from.address') . '" to check the email configurations.'
 ];

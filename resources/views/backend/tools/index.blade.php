@@ -55,6 +55,20 @@
             </panel>
         </div>
         <div class="col xs-12">
+            <panel title="{{ trans('action.send_test_mail') }}">
+                <p>{{ trans('descriptions.send_test_mail') }}</p>
+                <div class="btn-group flex-reverse">
+                    <form-button alert-key="send_test_mail"
+                                 action="{{ route('tools.mail') }}"
+                                 color="success"
+                                 method="POST">
+                        <i class="{{ config('icons.email') }}"></i>
+                        <span>{{ trans('action.send_test_mail') }}</span>
+                    </form-button>
+                </div>
+            </panel>
+        </div>
+        <div class="col xs-12">
             <panel title="{{ trans('action.manage_log') }}">
                 <p>{{ trans('descriptions.manage_log') }}</p>
                 <div class="btn-group flex-reverse">

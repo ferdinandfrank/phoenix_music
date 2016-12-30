@@ -114,6 +114,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::get('tools', 'ToolsController@index')->name('tools.index');
     Route::post('tools/reset_index', 'ToolsController@resetIndex')->name('tools.reset_index');
     Route::post('tools/backup', 'ToolsController@createBackup')->name('tools.backup');
+    Route::post('tools/mail', 'ToolsController@sendTestMail')->name('tools.mail');
     Route::post('tools/cache_clear', 'ToolsController@clearCache')->name('tools.cache_clear');
     Route::post('tools/download_archive', 'ToolsController@handleDownload')->name('tools.download_archive');
     Route::post('tools/download_log', 'ToolsController@downloadLog')->name('tools.download_log');

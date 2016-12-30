@@ -28,6 +28,7 @@ return [
     'export_data'              => 'Export Data',
     'download_log'             => 'Download Log File',
     'manage_log'               => 'Manage Log File',
+    'send_test_mail'           => 'Send Test Email',
     'clear_log'                => 'Clear Log File',
     'create_database_backup'   => 'Create Database Backup',
     'clear_cache'              => 'Clear Cache',
