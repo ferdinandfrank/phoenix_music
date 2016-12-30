@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.3.20 on 2016-12-29.
+ * Generated for Laravel 5.3.20 on 2016-12-30.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -12042,7 +12042,7 @@ namespace {
     }
 
 
-    class LocalDate extends EpicArrow\LocalDate\Facades\LocalDateFacade{
+    class LocalDate extends \EpicArrow\LocalDate\Facades\LocalDateFacade{
         
         /**
          * Format the instance as date and time.
@@ -12051,7 +12051,7 @@ namespace {
          * @static 
          */
         public static function toDateTimeString(){
-            return LocalDate::toDateTimeString();
+            return \EpicArrow\LocalDate\LocalDate::toDateTimeString();
         }
         
         /**
@@ -12061,7 +12061,7 @@ namespace {
          * @static 
          */
         public static function toTimeString(){
-            return LocalDate::toTimeString();
+            return \EpicArrow\LocalDate\LocalDate::toTimeString();
         }
         
         /**
@@ -12071,7 +12071,7 @@ namespace {
          * @static 
          */
         public static function toAge(){
-            return LocalDate::toAge();
+            return \EpicArrow\LocalDate\LocalDate::toAge();
         }
         
         /**
@@ -12081,7 +12081,7 @@ namespace {
          * @static 
          */
         public static function toDateString(){
-            return LocalDate::toDateString();
+            return \EpicArrow\LocalDate\LocalDate::toDateString();
         }
         
         /**
@@ -12091,7 +12091,7 @@ namespace {
          * @static 
          */
         public static function toWeekDateString(){
-            return LocalDate::toWeekDateString();
+            return \EpicArrow\LocalDate\LocalDate::toWeekDateString();
         }
         
         /**
@@ -12103,7 +12103,7 @@ namespace {
          * @static 
          */
         public static function toDateTimeRangeString($endDate){
-            return LocalDate::toDateTimeRangeString($endDate);
+            return \EpicArrow\LocalDate\LocalDate::toDateTimeRangeString($endDate);
         }
         
         /**
@@ -12122,13 +12122,13 @@ namespace {
          * 1 hour after
          * 5 months after
          *
-         * @param LocalDateCarbon|null $other
+         * @param \EpicArrow\LocalDate\Carbon|null $other
          * @param bool $absolute removes time difference modifiers ago, after, etc
          * @return string 
          * @static 
          */
         public static function diffForHumans($other = null, $absolute = false){
-            return LocalDate::diffForHumans($other, $absolute);
+            return \EpicArrow\LocalDate\LocalDate::diffForHumans($other, $absolute);
         }
         
         /**
@@ -12138,7 +12138,7 @@ namespace {
          * @static 
          */
         public static function dayDiffForHumans(){
-            return LocalDate::dayDiffForHumans();
+            return \EpicArrow\LocalDate\LocalDate::dayDiffForHumans();
         }
         
         /**
@@ -12150,7 +12150,7 @@ namespace {
          */
         public static function instance($dt){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::instance($dt);
+            return \EpicArrow\LocalDate\LocalDate::instance($dt);
         }
         
         /**
@@ -12166,7 +12166,7 @@ namespace {
          */
         public static function parse($time = null, $tz = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::parse($time, $tz);
+            return \EpicArrow\LocalDate\LocalDate::parse($time, $tz);
         }
         
         /**
@@ -12178,7 +12178,7 @@ namespace {
          */
         public static function now($tz = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::now($tz);
+            return \EpicArrow\LocalDate\LocalDate::now($tz);
         }
         
         /**
@@ -12190,7 +12190,7 @@ namespace {
          */
         public static function today($tz = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::today($tz);
+            return \EpicArrow\LocalDate\LocalDate::today($tz);
         }
         
         /**
@@ -12202,7 +12202,7 @@ namespace {
          */
         public static function tomorrow($tz = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::tomorrow($tz);
+            return \EpicArrow\LocalDate\LocalDate::tomorrow($tz);
         }
         
         /**
@@ -12214,7 +12214,7 @@ namespace {
          */
         public static function yesterday($tz = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::yesterday($tz);
+            return \EpicArrow\LocalDate\LocalDate::yesterday($tz);
         }
         
         /**
@@ -12225,7 +12225,7 @@ namespace {
          */
         public static function maxValue(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::maxValue();
+            return \EpicArrow\LocalDate\LocalDate::maxValue();
         }
         
         /**
@@ -12236,7 +12236,7 @@ namespace {
          */
         public static function minValue(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::minValue();
+            return \EpicArrow\LocalDate\LocalDate::minValue();
         }
         
         /**
@@ -12262,7 +12262,7 @@ namespace {
          */
         public static function create($year = null, $month = null, $day = null, $hour = null, $minute = null, $second = null, $tz = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::create($year, $month, $day, $hour, $minute, $second, $tz);
+            return \EpicArrow\LocalDate\LocalDate::create($year, $month, $day, $hour, $minute, $second, $tz);
         }
         
         /**
@@ -12277,7 +12277,7 @@ namespace {
          */
         public static function createFromDate($year = null, $month = null, $day = null, $tz = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::createFromDate($year, $month, $day, $tz);
+            return \EpicArrow\LocalDate\LocalDate::createFromDate($year, $month, $day, $tz);
         }
         
         /**
@@ -12292,7 +12292,7 @@ namespace {
          */
         public static function createFromTime($hour = null, $minute = null, $second = null, $tz = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::createFromTime($hour, $minute, $second, $tz);
+            return \EpicArrow\LocalDate\LocalDate::createFromTime($hour, $minute, $second, $tz);
         }
         
         /**
@@ -12307,7 +12307,7 @@ namespace {
          */
         public static function createFromFormat($format, $time, $tz = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::createFromFormat($format, $time, $tz);
+            return \EpicArrow\LocalDate\LocalDate::createFromFormat($format, $time, $tz);
         }
         
         /**
@@ -12320,7 +12320,7 @@ namespace {
          */
         public static function createFromTimestamp($timestamp, $tz = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::createFromTimestamp($timestamp, $tz);
+            return \EpicArrow\LocalDate\LocalDate::createFromTimestamp($timestamp, $tz);
         }
         
         /**
@@ -12332,7 +12332,7 @@ namespace {
          */
         public static function createFromTimestampUTC($timestamp){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::createFromTimestampUTC($timestamp);
+            return \EpicArrow\LocalDate\LocalDate::createFromTimestampUTC($timestamp);
         }
         
         /**
@@ -12343,7 +12343,7 @@ namespace {
          */
         public static function copy(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::copy();
+            return \EpicArrow\LocalDate\LocalDate::copy();
         }
         
         /**
@@ -12355,7 +12355,7 @@ namespace {
          */
         public static function year($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::year($value);
+            return \EpicArrow\LocalDate\LocalDate::year($value);
         }
         
         /**
@@ -12367,7 +12367,7 @@ namespace {
          */
         public static function month($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::month($value);
+            return \EpicArrow\LocalDate\LocalDate::month($value);
         }
         
         /**
@@ -12379,7 +12379,7 @@ namespace {
          */
         public static function day($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::day($value);
+            return \EpicArrow\LocalDate\LocalDate::day($value);
         }
         
         /**
@@ -12391,7 +12391,7 @@ namespace {
          */
         public static function hour($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::hour($value);
+            return \EpicArrow\LocalDate\LocalDate::hour($value);
         }
         
         /**
@@ -12403,7 +12403,7 @@ namespace {
          */
         public static function minute($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::minute($value);
+            return \EpicArrow\LocalDate\LocalDate::minute($value);
         }
         
         /**
@@ -12415,7 +12415,7 @@ namespace {
          */
         public static function second($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::second($value);
+            return \EpicArrow\LocalDate\LocalDate::second($value);
         }
         
         /**
@@ -12432,7 +12432,7 @@ namespace {
          */
         public static function setDateTime($year, $month, $day, $hour, $minute, $second = 0){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::setDateTime($year, $month, $day, $hour, $minute, $second);
+            return \EpicArrow\LocalDate\LocalDate::setDateTime($year, $month, $day, $hour, $minute, $second);
         }
         
         /**
@@ -12444,7 +12444,7 @@ namespace {
          */
         public static function setTimeFromTimeString($time){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::setTimeFromTimeString($time);
+            return \EpicArrow\LocalDate\LocalDate::setTimeFromTimeString($time);
         }
         
         /**
@@ -12456,7 +12456,7 @@ namespace {
          */
         public static function timestamp($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::timestamp($value);
+            return \EpicArrow\LocalDate\LocalDate::timestamp($value);
         }
         
         /**
@@ -12468,7 +12468,7 @@ namespace {
          */
         public static function timezone($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::timezone($value);
+            return \EpicArrow\LocalDate\LocalDate::timezone($value);
         }
         
         /**
@@ -12480,7 +12480,7 @@ namespace {
          */
         public static function tz($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::tz($value);
+            return \EpicArrow\LocalDate\LocalDate::tz($value);
         }
         
         /**
@@ -12492,7 +12492,7 @@ namespace {
          */
         public static function setTimezone($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::setTimezone($value);
+            return \EpicArrow\LocalDate\LocalDate::setTimezone($value);
         }
         
         /**
@@ -12503,7 +12503,7 @@ namespace {
          */
         public static function getWeekStartsAt(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::getWeekStartsAt();
+            return \EpicArrow\LocalDate\LocalDate::getWeekStartsAt();
         }
         
         /**
@@ -12514,7 +12514,7 @@ namespace {
          */
         public static function setWeekStartsAt($day){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::setWeekStartsAt($day);
+            return \EpicArrow\LocalDate\LocalDate::setWeekStartsAt($day);
         }
         
         /**
@@ -12525,7 +12525,7 @@ namespace {
          */
         public static function getWeekEndsAt(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::getWeekEndsAt();
+            return \EpicArrow\LocalDate\LocalDate::getWeekEndsAt();
         }
         
         /**
@@ -12536,7 +12536,7 @@ namespace {
          */
         public static function setWeekEndsAt($day){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::setWeekEndsAt($day);
+            return \EpicArrow\LocalDate\LocalDate::setWeekEndsAt($day);
         }
         
         /**
@@ -12547,7 +12547,7 @@ namespace {
          */
         public static function getWeekendDays(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::getWeekendDays();
+            return \EpicArrow\LocalDate\LocalDate::getWeekendDays();
         }
         
         /**
@@ -12558,7 +12558,7 @@ namespace {
          */
         public static function setWeekendDays($days){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::setWeekendDays($days);
+            return \EpicArrow\LocalDate\LocalDate::setWeekendDays($days);
         }
         
         /**
@@ -12580,7 +12580,7 @@ namespace {
          */
         public static function setTestNow($testNow = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::setTestNow($testNow);
+            return \EpicArrow\LocalDate\LocalDate::setTestNow($testNow);
         }
         
         /**
@@ -12592,7 +12592,7 @@ namespace {
          */
         public static function getTestNow(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::getTestNow();
+            return \EpicArrow\LocalDate\LocalDate::getTestNow();
         }
         
         /**
@@ -12604,7 +12604,7 @@ namespace {
          */
         public static function hasTestNow(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::hasTestNow();
+            return \EpicArrow\LocalDate\LocalDate::hasTestNow();
         }
         
         /**
@@ -12617,7 +12617,7 @@ namespace {
          */
         public static function hasRelativeKeywords($time){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::hasRelativeKeywords($time);
+            return \EpicArrow\LocalDate\LocalDate::hasRelativeKeywords($time);
         }
         
         /**
@@ -12628,7 +12628,7 @@ namespace {
          */
         public static function getTranslator(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::getTranslator();
+            return \EpicArrow\LocalDate\LocalDate::getTranslator();
         }
         
         /**
@@ -12639,7 +12639,7 @@ namespace {
          */
         public static function setTranslator($translator){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::setTranslator($translator);
+            return \EpicArrow\LocalDate\LocalDate::setTranslator($translator);
         }
         
         /**
@@ -12650,7 +12650,7 @@ namespace {
          */
         public static function getLocale(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::getLocale();
+            return \EpicArrow\LocalDate\LocalDate::getLocale();
         }
         
         /**
@@ -12661,7 +12661,7 @@ namespace {
          */
         public static function setLocale($locale){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::setLocale($locale);
+            return \EpicArrow\LocalDate\LocalDate::setLocale($locale);
         }
         
         /**
@@ -12674,7 +12674,7 @@ namespace {
          */
         public static function formatLocalized($format){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::formatLocalized($format);
+            return \EpicArrow\LocalDate\LocalDate::formatLocalized($format);
         }
         
         /**
@@ -12684,7 +12684,7 @@ namespace {
          */
         public static function resetToStringFormat(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::resetToStringFormat();
+            return \EpicArrow\LocalDate\LocalDate::resetToStringFormat();
         }
         
         /**
@@ -12695,7 +12695,7 @@ namespace {
          */
         public static function setToStringFormat($format){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::setToStringFormat($format);
+            return \EpicArrow\LocalDate\LocalDate::setToStringFormat($format);
         }
         
         /**
@@ -12706,7 +12706,7 @@ namespace {
          */
         public static function toFormattedDateString(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::toFormattedDateString();
+            return \EpicArrow\LocalDate\LocalDate::toFormattedDateString();
         }
         
         /**
@@ -12717,7 +12717,7 @@ namespace {
          */
         public static function toDayDateTimeString(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::toDayDateTimeString();
+            return \EpicArrow\LocalDate\LocalDate::toDayDateTimeString();
         }
         
         /**
@@ -12728,7 +12728,7 @@ namespace {
          */
         public static function toAtomString(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::toAtomString();
+            return \EpicArrow\LocalDate\LocalDate::toAtomString();
         }
         
         /**
@@ -12739,7 +12739,7 @@ namespace {
          */
         public static function toCookieString(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::toCookieString();
+            return \EpicArrow\LocalDate\LocalDate::toCookieString();
         }
         
         /**
@@ -12750,7 +12750,7 @@ namespace {
          */
         public static function toIso8601String(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::toIso8601String();
+            return \EpicArrow\LocalDate\LocalDate::toIso8601String();
         }
         
         /**
@@ -12761,7 +12761,7 @@ namespace {
          */
         public static function toRfc822String(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::toRfc822String();
+            return \EpicArrow\LocalDate\LocalDate::toRfc822String();
         }
         
         /**
@@ -12772,7 +12772,7 @@ namespace {
          */
         public static function toRfc850String(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::toRfc850String();
+            return \EpicArrow\LocalDate\LocalDate::toRfc850String();
         }
         
         /**
@@ -12783,7 +12783,7 @@ namespace {
          */
         public static function toRfc1036String(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::toRfc1036String();
+            return \EpicArrow\LocalDate\LocalDate::toRfc1036String();
         }
         
         /**
@@ -12794,7 +12794,7 @@ namespace {
          */
         public static function toRfc1123String(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::toRfc1123String();
+            return \EpicArrow\LocalDate\LocalDate::toRfc1123String();
         }
         
         /**
@@ -12805,7 +12805,7 @@ namespace {
          */
         public static function toRfc2822String(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::toRfc2822String();
+            return \EpicArrow\LocalDate\LocalDate::toRfc2822String();
         }
         
         /**
@@ -12816,7 +12816,7 @@ namespace {
          */
         public static function toRfc3339String(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::toRfc3339String();
+            return \EpicArrow\LocalDate\LocalDate::toRfc3339String();
         }
         
         /**
@@ -12827,7 +12827,7 @@ namespace {
          */
         public static function toRssString(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::toRssString();
+            return \EpicArrow\LocalDate\LocalDate::toRssString();
         }
         
         /**
@@ -12838,7 +12838,7 @@ namespace {
          */
         public static function toW3cString(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::toW3cString();
+            return \EpicArrow\LocalDate\LocalDate::toW3cString();
         }
         
         /**
@@ -12850,7 +12850,7 @@ namespace {
          */
         public static function eq($dt){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::eq($dt);
+            return \EpicArrow\LocalDate\LocalDate::eq($dt);
         }
         
         /**
@@ -12862,7 +12862,7 @@ namespace {
          */
         public static function ne($dt){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::ne($dt);
+            return \EpicArrow\LocalDate\LocalDate::ne($dt);
         }
         
         /**
@@ -12874,7 +12874,7 @@ namespace {
          */
         public static function gt($dt){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::gt($dt);
+            return \EpicArrow\LocalDate\LocalDate::gt($dt);
         }
         
         /**
@@ -12886,7 +12886,7 @@ namespace {
          */
         public static function gte($dt){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::gte($dt);
+            return \EpicArrow\LocalDate\LocalDate::gte($dt);
         }
         
         /**
@@ -12898,7 +12898,7 @@ namespace {
          */
         public static function lt($dt){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::lt($dt);
+            return \EpicArrow\LocalDate\LocalDate::lt($dt);
         }
         
         /**
@@ -12910,7 +12910,7 @@ namespace {
          */
         public static function lte($dt){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::lte($dt);
+            return \EpicArrow\LocalDate\LocalDate::lte($dt);
         }
         
         /**
@@ -12924,7 +12924,7 @@ namespace {
          */
         public static function between($dt1, $dt2, $equal = true){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::between($dt1, $dt2, $equal);
+            return \EpicArrow\LocalDate\LocalDate::between($dt1, $dt2, $equal);
         }
         
         /**
@@ -12937,7 +12937,7 @@ namespace {
          */
         public static function closest($dt1, $dt2){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::closest($dt1, $dt2);
+            return \EpicArrow\LocalDate\LocalDate::closest($dt1, $dt2);
         }
         
         /**
@@ -12950,7 +12950,7 @@ namespace {
          */
         public static function farthest($dt1, $dt2){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::farthest($dt1, $dt2);
+            return \EpicArrow\LocalDate\LocalDate::farthest($dt1, $dt2);
         }
         
         /**
@@ -12962,7 +12962,7 @@ namespace {
          */
         public static function min($dt = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::min($dt);
+            return \EpicArrow\LocalDate\LocalDate::min($dt);
         }
         
         /**
@@ -12974,7 +12974,7 @@ namespace {
          */
         public static function max($dt = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::max($dt);
+            return \EpicArrow\LocalDate\LocalDate::max($dt);
         }
         
         /**
@@ -12985,7 +12985,7 @@ namespace {
          */
         public static function isWeekday(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::isWeekday();
+            return \EpicArrow\LocalDate\LocalDate::isWeekday();
         }
         
         /**
@@ -12996,7 +12996,7 @@ namespace {
          */
         public static function isWeekend(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::isWeekend();
+            return \EpicArrow\LocalDate\LocalDate::isWeekend();
         }
         
         /**
@@ -13007,7 +13007,7 @@ namespace {
          */
         public static function isYesterday(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::isYesterday();
+            return \EpicArrow\LocalDate\LocalDate::isYesterday();
         }
         
         /**
@@ -13018,7 +13018,7 @@ namespace {
          */
         public static function isToday(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::isToday();
+            return \EpicArrow\LocalDate\LocalDate::isToday();
         }
         
         /**
@@ -13029,7 +13029,7 @@ namespace {
          */
         public static function isTomorrow(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::isTomorrow();
+            return \EpicArrow\LocalDate\LocalDate::isTomorrow();
         }
         
         /**
@@ -13040,7 +13040,7 @@ namespace {
          */
         public static function isFuture(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::isFuture();
+            return \EpicArrow\LocalDate\LocalDate::isFuture();
         }
         
         /**
@@ -13051,7 +13051,7 @@ namespace {
          */
         public static function isPast(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::isPast();
+            return \EpicArrow\LocalDate\LocalDate::isPast();
         }
         
         /**
@@ -13062,7 +13062,7 @@ namespace {
          */
         public static function isLeapYear(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::isLeapYear();
+            return \EpicArrow\LocalDate\LocalDate::isLeapYear();
         }
         
         /**
@@ -13074,7 +13074,7 @@ namespace {
          */
         public static function isSameDay($dt){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::isSameDay($dt);
+            return \EpicArrow\LocalDate\LocalDate::isSameDay($dt);
         }
         
         /**
@@ -13085,7 +13085,7 @@ namespace {
          */
         public static function isSunday(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::isSunday();
+            return \EpicArrow\LocalDate\LocalDate::isSunday();
         }
         
         /**
@@ -13096,7 +13096,7 @@ namespace {
          */
         public static function isMonday(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::isMonday();
+            return \EpicArrow\LocalDate\LocalDate::isMonday();
         }
         
         /**
@@ -13107,7 +13107,7 @@ namespace {
          */
         public static function isTuesday(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::isTuesday();
+            return \EpicArrow\LocalDate\LocalDate::isTuesday();
         }
         
         /**
@@ -13118,7 +13118,7 @@ namespace {
          */
         public static function isWednesday(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::isWednesday();
+            return \EpicArrow\LocalDate\LocalDate::isWednesday();
         }
         
         /**
@@ -13129,7 +13129,7 @@ namespace {
          */
         public static function isThursday(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::isThursday();
+            return \EpicArrow\LocalDate\LocalDate::isThursday();
         }
         
         /**
@@ -13140,7 +13140,7 @@ namespace {
          */
         public static function isFriday(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::isFriday();
+            return \EpicArrow\LocalDate\LocalDate::isFriday();
         }
         
         /**
@@ -13151,7 +13151,7 @@ namespace {
          */
         public static function isSaturday(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::isSaturday();
+            return \EpicArrow\LocalDate\LocalDate::isSaturday();
         }
         
         /**
@@ -13164,7 +13164,7 @@ namespace {
          */
         public static function addYears($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::addYears($value);
+            return \EpicArrow\LocalDate\LocalDate::addYears($value);
         }
         
         /**
@@ -13176,7 +13176,7 @@ namespace {
          */
         public static function addYear($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::addYear($value);
+            return \EpicArrow\LocalDate\LocalDate::addYear($value);
         }
         
         /**
@@ -13188,7 +13188,7 @@ namespace {
          */
         public static function subYear($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::subYear($value);
+            return \EpicArrow\LocalDate\LocalDate::subYear($value);
         }
         
         /**
@@ -13200,7 +13200,7 @@ namespace {
          */
         public static function subYears($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::subYears($value);
+            return \EpicArrow\LocalDate\LocalDate::subYears($value);
         }
         
         /**
@@ -13213,7 +13213,7 @@ namespace {
          */
         public static function addMonths($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::addMonths($value);
+            return \EpicArrow\LocalDate\LocalDate::addMonths($value);
         }
         
         /**
@@ -13225,7 +13225,7 @@ namespace {
          */
         public static function addMonth($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::addMonth($value);
+            return \EpicArrow\LocalDate\LocalDate::addMonth($value);
         }
         
         /**
@@ -13237,7 +13237,7 @@ namespace {
          */
         public static function subMonth($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::subMonth($value);
+            return \EpicArrow\LocalDate\LocalDate::subMonth($value);
         }
         
         /**
@@ -13249,7 +13249,7 @@ namespace {
          */
         public static function subMonths($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::subMonths($value);
+            return \EpicArrow\LocalDate\LocalDate::subMonths($value);
         }
         
         /**
@@ -13262,7 +13262,7 @@ namespace {
          */
         public static function addMonthsNoOverflow($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::addMonthsNoOverflow($value);
+            return \EpicArrow\LocalDate\LocalDate::addMonthsNoOverflow($value);
         }
         
         /**
@@ -13274,7 +13274,7 @@ namespace {
          */
         public static function addMonthNoOverflow($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::addMonthNoOverflow($value);
+            return \EpicArrow\LocalDate\LocalDate::addMonthNoOverflow($value);
         }
         
         /**
@@ -13286,7 +13286,7 @@ namespace {
          */
         public static function subMonthNoOverflow($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::subMonthNoOverflow($value);
+            return \EpicArrow\LocalDate\LocalDate::subMonthNoOverflow($value);
         }
         
         /**
@@ -13298,7 +13298,7 @@ namespace {
          */
         public static function subMonthsNoOverflow($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::subMonthsNoOverflow($value);
+            return \EpicArrow\LocalDate\LocalDate::subMonthsNoOverflow($value);
         }
         
         /**
@@ -13311,7 +13311,7 @@ namespace {
          */
         public static function addDays($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::addDays($value);
+            return \EpicArrow\LocalDate\LocalDate::addDays($value);
         }
         
         /**
@@ -13323,7 +13323,7 @@ namespace {
          */
         public static function addDay($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::addDay($value);
+            return \EpicArrow\LocalDate\LocalDate::addDay($value);
         }
         
         /**
@@ -13335,7 +13335,7 @@ namespace {
          */
         public static function subDay($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::subDay($value);
+            return \EpicArrow\LocalDate\LocalDate::subDay($value);
         }
         
         /**
@@ -13347,7 +13347,7 @@ namespace {
          */
         public static function subDays($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::subDays($value);
+            return \EpicArrow\LocalDate\LocalDate::subDays($value);
         }
         
         /**
@@ -13360,7 +13360,7 @@ namespace {
          */
         public static function addWeekdays($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::addWeekdays($value);
+            return \EpicArrow\LocalDate\LocalDate::addWeekdays($value);
         }
         
         /**
@@ -13372,7 +13372,7 @@ namespace {
          */
         public static function addWeekday($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::addWeekday($value);
+            return \EpicArrow\LocalDate\LocalDate::addWeekday($value);
         }
         
         /**
@@ -13384,7 +13384,7 @@ namespace {
          */
         public static function subWeekday($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::subWeekday($value);
+            return \EpicArrow\LocalDate\LocalDate::subWeekday($value);
         }
         
         /**
@@ -13396,7 +13396,7 @@ namespace {
          */
         public static function subWeekdays($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::subWeekdays($value);
+            return \EpicArrow\LocalDate\LocalDate::subWeekdays($value);
         }
         
         /**
@@ -13409,7 +13409,7 @@ namespace {
          */
         public static function addWeeks($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::addWeeks($value);
+            return \EpicArrow\LocalDate\LocalDate::addWeeks($value);
         }
         
         /**
@@ -13421,7 +13421,7 @@ namespace {
          */
         public static function addWeek($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::addWeek($value);
+            return \EpicArrow\LocalDate\LocalDate::addWeek($value);
         }
         
         /**
@@ -13433,7 +13433,7 @@ namespace {
          */
         public static function subWeek($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::subWeek($value);
+            return \EpicArrow\LocalDate\LocalDate::subWeek($value);
         }
         
         /**
@@ -13445,7 +13445,7 @@ namespace {
          */
         public static function subWeeks($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::subWeeks($value);
+            return \EpicArrow\LocalDate\LocalDate::subWeeks($value);
         }
         
         /**
@@ -13458,7 +13458,7 @@ namespace {
          */
         public static function addHours($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::addHours($value);
+            return \EpicArrow\LocalDate\LocalDate::addHours($value);
         }
         
         /**
@@ -13470,7 +13470,7 @@ namespace {
          */
         public static function addHour($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::addHour($value);
+            return \EpicArrow\LocalDate\LocalDate::addHour($value);
         }
         
         /**
@@ -13482,7 +13482,7 @@ namespace {
          */
         public static function subHour($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::subHour($value);
+            return \EpicArrow\LocalDate\LocalDate::subHour($value);
         }
         
         /**
@@ -13494,7 +13494,7 @@ namespace {
          */
         public static function subHours($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::subHours($value);
+            return \EpicArrow\LocalDate\LocalDate::subHours($value);
         }
         
         /**
@@ -13507,7 +13507,7 @@ namespace {
          */
         public static function addMinutes($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::addMinutes($value);
+            return \EpicArrow\LocalDate\LocalDate::addMinutes($value);
         }
         
         /**
@@ -13519,7 +13519,7 @@ namespace {
          */
         public static function addMinute($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::addMinute($value);
+            return \EpicArrow\LocalDate\LocalDate::addMinute($value);
         }
         
         /**
@@ -13531,7 +13531,7 @@ namespace {
          */
         public static function subMinute($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::subMinute($value);
+            return \EpicArrow\LocalDate\LocalDate::subMinute($value);
         }
         
         /**
@@ -13543,7 +13543,7 @@ namespace {
          */
         public static function subMinutes($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::subMinutes($value);
+            return \EpicArrow\LocalDate\LocalDate::subMinutes($value);
         }
         
         /**
@@ -13556,7 +13556,7 @@ namespace {
          */
         public static function addSeconds($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::addSeconds($value);
+            return \EpicArrow\LocalDate\LocalDate::addSeconds($value);
         }
         
         /**
@@ -13568,7 +13568,7 @@ namespace {
          */
         public static function addSecond($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::addSecond($value);
+            return \EpicArrow\LocalDate\LocalDate::addSecond($value);
         }
         
         /**
@@ -13580,7 +13580,7 @@ namespace {
          */
         public static function subSecond($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::subSecond($value);
+            return \EpicArrow\LocalDate\LocalDate::subSecond($value);
         }
         
         /**
@@ -13592,7 +13592,7 @@ namespace {
          */
         public static function subSeconds($value){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::subSeconds($value);
+            return \EpicArrow\LocalDate\LocalDate::subSeconds($value);
         }
         
         /**
@@ -13605,7 +13605,7 @@ namespace {
          */
         public static function diffInYears($dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::diffInYears($dt, $abs);
+            return \EpicArrow\LocalDate\LocalDate::diffInYears($dt, $abs);
         }
         
         /**
@@ -13618,7 +13618,7 @@ namespace {
          */
         public static function diffInMonths($dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::diffInMonths($dt, $abs);
+            return \EpicArrow\LocalDate\LocalDate::diffInMonths($dt, $abs);
         }
         
         /**
@@ -13631,7 +13631,7 @@ namespace {
          */
         public static function diffInWeeks($dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::diffInWeeks($dt, $abs);
+            return \EpicArrow\LocalDate\LocalDate::diffInWeeks($dt, $abs);
         }
         
         /**
@@ -13644,7 +13644,7 @@ namespace {
          */
         public static function diffInDays($dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::diffInDays($dt, $abs);
+            return \EpicArrow\LocalDate\LocalDate::diffInDays($dt, $abs);
         }
         
         /**
@@ -13658,7 +13658,7 @@ namespace {
          */
         public static function diffInDaysFiltered($callback, $dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::diffInDaysFiltered($callback, $dt, $abs);
+            return \EpicArrow\LocalDate\LocalDate::diffInDaysFiltered($callback, $dt, $abs);
         }
         
         /**
@@ -13672,7 +13672,7 @@ namespace {
          */
         public static function diffInHoursFiltered($callback, $dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::diffInHoursFiltered($callback, $dt, $abs);
+            return \EpicArrow\LocalDate\LocalDate::diffInHoursFiltered($callback, $dt, $abs);
         }
         
         /**
@@ -13687,7 +13687,7 @@ namespace {
          */
         public static function diffFiltered($ci, $callback, $dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::diffFiltered($ci, $callback, $dt, $abs);
+            return \EpicArrow\LocalDate\LocalDate::diffFiltered($ci, $callback, $dt, $abs);
         }
         
         /**
@@ -13700,7 +13700,7 @@ namespace {
          */
         public static function diffInWeekdays($dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::diffInWeekdays($dt, $abs);
+            return \EpicArrow\LocalDate\LocalDate::diffInWeekdays($dt, $abs);
         }
         
         /**
@@ -13713,7 +13713,7 @@ namespace {
          */
         public static function diffInWeekendDays($dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::diffInWeekendDays($dt, $abs);
+            return \EpicArrow\LocalDate\LocalDate::diffInWeekendDays($dt, $abs);
         }
         
         /**
@@ -13726,7 +13726,7 @@ namespace {
          */
         public static function diffInHours($dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::diffInHours($dt, $abs);
+            return \EpicArrow\LocalDate\LocalDate::diffInHours($dt, $abs);
         }
         
         /**
@@ -13739,7 +13739,7 @@ namespace {
          */
         public static function diffInMinutes($dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::diffInMinutes($dt, $abs);
+            return \EpicArrow\LocalDate\LocalDate::diffInMinutes($dt, $abs);
         }
         
         /**
@@ -13752,7 +13752,7 @@ namespace {
          */
         public static function diffInSeconds($dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::diffInSeconds($dt, $abs);
+            return \EpicArrow\LocalDate\LocalDate::diffInSeconds($dt, $abs);
         }
         
         /**
@@ -13763,7 +13763,7 @@ namespace {
          */
         public static function secondsSinceMidnight(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::secondsSinceMidnight();
+            return \EpicArrow\LocalDate\LocalDate::secondsSinceMidnight();
         }
         
         /**
@@ -13774,7 +13774,7 @@ namespace {
          */
         public static function secondsUntilEndOfDay(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::secondsUntilEndOfDay();
+            return \EpicArrow\LocalDate\LocalDate::secondsUntilEndOfDay();
         }
         
         /**
@@ -13785,7 +13785,7 @@ namespace {
          */
         public static function startOfDay(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::startOfDay();
+            return \EpicArrow\LocalDate\LocalDate::startOfDay();
         }
         
         /**
@@ -13796,7 +13796,7 @@ namespace {
          */
         public static function endOfDay(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::endOfDay();
+            return \EpicArrow\LocalDate\LocalDate::endOfDay();
         }
         
         /**
@@ -13807,7 +13807,7 @@ namespace {
          */
         public static function startOfMonth(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::startOfMonth();
+            return \EpicArrow\LocalDate\LocalDate::startOfMonth();
         }
         
         /**
@@ -13818,7 +13818,7 @@ namespace {
          */
         public static function endOfMonth(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::endOfMonth();
+            return \EpicArrow\LocalDate\LocalDate::endOfMonth();
         }
         
         /**
@@ -13829,7 +13829,7 @@ namespace {
          */
         public static function startOfYear(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::startOfYear();
+            return \EpicArrow\LocalDate\LocalDate::startOfYear();
         }
         
         /**
@@ -13840,7 +13840,7 @@ namespace {
          */
         public static function endOfYear(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::endOfYear();
+            return \EpicArrow\LocalDate\LocalDate::endOfYear();
         }
         
         /**
@@ -13851,7 +13851,7 @@ namespace {
          */
         public static function startOfDecade(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::startOfDecade();
+            return \EpicArrow\LocalDate\LocalDate::startOfDecade();
         }
         
         /**
@@ -13862,7 +13862,7 @@ namespace {
          */
         public static function endOfDecade(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::endOfDecade();
+            return \EpicArrow\LocalDate\LocalDate::endOfDecade();
         }
         
         /**
@@ -13873,7 +13873,7 @@ namespace {
          */
         public static function startOfCentury(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::startOfCentury();
+            return \EpicArrow\LocalDate\LocalDate::startOfCentury();
         }
         
         /**
@@ -13884,7 +13884,7 @@ namespace {
          */
         public static function endOfCentury(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::endOfCentury();
+            return \EpicArrow\LocalDate\LocalDate::endOfCentury();
         }
         
         /**
@@ -13895,7 +13895,7 @@ namespace {
          */
         public static function startOfWeek(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::startOfWeek();
+            return \EpicArrow\LocalDate\LocalDate::startOfWeek();
         }
         
         /**
@@ -13906,7 +13906,7 @@ namespace {
          */
         public static function endOfWeek(){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::endOfWeek();
+            return \EpicArrow\LocalDate\LocalDate::endOfWeek();
         }
         
         /**
@@ -13922,7 +13922,7 @@ namespace {
          */
         public static function next($dayOfWeek = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::next($dayOfWeek);
+            return \EpicArrow\LocalDate\LocalDate::next($dayOfWeek);
         }
         
         /**
@@ -13938,7 +13938,7 @@ namespace {
          */
         public static function previous($dayOfWeek = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::previous($dayOfWeek);
+            return \EpicArrow\LocalDate\LocalDate::previous($dayOfWeek);
         }
         
         /**
@@ -13953,7 +13953,7 @@ namespace {
          */
         public static function firstOfMonth($dayOfWeek = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::firstOfMonth($dayOfWeek);
+            return \EpicArrow\LocalDate\LocalDate::firstOfMonth($dayOfWeek);
         }
         
         /**
@@ -13968,7 +13968,7 @@ namespace {
          */
         public static function lastOfMonth($dayOfWeek = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::lastOfMonth($dayOfWeek);
+            return \EpicArrow\LocalDate\LocalDate::lastOfMonth($dayOfWeek);
         }
         
         /**
@@ -13985,7 +13985,7 @@ namespace {
          */
         public static function nthOfMonth($nth, $dayOfWeek){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::nthOfMonth($nth, $dayOfWeek);
+            return \EpicArrow\LocalDate\LocalDate::nthOfMonth($nth, $dayOfWeek);
         }
         
         /**
@@ -14000,7 +14000,7 @@ namespace {
          */
         public static function firstOfQuarter($dayOfWeek = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::firstOfQuarter($dayOfWeek);
+            return \EpicArrow\LocalDate\LocalDate::firstOfQuarter($dayOfWeek);
         }
         
         /**
@@ -14015,7 +14015,7 @@ namespace {
          */
         public static function lastOfQuarter($dayOfWeek = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::lastOfQuarter($dayOfWeek);
+            return \EpicArrow\LocalDate\LocalDate::lastOfQuarter($dayOfWeek);
         }
         
         /**
@@ -14032,7 +14032,7 @@ namespace {
          */
         public static function nthOfQuarter($nth, $dayOfWeek){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::nthOfQuarter($nth, $dayOfWeek);
+            return \EpicArrow\LocalDate\LocalDate::nthOfQuarter($nth, $dayOfWeek);
         }
         
         /**
@@ -14047,7 +14047,7 @@ namespace {
          */
         public static function firstOfYear($dayOfWeek = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::firstOfYear($dayOfWeek);
+            return \EpicArrow\LocalDate\LocalDate::firstOfYear($dayOfWeek);
         }
         
         /**
@@ -14062,7 +14062,7 @@ namespace {
          */
         public static function lastOfYear($dayOfWeek = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::lastOfYear($dayOfWeek);
+            return \EpicArrow\LocalDate\LocalDate::lastOfYear($dayOfWeek);
         }
         
         /**
@@ -14079,7 +14079,7 @@ namespace {
          */
         public static function nthOfYear($nth, $dayOfWeek){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::nthOfYear($nth, $dayOfWeek);
+            return \EpicArrow\LocalDate\LocalDate::nthOfYear($nth, $dayOfWeek);
         }
         
         /**
@@ -14091,7 +14091,7 @@ namespace {
          */
         public static function average($dt = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::average($dt);
+            return \EpicArrow\LocalDate\LocalDate::average($dt);
         }
         
         /**
@@ -14103,7 +14103,7 @@ namespace {
          */
         public static function isBirthday($dt = null){
             //Method inherited from \Carbon\Carbon            
-            return LocalDate::isBirthday($dt);
+            return \EpicArrow\LocalDate\LocalDate::isBirthday($dt);
         }
         
         /**
@@ -14113,7 +14113,7 @@ namespace {
          */
         public static function getLastErrors(){
             //Method inherited from \DateTime            
-            return LocalDate::getLastErrors();
+            return \EpicArrow\LocalDate\LocalDate::getLastErrors();
         }
         
         /**
@@ -14123,7 +14123,7 @@ namespace {
          */
         public static function format($format){
             //Method inherited from \DateTime            
-            return LocalDate::format($format);
+            return \EpicArrow\LocalDate\LocalDate::format($format);
         }
         
         /**
@@ -14133,7 +14133,7 @@ namespace {
          */
         public static function modify($modify){
             //Method inherited from \DateTime            
-            return LocalDate::modify($modify);
+            return \EpicArrow\LocalDate\LocalDate::modify($modify);
         }
         
         /**
@@ -14143,7 +14143,7 @@ namespace {
          */
         public static function add($interval){
             //Method inherited from \DateTime            
-            return LocalDate::add($interval);
+            return \EpicArrow\LocalDate\LocalDate::add($interval);
         }
         
         /**
@@ -14153,7 +14153,7 @@ namespace {
          */
         public static function sub($interval){
             //Method inherited from \DateTime            
-            return LocalDate::sub($interval);
+            return \EpicArrow\LocalDate\LocalDate::sub($interval);
         }
         
         /**
@@ -14163,7 +14163,7 @@ namespace {
          */
         public static function getTimezone(){
             //Method inherited from \DateTime            
-            return LocalDate::getTimezone();
+            return \EpicArrow\LocalDate\LocalDate::getTimezone();
         }
         
         /**
@@ -14173,7 +14173,7 @@ namespace {
          */
         public static function getOffset(){
             //Method inherited from \DateTime            
-            return LocalDate::getOffset();
+            return \EpicArrow\LocalDate\LocalDate::getOffset();
         }
         
         /**
@@ -14183,7 +14183,7 @@ namespace {
          */
         public static function setTime($hour, $minute, $second = null){
             //Method inherited from \DateTime            
-            return LocalDate::setTime($hour, $minute, $second);
+            return \EpicArrow\LocalDate\LocalDate::setTime($hour, $minute, $second);
         }
         
         /**
@@ -14193,7 +14193,7 @@ namespace {
          */
         public static function setDate($year, $month, $day){
             //Method inherited from \DateTime            
-            return LocalDate::setDate($year, $month, $day);
+            return \EpicArrow\LocalDate\LocalDate::setDate($year, $month, $day);
         }
         
         /**
@@ -14203,7 +14203,7 @@ namespace {
          */
         public static function setISODate($year, $week, $day = null){
             //Method inherited from \DateTime            
-            return LocalDate::setISODate($year, $week, $day);
+            return \EpicArrow\LocalDate\LocalDate::setISODate($year, $week, $day);
         }
         
         /**
@@ -14213,7 +14213,7 @@ namespace {
          */
         public static function setTimestamp($unixtimestamp){
             //Method inherited from \DateTime            
-            return LocalDate::setTimestamp($unixtimestamp);
+            return \EpicArrow\LocalDate\LocalDate::setTimestamp($unixtimestamp);
         }
         
         /**
@@ -14223,7 +14223,7 @@ namespace {
          */
         public static function getTimestamp(){
             //Method inherited from \DateTime            
-            return LocalDate::getTimestamp();
+            return \EpicArrow\LocalDate\LocalDate::getTimestamp();
         }
         
         /**
@@ -14233,7 +14233,7 @@ namespace {
          */
         public static function diff($object, $absolute = null){
             //Method inherited from \DateTime            
-            return LocalDate::diff($object, $absolute);
+            return \EpicArrow\LocalDate\LocalDate::diff($object, $absolute);
         }
         
     }

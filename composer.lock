@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6a20697f4f9654e22df98597ede4b4c4",
-    "content-hash": "d7e36b3f6207b91695c04b08b54ee7b6",
+    "hash": "89c6f65c5ad16dcddc8b108395f4229b",
+    "content-hash": "ecc4974bedbdc9fc50529aa17d34830b",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -735,16 +735,16 @@
         },
         {
             "name": "epicarrow/local-date",
-            "version": "v1.0",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EpicArrow/local-date.git",
-                "reference": "6ab27831634930fc270359ba5af88773289109da"
+                "reference": "178dea0f742e107d2dbe074521adf832d0906e1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EpicArrow/local-date/zipball/6ab27831634930fc270359ba5af88773289109da",
-                "reference": "6ab27831634930fc270359ba5af88773289109da",
+                "url": "https://api.github.com/repos/EpicArrow/local-date/zipball/178dea0f742e107d2dbe074521adf832d0906e1f",
+                "reference": "178dea0f742e107d2dbe074521adf832d0906e1f",
                 "shasum": ""
             },
             "require": {
@@ -775,7 +775,7 @@
                 "laravel",
                 "localization"
             ],
-            "time": "2016-12-29 20:53:45"
+            "time": "2016-12-30 00:45:43"
         },
         {
             "name": "guzzlehttp/guzzle",

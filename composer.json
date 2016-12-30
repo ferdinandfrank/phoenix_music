@@ -31,7 +31,7 @@
         "martinlindhe/laravel-vue-i18n-generator": "^0.1.7",
         "guzzlehttp/guzzle": "^6.2",
         "intervention/image": "^2.3",
-        "epicarrow/local-date": "^1.0"
+        "epicarrow/local-date": "^1.0.3"
     },
     "require-dev": {
         "erikgall/eloquent-phpunit": "~1.0",
