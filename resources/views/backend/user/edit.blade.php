@@ -194,7 +194,7 @@
             el: '#content-wrapper',
             data: {
                 showMediaManager: false,
-                avatar: "{{ $user->avatar }}",
+                avatar: "{{ $user->image }}",
                 selectedEventName: "avatar"
             },
             created: function () {
