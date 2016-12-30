@@ -34,7 +34,7 @@ abstract class BaseModel extends Model {
     protected function setNullables($model) {
         foreach ($model->attributes as $key => $value) {
             if (in_array($key, $this->nullable)) {
-                $model->{$key} = !isset($value) || $value == '' ? null : $value;
+                $model->{$key} = !isset($value) || $value == '' || $value == 'null' ? null : $value;
             }
         }
     }

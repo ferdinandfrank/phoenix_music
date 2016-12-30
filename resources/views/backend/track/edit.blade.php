@@ -52,7 +52,7 @@
                                     </div>
                                     <div class="col xs-12 md-6">
                                         <form-select name="album_id" lang-key="track" :show-placeholder="true">
-                                            <option value>{{ trans('defaults.no_album') }}</option>
+                                            <option value="null">{{ trans('defaults.no_album') }}</option>
                                             @foreach ($albums as $album)
                                                 <option @if ($track->album_id == $album->id) selected
                                                         @endif value="{{ $album->id }}">{{ $album->title }}</option>

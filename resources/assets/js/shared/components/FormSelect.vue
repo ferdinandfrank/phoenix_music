@@ -55,6 +55,8 @@
                 $(this.$refs.input).on("change", (event) => {
                     this.submitValue = event.added.id;
                     this.onInput();
+
+                    console.log($(this.$refs.input).val());
                 });
             });
         },

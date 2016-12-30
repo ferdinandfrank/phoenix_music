@@ -75,6 +75,14 @@ class Track extends SlugModel {
     protected $dates = ['published_at'];
 
     /**
+     * The attributes that will be set to 'null', if there is no value on a database insert.
+     *
+     * @var array
+     */
+    protected $nullable = ['album_id'];
+
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

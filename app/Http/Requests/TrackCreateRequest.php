@@ -31,7 +31,6 @@ class TrackCreateRequest extends FormRequest {
         return [
             'title'        => 'required|max:' . config('validation.track.title.max'),
             'composer_id'  => 'required|exists:users,id',
-            'album_id'     => 'exists:albums,id',
             'file'         => 'required',
             'length'       => 'required',
             'bpm'          => 'required|integer',
