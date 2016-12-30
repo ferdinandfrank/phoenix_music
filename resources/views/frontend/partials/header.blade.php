@@ -49,27 +49,27 @@
         <ul class="nav-pills light nav-links">
             @if(!empty(Settings::audiojungle()))
                 <li>
-                    <a href="{{ UrlGenerator::audiojungle(Settings::audiojungle()) }}">AudioJungle</a>
+                    <a target="_blank" href="{{ UrlGenerator::audiojungle(Settings::audiojungle()) }}">AudioJungle</a>
                 </li>
             @endif
             @if(!empty(Settings::stye()))
                 <li>
-                    <a href="{{ UrlGenerator::stye(Settings::stye()) }}">SongsToYourEyes</a>
+                    <a target="_blank" href="{{ UrlGenerator::stye(Settings::stye()) }}">SongsToYourEyes</a>
                 </li>
             @endif
             @if(!empty(Settings::cdbaby()))
                 <li>
-                    <a href="{{ UrlGenerator::cdbaby(Settings::cdbaby()) }}">CDBaby</a>
+                    <a target="_blank" href="{{ UrlGenerator::cdbaby(Settings::cdbaby()) }}">CDBaby</a>
                 </li>
             @endif
             @if(!empty(Settings::amazon()))
                 <li>
-                    <a href="{{ UrlGenerator::amazon(Settings::amazon()) }}">Amazon</a>
+                    <a target="_blank" href="{{ UrlGenerator::amazon(Settings::amazon()) }}">Amazon</a>
                 </li>
             @endif
             @if(!empty(Settings::iTunes()))
                 <li>
-                    <a href="{{ UrlGenerator::iTunes(Settings::iTunes()) }}">iTunes</a>
+                    <a target="_blank" href="{{ UrlGenerator::iTunes(Settings::iTunes()) }}">iTunes</a>
                 </li>
             @endif
         </ul>

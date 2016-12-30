@@ -12,7 +12,7 @@
             <panel avatar="{{ Auth::user()->image }}"  cover="{{ \App\Models\Settings::background() }}">
                 <p class="secondary m-none">{{ Auth::user()->job }}</p>
                 <h2 class="m-t-none">{{ Auth::user()->name }}</h2>
-                <p>{{ Auth::user()->about }}</p>
+                {!! Auth::user()->about !!}
                 <div slot="footer" class="btn-group center">
                     <a href="{{ Auth::user()->getPath() }}">
                         <icon icon="{{ config('icons.user') }}"></icon>
