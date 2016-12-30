@@ -1,4 +1,3 @@
-
 <?php
 
 return [
@@ -154,5 +153,14 @@ return [
             'content' => 'A test email has been successfully sent to ' . config('mail.from.address') . '.'
         ]
     ],
+
+    'media' => [
+        'create_folder' => 'The folder :name has been successfully created.',
+        'delete_folder' => 'The folder :name has been successfully deleted.',
+        'delete_file'   => 'The file :name has been successfully deleted.',
+        'upload_file'   => 'The files have been successfully uploaded.',
+        'rename_file'   => 'The file :old has been successfully renamed to :new.',
+        'move_file'     => 'The file :name has been successfully moved to :path.'
+    ]
 
 ];

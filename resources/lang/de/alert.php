@@ -154,4 +154,13 @@ return [
         ]
     ],
 
+    'media' => [
+        'create_folder' => 'Der Ordner :name wurde erfolgreich erstellt.',
+        'delete_folder' => 'Der Ordner :name wurde erfolgreich gelöscht.',
+        'delete_file'   => 'Die Datei :name wurde erfolgreich gelöscht.',
+        'upload_file'   => 'Die Dateien wurden erfolgreich hochgeladen.',
+        'rename_file'   => 'Die Datei :old wurde erfolgreich in :new umbenannt.',
+        'move_file'     => 'Die Datei :name wurde erfolgreich nach :path verschoben.'
+    ]
+
 ];

@@ -359,7 +359,8 @@
                 this.loading = true;
                 this.currentFile = false;
 
-                this.$http.get('/admin/browser/index?path=' + path).then(
+                let route = '/' + getCurrentLocale() + '/admin/browser/index?path=' + path;
+                this.$http.get(route).then(
                     function (response) {
                         this.breadCrumbs = response.data.breadCrumbs;
                         this.currentFile = null;
@@ -403,7 +404,8 @@
                 form.append('folder', this.currentPath);
 
                 this.loading = true;
-                this.$http.post('/admin/browser/file', form).then(
+                let route = '/' + getCurrentLocale() + '/admin/browser/file';
+                this.$http.post(route, form).then(
                     function (response) {
                         this.mediaManagerNotify(response.data.success);
                         this.loadFolder(this.currentPath);

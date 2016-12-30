@@ -59,11 +59,7 @@ class RouteServiceProvider extends ServiceProvider {
         $locale = $request->segment(1);
         if (array_key_exists($locale, config('app.locales'))) {
             $params['prefix'] = $locale;
-        } else {
-            $locale = config('app.fallback_locale');
         }
-
-        \App::setLocale($locale);
 
         Route::group($params, function ($router) {
             require base_path('routes/web.php');

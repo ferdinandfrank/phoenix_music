@@ -82,7 +82,8 @@
             },
 
             open: function () {
-                this.$http.get('/admin/browser/directories').then(
+                let route = '/' + getCurrentLocale() + '/admin/browser/directories';
+                this.$http.get(route).then(
                     function (response) {
                         this.newFolderLocation = this.currentPath;
                         this.allDirectories = response.data;
@@ -105,7 +106,8 @@
                 };
 
                 this.loading = true;
-                this.$http.post('/admin/browser/move', data).then(
+                let route = '/' + getCurrentLocale() + '/admin/browser/move';
+                this.$http.post(route, data).then(
                     function (response) {
                         window.eventHub.$emit('media-manager-reload-folder');
                         window.eventHub.$emit('media-manager-notification', response.data.success);

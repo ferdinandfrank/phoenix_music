@@ -47,15 +47,6 @@ Route::get('licensing', 'LicensingController@index')->name('licensing')->middlew
 
 /*
 |--------------------------------------------------------------------------
-| Media Manager Routes
-|--------------------------------------------------------------------------
-| Routes to handle file uploads through the media manager.
-|
-*/
-\TalvBansal\MediaManager\Routes\MediaRoutes::get();
-
-/*
-|--------------------------------------------------------------------------
 | Backend Routes
 |--------------------------------------------------------------------------
 | Routes to the views and controller actions that can only be called authenticated.
@@ -94,6 +85,17 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::post('media/images', 'ImageController@store')->name('media.images.store');
     Route::post('media/images/modify', 'ImageController@modify')->name('media.images.modify');
     Route::post('media/images/rotate', 'ImageController@rotate')->name('media.images.rotate');
+
+    Route::get('browser/index', 'MediaController@ls');
+
+    Route::post('browser/file', 'MediaController@uploadFiles');
+    Route::delete('browser/delete', 'MediaController@deleteFile');
+    Route::post('browser/folder', 'MediaController@createFolder');
+    Route::delete('browser/folder', 'MediaController@deleteFolder');
+
+    Route::post('browser/rename', 'MediaController@rename');
+    Route::get('browser/directories', 'MediaController@allDirectories');
+    Route::post('browser/move', 'MediaController@move');
 
     // Composer / User Routes
     Route::get('users/privacy', 'UserController@editPrivacy')->name('users.privacy');

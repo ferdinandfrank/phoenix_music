@@ -23,7 +23,7 @@ class LibraryController extends Controller {
      * @return \Illuminate\View\View
      */
     public function index() {
-        $tracks = Track::with('categories')->get();
+        $tracks = Track::with('categories')->orderBy('published_at')->get();
         $albums = Album::all();
         $categories = Category::all();
 
