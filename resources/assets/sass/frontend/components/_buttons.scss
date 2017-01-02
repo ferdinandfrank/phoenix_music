@@ -22,7 +22,8 @@ $button-group-margin: 10px;
 
 $social-buttons-size: 30px;
 
-$available-button-width: 120px;
+$available-button-height: 45px;
+$available-button-margin: 7px;
 
 /*********************
   2. General
@@ -174,10 +175,11 @@ $available-button-width: 120px;
 **********************/
 .available_button {
     display: inline-block;
-    width: $available-button-width;
+    height: $available-button-height;
     overflow: hidden;
+    margin: $available-button-margin;
 
     img {
-        width: 100%;
+        height: 100%;
     }
 }

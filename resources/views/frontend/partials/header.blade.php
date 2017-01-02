@@ -16,7 +16,7 @@
                     {{ trans('labels.home') }}
                 </a>
             </li>
-            <li class="@if (isRoute('library')) active @endif">
+            <li class="@if (isRoute('library', true)) active @endif">
                 <a href="{{ route('library') }}">
                     {{ trans('labels.library') }}
                 </a>
@@ -26,7 +26,7 @@
                     {{ trans('labels.licensing') }}
                 </a>
             </li>
-            <li class="@if (isRoute('team')) active @endif">
+            <li class="@if (isRoute('team', true)) active @endif">
                 <a href="{{ route('team') }}">
                     {{ trans('labels.about_us') }}
                 </a>
