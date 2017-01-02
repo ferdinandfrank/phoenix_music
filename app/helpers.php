@@ -100,3 +100,22 @@ function localizeRoute($locale = null) {
 
     return $path;
 }
+
+/**
+ * Format the carbon instance as an localized date string.
+ *
+ * @param \Carbon\Carbon $date
+ *
+ * @return string
+ */
+function toDateString(\Carbon\Carbon $date) {
+    if ($date->isToday()) {
+        return Lang::get('date.today');
+    } elseif ($date->isTomorrow()) {
+        return Lang::get('date.tomorrow');
+    } elseif ($date->isYesterday()) {
+        return Lang::get('date.yesterday');
+    }
+
+    return $date->formatLocalized('%d %B %Y');
+}

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use LocalDate;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 abstract class BaseModel extends Model {
@@ -44,9 +44,9 @@ abstract class BaseModel extends Model {
      *
      * @param  mixed $value
      *
-     * @return LocalDate
+     * @return Carbon
      */
     protected function asDateTime($value) {
-        return LocalDate::instance(parent::asDateTime($value));
+        return Carbon::instance(parent::asDateTime($value));
     }
 }

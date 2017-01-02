@@ -39,7 +39,7 @@
             </ajax-form>
         </panel>
 
-        <p class="muted center">&copy; Copyright {{ LocalDate::now()->year }}. All
+        <p class="muted center">&copy; Copyright {{ \Carbon\Carbon::now()->year }}. All
             Rights Reserved.</p>
 
     </section>

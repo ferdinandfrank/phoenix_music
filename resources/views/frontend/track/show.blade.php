@@ -46,7 +46,7 @@
                         <b>{{ trans('labels.bpm') }}: </b>{{ $track->bpm }}
                     </li>
                     <li>
-                        <b>{{ trans('labels.published_at') }}: </b>{{ $track->published_at->toDateString() }}
+                        <b>{{ trans('labels.published_at') }}: </b>{{ toDateString($track->published_at) }}
                     </li>
                     @if(!empty($track->tags))
                     <li>

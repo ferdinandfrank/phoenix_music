@@ -25,7 +25,6 @@
     </script>
 
     {{-- CSS --}}
-    <script src="https://use.fontawesome.com/f2946d10fd.js"></script>
     @stack('css')
 
 </head>

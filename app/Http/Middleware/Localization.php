@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Carbon\Carbon;
 use Closure;
 
 /**
@@ -32,6 +33,8 @@ class Localization {
         }
 
         \App::setLocale($locale);
+        Carbon::setLocale($locale);
+        setlocale(LC_TIME, config('app.locales.' . $locale));
 
         return $next($request);
     }

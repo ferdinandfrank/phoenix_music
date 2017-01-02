@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "89c6f65c5ad16dcddc8b108395f4229b",
-    "content-hash": "ecc4974bedbdc9fc50529aa17d34830b",
+    "hash": "56f295f8eafd572f88f2edb3efb8cf09",
+    "content-hash": "bbe734f7d9535e73b69f057287bda4c4",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -732,50 +732,6 @@
                 "parser"
             ],
             "time": "2014-09-09 13:34:57"
-        },
-        {
-            "name": "epicarrow/local-date",
-            "version": "v1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/EpicArrow/local-date.git",
-                "reference": "178dea0f742e107d2dbe074521adf832d0906e1f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/EpicArrow/local-date/zipball/178dea0f742e107d2dbe074521adf832d0906e1f",
-                "reference": "178dea0f742e107d2dbe074521adf832d0906e1f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "EpicArrow\\LocalDate\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "EpicArrow",
-                    "email": "ferdinand-frank@web.de"
-                }
-            ],
-            "description": "An extension of the Carbon date format to use localization within a Laravel installation.",
-            "keywords": [
-                "carbon",
-                "date",
-                "i18",
-                "language",
-                "laravel",
-                "localization"
-            ],
-            "time": "2016-12-30 00:45:43"
         },
         {
             "name": "guzzlehttp/guzzle",

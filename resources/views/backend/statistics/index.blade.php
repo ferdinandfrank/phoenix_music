@@ -25,7 +25,7 @@
                             @if(!$loop->first && $pageViews[$loop->index - 1]->date->toDateString() == $pageView->date->toDateString())
                                 <td class="no-border"></td>
                             @else
-                                <td class="bold-border">{{ $pageView->date->dayDiffForHumans() }}</td>
+                                <td class="bold-border">{{ toDateString($pageView->date) }}</td>
                             @endif
                             <td class="{{ !$loop->first && $pageViews[$loop->index - 1]->date->toDateString() != $pageView->date->toDateString() ? 'bold-border' : '' }}">{{ $pageView->page }}</td>
                             <td class="{{ !$loop->first && $pageViews[$loop->index - 1]->date->toDateString() != $pageView->date->toDateString() ? 'bold-border' : '' }}">{{ $pageView->views_count }}</td>

@@ -17,7 +17,7 @@
                 <p>{!! $album->description !!}</p>
                 <ul class="info-list">
                     <li>
-                        <b>{{ trans('labels.published_at') }}: </b>{{ $album->published_at->toDateString() }}
+                        <b>{{ trans('labels.published_at') }}: </b>{{ toDateString($album->published_at) }}
                     </li>
                     @if(!empty($track->tags))
                     <li>

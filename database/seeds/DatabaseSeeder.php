@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder {
 //                'name'     => 'Ferdinand Frank',
 //                'email'    => 'ferdinand.frank@phoenixmusicproductions.com',
 //                'password' => bcrypt('password'),
-//                'birthday' => LocalDate::create(1994, 8, 25),
+//                'birthday' => Carbon::create(1994, 8, 25),
 //                'role'     => 'Composer / Web Developer',
 //                'about'    => 'Born with a huge passion for epic music, Ferdinand started to make music at the age of eigth through playing the trumpet. Seven years later he switched to the classical piano and started to compose epic music together with his friend Alexander. On the same year Phoenix Music was founded...<br/> After graduation from school, Ferdinand is now studying Internet Computing at the University of Passau.',
 //                'image'    => 'ferdinand_frank.jpg',
@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder {
 //                'name'     => 'Alexander Richstein',
 //                'email'    => 'alexander.richstein@phoenixmusicproductions.com',
 //                'password' => bcrypt('password'),
-//                'birthday' => LocalDate::create(1990, 11, 24),
+//                'birthday' => Carbon::create(1990, 11, 24),
 //                'role'     => 'Composer',
 //                'about'    => null,
 //                'image'    => 'alexander_richstein.jpg',
@@ -45,7 +45,7 @@ class DatabaseSeeder extends Seeder {
                 'title'        => 'The First Spirit',
                 'image'        => '/storage/images/the_first_spirit.jpg',
                 'description'  => null,
-                'published_at' => LocalDate::create(2014, 11, 13),
+                'published_at' => Carbon::create(2014, 11, 13),
             ],
         ];
 

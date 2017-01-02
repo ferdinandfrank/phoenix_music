@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-use EpicArrow\LocalDate\LocalDate;
+use EpicArrow\Carbon\Carbon;
 
 
 /**
@@ -25,7 +25,7 @@ class Commit {
     /**
      * The date of the commit.
      *
-     * @var LocalDate
+     * @var Carbon
      */
     public $date;
 

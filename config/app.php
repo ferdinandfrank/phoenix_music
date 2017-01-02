@@ -184,8 +184,7 @@ return [
         TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         MartinLindhe\VueInternationalizationGenerator\GeneratorProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
-        EpicArrow\LocalDate\Providers\LocalDateServiceProvider::class
+        Intervention\Image\ImageServiceProvider::class
 
     ],
 
@@ -240,7 +239,6 @@ return [
          */
         'Excel'        => Maatwebsite\Excel\Facades\Excel::class,
         'Image'        => Intervention\Image\Facades\Image::class,
-        'LocalDate'    => EpicArrow\LocalDate\Facades\LocalDateFacade::class,
 
         /*
          * Custom Aliases
