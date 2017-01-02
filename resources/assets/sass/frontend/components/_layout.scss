@@ -80,7 +80,7 @@ hr {
 **********************/
 .header {
     position: fixed;
-    z-index: 2;
+    z-index: 4;
     padding: $header-padding-vertical $header-padding-horizontal;
     display: flex;
     flex-direction: column;

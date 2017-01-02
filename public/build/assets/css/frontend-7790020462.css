@@ -5009,7 +5009,7 @@ hr.solid {
 **********************/
 .header {
   position: fixed;
-  z-index: 2;
+  z-index: 4;
   padding: 30px 15px;
   display: -webkit-box;
   display: flex;
