@@ -8450,6 +8450,10 @@ ul.portfolio-list > li.item.large-item {
   width: 560px;
 }
 
+ul.portfolio-list > li.item.large-item .details {
+  width: 542px;
+}
+
 ul.portfolio-list > li.item > a {
   display: block;
   position: relative;
@@ -8475,13 +8479,13 @@ ul.portfolio-list > li.item .details {
   position: absolute;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.6);
   color: #FFF;
   font-weight: 700;
   padding: 9px;
   text-transform: uppercase;
   z-index: 2;
-  width: 100%;
+  width: 252px;
   bottom: 0;
   display: -webkit-box;
   display: flex;
@@ -8494,9 +8498,11 @@ ul.portfolio-list > li.item .categories > * {
   border-radius: 2px;
   font-size: 12px;
   font-weight: 400;
-  margin: 2px;
+  margin-bottom: 2px;
   padding: 2px 9px;
   text-transform: none;
+  white-space: nowrap;
+  display: inline-block;
   z-index: 2;
   background: #b2120f;
 }

@@ -26,6 +26,7 @@ $category-list-item-border-radius: 4px;
 
 $portfolio-list-item-size: 270px;
 $portfolio-list-item-margin: 10px;
+$portfolio-large-list-item-width: ($portfolio-list-item-size * 2) + ($portfolio-list-item-margin * 2);
 $portfolio-list-item-border-width: 2px;
 $portfolio-list-item-border-radius: 5px;
 $portfolio-list-item-details-padding: 9px;
@@ -122,7 +123,11 @@ ul.portfolio-list {
         margin: $portfolio-list-item-margin;
 
         &.large-item {
-            width: ($portfolio-list-item-size * 2) + ($portfolio-list-item-margin * 2);
+            width: $portfolio-large-list-item-width;
+
+            .details {
+                width: $portfolio-large-list-item-width - (2 * $portfolio-list-item-details-padding);
+            }
         }
 
         > a {
@@ -148,13 +153,13 @@ ul.portfolio-list {
         .details {
             position: absolute;
             @include transition(all 0.3s);
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.6);
             color: #FFF;
             font-weight: 700;
             padding: $portfolio-list-item-details-padding;
             text-transform: uppercase;
             z-index: 2;
-            width: 100%;
+            width: $portfolio-list-item-size - (2 * $portfolio-list-item-details-padding);
             bottom: 0;
             display: flex;
             flex-direction: column;
@@ -164,9 +169,11 @@ ul.portfolio-list {
             border-radius: 2px;
             font-size: 12px;
             font-weight: 400;
-            margin: 2px;
+            margin-bottom: 2px;
             padding: 2px 9px;
             text-transform: none;
+            white-space: nowrap;
+            display: inline-block;
             z-index: 2;
             background: $portfolio-list-item-category-background-color;
         }
