@@ -2,9 +2,7 @@
     <div class="phoenix-audio">
         <i class="fa fa-fw" :class="playing ? 'fa-pause' : 'fa-play'" v-on:click="play"></i>
         <div class="details">
-            <div class="progress">
-                <input type="range" v-model="progress" min="0" :max="audio.duration">
-            </div>
+            <input type="range" v-model="progress" min="0" :max="audio.duration">
             <div class="time">
                 <span>{{ currentTime }}</span>
                 <span>{{ duration }}</span>
@@ -29,6 +27,7 @@
         data() {
             return {
                 audio: '',
+                source: this.file,
                 playing: false,
                 volume: 1,
                 progress: 0,
@@ -51,28 +50,15 @@
 
         mounted() {
             this.$nextTick(function () {
-                this.audio = new Audio(this.file);
-
-                this.audio.ondurationchange = () => {
-                    this.duration = this.formatTime(this.audio.duration);
-                };
-
-                this.audio.onplay = () => {
-                    this.playing = true;
-                };
-
-                this.audio.onpause = () => {
-                    this.playing = false;
-                };
-
-                this.audio.ontimeupdate = () => {
-                    this.progress = this.audio.currentTime;
-                    this.currentTime = this.formatTime(this.progress);
-                };
+                this.initSource();
             })
         },
 
         watch: {
+            source: function (value) {
+                this.initSource();
+            },
+
             volume: function (value) {
                 this.audio.volume = value;
             },
@@ -110,7 +96,27 @@
                     this.audio.muted = true;
                     this.volume = 0;
                 }
+            },
 
+            initSource: function () {
+                this.audio = new Audio(this.source);
+
+                this.audio.ondurationchange = () => {
+                    this.duration = this.formatTime(this.audio.duration);
+                };
+
+                this.audio.onplay = () => {
+                    this.playing = true;
+                };
+
+                this.audio.onpause = () => {
+                    this.playing = false;
+                };
+
+                this.audio.ontimeupdate = () => {
+                    this.progress = this.audio.currentTime;
+                    this.currentTime = this.formatTime(this.progress);
+                };
             }
         }
     }
@@ -140,6 +146,10 @@
         position: relative;
         width: 100%;
         margin: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .phoenix-audio > .details > .time {
@@ -148,34 +158,26 @@
         width: 100%;
     }
 
-    .phoenix-audio > .details > .progress {
-        height: 5px;
-        background: grey;
-        width: 100%;
-        position: relative;
-        margin: 0 3px;
-    }
-
-
     /*Chrome*/
     @media screen and (-webkit-min-device-pixel-ratio:0) {
-        .phoenix-audio > .details > .progress > input[type='range'] {
+        .phoenix-audio > .details > input[type='range'] {
             overflow: hidden;
-            height: 100%;
+            height: 5px;
+            margin: 0 3px;
             width: 100%;
             cursor: pointer;
             -webkit-appearance: none;
             background-color: lightgray;
         }
 
-        .phoenix-audio > .details > .progress > input[type='range']::-webkit-slider-runnable-track {
+        .phoenix-audio > .details > input[type='range']::-webkit-slider-runnable-track {
             height: 100%;
             -webkit-appearance: none;
             color: lightgray;
             margin-top: -1px;
         }
 
-        .phoenix-audio > .details > .progress > input[type='range']::-webkit-slider-thumb {
+        .phoenix-audio > .details > input[type='range']::-webkit-slider-thumb {
             width: 0;
             -webkit-appearance: none;
             height: 100%;
@@ -185,18 +187,18 @@
 
     }
     /** FF*/
-    .phoenix-audio > .details > .progress > input[type="range"]::-moz-range-progress {
+    .phoenix-audio > .details > input[type="range"]::-moz-range-progress {
         background-color: #b2120f;
     }
-    .phoenix-audio > .details > .progress > input[type="range"]::-moz-range-track {
+    .phoenix-audio > .details > input[type="range"]::-moz-range-track {
         background-color: lightgray;
     }
 
     /* IE*/
-    .phoenix-audio > .details > .progress > input[type="range"]::-ms-fill-lower {
+    .phoenix-audio > .details > input[type="range"]::-ms-fill-lower {
         background-color: #b2120f;
     }
-    .phoenix-audio > .details > .progress > input[type="range"]::-ms-fill-upper {
+    .phoenix-audio > .details > input[type="range"]::-ms-fill-upper {
         background-color: lightgray;
     }
 

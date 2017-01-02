@@ -108,7 +108,7 @@
                         <panel title="{{ trans('action.upload_track') }}">
                             <input name="file" type="hidden" :required="true" v-model="trackFile"/>
                             <div class="center m-b-10 m-t-10">
-                                <phoenix-audio v-if="trackFile" :file="trackFile"></phoenix-audio>
+                                <phoenix-audio ref="audioPlayer" v-if="trackFile" :file="trackFile"></phoenix-audio>
                                 <span v-else class="text-muted small">{{ trans('messages.no_file') }}</span>
                             </div>
                             <div class="btn-group center">
@@ -175,7 +175,7 @@
 
                             <form-date-input name="published_at" :required="true"
                                                  lang-key="track"
-                                                 value="{{ $track->published_at ?? Carbon::now() }}"></form-date-input>
+                                                 value="{{ $track->published_at ?? \Carbon\Carbon::now() }}"></form-date-input>
 
                             <div class="btn-group center">
                                 @if($isEditPage)
@@ -229,7 +229,7 @@
                     });
 
                     window.eventHub.$on('media-manager-selected-file', (file) => {
-                        this.trackFile = file.relativePath;
+                        this.$refs.audioPlayer.source = file.relativePath;
                         this.showFileMediaManager = false;
                     });
 
