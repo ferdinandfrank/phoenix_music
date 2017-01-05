@@ -1,5 +1,7 @@
 @extends('frontend.layout')
 
+@section('title', $user->name)
+
 @section('breadcrumb')
     <li><a href="{{ route('team') }}">{{ trans('labels.about_us') }}</a></li>
     <li><a href="{{ $user->getPath() }}">{{ $user->name }}</a></li>

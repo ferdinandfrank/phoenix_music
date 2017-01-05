@@ -1,5 +1,7 @@
 @extends('frontend.layout')
 
+@section('title', $track->title)
+
 @section('breadcrumb')
     <li><a href="{{ route('library') }}">{{ trans('labels.library') }}</a></li>
     <li><a href="{{ $track->getPath() }}">{{ $track->title }}</a></li>

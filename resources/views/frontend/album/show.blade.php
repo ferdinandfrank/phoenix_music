@@ -1,5 +1,7 @@
 @extends('frontend.layout')
 
+@section('title', $album->title)
+
 @section('breadcrumb')
     <li><a href="{{ route('library') }}">{{ trans('labels.albums') }}</a></li>
     <li><a href="{{ $album->getPath() }}">{{ $album->title }}</a></li>

@@ -1,5 +1,7 @@
 @extends('frontend.layout')
 
+@section('title', trans('labels.contact_us'))
+
 @section('breadcrumb')
     <li><a href="{{ route('contact') }}">{{ trans('labels.contact_us') }}</a></li>
 @stop

@@ -1,5 +1,7 @@
 @extends('frontend.layout')
 
+@section('title', trans('labels.library'))
+
 @section('breadcrumb')
     <li><a href="{{ route('tracks.index') }}">{{ trans('labels.library') }}</a></li>
 @stop

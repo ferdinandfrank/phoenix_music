@@ -1,5 +1,7 @@
 @extends('frontend.layout')
 
+@section('title', trans('labels.licensing'))
+
 @section('breadcrumb')
     <li><a href="{{ route('licensing') }}">{{ trans('labels.licensing') }}</a></li>
 @stop

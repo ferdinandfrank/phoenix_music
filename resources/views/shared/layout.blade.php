@@ -3,7 +3,7 @@
 <head>
     {{-- General Page Info --}}
     <meta charset="utf-8">
-    <title>{{ \App\Models\Settings::pageTitle() }}</title>
+    <title>{{ \App\Models\Settings::pageTitle() }} | @yield('title')</title>
     <meta name="author" content="{{ \App\Models\Settings::pageAuthor() }}">
     <meta name="description" content="{{ \App\Models\Settings::pageDescription() }}">
 
