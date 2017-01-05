@@ -167,7 +167,7 @@ class Track extends SlugModel {
      */
     public function getImageAttribute($value) {
         if (empty($value)) {
-            return public_path('assets/images/cover_default.jpg');
+            return '/assets/images/cover_default.jpg';
         }
 
         return $value;

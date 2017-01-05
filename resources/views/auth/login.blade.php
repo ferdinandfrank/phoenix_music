@@ -16,6 +16,7 @@
 
         <panel border="top" color="primary">
             <ajax-form
+                    :stop-loading="false"
                     redirect="{{ route('admin') }}"
                     action="{{ route('login') }}"
                     :alert="false"
