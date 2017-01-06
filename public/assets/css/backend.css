@@ -171,6 +171,12 @@
   flex: 1;
 }
 
+@media only screen and (max-width: 766px) {
+  .col {
+    padding: 0.5rem 0;
+  }
+}
+
 .col[class*="push-"], .col[class*="pull-"] {
   position: relative;
 }
@@ -8066,6 +8072,7 @@ html body {
   flex: 1;
   margin: 40px;
   position: relative;
+  width: 100%;
 }
 
 @media only screen and (max-width: 766px) {
@@ -8094,8 +8101,7 @@ html body {
   border-bottom: 1px solid #ebebeb;
 }
 
-.header .header-left {
-  margin-left: 40px;
+.header .header-left, .header .header-right {
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
@@ -8104,14 +8110,24 @@ html body {
   height: 100%;
 }
 
+.header .header-left {
+  margin-left: 40px;
+}
+
+@media only screen and (max-width: 766px) {
+  .header .header-left {
+    margin-left: 13.3333333333px;
+  }
+}
+
 .header .header-right {
-  margin-left: 0;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  position: relative;
-  height: 100%;
+  margin-right: 0;
+}
+
+@media only screen and (max-width: 766px) {
+  .header .header-right {
+    margin-right: 0;
+  }
 }
 
 .header .header-right > * {
@@ -9596,6 +9612,12 @@ ul.nav-main li i {
   margin-right: 0.5em;
 }
 
+@media only screen and (max-width: 766px) {
+  ul.nav-main li i {
+    margin-right: 0;
+  }
+}
+
 ul.nav-main li.nav-active > a {
   box-shadow: 2px 0 0 #b2120f inset;
 }
@@ -9826,6 +9848,7 @@ ul.nav-main li.nav-active > i {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
   padding: 25px;
+  overflow-x: auto;
 }
 
 .panel .content.bg-primary {
@@ -9888,6 +9911,12 @@ ul.nav-main li.nav-active > i {
   border-right: 1px solid #f2f2f2;
   padding: 10px 15px;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 766px) {
+  .panel .buttons .btn-group a, .panel .buttons .modal-dialog .modal-footer a, .modal-dialog .panel .buttons .modal-footer a {
+    padding: 0;
+  }
 }
 
 .panel .buttons .btn-group a:hover, .panel .buttons .modal-dialog .modal-footer a:hover, .modal-dialog .panel .buttons .modal-footer a:hover {

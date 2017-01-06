@@ -29,6 +29,11 @@ window.VueModel = Vue.extend({
         if (scrollBarElements.length) {
             scrollBarElements.perfectScrollbar();
         }
+
+        // Hide sidebar if mobile
+        if ($('html').hasClass('ismobile')) {
+            this.toggleSidebar();
+        }
     },
 
     methods: {

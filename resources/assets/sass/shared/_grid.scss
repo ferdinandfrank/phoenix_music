@@ -108,6 +108,11 @@ $row-margin-bottom: 20px !default;
     width: 100%;
     flex: 1;
 
+
+    @media #{$x-small-only} {
+        padding: $gutter-width / 3 0;
+    }
+
     &[class*="push-"],
     &[class*="pull-"] {
         position: relative;

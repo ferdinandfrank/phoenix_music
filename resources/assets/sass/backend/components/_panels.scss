@@ -128,6 +128,7 @@ $panel-border-radius: 5px;
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
         border-radius: $panel-border-radius;
         padding: $panel-content-padding;
+        overflow-x: auto;
 
         @each $color in $colors-list {
             &.bg-#{nth($color,1)} {
@@ -153,6 +154,10 @@ $panel-border-radius: 5px;
                 border-right: 1px solid $panel-buttons-border-color;
                 padding: $panel-buttons-button-padding;
                 text-decoration: none;
+
+                @media #{$x-small-only} {
+                    padding: 0;
+                }
 
                 &:hover {
                     background-color: $white-smooth;

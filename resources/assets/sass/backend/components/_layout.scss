@@ -85,6 +85,7 @@ html {
             flex: 1;
             margin: $content-margin;
             position: relative;
+            width: 100%;
 
             @media #{$x-small-only} {
                 margin: 0.2 * $content-margin !important;
@@ -107,20 +108,27 @@ html {
     @include linear-gradient($header-background-gradient-start, $header-background-gradient-end);
     border-bottom: $header-border-bottom-width solid $header-border-bottom-color;
 
-    .header-left {
-        margin-left: $header-margin-left;
+    .header-left, .header-right {
         display: flex;
         align-items: center;
         position: relative;
         height: 100%;
     }
 
+    .header-left {
+        margin-left: $header-margin-left;
+
+        @media #{$x-small-only} {
+            margin-left: $header-margin-left / 3;
+        }
+    }
+
     .header-right {
-        margin-left: $header-margin-right;
-        display: flex;
-        align-items: center;
-        position: relative;
-        height: 100%;
+        margin-right: $header-margin-right;
+
+        @media #{$x-small-only} {
+            margin-right: $header-margin-right / 3;
+        }
 
         > * {
             margin: $header-item-margin;

@@ -69,9 +69,9 @@
         </ul>
     </nav>
 
-    <hr class="separator"/>
+    <hr class="separator xs-hidden"/>
 
-    <nav>
+    <nav class="xs-hidden">
         <p class="sidebar-title">{{ trans('labels.actions') }}</p>
         <ul class="nav nav-main">
             <li @if (isRoute('tracks.create')) class="nav-active" @endif>

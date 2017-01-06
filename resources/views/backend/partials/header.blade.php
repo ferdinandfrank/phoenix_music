@@ -21,7 +21,7 @@
                         </a></li>
                 @endif
             @endforeach
-            <li v-on:click="markNotifications">
+            <li v-on:click="markNotifications" class="xs-hidden">
                 <dropdown activate="#notifications-menu" :constrain-width="false"
                           :class="!notificationsMarked ? '{{ count(Auth::user()->unreadNotifications) ? 'with-badge' : '' }}' : ''">
                     <icon icon="{{ config('icons.notifications') }}">

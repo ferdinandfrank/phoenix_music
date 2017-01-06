@@ -46,6 +46,10 @@ ul.nav-main {
             font-size: $font-size-large;
             width: 1.1em;
             margin-right: 0.5em;
+
+            @media #{$x-small-only} {
+                margin-right: 0;
+            }
         }
 
         &.nav-active {

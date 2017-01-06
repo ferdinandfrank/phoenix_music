@@ -171,6 +171,12 @@
   flex: 1;
 }
 
+@media only screen and (max-width: 766px) {
+  .col {
+    padding: 0.5rem 0;
+  }
+}
+
 .col[class*="push-"], .col[class*="pull-"] {
   position: relative;
 }
