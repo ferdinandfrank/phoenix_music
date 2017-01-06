@@ -8067,6 +8067,12 @@ html body {
   margin-top: 110px;
 }
 
+@media only screen and (max-width: 766px) {
+  .body .inner-wrapper {
+    margin: 110px 8px 0 !important;
+  }
+}
+
 .body .inner-wrapper .content-body {
   -webkit-box-flex: 1;
   flex: 1;
@@ -8077,7 +8083,7 @@ html body {
 
 @media only screen and (max-width: 766px) {
   .body .inner-wrapper .content-body {
-    margin: 8px !important;
+    margin: 0 !important;
   }
 }
 

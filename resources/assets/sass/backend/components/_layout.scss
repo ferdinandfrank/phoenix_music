@@ -81,6 +81,10 @@ html {
         display: flex;
         margin-top: $header-height + $sub-header-height;
 
+        @media #{$x-small-only} {
+            margin: $header-height + $sub-header-height (0.2 * $content-margin) 0 !important;
+        }
+
         .content-body {
             flex: 1;
             margin: $content-margin;
@@ -88,7 +92,7 @@ html {
             width: 100%;
 
             @media #{$x-small-only} {
-                margin: 0.2 * $content-margin !important;
+                margin: 0 !important;
             }
         }
     }
