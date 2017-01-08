@@ -22,7 +22,7 @@
                         <icon icon="{{ config('icons.edit') }}"></icon>
                         {{ trans('action.edit_profile') }}
                     </a>
-                    <form-link form-id="logout-form" action="{{ route('logout') }}" method="post">
+                    <form-link :alert="false" redirect="{{ route('login') }}" action="{{ route('logout') }}" method="post">
                         <icon icon="{{ config('icons.logout') }}"></icon>{{ trans('action.logout') }}
                     </form-link>
                 </div>
