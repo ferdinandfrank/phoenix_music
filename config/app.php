@@ -184,7 +184,8 @@ return [
         TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         MartinLindhe\VueInternationalizationGenerator\GeneratorProvider::class,
-        Intervention\Image\ImageServiceProvider::class
+        Intervention\Image\ImageServiceProvider::class,
+        EpicArrow\VueForms\Providers\VueFormsServiceProvider::class
 
     ],
 

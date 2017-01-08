@@ -35,6 +35,13 @@ return [
         ],
     ],
 
+    'album' => [
+        'delete' => [
+            'title'   => 'Album löschen',
+            'content' => 'Möchtest du das Album :name wirklich löschen?'
+        ],
+    ],
+
     'enable_maintenance_mode' => [
         'post' => [
             'title'   => 'Wartungsmodus aktivieren',

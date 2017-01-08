@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "56f295f8eafd572f88f2edb3efb8cf09",
-    "content-hash": "bbe734f7d9535e73b69f057287bda4c4",
+    "hash": "367dbca4b4c219079044f2fb32a3ac9f",
+    "content-hash": "fe4b8e4fe8dcc680463e0ffd80e2704b",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -266,16 +266,16 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "v1.3.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "30e07cf03edc3cd3ef579d0dd4dd8c58250799a5"
+                "reference": "bd4461328621bde0ae6b1b2675fbc6aca4ceb558"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/30e07cf03edc3cd3ef579d0dd4dd8c58250799a5",
-                "reference": "30e07cf03edc3cd3ef579d0dd4dd8c58250799a5",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/bd4461328621bde0ae6b1b2675fbc6aca4ceb558",
+                "reference": "bd4461328621bde0ae6b1b2675fbc6aca4ceb558",
                 "shasum": ""
             },
             "require": {
@@ -330,7 +330,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2016-10-24 11:45:47"
+            "time": "2016-12-30 15:59:45"
         },
         {
             "name": "doctrine/cache",
@@ -732,6 +732,53 @@
                 "parser"
             ],
             "time": "2014-09-09 13:34:57"
+        },
+        {
+            "name": "epicarrow/vue-forms",
+            "version": "v1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/EpicArrow/vue-forms.git",
+                "reference": "024b88561002bc56bd801135de13457d82691fc7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/EpicArrow/vue-forms/zipball/024b88561002bc56bd801135de13457d82691fc7",
+                "reference": "024b88561002bc56bd801135de13457d82691fc7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EpicArrow\\VueForms\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "EpicArrow",
+                    "email": "ferdinand-frank@web.de"
+                }
+            ],
+            "description": "A collection of vue.js form and input components to create pretty ajax requests.",
+            "keywords": [
+                "Forms",
+                "ajax",
+                "i18",
+                "inputs",
+                "language",
+                "laravel",
+                "localization",
+                "requests",
+                "vue"
+            ],
+            "time": "2017-01-08 13:21:33"
         },
         {
             "name": "guzzlehttp/guzzle",

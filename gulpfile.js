@@ -22,26 +22,27 @@ elixir((mix) => {
         'backend/app.scss',
         'backend/vendor/select2/select2.css',
         '../talvbansal/media-manager/css/media-manager.css',
+        '../vendor/vue-forms/sass/vue-forms.scss'
     ], assetsPath + 'css/backend.css');
 
     // Sass Frontend
     mix.sass([
         'frontend/app.scss',
-        'frontend/theme-elements.css',
-        'frontend/theme-animate.css',
-        'frontend/skin.css'
+        '../vendor/vue-forms/sass/vue-forms.scss'
     ], assetsPath + 'css/frontend.css');
 
     // JS Backend
     mix.webpack([
         'backend/app.js',
         '../talvbansal/media-manager/js/media-manager.js',
+        '../vendor/vue-forms/js/vue-forms.js',
     ], assetsPath + 'js/backend.js');
 
     // JS Frontend
     mix.webpack([
         'frontend/app.js',
         'frontend/jquery.fastLiveFilter.js',
+        '../vendor/vue-forms/js/vue-forms.js',
     ], assetsPath + 'js/frontend.js');
 
     // Copy images

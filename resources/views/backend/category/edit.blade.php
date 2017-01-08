@@ -14,9 +14,8 @@
 
 @section('content')
     <ajax-form
-            action="{{ $category->getStorePath() }}"
-            update-action="{{ $category->getUpdatePath() }}"
-            update-key="{{ $category->getRouteKeyName() }}"
+            action="{{ $isEditPage ? $category->getUpdatePath() : $category->getStorePath() }}"
+            object-key="{{ $category->getRouteKeyName() }}"
             method="{{ $isEditPage ? 'PUT' : 'POST' }}"
             alert-key="category"
             redirect="{{ $category->getIndexPath() }}"
@@ -25,7 +24,7 @@
             <div class="col xs-12 md-8">
                 @if($isEditPage)
                     <panel title="{{ trans('action.edit_category') }}: {{ $category->title }}"
-                           subtitle="{{ trans('param_labels.last_edited', ['date' => $category->updated_at->toDateString(), 'time' => $category->updated_at->toTimeString()]) }}">
+                           subtitle="{{ trans('param_labels.last_edited', ['date' => toDateString($category->updated_at), 'time' => $category->updated_at->toTimeString()]) }}">
                         @else
                             <panel title="{{ trans('action.create_category') }}">
                                 @endif

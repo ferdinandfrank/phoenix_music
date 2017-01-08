@@ -76,6 +76,21 @@ return [
         ],
     ],
 
+    'album' => [
+        'post'   => [
+            'title'   => 'Album erstellt',
+            'content' => 'Das Album wurde gespeichert.'
+        ],
+        'put'    => [
+            'title'   => 'Album aktualisiert',
+            'content' => 'Die Änderungen an dem Album :name wurden gespeichert.'
+        ],
+        'delete' => [
+            'title'   => 'Album gelöscht',
+            'content' => 'Das Album :name wurde erfolgreich gelöscht.'
+        ],
+    ],
+
     'user' => [
         'post'   => [
             'title'   => 'Benutzer erstellt',

@@ -14,9 +14,7 @@
 
 @section('content')
     <ajax-form
-            action="{{ $user->getStorePath() }}"
-            update-action="{{ $user->getUpdatePath() }}"
-            update-key="{{ $user->getRouteKeyName() }}"
+            action="{{ $isEditPage ? $user->getUpdatePath() : $user->getStorePath() }}"
             method="{{ $isEditPage ? 'PUT' : 'POST' }}"
             alert-key="user"
             redirect="{{ $user->getIndexPath() }}"
@@ -28,7 +26,7 @@
 
                         @if($isEditPage)
                             <panel title="{{ trans('action.edit_user') }}: {{ $user->name }}"
-                                   subtitle="{{ $user->updated_at ? trans('param_labels.last_edited', ['date' => $user->updated_at->toDateString(), 'time' => $user->updated_at->toTimeString()]) : '' }}">
+                                   subtitle="{{ $user->updated_at ? trans('param_labels.last_edited', ['date' => toDateString($user->updated_at), 'time' => $user->updated_at->toTimeString()]) : '' }}">
                                 @else
                                     <panel title="{{ trans('action.create_user') }}">
                                         @endif
@@ -50,9 +48,9 @@
                                             </div>
                                             @can('update-roles', $user)
                                                 <div class="col xs-12 lg-6">
-                                                    <form-select name="user_type" :required="true">
+                                                    <form-select name="user_type" :value="{{ $user->user_type ?? 'null' }}" :required="true">
                                                         @foreach(config('user_type') as $userType => $id)
-                                                            <option value="{{ $id }}" {{ $user->user_type == $id ? 'selected' : '' }}>{{ trans('input.user_types.' . $userType) }}</option>
+                                                            <option value="{{ $id }}">{{ trans('input.user_types.' . $userType) }}</option>
                                                         @endforeach
                                                     </form-select>
                                                 </div>
@@ -138,13 +136,14 @@
                         <div class="col xs-12">
                             <panel title="{{ trans('action.change_password') }}">
                                 <div class="row">
-                                    <div class="col xs-12 lg-6">
+                                    <div class="col xs-12">
                                         <form-input type="password"
+                                                    :min-length="{{ config('validation.user.password.min') }}"
                                                     :max-length="{{ config('validation.user.password.max') }}"
                                                     name="password"></form-input>
                                     </div>
-                                    <div class="col xs-12 lg-6">
-                                        <form-input type="password" name="password_confirmation"></form-input>
+                                    <div class="col xs-12">
+                                        <form-input type="password" :confirmed="true" name="password_confirmation"></form-input>
                                     </div>
                                 </div>
                             </panel>

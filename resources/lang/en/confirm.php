@@ -35,6 +35,13 @@ return [
         ],
     ],
 
+    'album' => [
+        'delete' => [
+            'title'   => 'Delete album',
+            'content' => 'Do you really want to delete the album :name?'
+        ],
+    ],
+
     'enable_maintenance_mode' => [
         'post' => [
             'title'   => 'Enable maintenance mode',

@@ -14,9 +14,8 @@
 
 @section('content')
     <ajax-form
-            action="{{ $album->getStorePath() }}"
-            update-action="{{ $album->getUpdatePath() }}"
-            update-key="{{ $album->getRouteKeyName() }}"
+            action="{{ $isEditPage ? $album->getUpdatePath() : $album->getStorePath() }}"
+            object-key="{{ $album->getRouteKeyName() }}"
             method="{{ $isEditPage ? 'PUT' : 'POST' }}"
             alert-key="album"
             detail-redirect="{{ $album->getPath() }}"
@@ -27,7 +26,7 @@
                     <div class="col xs-12">
                         @if($isEditPage)
                             <panel title="{{ trans('action.edit_album') }}: {{ $album->title }}"
-                                   subtitle="{{ trans('param_labels.last_edited', ['date' => $album->updated_at->toDateString(), 'time' => $album->updated_at->toTimeString()]) }}">
+                                   subtitle="{{ trans('param_labels.last_edited', ['date' => toDateString($album->updated_at), 'time' => $album->updated_at->toTimeString()]) }}">
                                 @else
                                     <panel title="{{ trans('action.create_album') }}">
                                         @endif
@@ -115,7 +114,7 @@
 
                             <form-date-input name="published_at" :required="true"
                                              lang-key="album"
-                                             value="{{ $album->published_at ?? Carbon::now() }}"></form-date-input>
+                                             value="{{ $album->published_at ?? \Carbon\Carbon::now() }}"></form-date-input>
 
                             <div class="btn-group center">
                                 @if($isEditPage)

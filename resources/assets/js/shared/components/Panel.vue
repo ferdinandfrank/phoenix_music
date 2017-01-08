@@ -21,7 +21,7 @@
 </template>
 
 <script>
-    import removeElementMixin from './RemoveElementMixin';
+    import removeElementMixin from './../../../vendor/vue-forms/js/mixins/RemoveElementMixin';
     import collapseElementMixin from './CollapsibleElementMixin';
 
     export default{

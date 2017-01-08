@@ -175,10 +175,11 @@ class UserController extends Controller {
         });
 
         // Only keep 5 notifications per user in the db
-        if (count($user->notifications) > 5) {
-            DatabaseNotification::destroy($user->notifications()->limit(PHP_INT_MAX)->skip(5)->latest()->get()->pluck('id'));
+        $deleteNotifications = null;
+        if ($user->notifications->count() > 5) {
+            $deleteNotifications = $user->notifications()->latest()->limit(PHP_INT_MAX)->skip(5)->delete();
         }
 
-        return response()->json(true);
+        return response()->json($deleteNotifications);
     }
 }

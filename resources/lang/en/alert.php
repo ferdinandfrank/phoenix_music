@@ -76,6 +76,21 @@ return [
         ],
     ],
 
+    'album' => [
+        'post'   => [
+            'title'   => 'Album created',
+            'content' => 'The album has been saved.'
+        ],
+        'put'    => [
+            'title'   => 'Album updated',
+            'content' => 'The changes on the album :name have been saved.'
+        ],
+        'delete' => [
+            'title'   => 'Album deleted',
+            'content' => 'The album :name has been deleted.'
+        ],
+    ],
+
     'user' => [
         'post'   => [
             'title'   => 'User created',

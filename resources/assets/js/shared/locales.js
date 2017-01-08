@@ -124,6 +124,20 @@ export default {
                     "content": "Die Kategorie {name} wurde erfolgreich gelöscht."
                 }
             },
+            "album": {
+                "post": {
+                    "title": "Album erstellt",
+                    "content": "Das Album wurde gespeichert."
+                },
+                "put": {
+                    "title": "Album aktualisiert",
+                    "content": "Die Änderungen an dem Album {name} wurden gespeichert."
+                },
+                "delete": {
+                    "title": "Album gelöscht",
+                    "content": "Das Album {name} wurde erfolgreich gelöscht."
+                }
+            },
             "user": {
                 "post": {
                     "title": "Benutzer erstellt",
@@ -189,8 +203,16 @@ export default {
             "send_test_mail": {
                 "post": {
                     "title": "Test E-Mail versendet",
-                    "content": "Eine Testnachricht wurde erfolgreich an info@phoenixmusicproductions.com versendet."
+                    "content": "Eine Testnachricht wurde erfolgreich an info@phoenixmusicproductions.de versendet."
                 }
+            },
+            "media": {
+                "create_folder": "Der Ordner {name} wurde erfolgreich erstellt.",
+                "delete_folder": "Der Ordner {name} wurde erfolgreich gelöscht.",
+                "delete_file": "Die Datei {name} wurde erfolgreich gelöscht.",
+                "upload_file": "Die Dateien wurden erfolgreich hochgeladen.",
+                "rename_file": "Die Datei {old} wurde erfolgreich in {new} umbenannt.",
+                "move_file": "Die Datei {name} wurde erfolgreich nach {path} verschoben."
             }
         },
         "auth": {
@@ -229,6 +251,12 @@ export default {
                 "delete": {
                     "title": "Kategorie löschen",
                     "content": "Möchtest du die Kategorie {name} wirklich löschen?"
+                }
+            },
+            "album": {
+                "delete": {
+                    "title": "Album löschen",
+                    "content": "Möchtest du das Album {name} wirklich löschen?"
                 }
             },
             "enable_maintenance_mode": {
@@ -374,7 +402,7 @@ export default {
             "clear_cache": "Caching der Daten verbessert die Performance des Systems, aber kann zu Problemen führen, wenn neue Features getestet werden und es sich alte Daten im Cache befinden. Um deshalb den Cache zu leeren klicke den folgenden Button.",
             "reset_index": "Der Suchindex ist dafür zuständig, dass bestimmte Daten der Datenbank von der Suche erfasst werden können. Um diesen zurückzusetzen klicke den folgenden Button.",
             "create_database_backup": "Erstelle ein Backup Skript der Datenbank, um bei einem Datenverlust die alten Daten der Datenbank wieder aufspielen zu können.",
-            "send_test_mail": "Sende eine Test E-Mail an die Sender E-Mail Adresse der Website \"info@phoenixmusicproductions.com\", um die E-Mail Einstellungen zu testen."
+            "send_test_mail": "Sende eine Test E-Mail an die Sender E-Mail Adresse der Website \"info@phoenixmusicproductions.de\", um die E-Mail Einstellungen zu testen."
         },
         "email": {
             "greeting": "Hallo",
@@ -838,6 +866,20 @@ export default {
                     "content": "The category {name} has been deleted."
                 }
             },
+            "album": {
+                "post": {
+                    "title": "Album created",
+                    "content": "The album has been saved."
+                },
+                "put": {
+                    "title": "Album updated",
+                    "content": "The changes on the album {name} have been saved."
+                },
+                "delete": {
+                    "title": "Album deleted",
+                    "content": "The album {name} has been deleted."
+                }
+            },
             "user": {
                 "post": {
                     "title": "User created",
@@ -903,8 +945,16 @@ export default {
             "send_test_mail": {
                 "post": {
                     "title": "Test Email sent",
-                    "content": "A test email has been successfully sent to info@phoenixmusicproductions.com."
+                    "content": "A test email has been successfully sent to info@phoenixmusicproductions.de."
                 }
+            },
+            "media": {
+                "create_folder": "The folder {name} has been successfully created.",
+                "delete_folder": "The folder {name} has been successfully deleted.",
+                "delete_file": "The file {name} has been successfully deleted.",
+                "upload_file": "The files have been successfully uploaded.",
+                "rename_file": "The file {old} has been successfully renamed to {new}.",
+                "move_file": "The file {name} has been successfully moved to {path}."
             }
         },
         "auth": {
@@ -943,6 +993,12 @@ export default {
                 "delete": {
                     "title": "Delete category",
                     "content": "Do you really want to delete the category {name}?"
+                }
+            },
+            "album": {
+                "delete": {
+                    "title": "Delete album",
+                    "content": "Do you really want to delete the album {name}?"
                 }
             },
             "enable_maintenance_mode": {
@@ -1088,7 +1144,7 @@ export default {
             "create_database_backup": "Create a backup of your database, so the data can be restored if an error occurs on the database.",
             "reset_index": "Regenerate the search index to make the data in the database searchable.",
             "clear_cache": "Clear the websites cache to regenerate the web routes, view files, and the general cache of the website. This may be used if an error occurred by visiting a page of the website to regenerate the file of the page.",
-            "send_test_mail": "Send a test mail to the application's sender email address \"info@phoenixmusicproductions.com\" to check the email configurations."
+            "send_test_mail": "Send a test mail to the application's sender email address \"info@phoenixmusicproductions.de\" to check the email configurations."
         },
         "email": {
             "greeting": "Hello",

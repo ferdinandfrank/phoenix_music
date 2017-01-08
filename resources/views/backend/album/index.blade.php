@@ -40,7 +40,7 @@
                                 @endcan
                                 @can('delete', $album)
                                     <form-button action="{{ $album->getDestroyPath() }}"
-                                                 object-name="{{ $album->display_name }}"
+                                                 object-name="{{ $album->title }}"
                                                  alert-key="album" remove="#album-{{ $album->id }}"
                                                  size="xs">
                                         <icon icon="{{ config('icons.delete') }}"></icon>

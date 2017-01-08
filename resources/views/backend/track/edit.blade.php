@@ -14,9 +14,8 @@
 
 @section('content')
     <ajax-form
-            action="{{ $track->getStorePath() }}"
-            update-action="{{ $track->getUpdatePath() }}"
-            update-key="{{ $track->getRouteKeyName() }}"
+            action="{{ $isEditPage ? $track->getUpdatePath() : $track->getStorePath() }}"
+            object-key="{{ $track->getRouteKeyName() }}"
             method="{{ $isEditPage ? 'PUT' : 'POST' }}"
             alert-key="track"
             detail-redirect="{{ $track->getPath() }}"
@@ -27,7 +26,7 @@
                     <div class="col xs-12">
                 @if($isEditPage)
                     <panel title="{{ trans('action.edit_track') }}: {{ $track->title }}"
-                           subtitle="{{ trans('param_labels.last_edited', ['date' => $track->updated_at->toDateString(), 'time' => $track->updated_at->toTimeString()]) }}">
+                           subtitle="{{ trans('param_labels.last_edited', ['date' => toDateString($track->updated_at), 'time' => $track->updated_at->toTimeString()]) }}">
                         @else
                             <panel title="{{ trans('action.create_track') }}">
                                 @endif
@@ -43,19 +42,17 @@
                                                        :show-placeholder="true"></form-codearea>
                                     </div>
                                     <div class="col xs-12 md-6">
-                                        <form-select name="composer_id" :required="true" lang-key="track" :show-placeholder="true">
+                                        <form-select name="composer_id" :value="{{ $track->composer_id ?? 'null' }}" :required="true" lang-key="track">
                                             @foreach ($composers as $composer)
-                                                <option @if ($track->composer_id == $composer->id) selected
-                                                        @endif value="{{ $composer->id }}">{{ $composer->name }}</option>
+                                                <option value="{{ $composer->id }}">{{ $composer->name }}</option>
                                             @endforeach
                                         </form-select>
                                     </div>
                                     <div class="col xs-12 md-6">
-                                        <form-select name="album_id" lang-key="track" :show-placeholder="true">
+                                        <form-select name="album_id" :value="{{ $track->album_id ?? 'null' }}" lang-key="track">
                                             <option value="null">{{ trans('defaults.no_album') }}</option>
                                             @foreach ($albums as $album)
-                                                <option @if ($track->album_id == $album->id) selected
-                                                        @endif value="{{ $album->id }}">{{ $album->title }}</option>
+                                                <option value="{{ $album->id }}">{{ $album->title }}</option>
                                             @endforeach
                                         </form-select>
                                     </div>
@@ -156,10 +153,9 @@
                     </div>
                     <div class="col xs-12">
                         <panel title="{{ trans('labels.categories') }}">
-                            <form-select name="categories" lang-key="track" :multiple="true" :show-placeholder="true">
+                            <form-select name="categories" :value="{{ $track->categories ? $track->categories->pluck('id') : 'null' }}" :show-placeholder="true" lang-key="track" :multiple="true">
                                 @foreach ($categories as $category)
-                                    <option @if ($track->categories->pluck('id')->contains($category->id)) selected
-                                            @endif value="{{ $category->id }}">{{ $category->title }}</option>
+                                    <option value="{{ $category->id }}">{{ $category->title }}</option>
                                 @endforeach
                             </form-select>
                         </panel>
