@@ -115,7 +115,7 @@
                 <div class="row">
                     <div class="col sm-12">
                         <panel title="{{ trans('action.choose_avatar') }}">
-                            <input name="image" type="hidden" v-model="avatar"/>
+                            <hidden-input name="image" v-model="avatar"></hidden-input>
                             <div class="center m-b-10 m-t-10">
                                 <img v-if="avatar" class="avatar" :src="avatar">
                                 <span v-else class="text-muted small">{{ trans('messages.no_avatar') }}</span>

@@ -80,3 +80,5 @@ Vue.http.interceptors.push((request, next) => {
 });
 require('./vueInit');
 
+require('./helper');
+

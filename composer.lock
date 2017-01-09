@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "367dbca4b4c219079044f2fb32a3ac9f",
-    "content-hash": "fe4b8e4fe8dcc680463e0ffd80e2704b",
+    "hash": "75a9d35a6db9622dd59de1c48c951316",
+    "content-hash": "1713a1b14df611ae182301a5fe80f184",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -735,16 +735,16 @@
         },
         {
             "name": "epicarrow/vue-forms",
-            "version": "v1.1.3",
+            "version": "v1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EpicArrow/vue-forms.git",
-                "reference": "024b88561002bc56bd801135de13457d82691fc7"
+                "reference": "052edc22a962c75d5490be3eecb68de09d1ce6dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EpicArrow/vue-forms/zipball/024b88561002bc56bd801135de13457d82691fc7",
-                "reference": "024b88561002bc56bd801135de13457d82691fc7",
+                "url": "https://api.github.com/repos/EpicArrow/vue-forms/zipball/052edc22a962c75d5490be3eecb68de09d1ce6dd",
+                "reference": "052edc22a962c75d5490be3eecb68de09d1ce6dd",
                 "shasum": ""
             },
             "require": {
@@ -778,7 +778,7 @@
                 "requests",
                 "vue"
             ],
-            "time": "2017-01-08 13:21:33"
+            "time": "2017-01-09 09:29:36"
         },
         {
             "name": "guzzlehttp/guzzle",

@@ -114,7 +114,7 @@
                 <div class="row">
                     <div class="col xs-12">
                         <panel title="{{ trans('action.choose_logo') }}" subtitle="{{ trans('descriptions.logo') }}">
-                            <input name="logo" type="hidden" v-model="logo"/>
+                            <hidden-input name="logo" v-model="logo"></hidden-input>
                             <div class="center m-b-10 m-t-10">
                                 <img v-if="logo" class="img-responsive" :src="logo">
                                 <span v-else class="text-muted small">{{ trans('messages.no_image') }}</span>
@@ -133,7 +133,7 @@
                     </div>
                     <div class="col xs-12">
                         <panel title="{{ trans('action.choose_cover') }}" subtitle="{{ trans('descriptions.cover') }}">
-                            <input name="background" type="hidden" v-model="cover"/>
+                            <hidden-input name="background" v-model="cover"></hidden-input>
                             <div class="center m-b-10 m-t-10">
                                 <img v-if="cover" class="img-responsive" :src="cover">
                                 <span v-else class="text-muted small">{{ trans('messages.no_image') }}</span>
@@ -152,7 +152,7 @@
                     </div>
                     <div class="col xs-12">
                         <panel title="{{ trans('action.choose_favicon') }}" subtitle="{{ trans('descriptions.favicon') }}">
-                            <input name="favicon" type="hidden" v-model="favicon"/>
+                            <hidden-input name="favicon" v-model="favicon"></hidden-input>
                             <div class="center m-b-10 m-t-10">
                                 <img v-if="favicon" class="img-responsive" :src="favicon">
                                 <span v-else class="text-muted small">{{ trans('messages.no_image') }}</span>
@@ -171,7 +171,7 @@
                     </div>
                     <div class="col xs-12">
                         <panel title="{{ trans('action.choose_intro_video') }}" subtitle="{{ trans('descriptions.intro_video') }}">
-                            <input name="intro_video" type="hidden" v-model="intro_video"/>
+                            <hidden-input name="intro_video" v-model="intro_video"></hidden-input>
                             <div class="center m-b-10 m-t-10">
                                 <video v-if="intro_video" autoplay muted loop class="img-responsive">
                                     <source :src="intro_video" type="video/mp4">

@@ -103,10 +103,10 @@
                     </div>
                     <div class="col xs-12">
                         <panel title="{{ trans('action.upload_track') }}">
-                            <input name="file" type="hidden" :required="true" v-model="trackFile"/>
+                            <hidden-input name="file" :required="true" v-model="trackFile"></hidden-input>
                             <div class="center m-b-10 m-t-10">
-                                <phoenix-audio ref="audioPlayer" v-if="trackFile" :file="trackFile"></phoenix-audio>
-                                <span v-else class="text-muted small">{{ trans('messages.no_file') }}</span>
+                                <phoenix-audio ref="audioPlayer" v-show="trackFile" :file="loadedTrackFile"></phoenix-audio>
+                                <span v-if="!trackFile" class="text-muted small">{{ trans('messages.no_file') }}</span>
                             </div>
                             <div class="btn-group center">
                                 <a class="btn btn-secondary" v-on:click="showFileMediaManager = true">
@@ -134,7 +134,7 @@
                 <div class="row">
                     <div class="col xs-12">
                         <panel title="{{ trans('action.choose_cover') }}">
-                            <input name="image" type="hidden" v-model="trackImage"/>
+                            <hidden-input name="image" v-model="trackImage"></hidden-input>
                             <div class="center m-b-10 m-t-10">
                                 <img v-if="trackImage" class="img-responsive" :src="trackImage">
                                 <span v-else class="text-muted small">{{ trans('messages.no_image') }}</span>
@@ -214,9 +214,17 @@
                     trackImage: "{{ $track->image }}",
                     selectedCoverEventName: "cover",
                     showFileMediaManager: false,
+                    loadedTrackFile: "{{ $track->file }}",
                     trackFile: "{{ $track->file }}",
                     selectedFileEventName: "file",
                 },
+
+                watch: {
+                    trackFile: function (val) {
+                        this.$refs.audioPlayer.source = val;
+                    },
+                },
+
                 created: function () {
 
                     window.eventHub.$on('media-manager-selected-cover', (file) => {
@@ -225,7 +233,7 @@
                     });
 
                     window.eventHub.$on('media-manager-selected-file', (file) => {
-                        this.$refs.audioPlayer.source = file.relativePath;
+                        this.trackFile = file.relativePath;
                         this.showFileMediaManager = false;
                     });
 

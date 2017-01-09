@@ -34,8 +34,8 @@ elixir((mix) => {
     // JS Backend
     mix.webpack([
         'backend/app.js',
-        '../talvbansal/media-manager/js/media-manager.js',
         '../vendor/vue-forms/js/vue-forms.js',
+        '../talvbansal/media-manager/js/media-manager.js',
     ], assetsPath + 'js/backend.js');
 
     // JS Frontend

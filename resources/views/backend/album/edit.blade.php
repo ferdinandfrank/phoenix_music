@@ -86,7 +86,7 @@
                 <div class="row">
                     <div class="col xs-12">
                         <panel title="{{ trans('action.choose_cover') }}">
-                            <input name="image" type="hidden" v-model="albumImage"/>
+                            <hidden-input name="image" v-model="albumImage"></hidden-input>
                             <div class="center m-b-10 m-t-10">
                                 <img v-if="albumImage" class="img-responsive" :src="albumImage">
                                 <span v-else class="text-muted small">{{ trans('messages.no_image') }}</span>
