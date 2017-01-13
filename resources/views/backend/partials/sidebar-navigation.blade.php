@@ -111,5 +111,12 @@
             @endif
         </ul>
     </nav>
+
+    <hr class="separator"/>
+
+    <div class="center small muted">
+        <p>&copy; {{ \Carbon\Carbon::now()->year }} {{ Settings::pageTitle() }} {{ $gitVersion }}</p>
+        <p>All Rights Reserved.</p>
+    </div>
 </div>
 

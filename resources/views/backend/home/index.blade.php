@@ -132,7 +132,7 @@
         <div class="col xs-12 lg-6">
             <div class="row">
                 <div class="col xs-12">
-                    <panel :actions="true" title="{{ trans('labels.changelog') }}">
+                    <panel :actions="true" title="{{ trans('labels.changelog') }}" subtitle="Version: {{ $gitVersion }}">
                         <table class="table striped">
                             <thead>
                             <tr>

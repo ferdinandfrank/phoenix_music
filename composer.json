@@ -31,7 +31,8 @@
         "martinlindhe/laravel-vue-i18n-generator": "^0.1.7",
         "guzzlehttp/guzzle": "^6.2",
         "intervention/image": "^2.3",
-        "epicarrow/vue-forms": "^1.1.4"
+        "epicarrow/vue-forms": "^1.1.4",
+        "epicarrow/git-changelog": "^1.0"
     },
     "require-dev": {
         "erikgall/eloquent-phpunit": "~1.0",

@@ -185,7 +185,8 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         MartinLindhe\VueInternationalizationGenerator\GeneratorProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        EpicArrow\VueForms\Providers\VueFormsServiceProvider::class
+        EpicArrow\VueForms\Providers\VueFormsServiceProvider::class,
+        EpicArrow\GitChangeLog\Providers\GitChangeLogServiceProvider::class,
 
     ],
 

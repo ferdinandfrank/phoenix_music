@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "75a9d35a6db9622dd59de1c48c951316",
-    "content-hash": "1713a1b14df611ae182301a5fe80f184",
+    "hash": "e3adcc445ae996fccd04b326ba227b52",
+    "content-hash": "33a773dc205fd06ccd7c5a7ba36ac0a7",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -732,6 +732,50 @@
                 "parser"
             ],
             "time": "2014-09-09 13:34:57"
+        },
+        {
+            "name": "epicarrow/git-changelog",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/EpicArrow/git-changelog.git",
+                "reference": "3fc6a475aca847b55ac0adffa81827c1f3652f49"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/EpicArrow/git-changelog/zipball/3fc6a475aca847b55ac0adffa81827c1f3652f49",
+                "reference": "3fc6a475aca847b55ac0adffa81827c1f3652f49",
+                "shasum": ""
+            },
+            "require": {
+                "nesbot/carbon": "~1.18",
+                "php": ">=5.6.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EpicArrow\\GitChangeLog\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "EpicArrow",
+                    "email": "ferdinand-frank@web.de"
+                }
+            ],
+            "description": "A simple service to parse the git log of an application to a readable changelog.",
+            "keywords": [
+                "changelog",
+                "commits",
+                "git",
+                "laravel",
+                "version"
+            ],
+            "time": "2017-01-13 13:28:57"
         },
         {
             "name": "epicarrow/vue-forms",

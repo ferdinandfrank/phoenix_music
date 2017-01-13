@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Middleware\VisitCounter;
-use App\Services\ChangeLog;
 use Carbon\Carbon;
+use EpicArrow\GitChangeLog\GitChangeLog;
 
 /**
  * HomeController
@@ -24,7 +24,7 @@ class HomeController extends Controller {
      */
     public function index() {
 
-        $changeLog = ChangeLog::get();
+        $changeLog = GitChangeLog::get();
 
         $totalVisits = VisitCounter::getTotalPageViewsCount();
         $todayVisits = VisitCounter::getTotalPageViewsCount(Carbon::now());
