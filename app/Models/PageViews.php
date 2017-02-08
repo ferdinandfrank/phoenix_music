@@ -5,12 +5,13 @@ namespace App\Models;
 /**
  * App\Models\PageViews
  *
- * @property int            $id
- * @property int            $views_count
+ * @property int $id
+ * @property int $views_count
  * @property \Carbon\Carbon $date
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\BaseModel ignore($id)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\PageViews whereDate($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\PageViews whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\PageViews whereViewsCount($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\PageViews whereDate($value)
  * @mixin \Eloquent
  */
 class PageViews extends BaseModel {

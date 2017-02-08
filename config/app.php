@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('APP_NAME', 'Phoenix Music'),
+    'name' => env('APP_NAME'),
 
     /*
     |--------------------------------------------------------------------------
@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => env('APP_TIMEZONE', 'UTC'),
 
     /*
     |--------------------------------------------------------------------------
@@ -165,28 +165,27 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        /*
+         * Package Service Providers...
+         */
+        Laravel\Tinker\TinkerServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+        TalvBansal\MediaManager\Providers\MediaManagerServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        MartinLindhe\VueInternationalizationGenerator\GeneratorProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        EpicArrow\VueForms\Providers\VueFormsServiceProvider::class,
+        EpicArrow\GitChangeLog\Providers\GitChangeLogServiceProvider::class,
+        Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
 
         /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-//        App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        \App\Providers\ScoutServiceProvider::class,
-
-        /*
-        * Vendor Service Providers...
-        */
-        Maatwebsite\Excel\ExcelServiceProvider::class,
-        TalvBansal\MediaManager\Providers\MediaManagerServiceProvider::class,
-        TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        MartinLindhe\VueInternationalizationGenerator\GeneratorProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
-        EpicArrow\VueForms\Providers\VueFormsServiceProvider::class,
-        EpicArrow\GitChangeLog\Providers\GitChangeLogServiceProvider::class,
+        \App\Providers\ComposerServiceProvider::class,
 
     ],
 
@@ -207,6 +206,7 @@ return [
         'Artisan'      => Illuminate\Support\Facades\Artisan::class,
         'Auth'         => Illuminate\Support\Facades\Auth::class,
         'Blade'        => Illuminate\Support\Facades\Blade::class,
+        'Broadcast'    => Illuminate\Support\Facades\Broadcast::class,
         'Bus'          => Illuminate\Support\Facades\Bus::class,
         'Cache'        => Illuminate\Support\Facades\Cache::class,
         'Config'       => Illuminate\Support\Facades\Config::class,
@@ -247,7 +247,6 @@ return [
          */
         'Settings'     => \App\Models\Settings::class,
         'UrlGenerator' => \App\Utils\UrlGenerator::class
-
     ],
 
 ];

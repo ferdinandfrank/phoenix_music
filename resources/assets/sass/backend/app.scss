@@ -1,9 +1,13 @@
 @import "../shared/app";
 
-
-// CONFIG
-// ---------------------------------------------------------------
+/*********************
+  Config
+**********************/
 @import "config/colors";
+
+/*********************
+  Components
+**********************/
 @import "components/layout";
 @import "components/inputs";
 @import "components/dropdowns";
@@ -17,7 +21,13 @@
 @import "components/animations";
 @import "components/pagination";
 @import "components/widgets";
+
+/*********************
+  Vendor
+**********************/
 @import "vendor/bourbon/bourbon";
 @import "vendor/datetimepicker";
+@import "vendor/select2/select2";
+@import "../../talvbansal/media-manager/css/media-manager";
 
 

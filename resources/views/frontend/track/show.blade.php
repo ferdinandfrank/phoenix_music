@@ -16,7 +16,7 @@
             </div>
             <div class="col xs-12 md-8 lg-9">
                 <h1 class="m-none">{{ $track->title }}</h1>
-                <h3 class="primary m-none">{{ trans('labels.track') }}</h3>
+                <h3 class="primary m-t-5">{{ trans('labels.track') }}</h3>
                 {!! $track->description !!}
                 <ul class="info-list">
                     <li>

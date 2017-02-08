@@ -49,8 +49,14 @@ module.exports = {
         },
 
         // The path of the page to send the user if he clicks the help icon on the input.
-        // No icon will be shown if this property isn't set.
+        // No icon will be shown if this property and the property 'helpTooltip' isn't set.
         helpPath: {
+            type: String
+        },
+
+        // The tooltip to show if the user hovers over the help icon.
+        // No icon will be shown if this property and the property 'helpPath' isn't set.
+        helpTooltip: {
             type: String
         }
     },
@@ -59,7 +65,7 @@ module.exports = {
         return {
 
             // States if a help icon shall be displayed next to the input.
-            showHelp: this.helpPath ? true : false,
+            showHelp: this.helpPath || this.helpTooltip ? true : false,
 
             submitValue: '',
 
@@ -72,7 +78,10 @@ module.exports = {
             invalid: false,
 
             // The parent components of the component.
-            parents: ''
+            parents: '',
+
+            // States if the input is currently focused.
+            active: false
         }
     },
 
@@ -123,6 +132,13 @@ module.exports = {
 
     watch: {
         submitValue: function (val) {
+
+            // Convert booleans to integer
+            if (typeof(val) === "boolean"){
+                this.submitValue = val ? 1 : 0;
+                return;
+            }
+
             for (let index in this.parents) {
                 let parent = this.parents[index];
                 if (parent.hasOwnProperty("form")) {
@@ -131,8 +147,13 @@ module.exports = {
             }
 
             window.eventHub.$emit(this.name + '-input-changed', val);
-            this.checkInput();
-            this.validateParentForm();
+
+            // Only check input if the input wasn't cleared
+            if (val || this.active) {
+                this.checkInput();
+                this.validateParentForm();
+            }
+
         },
 
         value: function (val) {
@@ -147,6 +168,7 @@ module.exports = {
          */
         activate: function () {
             $(this.$refs.inputWrapper).addClass('active');
+            this.active = true;
         },
 
         /**
@@ -154,6 +176,7 @@ module.exports = {
          */
         deactivate: function () {
             $(this.$refs.inputWrapper).removeClass('active');
+            this.active = false;
         },
 
         /**
@@ -233,7 +256,9 @@ module.exports = {
          * Opens the help page for the input.
          */
         openHelp: function () {
-            window.open(this.helpPath, '_blank');
+            if (this.helpPath) {
+                window.open(this.helpPath, '_blank');
+            }
         },
 
         /**

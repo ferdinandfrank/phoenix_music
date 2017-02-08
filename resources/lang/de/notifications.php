@@ -59,5 +59,10 @@ return [
     'user_deleted' => [
         'title' => 'Benutzer gelöscht',
         'text'  => 'Soeben hat :user den Benutzer :name gelöscht.'
-    ]
+    ],
+
+    'settings_updated' => [
+        'title' => 'Einstellungen aktualisiert',
+        'text'  => 'Soeben hat :user die Einstellungen des Blogs aktualisiert.'
+    ],
 ];

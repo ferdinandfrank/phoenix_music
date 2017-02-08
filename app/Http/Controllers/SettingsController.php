@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SettingsUpdateRequest;
 use App\Models\Settings;
+use App\Models\User;
+use App\Notifications\SettingsUpdatedNotification;
+use Auth;
 use Gate;
 
 /**
@@ -49,6 +52,10 @@ class SettingsController extends Controller {
         }
 
         $success = Settings::updateAll($request->all());
+
+        if ($success) {
+            \Notification::send(User::ignore(Auth::id())->get(), (new SettingsUpdatedNotification(Auth::user())));
+        }
 
         return response()->json($success, $success ? 200 : 500);
     }

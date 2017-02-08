@@ -59,5 +59,10 @@ return [
     'user_deleted' => [
         'title' => 'User deleted',
         'text' => ':user has just deleted the user :name.'
-    ]
+    ],
+
+    'settings_updated' => [
+        'title' => 'Settings updated',
+        'text'  => ':user has just updated the settings.'
+    ],
 ];

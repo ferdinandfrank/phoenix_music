@@ -117,6 +117,11 @@
                                              value="{{ $album->published_at ?? \Carbon\Carbon::now() }}"></form-date-input>
 
                             <div class="btn-group center">
+                                <a href="{{ url()->previous() }}" class="btn btn-warning">
+                                    <icon icon="{{ config('icons.back') }}"></icon>
+                                    <span>{{ trans('labels.back') }}</span>
+                                </a>
+
                                 @if($isEditPage)
                                     <form-button action="{{ $album->getDestroyPath() }}"
                                                  alert-key="album"

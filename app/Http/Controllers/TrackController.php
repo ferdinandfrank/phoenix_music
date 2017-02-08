@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TrackCreateRequest;
-use App\Http\Requests\TrackUpdateRequest;
 use App\Models\Album;
 use App\Models\Category;
 use App\Models\Track;
@@ -13,6 +12,7 @@ use App\Notifications\TrackDeletedNotification;
 use App\Notifications\TrackUpdatedNotification;
 use Auth;
 use Gate;
+use Illuminate\Http\Request;
 
 /**
  * TrackController
@@ -28,13 +28,27 @@ class TrackController extends Controller {
     /**
      * Displays a listing of the tracks.
      *
+     * @param Request $request
+     *
      * @return \Illuminate\View\View The page with the track listing.
      */
-    public function index() {
+    public function index(Request $request) {
+        $entries_count = $request->get('entries_count') ?? 10;
 
-        $tracks = Track::with(['views', 'composer', 'album', 'categories'])->paginate(config('portfolio.backend.pagination_entries_per_page'));
+        $tracks = Track::search($request->get('search'))
+                       ->with(['views', 'composer', 'album', 'categories'])
+                       ->sortable(['published_at' => 'desc'])
+                       ->paginate($entries_count);
 
-        return view('backend.track.index', compact('tracks'));
+        $newTrackNotifications = \Auth::user()->unreadNotifications()->where('type',
+            TrackCreatedNotification::class)->get();
+        $newTrackKeys = $newTrackNotifications->pluck('data.key');
+
+        foreach ($newTrackNotifications as $newTrackNotification) {
+            $newTrackNotification->markAsRead();
+        }
+
+        return view('backend.track.index', compact('tracks', 'newTrackKeys', 'entries_count'));
     }
 
     /**
@@ -75,6 +89,7 @@ class TrackController extends Controller {
      */
     public function show(Track $track) {
         $track->load('categories', 'composer', 'album');
+
         return view('frontend.track.show', compact('track'));
     }
 
@@ -90,7 +105,7 @@ class TrackController extends Controller {
         $track->categories()->sync($request->get('categories', []));
 
         if (!empty($track)) {
-            \Notification::send(User::all(), (new TrackCreatedNotification($track, Auth::user())));
+            \Notification::send(User::ignore(Auth::id())->get(), (new TrackCreatedNotification($track, Auth::user())));
         }
 
         return response()->json($track, empty($track) ? 500 : 200);
@@ -99,12 +114,12 @@ class TrackController extends Controller {
     /**
      * Updates the specified track in the database.
      *
-     * @param TrackUpdateRequest $request The data to update the track.
-     * @param Track              $track    The track to update.
+     * @param TrackCreateRequest $request The data to update the track.
+     * @param Track              $track   The track to update.
      *
      * @return \Illuminate\Http\JsonResponse The updated track.
      */
-    public function update(TrackUpdateRequest $request, Track $track) {
+    public function update(TrackCreateRequest $request, Track $track) {
         if (Gate::denies('update', $track)) {
             return redirect()->back();
         }
@@ -114,7 +129,7 @@ class TrackController extends Controller {
         $success = $track->save();
 
         if ($success && count($dirty) > 0) {
-            \Notification::send(User::all(), (new TrackUpdatedNotification($track, Auth::user(), array_keys($dirty))));
+            \Notification::send(User::ignore(Auth::id())->get(), (new TrackUpdatedNotification($track, Auth::user(), array_keys($dirty))));
         }
 
         if ($request->has('categories')) {
@@ -141,7 +156,8 @@ class TrackController extends Controller {
         $deleteSuccess = $track->delete();
 
         if ($deleteSuccess) {
-            \Notification::send(User::all(), (new TrackDeletedNotification($track, Auth::user())));
+            \Notification::send(User::ignore(Auth::id())->get(), (new TrackDeletedNotification($track, Auth::user())));
+
             return response()->json(true);
         } else {
             return response()->json(getJsonError(), 500);

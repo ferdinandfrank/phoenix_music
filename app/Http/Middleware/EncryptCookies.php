@@ -4,17 +4,8 @@ namespace App\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 
-/**
- * EncryptCookies
- * -----------------------
- * Middleware to encrypt cookies.
- *
- * @author  Ferdinand Frank
- * @version 1.0
- * @package App\Http\Middleware
- */
-class EncryptCookies extends BaseEncrypter {
-
+class EncryptCookies extends BaseEncrypter
+{
     /**
      * The names of the cookies that should not be encrypted.
      *

@@ -7,6 +7,7 @@ return [
     'password_confirmation' => 'Password Confirmation',
     'email'                 => 'E-Mail Address',
     'birthday'              => 'Birthday',
+    'entries_count'         => 'Entries per page',
 
     'role'        => 'Job',
     'user_type'   => 'Type',

@@ -9,7 +9,7 @@
 @section('content')
     <div class="row">
         <div class="col xs-12 lg-6">
-            <panel avatar="{{ Auth::user()->image }}"  cover="{{ \App\Models\Settings::background() }}">
+            <panel avatar="{{ Auth::user()->image }}" cover="{{ \App\Models\Settings::background() }}">
                 <p class="secondary m-none">{{ Auth::user()->job }}</p>
                 <h2 class="m-t-none">{{ Auth::user()->name }}</h2>
                 {!! Auth::user()->about !!}
@@ -22,7 +22,8 @@
                         <icon icon="{{ config('icons.edit') }}"></icon>
                         {{ trans('action.edit_profile') }}
                     </a>
-                    <form-link :alert="false" redirect="{{ route('login') }}" action="{{ route('logout') }}" method="post">
+                    <form-link :alert="false" redirect="{{ route('login') }}" action="{{ route('logout.post') }}"
+                               method="post">
                         <icon icon="{{ config('icons.logout') }}"></icon>{{ trans('action.logout') }}
                     </form-link>
                 </div>
@@ -97,7 +98,12 @@
                             </div>
                             <div class="widget-content">
                                 <div class="title">
-                                    <h3><strong>{{ App\Models\Track::count() }}</strong> {{ trans('labels.tracks') }}</h3>
+                                    <h3><strong>{{ App\Models\Track::count() }}</strong> {{ trans('labels.tracks') }}
+                                        @if($numOfNewTracks > 0)
+                                            <span class="warning">({{ trans_choice('param_labels.new', $numOfNewTracks, ['count' => $numOfNewTracks]) }}
+                                                )</span>
+                                        @endif
+                                    </h3>
                                 </div>
                                 <div class="widget-action">
                                     <a href="{{ route('tracks.index') }}"
@@ -115,7 +121,12 @@
                             </div>
                             <div class="widget-content">
                                 <div class="title">
-                                    <h3><strong>{{ App\Models\Album::count() }}</strong> {{ trans('labels.albums') }}</h3>
+                                    <h3><strong>{{ App\Models\Album::count() }}</strong> {{ trans('labels.albums') }}
+                                        @if($numOfNewAlbums > 0)
+                                            <span class="warning">({{ trans_choice('param_labels.new', $numOfNewAlbums, ['count' => $numOfNewAlbums]) }}
+                                                )</span>
+                                        @endif
+                                    </h3>
                                 </div>
                                 <div class="widget-action">
                                     <a href="{{ route('albums.index') }}"
@@ -132,25 +143,28 @@
         <div class="col xs-12 lg-6">
             <div class="row">
                 <div class="col xs-12">
-                    <panel :actions="true" title="{{ trans('labels.changelog') }}" subtitle="Version: {{ $gitVersion }}">
-                        <table class="table striped">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>{{ trans('labels.content') }}</th>
-                                <th>{{ trans('labels.published_at') }}</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($changeLog as $logEntry)
+                    <panel :actions="true" title="{{ trans('labels.changelog') }}"
+                           subtitle="Version: {{ $gitVersion }}">
+                        <div class="auto-overflow">
+                            <table class="table striped">
+                                <thead>
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $logEntry->message }}</td>
-                                    <td>{{ $logEntry->date->diffForHumans() }}</td>
+                                    <th>#</th>
+                                    <th>{{ trans('labels.content') }}</th>
+                                    <th>{{ trans('labels.published_at') }}</th>
                                 </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                @foreach($changeLog as $logEntry)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $logEntry->message }}</td>
+                                        <td>{{ $logEntry->date->diffForHumans() }}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </panel>
                 </div>
             </div>
@@ -161,50 +175,44 @@
                 @if(Auth::user()->isType(config('user_type.manager')) || Auth::user()->isType(config('user_type.admin')))
                     <div class="col xs-12">
                         <panel :actions="true" title="{{ trans('labels.system_information') }}">
-                            <table class="table">
-                                <tbody>
-                                <tr>
-                                    <td>SITE_URL:</td>
-                                    <td>{{ $system['url'] }}</td>
-                                </tr>
-                                <tr>
-                                    <td>SITE_IP:</td>
-                                    <td>{{ $system['ip'] }}</td>
-                                </tr>
-                                <tr>
-                                    <td>SITE_TIMEZONE:</td>
-                                    <td>{{ $system['timezone'] }}</td>
-                                </tr>
-
-                                <tr>
-                                    <td>PHP_VERSION:</td>
-                                    <td>{{ $system['php_version'] }}</td>
-                                </tr>
-                                <tr>
-                                    <td>PHP_MEMORY_LIMIT:</td>
-                                    <td>{{ $system['php_memory_limit'] }}</td>
-                                </tr>
-                                <tr>
-                                    <td>PHP_TIME_LIMIT:</td>
-                                    <td>{{ $system['php_time_limit'] }}</td>
-                                </tr>
-
-                                <tr>
-                                    <td>DATABASE_CONNECTION:</td>
-                                    <td>{{ $system['db_connection'] }}</td>
-                                </tr>
-
-                                <tr>
-                                    <td>WEB_SERVER:</td>
-                                    <td>{{ $system['web_server'] }}</td>
-                                </tr>
-
-                                <tr>
-                                    <td>LAST_INDEX_RUN:</td>
-                                    <td>{{ $system['last_index'] }}</td>
-                                </tr>
-                                </tbody>
-                            </table>
+                            <div class="auto-overflow">
+                                <table class="table">
+                                    <tbody>
+                                    <tr>
+                                        <td>SITE_URL:</td>
+                                        <td>{{ $system['url'] }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SITE_IP:</td>
+                                        <td>{{ $system['ip'] }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SITE_TIMEZONE:</td>
+                                        <td>{{ $system['timezone'] }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PHP_VERSION:</td>
+                                        <td>{{ $system['php_version'] }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PHP_MEMORY_LIMIT:</td>
+                                        <td>{{ $system['php_memory_limit'] }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PHP_TIME_LIMIT:</td>
+                                        <td>{{ $system['php_time_limit'] }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DATABASE_CONNECTION:</td>
+                                        <td>{{ $system['db_connection'] }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>WEB_SERVER:</td>
+                                        <td>{{ $system['web_server'] }}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </panel>
                     </div>
                 @endif

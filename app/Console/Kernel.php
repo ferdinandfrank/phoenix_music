@@ -3,9 +3,20 @@
 namespace App\Console;
 
 use App\Jobs\StoreVisitCounts;
+use Carbon\Carbon;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Log;
 
+/**
+ * Kernel
+ * -----------------------
+ * Manages the console commands.
+ *
+ * @author  Ferdinand Frank
+ * @version 1.0
+ * @package App\Console
+ */
 class Kernel extends ConsoleKernel {
 
     /**
@@ -14,7 +25,6 @@ class Kernel extends ConsoleKernel {
      * @var array
      */
     protected $commands = [
-        Commands\Index::class,
         Commands\Install::class,
     ];
 

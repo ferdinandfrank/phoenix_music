@@ -47,6 +47,30 @@ Route::get('licensing', 'LicensingController@index')->name('licensing')->middlew
 
 /*
 |--------------------------------------------------------------------------
+| Authentication Routes
+|--------------------------------------------------------------------------
+| Routes to the views and the controller actions to get authenticated
+|
+*/
+Route::group(['namespace' => 'Auth'], function () {
+
+    // Login / Logout Routes
+    Route::post('login', 'LoginController@login')->name('login');
+    Route::get('login', 'LoginController@showLoginForm')->name('login.show');
+    Route::post('logout', 'LoginController@logout')->name('logout.post');
+
+    // Password Reset Routes
+    Route::group(['prefix' => 'password'], function () {
+        Route::get('forgot', 'ForgotPasswordController@showLinkRequestForm')->name('password.forgot');
+        Route::post('forgot', 'ForgotPasswordController@sendResetLinkEmail')->name('password.forgot.store');
+
+        Route::get('reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
+        Route::post('reset', 'ResetPasswordController@reset')->name('password.reset.store');
+    });
+});
+
+/*
+|--------------------------------------------------------------------------
 | Backend Routes
 |--------------------------------------------------------------------------
 | Routes to the views and controller actions that can only be called authenticated.
@@ -77,6 +101,9 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         'except' => 'show'
     ]);
 
+    // Changelog Routes
+    Route::get('changelog', 'ChangelogController@index')->name('changelog.index');
+
     // Statistic Routes
     Route::get('statistics', 'StatisticsController@index')->name('statistics.index');
 
@@ -101,7 +128,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::get('users/privacy', 'UserController@editPrivacy')->name('users.privacy');
     Route::delete('users/notifications/{user?}', 'UserController@markNotifications')->name('users.notifications.mark');
     Route::resource('users', 'UserController', [
-        'names'      => [
+        'names'  => [
             'index'   => 'users.index',
             'edit'    => 'users.edit',
             'update'  => 'users.update',
@@ -129,30 +156,4 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     // Settings Routes
     Route::get('settings', 'SettingsController@index')->name('settings.index');
     Route::put('settings', 'SettingsController@update')->name('settings.update');
-});
-
-/*
-|--------------------------------------------------------------------------
-| Authentication Routes
-|--------------------------------------------------------------------------
-| Routes to the views and the controller actions to get authenticated
-|
-*/
-Route::group(['namespace' => 'Auth'], function () {
-    // Login / Logout Routes
-    Route::group(['prefix' => 'auth'], function () {
-        Route::post('login', 'LoginController@login')->name('login');
-        Route::get('login', 'LoginController@showLoginForm')->name('login.show');
-
-        Route::post('logout', 'LoginController@logout')->name('logout');
-    });
-
-    // Password Reset Routes
-    Route::group(['prefix' => 'password'], function () {
-        Route::get('forgot', 'ForgotPasswordController@showLinkRequestForm')->name('password.forgot');
-        Route::post('forgot', 'ForgotPasswordController@sendResetLinkEmail')->name('password.forgot.store');
-
-        Route::get('reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
-        Route::post('reset', 'ResetPasswordController@reset')->name('password.reset.store');
-    });
 });

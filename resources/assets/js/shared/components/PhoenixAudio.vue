@@ -150,6 +150,11 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        flex: 1;
+    }
+
+    .phoenix-audio > .details > input {
+        width: 100%;
     }
 
     .phoenix-audio > .details > .time {
@@ -206,6 +211,7 @@
     .phoenix-audio > .volume-control {
         display: flex;
         align-items: center;
+        max-width: 30%;
     }
 
     /*Chrome*/

@@ -70,7 +70,7 @@ $textarea-min-height: 150px;
     }
 
     .switch ~ label {
-        top: 0;
+        top: 5px;
         left: 60px;
     }
 
@@ -81,10 +81,8 @@ $textarea-min-height: 150px;
         font-size: $input-label-font-size;
         cursor: text;
         transition: .2s ease-out;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         width: 100%;
+        left: 0;
 
         &:after {
             display: block;
@@ -94,6 +92,10 @@ $textarea-min-height: 150px;
             opacity: 0;
             white-space: nowrap;
             transition: .2s opacity ease-out, .2s color ease-out;
+        }
+
+        .tooltip {
+            float: right;
         }
 
         .help {

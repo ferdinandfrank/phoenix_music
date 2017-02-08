@@ -94,7 +94,6 @@
 
             delete: function (route, payload) {
                 this.loading = true;
-                route = '/' + getCurrentLocale() + route;
                 this.$http.delete(route, {body: payload}).then(
                     function (response) {
                         window.eventHub.$emit('media-manager-reload-folder');

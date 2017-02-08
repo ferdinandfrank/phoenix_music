@@ -2,31 +2,31 @@
 
 namespace App\Models;
 
-
-use Laravel\Scout\Searchable;
+use Kyslik\ColumnSortable\Sortable;
 
 /**
  * App\Models\Category
  *
- * @property int                                                               $id
- * @property string                                                            $slug
- * @property string                                                            $title
- * @property string                                                            $description
- * @property \Carbon\Carbon                                                    $created_at
- * @property \Carbon\Carbon                                                    $updated_at
+ * @property int $id
+ * @property string $slug
+ * @property string $title
+ * @property string $description
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Track[] $tracks
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\BaseModel ignore($id)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Category search($searchQuery)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Category whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Category whereDescription($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Category whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Category whereSlug($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Category whereTitle($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\Category whereDescription($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\Category whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Category whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Category extends SlugModel {
 
-    use Searchable;
-    use HasResourceRoutes;
+    use Searchable, HasResourceRoutes, Sortable;
 
     /**
      * The database table used by the model.
@@ -46,19 +46,22 @@ class Category extends SlugModel {
     ];
 
     /**
-     * Gets the indexable data array for the model.
+     * The database columns which are sortable to reduce the db hit per request.
      *
-     * @return array
+     * @var array
      */
-    public function toSearchableArray() {
-        $array = [
-            'id'          => $this->id,
-            'title'       => $this->title,
-            'description' => $this->description,
-        ];
+    public $sortable = [
+        'title',
+        'description',
+        'created_at'
+    ];
 
-        return $array;
-    }
+    /**
+     * Searchable columns.
+     *
+     * @var array
+     */
+    public $searchable = ['title', 'description'];
 
     /**
      * Gets the attribute name of the model, that shall be used for the slug of the model.

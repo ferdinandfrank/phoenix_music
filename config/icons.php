@@ -46,5 +46,10 @@ return [
     'statistics'    => 'fa fa-fw fa-bar-chart',
     'views'         => 'fa fa-fw fa-eye',
     'frontend'      => 'fa fa-fw fa-window-maximize',
-    'email'         => 'fa fa-fw fa-envelope'
+    'email'         => 'fa fa-fw fa-envelope',
+    'whatsapp'      => 'fa fa-fw fa-whatsapp',
+    'website'       => 'fa fa-fw fa-globe',
+    'changelog'     => 'fa fa-fw fa-cloud-upload',
+    'advertisement' => 'fa fa-fw fa-info-circle',
+    'back'          => 'fa fa-fw fa-chevron-left'
 ];

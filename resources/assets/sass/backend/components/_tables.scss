@@ -17,13 +17,19 @@ $table-data-padding: 8px;
 /*********************
   2. General
 **********************/
-.table {
+table {
     width: 100%;
     background: transparent;
     border-spacing: 0;
 
     tr {
         background-color: $table-row-background-color;
+
+        &.new {
+            > td {
+                color: $table-row-new-text-color;
+            }
+        }
     }
 
     thead {
@@ -32,6 +38,10 @@ $table-data-padding: 8px;
             vertical-align: bottom;
             text-align: left;
             border-bottom: 2px solid $table-row-border-color;
+
+            > a {
+                color: inherit;
+            }
         }
     }
 
@@ -53,8 +63,8 @@ $table-data-padding: 8px;
                 justify-content: center;
 
                 > .btn {
-                    margin-top: 0 !important;
-                    margin-bottom: 0 !important;
+                    margin-top: 2px !important;
+                    margin-bottom: 2px !important;
                 }
             }
         }
@@ -69,6 +79,6 @@ $table-data-padding: 8px;
 /*********************
   3. Striped
 **********************/
-.table.striped > tbody > tr:nth-of-type(odd) {
+table.striped > tbody > tr:nth-of-type(odd) {
     background-color: $table-striped-odd-row-background-color;
 }

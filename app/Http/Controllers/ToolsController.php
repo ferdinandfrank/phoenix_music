@@ -139,20 +139,6 @@ class ToolsController extends Controller {
     }
 
     /**
-     * Resets the index for searching.
-     *
-     * @return \Illuminate\Http\JsonResponse {@code true} if the operation was successful, {@code false} otherwise.
-     */
-    public function resetIndex() {
-        $exitCode = Artisan::call('portfolio:index');
-        if ($exitCode === 0) {
-            return response()->json(true);
-        }
-
-        return response()->json(getJsonError(), 500);
-    }
-
-    /**
      * Creates and downloads an archive of all existing data.
      *
      * @return \Symfony\Component\HttpFoundation\BinaryFileResponse The download execution of the archive.

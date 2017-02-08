@@ -205,6 +205,27 @@ class VisitCounter {
     }
 
     /**
+     * Gets the total views per day for all pages.
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public static function getDailyTrackViews() {
+        $groupedPageViews = self::getTotalPageViews()->groupBy(function ($item, $key) {
+            return $item->date->toDateString();
+        });
+
+        $pageViews = collect();
+        foreach ($groupedPageViews as $groupedPageView) {
+            $pageView = new PageViews();
+            $pageView->date = $groupedPageView->get(0)->date;
+            $pageView->views_count = $groupedPageView->sum('views_count');
+            $pageViews->push($pageView);
+        }
+
+        return $pageViews;
+    }
+
+    /**
      * Gets the views counts for every page within a collection.
      *
      * @param null|Carbon $filterDate    The date to filter.
@@ -231,16 +252,29 @@ class VisitCounter {
 
                 if (substr($fileName, 0, strlen(self::$TRACK_FILE_PREFIX)) === self::$TRACK_FILE_PREFIX) {
                     $trackId = substr($fileName, strlen(self::$TRACK_FILE_PREFIX));
-                    if (is_numeric($trackId) && (empty($filterTrackId) || $filterTrackId == $trackId)) {
-                        $trackView = new TrackViews();
-                        $trackView->track_id = $trackId;
-                        $trackView->date = $date;
-                        $trackView->views_count = $count;
 
-                        $trackView->track = Track::find($trackId);
+                    if (is_numeric($trackId)) {
 
-                        $pageViews->push($trackView);
+                        // Check if the track still exists in the database
+                        if (Track::find($trackId) == null) {
+                            if (!unlink($filePath)) {
+                                \Log::critical('The track with id ' . $trackId . ' does not exist anymore and the file ' . $filePath . ' could not be deleted.');
+                            }
+                        } else if ((empty($filterTrackId) || $filterTrackId == $trackId)) {
+                            $trackView = new TrackViews();
+                            $trackView->track_id = $trackId;
+                            $trackView->date = $date;
+                            $trackView->views_count = $count;
+
+                            $trackView->track = Track::find($trackId);
+
+                            $pageViews->push($trackView);
+                        }
+
+                    } else {
+                        \Log::error("The track views count id for file '$fileName' cannot be read.");
                     }
+
                 } elseif (empty($filterTrackId)) {
                     $pageView = new PageViews();
                     $pageView->page = ucfirst($fileName);

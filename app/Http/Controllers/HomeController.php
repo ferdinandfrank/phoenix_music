@@ -24,7 +24,7 @@ class HomeController extends Controller {
      */
     public function index() {
 
-        $changeLog = GitChangeLog::get();
+        $changeLog = GitChangeLog::get(10);
 
         $totalVisits = VisitCounter::getTotalPageViewsCount();
         $todayVisits = VisitCounter::getTotalPageViewsCount(Carbon::now());
@@ -38,9 +38,7 @@ class HomeController extends Controller {
             'php_memory_limit' => ini_get('memory_limit'),
             'php_time_limit'   => ini_get('max_execution_time'),
             'db_connection'    => strtoupper(env('DB_CONNECTION')),
-            'web_server'       => $_SERVER['SERVER_SOFTWARE'],
-            'last_index'       => date('Y-m-d H:i:s',
-                file_exists(storage_path('posts.index')) ? filemtime(storage_path('posts.index')) : false)
+            'web_server'       => $_SERVER['SERVER_SOFTWARE']
         ];
 
         return view('backend.home.index', compact('system', 'changeLog', 'todayVisits', 'totalVisits'));

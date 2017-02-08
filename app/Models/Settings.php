@@ -8,9 +8,10 @@ use DB;
 /**
  * App\Models\Settings
  *
- * @property int    $id
+ * @property int $id
  * @property string $key
  * @property string $value
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\BaseModel ignore($id)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings whereKey($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Settings whereValue($value)

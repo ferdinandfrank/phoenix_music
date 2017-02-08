@@ -10,7 +10,9 @@ use App\Models\User;
 use App\Notifications\UserCreatedNotification;
 use App\Notifications\UserDeletedNotification;
 use App\Notifications\UserUpdatedNotification;
+use Auth;
 use Gate;
+use Illuminate\Http\Request;
 
 /**
  * UserController
@@ -26,12 +28,27 @@ class UserController extends Controller {
     /**
      * Displays a list of all registered users.
      *
+     * @param Request $request
+     *
      * @return \Illuminate\View\View The page with a listing of all registered users.
      */
-    public function index() {
-        $users = User::paginate(config('portfolio.backend.pagination_entries_per_page'));
+    public function index(Request $request) {
+        $entries_count = $request->get('entries_count') ?? 10;
 
-        return view('backend.user.index', compact('users'));
+        $users = User::search($request->get('search'))
+                    ->withCount('tracks')
+                     ->sortable(['created_at' => 'desc'])
+                     ->paginate($entries_count);
+
+        $newUserNotifications = \Auth::user()->unreadNotifications()->where('type',
+            UserCreatedNotification::class)->get();
+        $newUserKeys = $newUserNotifications->pluck('data.key');
+
+        foreach ($newUserNotifications as $newUserNotification) {
+            $newUserNotification->markAsRead();
+        }
+
+        return view('backend.user.index', compact('users','newUserKeys', 'entries_count'));
     }
 
     /**
@@ -72,6 +89,7 @@ class UserController extends Controller {
         if (Gate::denies('update', $user)) {
             return redirect()->back();
         }
+
         return $this->showEditForm($user, true);
     }
 
@@ -99,9 +117,9 @@ class UserController extends Controller {
 
         if (!empty($user)) {
             \Mail::to($user->email)
-                ->send(new RegistrationEmail($user, $password));
+                 ->send(new RegistrationEmail($user, $password));
 
-            \Notification::send(User::minManager()->get(), (new UserCreatedNotification($user, \Auth::user())));
+            \Notification::send(User::ignore(Auth::id())->minManager()->get(), (new UserCreatedNotification($user, \Auth::user())));
         }
 
         return response()->json($user, empty($user) ? 500 : 200);
@@ -147,7 +165,7 @@ class UserController extends Controller {
         $deleteSuccess = $user->delete();
 
         if ($deleteSuccess) {
-            \Notification::send(User::minManager()->get(), (new UserDeletedNotification($user, \Auth::user())));
+            \Notification::send(User::ignore(Auth::id())->minManager()->get(), (new UserDeletedNotification($user, \Auth::user())));
 
             return response()->json(true);
         } else {
@@ -170,16 +188,17 @@ class UserController extends Controller {
             }
             $user = \Auth::user();
         }
-        $user->unreadNotifications->map(function ($notification) {
-            $notification->markAsRead();
-        });
+
+        $user->unreadNotifications->map->markAsRead();
 
         // Only keep 5 notifications per user in the db
-        $deleteNotifications = null;
-        if ($user->notifications->count() > 5) {
-            $deleteNotifications = $user->notifications()->latest()->limit(PHP_INT_MAX)->skip(5)->delete();
+        if ($user->notifications()->count() > 5) {
+            $notifications = $user->notifications()->limit(PHP_INT_MAX)->skip(5)->latest()->get();
+            foreach ($notifications as $notification) {
+                $notification->delete();
+            }
         }
 
-        return response()->json($deleteNotifications);
+        return response()->json(true);
     }
 }

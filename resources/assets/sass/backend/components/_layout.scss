@@ -48,10 +48,9 @@ $sidebar-title-font-weight: 600;
 $sidebar-title-padding: 15px;
 $sidebar-border-width: $scrollbar-width;
 $sidebar-toggle-width: 80px;
-
 $sidebar-toggle-bottom-radius: 5px;
-
 $sidebar-separator-margin: 20px;
+$sidebar-toggle-transition: 0.5s;
 
 /*********************
   2. General
@@ -293,21 +292,17 @@ html {
 **********************/
 .sidebar {
     width: $sidebar-width;
-    height: 100%;
+    height: 90% !important;
     background: $sidebar-background;
     box-shadow: -$sidebar-border-width 0 0 $sidebar-border-color inset;
     color: $default-inverse-color;
     position: fixed;
     z-index: 20;
+    @include transition(width $sidebar-toggle-transition);
 
     + * {
         margin-left: $sidebar-width + $content-margin !important;
-    }
-
-    ul {
-        * {
-
-        }
+        @include transition(margin-left $sidebar-toggle-transition);
     }
 
     hr.separator {
@@ -330,18 +325,14 @@ html {
             box-shadow: -$sidebar-border-width 0 0 $sidebar-border-color inset;
         }
 
-        .sidebar-title {
-            display: none;
-        }
-
-        .sidebar-toggle {
-            display: none;
-        }
-
         .nav-main {
             > li > a {
                 overflow: hidden;
                 text-overflow: clip;
+
+                i {
+                    margin-right: 0 !important;
+                }
 
                 span {
                     display: none;
@@ -349,6 +340,8 @@ html {
             }
         }
 
+        .sidebar-title,
+        .sidebar-toggle,
         .sidebar-widget,
         .separator {
             display: none;
@@ -390,6 +383,10 @@ html.sidebar-collapsed {
                 overflow: hidden;
                 text-overflow: clip;
 
+                i {
+                    margin-right: 0 !important;
+                }
+
                 span {
                     display: none;
                 }
@@ -401,30 +398,6 @@ html.sidebar-collapsed {
             display: none;
         }
 
-        .sidebar-content:hover {
-            width: $sidebar-width;
-
-            .nav-main {
-                .nav-expanded {
-                    > ul.nav-children {
-                        display: block;
-                    }
-                }
-
-                li {
-
-                    // text
-                    a span {
-                        display: inline-block;
-                    }
-                }
-            }
-
-            .sidebar-widget,
-            .separator, .sidebar-title {
-                display: block;
-            }
-        }
 
         @media #{$small-down} {
             display: none;
@@ -434,6 +407,7 @@ html.sidebar-collapsed {
             }
         }
     }
+
     .sidebar-title {
         display: none;
     }
@@ -479,6 +453,7 @@ html.sidebar-collapsed {
         justify-content: space-between;
         width: $sidebar-width;
         background: $sidebar-background;
+        @include transition(width $sidebar-toggle-transition);
 
         .sidebar-toggle {
             background-color: $sidebar-toggle-background;

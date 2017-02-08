@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Middleware\VisitCounter;
 use App\Jobs\StoreVisitCounts;
+use App\Models\TrackViews;
+use DB;
 
 /**
  * StatisticsController
@@ -23,8 +25,12 @@ class StatisticsController extends Controller {
      */
     public function index() {
         dispatch(new StoreVisitCounts());
-        $pageViews = VisitCounter::getTotalPageViews();
 
-        return view('backend.statistics.index', compact('pageViews'));
+        $pageViews = VisitCounter::getTotalPageViews();
+        $totalVisits = VisitCounter::getTotalPageViewsCount();
+        $dailyViews = VisitCounter::getDailyTrackViews();
+        $trackViews = TrackViews::select(DB::raw('track_id, sum(views_count) as views_count'))->with('track')->groupBy('track_id')->orderBy('views_count', 'desc')->get();
+
+        return view('backend.statistics.index', compact('pageViews', 'totalVisits', 'trackViews', 'dailyViews'));
     }
 }

@@ -5,8 +5,9 @@ return [
     'search'                => 'Suche',
     'password'              => 'Passwort',
     'password_confirmation' => 'Passwort bestätigen',
-    'email'                 => 'E-Mail Adresse',
+    'email'                 => 'E-Mail-Adresse',
     'birthday'              => 'Geburtsdatum',
+    'entries_count'         => 'Einträge pro Seite',
 
     'role'        => 'Job',
     'user_type'   => 'Typ',
@@ -28,8 +29,8 @@ return [
 
     'title'            => 'Webseite Titel',
     'author'           => 'Verantwortlicher Autor der Webseite',
-    'email_contact'    => 'Kontakt E-Mail Adresse',
-    'email_admin'      => 'Technische Kontakt E-Mail Adresse',
+    'email_contact'    => 'Kontakt E-Mail-Adresse',
+    'email_admin'      => 'Technische Kontakt E-Mail-Adresse',
     'description'      => 'Beschreibung',
     'imprint'          => 'Impressum der Webseite',
     'keywords'         => 'Schlüsselwörter',

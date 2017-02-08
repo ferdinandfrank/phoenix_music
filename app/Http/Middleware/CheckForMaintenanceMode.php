@@ -18,7 +18,7 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
  */
 class CheckForMaintenanceMode extends Original {
 
-    private $except = ['admin', 'admin/*', 'auth/*'];
+    private $except = ['admin', 'admin/*', 'login', 'logout'];
 
     private $excludedIPs = [];
 

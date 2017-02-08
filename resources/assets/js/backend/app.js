@@ -15,6 +15,12 @@ require('./../vendor/datetimepicker');
  * ------------------
  * Load the basic vue models to extend from.
  */
+import Chart from './components/Chart.vue';
+Vue.component('chart', Chart);
+
+import DataTable from './components/DataTable.vue';
+Vue.component('data-table', DataTable);
+
 window.VueModel = Vue.extend({
 
     data() {

@@ -42,6 +42,11 @@
             <div class="col xs-12 md-4">
                 <panel title="{{ trans('labels.actions') }}">
                     <div class="btn-group center">
+                        <a href="{{ url()->previous() }}" class="btn btn-warning">
+                            <icon icon="{{ config('icons.back') }}"></icon>
+                            <span>{{ trans('labels.back') }}</span>
+                        </a>
+
                         @if($isEditPage)
                             <form-button action="{{ $category->getDestroyPath() }}"
                                          alert-key="category"

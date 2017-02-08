@@ -13,6 +13,7 @@ use App\Notifications\CategoryDeletedNotification;
 use App\Notifications\CategoryUpdatedNotification;
 use Auth;
 use Gate;
+use Illuminate\Http\Request;
 
 /**
  * CategoryController
@@ -24,6 +25,31 @@ use Gate;
  * @package App\Http\Controllers
  */
 class CategoryController extends Controller {
+
+    /**
+     * Display a listing of the categories.
+     *
+     * @param Request $request
+     *
+     * @return \Illuminate\View\View The index page of the categories.
+     */
+    public function index(Request $request) {
+        $entries_count = $request->get('entries_count') ?? 10;
+
+        $categories = Category::search($request->get('search'))
+                              ->sortable(['created_at' => 'desc'])
+                              ->paginate($entries_count);
+
+        $newCategoryNotifications = \Auth::user()->unreadNotifications()->where('type',
+            CategoryCreatedNotification::class)->get();
+        $newCategoryKeys = $newCategoryNotifications->pluck('data.key');
+
+        foreach ($newCategoryNotifications as $newCategoryNotification) {
+            $newCategoryNotification->markAsRead();
+        }
+
+        return view('backend.category.index', compact('categories', 'newCategoryKeys', 'entries_count'));
+    }
 
     /**
      * Displays the details page of the specified category.
@@ -38,17 +64,6 @@ class CategoryController extends Controller {
         $albums = Album::all();
 
         return view('frontend.track.index', compact('tracks', 'categories', 'category', 'albums'));
-    }
-
-    /**
-     * Display a listing of the categories.
-     *
-     * @return \Illuminate\View\View The index page of the categories.
-     */
-    public function index() {
-        $categories = Category::paginate(config('portfolio.backend.pagination_entries_per_page'));
-
-        return view('backend.category.index', compact('categories'));
     }
 
     /**
@@ -81,7 +96,7 @@ class CategoryController extends Controller {
         $success = $category->save();
 
         if ($success) {
-            \Notification::send(User::all(), (new CategoryCreatedNotification($category, Auth::user())));
+            \Notification::send(User::ignore(Auth::id())->get(), (new CategoryCreatedNotification($category, Auth::user())));
         }
 
         return response()->json($category, $success ? 200 : 500);
@@ -109,12 +124,12 @@ class CategoryController extends Controller {
     /**
      * Updates the specified category with the data from the specified request.
      *
-     * @param CategoryUpdateRequest $request  The data to update the specified category.
+     * @param CategoryCreateRequest $request  The data to update the specified category.
      * @param Category              $category The category to update.
      *
      * @return \Illuminate\Http\JsonResponse The updated category.
      */
-    public function update(CategoryUpdateRequest $request, Category $category) {
+    public function update(CategoryCreateRequest $request, Category $category) {
         if (Gate::denies('update', $category)) {
             return redirect()->back();
         }
@@ -124,7 +139,7 @@ class CategoryController extends Controller {
         $success = $category->save();
 
         if ($success && count($dirty) > 0) {
-            \Notification::send(User::all(),
+            \Notification::send(User::ignore(Auth::id())->get(),
                 (new CategoryUpdatedNotification($category, Auth::user(), array_keys($dirty))));
         }
 
@@ -147,7 +162,7 @@ class CategoryController extends Controller {
         $deleteSuccess = $category->delete();
 
         if ($deleteSuccess) {
-            \Notification::send(User::all(), (new CategoryDeletedNotification($category, Auth::user())));
+            \Notification::send(User::ignore(Auth::id())->get(), (new CategoryDeletedNotification($category, Auth::user())));
 
             return response()->json(true);
         } else {

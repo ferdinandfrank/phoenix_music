@@ -9,6 +9,7 @@ return [
     'tracks_index'             => 'Hier findest Du eine Liste aller erstellten Tracks',
     'users_index'              => 'Hier findest Du eine Liste aller Komponisten',
     'albums_index'             => 'Hier findest Du eine Liste aller erstellten Alben',
+    'changelog_index'          => 'Hier findest du eine Übersicht über die letzten Commits (Updates) des Blogs',
     'logo'                     => 'Das Logo erscheint in der Navigationsleiste und in den versendeten E-Mails an oberster Stelle..',
     'cover'                    => 'Dieses Bild dient im Frontend als Hintergrundbild.',
     'favicon'                  => 'Das Favicon ist das Bild, welches im Browsertab neben dem Seitentitel angezeigt wird. Das Favicon muss eine ".png" Datei sein.',
@@ -20,5 +21,6 @@ return [
     'clear_cache'              => 'Caching der Daten verbessert die Performance des Systems, aber kann zu Problemen führen, wenn neue Features getestet werden und es sich alte Daten im Cache befinden. Um deshalb den Cache zu leeren klicke den folgenden Button.',
     'reset_index'              => 'Der Suchindex ist dafür zuständig, dass bestimmte Daten der Datenbank von der Suche erfasst werden können. Um diesen zurückzusetzen klicke den folgenden Button.',
     'create_database_backup'   => 'Erstelle ein Backup Skript der Datenbank, um bei einem Datenverlust die alten Daten der Datenbank wieder aufspielen zu können.',
-    'send_test_mail'           => 'Sende eine Test E-Mail an die Sender E-Mail Adresse der Website "' . config('mail.from.address') . '", um die E-Mail Einstellungen zu testen.'
+    'send_test_mail'           => 'Sende eine Test E-Mail an die Sender E-Mail Adresse der Website "'
+                                  . config('mail.from.address') . '", um die E-Mail Einstellungen zu testen.'
 ];

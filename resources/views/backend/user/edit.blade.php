@@ -152,6 +152,11 @@
                     <div class="col xs-12">
                         <panel title="{{ trans('action.save') }}">
                             <div class="btn-group center">
+                                <a href="{{ url()->previous() }}" class="btn btn-warning">
+                                    <icon icon="{{ config('icons.back') }}"></icon>
+                                    <span>{{ trans('labels.back') }}</span>
+                                </a>
+
                                 @if($isEditPage)
                                     <form-button action="{{ $user->getDestroyPath() }}"
                                                  object-name="{{ $user->name }}"

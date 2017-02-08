@@ -50,7 +50,7 @@
                                     </div>
                                     <div class="col xs-12 md-6">
                                         <form-select name="album_id" :value="{{ $track->album_id ?? 'null' }}" lang-key="track">
-                                            <option value="null">{{ trans('defaults.no_album') }}</option>
+                                            <option value="">{{ trans('defaults.no_album') }}</option>
                                             @foreach ($albums as $album)
                                                 <option value="{{ $album->id }}">{{ $album->title }}</option>
                                             @endforeach
@@ -174,6 +174,11 @@
                                                  value="{{ $track->published_at ?? \Carbon\Carbon::now() }}"></form-date-input>
 
                             <div class="btn-group center">
+                                <a href="{{ url()->previous() }}" class="btn btn-warning">
+                                    <icon icon="{{ config('icons.back') }}"></icon>
+                                    <span>{{ trans('labels.back') }}</span>
+                                </a>
+
                                 @if($isEditPage)
                                     <form-button action="{{ $track->getDestroyPath() }}"
                                                  alert-key="track"

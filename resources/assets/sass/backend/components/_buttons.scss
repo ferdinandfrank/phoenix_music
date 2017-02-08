@@ -29,6 +29,7 @@ $button-large-font-size: $font-size !default;
     white-space: normal;
     border-radius: $button-border-radius;
     display: flex;
+    display: -moz-box;
     padding: $button-padding;
     font-size: $button-font-size;
     margin-bottom: 0;

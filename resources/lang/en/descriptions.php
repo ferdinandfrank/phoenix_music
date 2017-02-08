@@ -9,6 +9,7 @@ return [
     'tracks_index'             => 'Here you can see a listing of all the uploaded tracks',
     'users_index'              => 'Here you can see a listing of all the composers',
     'albums_index'             => 'Here you can see a listing of all the created albums',
+    'changelog_index'          => 'Here you can see a listing of all the latest Commits (Updates) of the portfolio',
     'logo'                     => 'The logo will be displayed on the navigation bars, as well as on top of the sent emails.',
     'cover'                    => 'The background image will be used as the background of the frontend.',
     'favicon'                  => 'The favicon will be displayed on the browser\'s page tab next to the website title. This should be a ".png" file.',
@@ -20,5 +21,6 @@ return [
     'create_database_backup'   => 'Create a backup of your database, so the data can be restored if an error occurs on the database.',
     'reset_index'              => 'Regenerate the search index to make the data in the database searchable.',
     'clear_cache'              => 'Clear the websites cache to regenerate the web routes, view files, and the general cache of the website. This may be used if an error occurred by visiting a page of the website to regenerate the file of the page.',
-    'send_test_mail'           => 'Send a test mail to the application\'s sender email address "' . config('mail.from.address') . '" to check the email configurations.'
+    'send_test_mail'           => 'Send a test mail to the application\'s sender email address "'
+                                  . config('mail.from.address') . '" to check the email configurations.'
 ];

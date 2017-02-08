@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed'             => 'Die E-Mail Adresse oder das Passwort ist falsch.',
+    'failed'             => 'Die E-Mail-Adresse oder das Passwort ist falsch.',
     'throttle'           => 'Zu viele Versuche. Bitte versuche es in :seconds nocheinmal.',
     'forgot_my_password' => 'Passwort vergessen'
 

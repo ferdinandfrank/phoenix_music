@@ -5,37 +5,19 @@ require('laravel-elixir-vue-2');
 let assetsPath = 'public/assets/';
 let buildPath = 'public/build/assets/';
 
-/*
- |--------------------------------------------------------------------------
- | Elixir Asset Management
- |--------------------------------------------------------------------------
- |
- | Elixir provides a clean, fluent API for defining some basic Gulp tasks
- | for your Laravel application. By default, we are compiling the Sass
- | file for your application as well as publishing vendor resources.
- |
- */
+elixir(function (mix) {
 
-elixir((mix) => {
     // Sass Backend
-    mix.sass([
-        'backend/app.scss',
-        'backend/vendor/select2/select2.css',
-        '../talvbansal/media-manager/css/media-manager.css',
-        '../vendor/vue-forms/sass/vue-forms.scss'
-    ], assetsPath + 'css/backend.css');
+    mix.sass('backend/app.scss', assetsPath + 'css/backend.css');
 
     // Sass Frontend
-    mix.sass([
-        'frontend/app.scss',
-        '../vendor/vue-forms/sass/vue-forms.scss'
-    ], assetsPath + 'css/frontend.css');
+    mix.sass('frontend/app.scss', assetsPath + 'css/frontend.css');
 
     // JS Backend
     mix.webpack([
         'backend/app.js',
-        '../vendor/vue-forms/js/vue-forms.js',
         '../talvbansal/media-manager/js/media-manager.js',
+        '../vendor/vue-forms/js/vue-forms.js',
     ], assetsPath + 'js/backend.js');
 
     // JS Frontend
@@ -67,4 +49,7 @@ elixir((mix) => {
         assetsPath + 'js/backend.js',
         assetsPath + 'js/frontend.js',
     ]);
+
+    // Run unit tests and generate reports each time Gulp is run
+    // mix.phpUnit();
 });

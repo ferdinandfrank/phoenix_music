@@ -54,8 +54,6 @@ class Install extends Command {
 
             $this->setupPortfolioInformation();
 
-            $this->setupSearchIndex();
-
             $this->setupApplicationKey();
 
             $this->setupAdditionalSettings();
@@ -180,13 +178,6 @@ class Install extends Command {
         Artisan::call('db:seed');
         $this->logger->progress(3);
         $this->logger->success('The database has been filled with mandatory data.');
-    }
-
-    private function setupSearchIndex() {
-        $this->logger->comment('Building the search index...');
-        Artisan::call('portfolio:index');
-        $this->logger->progress(2);
-        $this->logger->success('The application search index has been built.');
     }
 
     private function setupApplicationKey() {

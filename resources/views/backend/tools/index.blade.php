@@ -100,17 +100,6 @@
             </panel>
         </div>
         <div class="col xs-12">
-            <panel title="{{ trans('action.reset_index') }}">
-                <p>{{ trans('descriptions.reset_index') }}</p>
-                <div class="btn-group flex-reverse">
-                    <form-button alert-key="reset_index" action="{{ route('tools.reset_index') }}"
-                                 color="primary" method="POST">
-                        <i class="{{ config('icons.refresh') }}"></i> <span>{{ trans('action.reset_index') }}</span>
-                    </form-button>
-                </div>
-            </panel>
-        </div>
-        <div class="col xs-12">
             <panel title="{{ trans('action.clear_cache') }}">
                 <p>{{ trans('descriptions.clear_cache') }}</p>
                 <div class="btn-group flex-reverse">

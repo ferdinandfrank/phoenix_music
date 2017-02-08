@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AlbumCreateRequest;
-use App\Http\Requests\AlbumUpdateRequest;
 use App\Models\Album;
 use App\Models\User;
 use App\Notifications\AlbumCreatedNotification;
@@ -11,6 +10,7 @@ use App\Notifications\AlbumDeletedNotification;
 use App\Notifications\AlbumUpdatedNotification;
 use Auth;
 use Gate;
+use Illuminate\Http\Request;
 
 /**
  * AlbumController
@@ -26,12 +26,27 @@ class AlbumController extends Controller {
     /**
      * Displays a listing of the albums.
      *
+     * @param Request $request
+     *
      * @return \Illuminate\View\View The page with the album listing.
      */
-    public function index() {
-        $albums = Album::withCount('tracks')->paginate(config('portfolio.backend.pagination_entries_per_page'));
+    public function index(Request $request) {
+        $entries_count = $request->get('entries_count') ?? 10;
 
-        return response()->view('backend.album.index', compact('albums'));
+        $albums = Album::search($request->get('search'))
+                       ->withCount('tracks')
+                       ->sortable(['created_at' => 'desc'])
+                       ->paginate($entries_count);
+
+        $newAlbumNotifications = \Auth::user()->unreadNotifications()->where('type',
+            AlbumCreatedNotification::class)->get();
+        $newAlbumKeys = $newAlbumNotifications->pluck('data.key');
+
+        foreach ($newAlbumNotifications as $newAlbumNotification) {
+            $newAlbumNotification->markAsRead();
+        }
+
+        return response()->view('backend.album.index', compact('albums', 'newAlbumKeys', 'entries_count'));
     }
 
     /**
@@ -94,7 +109,7 @@ class AlbumController extends Controller {
         $album = Album::create($request->all());
 
         if (!empty($album)) {
-            \Notification::send(User::all(), (new AlbumCreatedNotification($album, Auth::user())));
+            \Notification::send(User::ignore(Auth::id())->get(), (new AlbumCreatedNotification($album, Auth::user())));
         }
 
         return response()->json($album, empty($album) ? 500 : 200);
@@ -103,12 +118,12 @@ class AlbumController extends Controller {
     /**
      * Updates the specified track in the database.
      *
-     * @param AlbumUpdateRequest $request The data to update the album.
+     * @param AlbumCreateRequest $request The data to update the album.
      * @param Album              $album   The album to update.
      *
      * @return \Illuminate\Http\JsonResponse The updated album.
      */
-    public function update(AlbumUpdateRequest $request, Album $album) {
+    public function update(AlbumCreateRequest $request, Album $album) {
         if (Gate::denies('update', $album)) {
             return redirect()->back();
         }
@@ -118,7 +133,7 @@ class AlbumController extends Controller {
         $success = $album->save();
 
         if ($success && count($dirty) > 0) {
-            \Notification::send(User::all(), (new AlbumUpdatedNotification($album, Auth::user(), array_keys($dirty))));
+            \Notification::send(User::ignore(Auth::id())->get(), (new AlbumUpdatedNotification($album, Auth::user(), array_keys($dirty))));
         }
 
         return response()->json($album, $success ? 200 : 500);
@@ -140,7 +155,7 @@ class AlbumController extends Controller {
         $deleteSuccess = $album->delete();
 
         if ($deleteSuccess) {
-            \Notification::send(User::all(), (new AlbumDeletedNotification($album, Auth::user())));
+            \Notification::send(User::ignore(Auth::id())->get(), (new AlbumDeletedNotification($album, Auth::user())));
 
             return response()->json(true);
         } else {

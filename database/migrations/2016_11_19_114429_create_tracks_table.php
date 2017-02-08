@@ -15,7 +15,7 @@ class CreateTracksTable extends Migration {
         Schema::create('tracks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('slug')->unique();
-            $table->string('title');
+            $table->string('title', config('validation.track.title.max'));
             $table->text('description')->nullable();
             $table->unsignedInteger('composer_id')->index();
             $table->unsignedInteger('album_id')->nullable();
@@ -24,12 +24,12 @@ class CreateTracksTable extends Migration {
             $table->integer('bpm');
             $table->text('tags')->nullable();
             $table->string('image')->nullable();
-            $table->string('audiojungle')->nullable();
-            $table->string('stye')->nullable();
-            $table->string('cdbaby')->nullable();
-            $table->string('amazon')->nullable();
-            $table->string('itunes')->nullable();
-            $table->string('youtube')->nullable();
+            $table->string('audiojungle', config('validation.track.audiojungle.max'))->nullable();
+            $table->string('stye', config('validation.track.stye.max'))->nullable();
+            $table->string('cdbaby', config('validation.track.cdbaby.max'))->nullable();
+            $table->string('amazon', config('validation.track.amazon.max'))->nullable();
+            $table->string('itunes', config('validation.track.itunes.max'))->nullable();
+            $table->string('youtube', config('validation.track.youtube.max'))->nullable();
             $table->date('published_at');
             $table->timestamps();
 

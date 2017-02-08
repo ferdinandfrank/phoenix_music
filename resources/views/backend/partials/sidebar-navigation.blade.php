@@ -11,27 +11,36 @@
                 <a href="{{ route('tracks.index') }}">
                     <icon icon="{{ config('icons.track') }}"></icon>
                     <span>{{ trans('labels.tracks') }}</span>
-                    <span class="label">{{ App\Models\Track::count() }}</span>
+                    @if($numOfNewTracks > 0)
+                        <span class="label">{{ trans_choice('param_labels.new', $numOfNewTracks, ['count' => $numOfNewTracks]) }}</span>
+                    @endif
                 </a>
             </li>
             <li @if (isRoute('albums.index')) class="nav-active" @endif>
                 <a href="{{ route('albums.index') }}">
                     <icon icon="{{ config('icons.album') }}"></icon>
                     <span>{{ trans('labels.albums') }}</span>
-                    <span class="label">{{ App\Models\Album::count() }}</span>
+                    @if($numOfNewAlbums > 0)
+                        <span class="label">{{ trans_choice('param_labels.new', $numOfNewAlbums, ['count' => $numOfNewAlbums]) }}</span>
+                    @endif
                 </a>
             </li>
             <li @if (isRoute('categories.index')) class="nav-active" @endif>
                 <a href="{{ route('categories.index') }}">
                     <icon icon="{{ config('icons.category') }}"></icon>
                     <span>{{ trans('labels.categories') }}</span>
-                    <span class="label">{{ App\Models\Category::count() }}</span>
+                    @if($numOfNewCategories > 0)
+                        <span class="label">{{ trans_choice('param_labels.new', $numOfNewCategories, ['count' => $numOfNewCategories]) }}</span>
+                    @endif
                 </a>
             </li>
             <li @if (isRoute('users.index')) class="nav-active" @endif>
                 <a href="{{ route('users.index') }}">
                     <icon icon="{{ config('icons.user') }}"></icon>
                     <span>{{ trans('labels.users') }}</span>
+                    @if($numOfNewUsers > 0)
+                        <span class="label">{{ trans_choice('param_labels.new', $numOfNewUsers, ['count' => $numOfNewUsers]) }}</span>
+                    @endif
                 </a>
             </li>
             <li @if (isRoute('media')) class="nav-active" @endif>
@@ -60,6 +69,12 @@
                 </a>
             </li>
             @endcan
+            <li @if (isRoute('changelog.index')) class="nav-active" @endif>
+                <a href="{{ route('changelog.index') }}">
+                    <icon icon="{{ config('icons.changelog') }}"></icon>
+                    <span>{{ trans('labels.changelog') }}</span>
+                </a>
+            </li>
             <li @if (isRoute('help')) class="nav-active" @endif>
                 <a href="{{ route('help') }}">
                     <icon icon="{{ config('icons.help') }}"></icon>

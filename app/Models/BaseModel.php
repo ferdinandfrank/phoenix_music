@@ -8,45 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 abstract class BaseModel extends Model {
 
     /**
-     * The attributes that will be set to 'null', if there is no value on a database insert.
+     * Scopes a query to only include the model without the specified id.
      *
-     * @var array
-     */
-    protected $nullable = [];
-
-    /**
-     * Listens for save events.
-     */
-    protected static function boot() {
-        parent::boot();
-        static::saving(
-            function ($model) {
-                $model->setNullables($model);
-            }
-        );
-    }
-
-    /**
-     * Sets empty nullable fields to null.
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param array|string|int                      $id
      *
-     * @param BaseModel $model
+     * @return \Illuminate\Database\Eloquent\Builder
      */
-    protected function setNullables($model) {
-        foreach ($model->attributes as $key => $value) {
-            if (in_array($key, $this->nullable)) {
-                $model->{$key} = !isset($value) || $value == '' || $value == 'null' ? null : $value;
-            }
+    public function scopeIgnore($query, $id) {
+        if (is_array($id)) {
+            return $query->whereNotIn('id', $id);
         }
-    }
 
-    /**
-     * Returns a timestamp as a local DateTime object.
-     *
-     * @param  mixed $value
-     *
-     * @return Carbon
-     */
-    protected function asDateTime($value) {
-        return Carbon::instance(parent::asDateTime($value));
+        return $query->where('id', '<>', $id);
     }
 }

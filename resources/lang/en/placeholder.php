@@ -22,17 +22,24 @@ return [
         'length' => 'Ex.: 0:29, 0:29, 0:14, 0:14',
         'bpm' => 'Ex.: 128',
         'tags' => 'Ex.: aggressive, dramatic, drums, full, hit, horror, hybrid, intense',
-        'categories' => 'Select the corresponding track categories...'
+        'categories' => 'Select the corresponding track categories...',
+        'search'      => 'Search for a track...'
     ],
 
     'album' => [
         'title'      => 'Enter the title of your album...',
         'description'   => 'Describe your album...',
         'tags' => 'Ex.: aggressive, dramatic, drums, full, hit, horror, hybrid, intense',
+        'search'      => 'Search for an album...'
     ],
 
     'category' => [
         'title'       => 'Enter a title for your track category...',
         'description' => 'Describe your category...',
+        'search'      => 'Search for a category...'
     ],
+
+    'user' => [
+        'search'      => 'Search for an user...'
+    ]
 ];

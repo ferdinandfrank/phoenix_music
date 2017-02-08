@@ -78,6 +78,12 @@ Vue.http.interceptors.push((request, next) => {
 
     next();
 });
+
+// Vue production settings
+Vue.config.devtools = false;
+Vue.config.debug = false;
+Vue.config.silent = true;
+
 require('./vueInit');
 
 require('./helper');

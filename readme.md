@@ -13,7 +13,7 @@ Before you proceed make sure your server meets the following requirements:
 
 ##### 1. Clone the git repository
 
-    git clone https://github.com/EpicArrow/phoenix_music.git
+    git clone https://github.com/EpicArrow/spoferan_blog.git
    
 ##### 2. Run the following command from the command line in the project root to install the composer packages:
     
@@ -35,7 +35,7 @@ Before you proceed make sure your server meets the following requirements:
 ##### 6. Copy the contents of `.env.example` and create a new file called `.env` in the project root. Set your application variables in the new file. Be sure to keep the value of `APP_ENV` set to `local` for the duration of the install.
 ##### 7. Run the following command from the command line in the project root and follow the on-screen prompts:
 
-    php artisan portfolio:install
+    php artisan blog:install
 
 ##### 8. Run the following command from the command line in the project root to change the permissions of the `storage/` directory.
 

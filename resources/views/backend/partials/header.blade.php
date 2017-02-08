@@ -74,7 +74,7 @@
                         </a>
                     </li>
                     <li id="logout-button">
-                        <form-link :alert="false" redirect="{{ route('login') }}" action="{{ route('logout') }}" method="POST">
+                        <form-link :alert="false" redirect="{{ route('login') }}" action="{{ route('logout.post') }}" method="POST">
                             <icon icon="{{ config('icons.logout') }}"></icon>{{ trans('action.logout') }}
                         </form-link>
                     </li>

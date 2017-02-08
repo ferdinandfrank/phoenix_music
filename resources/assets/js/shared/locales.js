@@ -216,7 +216,7 @@ export default {
             }
         },
         "auth": {
-            "failed": "Die E-Mail Adresse oder das Passwort ist falsch.",
+            "failed": "Die E-Mail-Adresse oder das Passwort ist falsch.",
             "throttle": "Zu viele Versuche. Bitte versuche es in {seconds} nocheinmal.",
             "forgot_my_password": "Passwort vergessen"
         },
@@ -391,6 +391,7 @@ export default {
             "tracks_index": "Hier findest Du eine Liste aller erstellten Tracks",
             "users_index": "Hier findest Du eine Liste aller Komponisten",
             "albums_index": "Hier findest Du eine Liste aller erstellten Alben",
+            "changelog_index": "Hier findest du eine Übersicht über die letzten Commits (Updates) des Blogs",
             "logo": "Das Logo erscheint in der Navigationsleiste und in den versendeten E-Mails an oberster Stelle..",
             "cover": "Dieses Bild dient im Frontend als Hintergrundbild.",
             "favicon": "Das Favicon ist das Bild, welches im Browsertab neben dem Seitentitel angezeigt wird. Das Favicon muss eine \".png\" Datei sein.",
@@ -426,8 +427,9 @@ export default {
             "search": "Suche",
             "password": "Passwort",
             "password_confirmation": "Passwort bestätigen",
-            "email": "E-Mail Adresse",
+            "email": "E-Mail-Adresse",
             "birthday": "Geburtsdatum",
+            "entries_count": "Einträge pro Seite",
             "role": "Job",
             "user_type": "Typ",
             "remember_me": "Angemeldet bleiben",
@@ -447,8 +449,8 @@ export default {
             "audiojungle": "Audiojungle Slug",
             "title": "Webseite Titel",
             "author": "Verantwortlicher Autor der Webseite",
-            "email_contact": "Kontakt E-Mail Adresse",
-            "email_admin": "Technische Kontakt E-Mail Adresse",
+            "email_contact": "Kontakt E-Mail-Adresse",
+            "email_admin": "Technische Kontakt E-Mail-Adresse",
             "description": "Beschreibung",
             "imprint": "Impressum der Webseite",
             "keywords": "Schlüsselwörter",
@@ -499,8 +501,12 @@ export default {
             "help": "Hilfe",
             "albums": "Alben",
             "tracks": "Tracks",
+            "back": "Zurück",
             "server_status": "Server Status",
             "visits": "Besucher",
+            "version": "Version",
+            "author": "Autor",
+            "email": "E-Mail",
             "total": "Insgesamt",
             "changelog": "Changelog",
             "content": "Inhalt",
@@ -524,6 +530,7 @@ export default {
             "created_at": "Erstellt am",
             "updated_at": "Bearbeitet am",
             "tracks_count": "Enthaltene Tracks",
+            "composed_tracks": "Komponierte Tracks",
             "tags": "Tags",
             "general_contact": "Informationen & Lizensierung",
             "technical_contact": "Technischer Kontakt",
@@ -536,6 +543,8 @@ export default {
             "date": "Datum",
             "visit_counter": "Besucherzähler",
             "general": "Allgemein",
+            "popular_tracks": "Beliebte Tracks",
+            "daily_views": "Tägliche Aufrufe",
             "audiojungle_exclusive_author": "Exklusiver Autor auf Audiojungle",
             "under_contract_with_stye": "Unter Vertrag mit SongsToYourEyes",
             "get_in_touch": "Schreibe uns",
@@ -609,6 +618,10 @@ export default {
             "user_deleted": {
                 "title": "Benutzer gelöscht",
                 "text": "Soeben hat {user} den Benutzer {name} gelöscht."
+            },
+            "settings_updated": {
+                "title": "Einstellungen aktualisiert",
+                "text": "Soeben hat {user} die Einstellungen des Blogs aktualisiert."
             }
         },
         "pagination": {
@@ -617,7 +630,8 @@ export default {
         },
         "param_labels": {
             "last_edited": "Zuletzt bearbeitet am {date} um {time}",
-            "visit": "{visits} Aufruf|{visits} Aufrufe"
+            "visit": "{visits} Aufruf|{visits} Aufrufe",
+            "new": "{count} Neu|{count} Neue"
         },
         "passwords": {
             "password": "Passwords must be at least six characters and match the confirmation.",
@@ -646,16 +660,22 @@ export default {
                 "length": "Bsp.: 0:29, 0:14",
                 "bpm": "Bsp.: 128",
                 "tags": "Bsp.: aggressive, dramatic, drums, full, hit, horror, hybrid, intense",
-                "categories": "Wähle die Kategorien deines Tracks aus..."
+                "categories": "Wähle die Kategorien deines Tracks aus...",
+                "search": "Suche nach einem Track..."
             },
             "album": {
                 "title": "Gebe den Titel deines Albums ein...",
                 "description": "Beschreibe dein Album...",
-                "tags": "Bsp.: aggressive, dramatic, drums, full, hit, horror, hybrid, intense"
+                "tags": "Bsp.: aggressive, dramatic, drums, full, hit, horror, hybrid, intense",
+                "search": "Suche nach einem Album..."
             },
             "category": {
                 "title": "Gebe den Titel deiner Kategorie ein...",
-                "description": "Beschreibe deine Kategorie..."
+                "description": "Beschreibe deine Kategorie...",
+                "search": "Suche nach einer Kategorie..."
+            },
+            "user": {
+                "search": "Suche nach einem Benutzer..."
             }
         },
         "validation": {
@@ -1133,6 +1153,7 @@ export default {
             "tracks_index": "Here you can see a listing of all the uploaded tracks",
             "users_index": "Here you can see a listing of all the composers",
             "albums_index": "Here you can see a listing of all the created albums",
+            "changelog_index": "Here you can see a listing of all the latest Commits (Updates) of the portfolio",
             "logo": "The logo will be displayed on the navigation bars, as well as on top of the sent emails.",
             "cover": "The background image will be used as the background of the frontend.",
             "favicon": "The favicon will be displayed on the browser's page tab next to the website title. This should be a \".png\" file.",
@@ -1170,6 +1191,7 @@ export default {
             "password_confirmation": "Password Confirmation",
             "email": "E-Mail Address",
             "birthday": "Birthday",
+            "entries_count": "Entries per page",
             "role": "Job",
             "user_type": "Type",
             "remember_me": "Remember me",
@@ -1241,8 +1263,12 @@ export default {
             "help": "Help",
             "albums": "Albums",
             "tracks": "Tracks",
+            "back": "Back",
             "server_status": "Server Status",
             "visits": "Visits",
+            "version": "Version",
+            "author": "Autor",
+            "email": "E-Mail",
             "total": "Total",
             "changelog": "Changelog",
             "content": "Content",
@@ -1266,6 +1292,7 @@ export default {
             "created_at": "Created at",
             "updated_at": "Updated at",
             "tracks_count": "Number of tracks",
+            "composed_tracks": "Composed Tracks",
             "tags": "Tags",
             "general_contact": "Information & Licensing Contact",
             "technical_contact": "Technical Contact",
@@ -1278,6 +1305,8 @@ export default {
             "date": "Date",
             "visit_counter": "Visit Counter",
             "general": "General",
+            "popular_tracks": "Popular Tracks",
+            "daily_views": "Daily Visits",
             "audiojungle_exclusive_author": "Exclusive author on Audiojungle",
             "under_contract_with_stye": "Under contract with SongsToYourEyes",
             "get_in_touch": "Get in touch",
@@ -1351,6 +1380,10 @@ export default {
             "user_deleted": {
                 "title": "User deleted",
                 "text": "{user} has just deleted the user {name}."
+            },
+            "settings_updated": {
+                "title": "Settings updated",
+                "text": "{user} has just updated the settings."
             }
         },
         "pagination": {
@@ -1359,7 +1392,8 @@ export default {
         },
         "param_labels": {
             "last_edited": "Last edited on {date} at {time}",
-            "visit": "{visits} Visit|{visits} Visits"
+            "visit": "{visits} Visit|{visits} Visits",
+            "new": "{count} New|{count} New"
         },
         "passwords": {
             "password": "Passwords must be at least six characters and match the confirmation.",
@@ -1388,16 +1422,22 @@ export default {
                 "length": "Ex.: 0:29, 0:14",
                 "bpm": "Ex.: 128",
                 "tags": "Ex.: aggressive, dramatic, drums, full, hit, horror, hybrid, intense",
-                "categories": "Select the corresponding track categories..."
+                "categories": "Select the corresponding track categories...",
+                "search": "Search for a track..."
             },
             "album": {
                 "title": "Enter the title of your album...",
                 "description": "Describe your album...",
-                "tags": "Ex.: aggressive, dramatic, drums, full, hit, horror, hybrid, intense"
+                "tags": "Ex.: aggressive, dramatic, drums, full, hit, horror, hybrid, intense",
+                "search": "Search for an album..."
             },
             "category": {
                 "title": "Enter a title for your track category...",
-                "description": "Describe your category..."
+                "description": "Describe your category...",
+                "search": "Search for a category..."
+            },
+            "user": {
+                "search": "Search for an user..."
             }
         },
         "validation": {

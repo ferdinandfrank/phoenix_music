@@ -17,10 +17,14 @@ return [
     'help'                         => 'Help',
     'albums'                       => 'Albums',
     'tracks'                       => 'Tracks',
+    'back'                         => 'Back',
 
     // Labels
     'server_status'                => 'Server Status',
     'visits'                       => 'Visits',
+    'version'                      => 'Version',
+    'author'                       => 'Autor',
+    'email'                        => 'E-Mail',
     'total'                        => 'Total',
     'changelog'                    => 'Changelog',
     'content'                      => 'Content',
@@ -44,6 +48,7 @@ return [
     'created_at'                   => 'Created at',
     'updated_at'                   => 'Updated at',
     'tracks_count'                 => 'Number of tracks',
+    'composed_tracks'              => 'Composed Tracks',
     'tags'                         => 'Tags',
     'general_contact'              => 'Information & Licensing Contact',
     'technical_contact'            => 'Technical Contact',
@@ -56,6 +61,8 @@ return [
     'date'                         => 'Date',
     'visit_counter'                => 'Visit Counter',
     'general'                      => 'General',
+    'popular_tracks'               => 'Popular Tracks',
+    'daily_views'                  => 'Daily Visits',
 
     // Frontend Specific
     'audiojungle_exclusive_author' => 'Exclusive author on Audiojungle',

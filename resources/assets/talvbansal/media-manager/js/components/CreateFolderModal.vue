@@ -81,8 +81,7 @@
                 };
 
                 this.loading = true;
-                let route = '/' + getCurrentLocale() + '/admin/browser/folder';
-                this.$http.post(route, data).then(
+                this.$http.post('/admin/browser/folder', data).then(
                     function (response) {
                         this.mediaManagerNotify(response.data.success);
                         window.eventHub.$emit('media-manager-reload-folder');
