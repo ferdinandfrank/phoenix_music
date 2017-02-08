@@ -1,7 +1,7 @@
 @extends('emails.layout')
 
 @section('content')
-    <h3>{{ trans('email.greeting') }},</h3>
+    <h3>{{ trans('email.greeting_plain') }},</h3>
 
     <p>{{ trans('email.contact_text') }}</p>
 

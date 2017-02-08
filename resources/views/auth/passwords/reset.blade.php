@@ -23,7 +23,7 @@
 
                 <h3 class="m-t-none m-b-30 center secondary">{{ trans('action.reset_password') }}</h3>
 
-                <input type="hidden" name="token" value="{{ $token }}">
+                <hidden-input name="token" value="{{ $token }}" ></hidden-input>
 
                 <form-input name="email" :required="true" value="{{ $email or old('email') }}"
                             icon="{{ config('icons.user') }}"></form-input>

@@ -10,8 +10,28 @@
             padding: 0;
             width: 100%;
             background-color: #f2f2f2;
-            font-family: Helvetica, sans-serif;
+            font-family: 'Folks', Helvetica, sans-serif;
             color: #555;
+        }
+
+        h1 {
+            font-size: 1.6rem !important;
+        }
+
+        h2 {
+            font-size: 1.4rem !important;
+        }
+
+        h3 {
+            font-size: 1.2rem !important;
+        }
+
+        h4 {
+            font-size: 1.0rem !important;
+        }
+
+        p {
+            color: #74787E !important;
         }
 
         .header {
@@ -20,7 +40,7 @@
         }
 
         .logo {
-            width: 180px;
+            width: 150px;
         }
 
         .content {
@@ -31,7 +51,15 @@
             text-align: center;
             margin-top: 10px;
             border-top: 1px solid lightgray;
+        }
+
+        .extra p {
             font-size: 0.7rem;
+        }
+
+        .footer p {
+            text-align: left !important;
+            font-size: 1rem !important;
         }
 
         .left-align {
@@ -65,7 +93,7 @@
 
         .btn {
             padding: 10px 20px;
-            background-color: #b2120f;
+            background-color: #f0820a;
             border-radius: 5px;
             color: #fff;
             text-decoration: none;
@@ -104,10 +132,10 @@
         }
 
         .primary {
-            color: #b2120f !important; }
+            color: #008200 !important; }
 
         .secondary {
-            color: #e38b24 !important; }
+            color: #f0820a !important; }
 
         .success {
             color: #47a447 !important; }

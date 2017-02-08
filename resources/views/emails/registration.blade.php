@@ -1,7 +1,7 @@
 @extends('emails.layout')
 
 @section('content')
-    <h3>{{ trans('email.greeting') }} {{ $user->first_name }},</h3>
+    <h3>{{ trans('email.greeting', ['name' => $user->first_name]) }},</h3>
 
     <p>{{ trans('email.registration_text', ['title' => Settings::pageTitle()]) }}</p>
 
