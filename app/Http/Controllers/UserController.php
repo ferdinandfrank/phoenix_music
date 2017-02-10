@@ -192,7 +192,7 @@ class UserController extends Controller {
         $user->unreadNotifications->map->markAsRead();
 
         // Only keep 5 notifications per user in the db
-        if ($user->notifications()->count() > 5) {
+        if (count($user->notifications) > 5) {
             $notifications = $user->notifications()->limit(PHP_INT_MAX)->skip(5)->latest()->get();
             foreach ($notifications as $notification) {
                 $notification->delete();
