@@ -36,10 +36,12 @@
                                 </div>
                                 <div class="col xs-12">
                                     <form-codearea name="description" help-path="{{ route('help') }}"
+                                                   :stylesheets="['{{ elixir('assets/css/frontend.css') }}']"
                                                    value="{{ $settings['description'] }}"></form-codearea>
                                 </div>
                                 <div class="col xs-12">
                                     <form-codearea name="imprint" help-path="{{ route('help') }}"
+                                                   :stylesheets="['{{ elixir('assets/css/frontend.css') }}']"
                                                    value="{{ $settings['imprint'] }}"></form-codearea>
                                 </div>
                             </div>
@@ -96,10 +98,12 @@
                             <div class="row">
                                 <div class="col xs-12 md-6">
                                     <form-codearea name="text_stye" help-path="{{ route('help') }}"
+                                                   :stylesheets="['{{ elixir('assets/css/frontend.css') }}']"
                                                    value="{{ $settings['text_stye'] }}"></form-codearea>
                                 </div>
                                 <div class="col xs-12 md-6">
                                     <form-codearea name="text_audiojungle" help-path="{{ route('help') }}"
+                                                   :stylesheets="['{{ elixir('assets/css/frontend.css') }}']"
                                                    value="{{ $settings['text_audiojungle'] }}"></form-codearea>
                                 </div>
                                 <div class="col xs-12">

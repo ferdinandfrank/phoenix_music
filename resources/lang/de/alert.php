@@ -94,7 +94,7 @@ return [
     'user' => [
         'post'   => [
             'title'   => 'Benutzer erstellt',
-            'content' => 'Der Benutzer wurde gespeichert.'
+            'content' => 'Der Benutzer wurde erstellt. Er erhält in den nächsten Minuten eine E-Mail an seine E-Mail-Adresse, welche er bestätigen muss.'
         ],
         'put'    => [
             'title'   => 'Benutzer aktualisiert',

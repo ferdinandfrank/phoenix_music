@@ -39,6 +39,8 @@ return [
     'choose_favicon'           => 'Favicon auswählen',
     'choose_intro_video'       => 'Intro Video auswählen',
     'choose_file'              => 'Datei auswählen',
+    'send_us_an_email'         => 'Sende uns eine Mail',
+    'share'                    => 'Teilen',
 
     'upload_track' => 'Track hochladen',
     'create_track' => 'Track erstellen',

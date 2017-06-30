@@ -2,6 +2,10 @@
 
 @section('title', trans('labels.contact_us'))
 
+@section('og-type', 'website')
+@section('og-title', trans('labels.get_in_touch'))
+@section('og-description', trans('descriptions.contact'))
+
 @section('breadcrumb')
     <li><a href="{{ route('contact') }}">{{ trans('labels.contact_us') }}</a></li>
 @stop

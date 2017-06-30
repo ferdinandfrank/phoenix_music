@@ -1,0 +1,272 @@
+/* ==========================================================================
+   Email Stylesheet
+   ========================================================================== */
+/**
+ * Table of Contents:
+ *
+ *  1. General
+ *  2. Typography
+ *  3. Header
+ *  4. Images
+ *  5. Content
+ *  6. Subcopy
+ *  7. Footer
+ *  8. Tables
+ *  9. Buttons
+ * 10. Helper
+ */
+
+/*********************
+  1. General
+**********************/
+body, body *:not(html):not(style):not(br):not(tr):not(code) {
+    font-family: 'Folks', Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F2F4F6;
+    color: #74787E;
+    height: 100%;
+    line-height: 1.4;
+    margin: 0;
+    width: 100% !important;
+    -webkit-text-size-adjust: none;
+}
+
+td {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*********************
+  2. Typography
+**********************/
+
+p, ul, ol, blockquote {
+    line-height: 1.4;
+    text-align: left;
+}
+
+p {
+    color: #74787E;
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+a {
+    color: #f0820a;
+}
+
+h1, h2, h3 {
+    color: #2F3133;
+    font-weight: bold;
+    margin-top: 0;
+    text-align: left;
+}
+
+h1 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+.brand-name {
+    color: #ffffff;
+    font-family: 'Xirod', Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    line-height: 25px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.title {
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 22px;
+}
+
+.subtitle {
+    mso-line-height-rule: exactly;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 17px;
+    text-shadow: 0 1px 1px #8e0e0c;
+}
+
+.help-text {
+    color: #515f66;
+    font-size: 15px;
+    line-height: 21px;
+}
+
+.center, .center p {
+    text-align: center !important;
+}
+
+/*********************
+  3. Header
+**********************/
+.header {
+    background-color: #b2120f;
+}
+
+.sub-header {
+    background-color: #8e0e0c;
+}
+
+/*********************
+  4. Images
+**********************/
+img {
+    max-width: 100%;
+}
+
+.logo a {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    padding-top: 24px;
+    text-align: center;
+}
+
+.logo img {
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+/*********************
+  5. Content
+**********************/
+
+.content {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #e4e6e8;
+}
+
+.body {
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.inner-body {
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    padding: 0;
+    width: 570px;
+}
+
+/*********************
+  7. Footer
+**********************/
+
+.footer {
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    width: 570px;
+}
+
+.footer p {
+    color: #AEAEAE;
+    font-size: 12px;
+    text-align: center;
+}
+
+/*********************
+  8. Tables
+**********************/
+
+.table table {
+    margin: 30px auto;
+    width: 100%;
+}
+
+.table th {
+    border-bottom: 1px solid #EDEFF2;
+    padding-bottom: 8px;
+}
+
+.table td {
+    color: #74787E;
+    font-size: 15px;
+    line-height: 18px;
+    padding: 10px 0;
+}
+
+/*********************
+  9. Buttons
+**********************/
+
+.button a {
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
+    color: #FFF;
+    display: inline-block;
+    font-size: 15px;
+    height: 40px;
+    line-height: 40px;
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-text-size-adjust: none;
+}
+
+.button-primary a {
+    background-color: #b2120f;
+}
+
+.button-secondary a {
+    background-color: #f0820a;
+}
+
+.button-success a {
+    background-color: #47a447;
+}
+
+.button-warning a {
+    background-color: #ed9c28;
+}
+
+.button-danger a {
+    background-color: #d2322d;
+}
+
+/*********************
+  10. Helper
+**********************/
+td.padding {
+    mso-line-height-rule: exactly;
+    font-size: 1px;
+    line-height: 1px;
+}
+
+/*********************
+  11. Separator
+**********************/
+.separator {
+    mso-line-height-rule: exactly;
+    font-size: 1px;
+    line-height: 1px;
+    background-color: #d9d9d9;
+    height: 1px;
+    width: 200px;
+}
+
+.header .separator {
+    background-color: #8e0e0c;
+}

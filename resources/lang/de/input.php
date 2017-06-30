@@ -11,7 +11,7 @@ return [
 
     'role'        => 'Job',
     'user_type'   => 'Typ',
-    'remember_me' => 'Angemeldet bleiben',
+    'remember' => 'Angemeldet bleiben',
     'name'        => 'Name',
     'message'     => 'Nachricht',
     'url'         => 'Webseite URL',

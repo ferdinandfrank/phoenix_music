@@ -27,9 +27,10 @@ class TestEmail extends Mailable {
      * @return $this
      */
     public function build() {
-
         return $this
-            ->subject(\Lang::get('email.test_subject', ['name' => Settings::pageTitle()]))
-            ->view('emails.test');
+            ->subject(trans('email.test.subject', ['title' => \Settings::pageTitle()]))
+            ->markdown('emails.test', [
+                'link' => route('home')
+            ]);
     }
 }

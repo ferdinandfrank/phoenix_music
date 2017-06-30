@@ -38,6 +38,7 @@ export default {
             "choose_favicon": "Favicon auswählen",
             "choose_intro_video": "Intro Video auswählen",
             "choose_file": "Datei auswählen",
+            "send_us_an_email": "Sende uns eine Mail",
             "upload_track": "Track hochladen",
             "create_track": "Track erstellen",
             "edit_track": "Track bearbeiten",
@@ -141,7 +142,7 @@ export default {
             "user": {
                 "post": {
                     "title": "Benutzer erstellt",
-                    "content": "Der Benutzer wurde gespeichert."
+                    "content": "Der Benutzer wurde erstellt. Er erhält in den nächsten Minuten eine E-Mail an seine E-Mail-Adresse, welche er bestätigen muss."
                 },
                 "put": {
                     "title": "Benutzer aktualisiert",
@@ -406,15 +407,45 @@ export default {
             "send_test_mail": "Sende eine Test E-Mail an die Sender E-Mail Adresse der Website \"info@phoenixmusicproductions.de\", um die E-Mail Einstellungen zu testen."
         },
         "email": {
-            "greeting": "Hallo",
-            "salutation": "Mit freundlichen Grüßen",
-            "contact_subject": "Neue Kontaktnachricht auf der Webseite",
-            "contact_text": "eine neue Kontaktnachricht wurde auf der Webseite verfasst.",
-            "registration_subject": "Deine Registrierung bei {name}",
-            "registration_text": "für dich wurde soeben ein Account auf der Seite {title} erstellt. Bitte melde dich mit den folgenden Daten an und ändere dein Passwort.",
-            "test_subject": "Testnachricht von {name}",
-            "test_text": "Testnachricht",
-            "password_text": "du hast eine Zurücksetzung deines Passworts auf der Seite {title} angefordert. Bitte klicke auf den folgenden Button, um dein Passwort zu ändern."
+            "greeting": "Hallo {name}",
+            "greeting_plain": "Hallo",
+            "salutation": "Viele Grüße",
+            "any_questions": "Du hast Fragen oder benötigst Hilfe?",
+            "button_help": "Falls du Probleme hast den \"{button}\" Button zu klicken, kopiere den folgenden Link und füge ihn in deinen Browser ein",
+            "password_reset": {
+                "title": "{title}: Dein neues Passwort",
+                "content": "du hast soeben ein neues Passwort für deinen Account bei {title} angefragt. Klicke auf den folgenden Button, um dein Passwort zurückzusetzen. Solltest du nicht um eine Zurücksetzung deines Passworts gebeten haben, so kannst du diese E-Mail ignorieren."
+            },
+            "error": {
+                "subject": "{title}: Es ist ein Fehler auf der Seite aufgetreten",
+                "title": "Fehler :(",
+                "content": "es ist soeben der folgende Fehler aufgetreten. Bitte kontrolliere die Log-Datei für mehr Details.",
+                "receiving_info": "Du erhälst diese E-Mail, weil deine E-Mail-Adresse als Support-E-Mail-Adresse auf {title} hinterlegt ist."
+            },
+            "track_created": {
+                "subject": "{title}: Neuer Track hochgeladen",
+                "title": "Neuer Track",
+                "content": "{author} hat soeben den Track \"{title}\" von {composer} auf {name} hochgeladen. Klicke auf den folgenden Button, um ihn dir anzuhören.",
+                "receiving_info": "Du erhälst diese E-Mail, weil du auf der Seite {title} als Administrator registriert bist."
+            },
+            "contact": {
+                "subject": "Neue Kontaktnachricht auf der {title} Website",
+                "title": "Neue Kontaktnachricht",
+                "content": "es wurde soeben eine neue Kontaktnachricht durch das Kontaktformular auf {title} verfasst:",
+                "receiving_info": "Du erhälst diese E-Mail, weil deine E-Mail-Adresse als Kontakt-E-Mail-Adresse auf {title} hinterlegt ist."
+            },
+            "registration": {
+                "subject": "Deine Registrierung bei {name}",
+                "title": "Registrierungsbestätigung",
+                "content": "für dich wurde soeben ein neuer Account auf der Seite {name} erstellt. Bitte logge dich mit den folgenden Daten ein und ändere dein Passwort.",
+                "receiving_info": "Du erhälst diese E-Mail, weil für dich auf der Seite {title} ein Account erstellt worden ist. Solltest du von dieser Aktion nicht informiert worden sein, so kannst du diese E-Mail ignorieren."
+            },
+            "test": {
+                "subject": "Test-E-Mail von {title}",
+                "title": "Hier steht der Titel der E-Mail!",
+                "content": "hier steht der Hauptinhalt der E-Mail, welcher dem Empfänger wichtige Informationen mitteilt. Hier steht beispielsweise der Inhalt eines Newsletters. Dieser Inhalt kann zusätzlich dynamische Daten über Benutzer von {title} enthalten.",
+                "receiving_info": "Du erhälst diese E-Mail, weil auf {title} eine Test-E-Mail angefordert wurde."
+            }
         },
         "help": {
             "codearea": {
@@ -432,7 +463,7 @@ export default {
             "entries_count": "Einträge pro Seite",
             "role": "Job",
             "user_type": "Typ",
-            "remember_me": "Angemeldet bleiben",
+            "remember": "Angemeldet bleiben",
             "name": "Name",
             "message": "Nachricht",
             "url": "Webseite URL",
@@ -545,6 +576,18 @@ export default {
             "general": "Allgemein",
             "popular_tracks": "Beliebte Tracks",
             "daily_views": "Tägliche Aufrufe",
+            "error_page": "Fehlerseite",
+            "logged_user": "Eingeloggter Benutzer",
+            "anonymous": "Anonym",
+            "words": "Wörter",
+            "chars": "Zeichen",
+            "font_size": "Schriftgröße",
+            "headings": "Überschriften",
+            "font_transformation": "Schrifttransformation",
+            "font_color": "Schriftfarbe",
+            "insert_options": "Einfügeoptionen",
+            "alignment": "Ausrichtung",
+            "lists": "Listen",
             "audiojungle_exclusive_author": "Exklusiver Autor auf Audiojungle",
             "under_contract_with_stye": "Unter Vertrag mit SongsToYourEyes",
             "get_in_touch": "Schreibe uns",
@@ -657,7 +700,7 @@ export default {
             "track": {
                 "title": "Gebe den Titel deines Tracks ein...",
                 "description": "Beschreibe deinen Track...",
-                "length": "Bsp.: 0:29, 0:14",
+                "length": "Bsp.: 0{29}, 0{29}, 0{14}, 0{14}",
                 "bpm": "Bsp.: 128",
                 "tags": "Bsp.: aggressive, dramatic, drums, full, hit, horror, hybrid, intense",
                 "categories": "Wähle die Kategorien deines Tracks aus...",
@@ -800,6 +843,7 @@ export default {
             "choose_favicon": "Choose Favicon",
             "choose_intro_video": "Choose Intro Video",
             "choose_file": "Choose File",
+            "send_us_an_email": "Send us an email",
             "upload_track": "Upload Track",
             "create_track": "Create Track",
             "edit_track": "Edit Track",
@@ -903,7 +947,7 @@ export default {
             "user": {
                 "post": {
                     "title": "User created",
-                    "content": "The user has been saved."
+                    "content": "The user has been created. A confirmation email has been sent for confirmation to his email address."
                 },
                 "put": {
                     "title": "User updated",
@@ -964,7 +1008,7 @@ export default {
             },
             "send_test_mail": {
                 "post": {
-                    "title": "Test Email sent",
+                    "title": "Test-Email sent",
                     "content": "A test email has been successfully sent to info@phoenixmusicproductions.de."
                 }
             },
@@ -1168,15 +1212,45 @@ export default {
             "send_test_mail": "Send a test mail to the application's sender email address \"info@phoenixmusicproductions.de\" to check the email configurations."
         },
         "email": {
-            "greeting": "Hello",
+            "greeting": "Hello {name}",
+            "greeting_plain": "Hello",
             "salutation": "Best Regards",
-            "contact_subject": "New contact message on your website",
-            "contact_text": "a new contact message has been submitted on the website.",
-            "registration_subject": "Your Registration at {name}",
-            "registration_text": "an account has been created for you on the website {title}. Please sign in with the following data and change your password as soon as possible.",
-            "test_subject": "Test Message by {name}",
-            "test_text": "Test message",
-            "password_text": "you have requested a reset of your password on the website {title}. Please click the following button to change your password."
+            "any_questions": "You have any questions or comments?",
+            "button_help": "If you are having troubles clicking the \"{button}\" button, copy the following link and paste it within your browser",
+            "password_reset": {
+                "title": "{title}: Your new password",
+                "content": "you have requested a reset of your password on the website {title}. Please click the following button to change your password. If you did not request a password reset, no further action is required."
+            },
+            "error": {
+                "subject": "{title}: An error occurred",
+                "title": "Error :(",
+                "content": "the following error just occurred. Please check the log file for more details.",
+                "receiving_info": "You are receiving this email, because this email address is saved as the technical contact email address on {title}."
+            },
+            "track_created": {
+                "subject": "{title}: New track uploaded",
+                "title": "New Track",
+                "content": "{author} just uploaded the track \"{title}\" by {composer} on the {name} website. Press the following button to view the new track.",
+                "receiving_info": "You are receiving this email, because you are registered as an administrator on {title}."
+            },
+            "contact": {
+                "subject": "New contact message on the {title} website",
+                "title": "New Contact Message",
+                "content": "a new contact message has just been created on the contact form of the {title} website:",
+                "receiving_info": "You are receiving this email, because this email address is saved as the contact email address on {title}."
+            },
+            "registration": {
+                "subject": "Your Registration at {name}",
+                "title": "Registration Confirmation",
+                "content": "an account has just been created for you on {name}. Please login with the following credentials and change your password.",
+                "receiving_info": "You are receiving this email, because an account has been created for you on {title}. If you did not get informed about this action, you can ignore this email."
+            },
+            "test": {
+                "subject": "Test-Email from {title}",
+                "title": "This Is The Title Of The E-Mail!",
+                "content": "this is the main content of the email. Admins can be notified about newly uploaded tracks or specific information on {title}.",
+                "receiving_info": "You are receiving this email, because a test email was requested on {title}"
+            }
         },
         "help": {
             "codearea": {
@@ -1194,7 +1268,7 @@ export default {
             "entries_count": "Entries per page",
             "role": "Job",
             "user_type": "Type",
-            "remember_me": "Remember me",
+            "remember": "Remember me",
             "name": "Name",
             "message": "Message",
             "url": "Website URL",
@@ -1307,6 +1381,18 @@ export default {
             "general": "General",
             "popular_tracks": "Popular Tracks",
             "daily_views": "Daily Visits",
+            "error_page": "Error page",
+            "logged_user": "Logged-in user",
+            "anonymous": "Anonymous",
+            "words": "Words",
+            "chars": "Chars",
+            "font_size": "Font Size",
+            "headings": "Headings",
+            "font_transformation": "Font Transforms",
+            "font_color": "Font Color",
+            "insert_options": "Inserts",
+            "alignment": "Alignment",
+            "lists": "Lists",
             "audiojungle_exclusive_author": "Exclusive author on Audiojungle",
             "under_contract_with_stye": "Under contract with SongsToYourEyes",
             "get_in_touch": "Get in touch",
@@ -1419,7 +1505,7 @@ export default {
             "track": {
                 "title": "Enter the title of your track...",
                 "description": "Describe your track...",
-                "length": "Ex.: 0:29, 0:14",
+                "length": "Ex.: 0{29}, 0{29}, 0{14}, 0{14}",
                 "bpm": "Ex.: 128",
                 "tags": "Ex.: aggressive, dramatic, drums, full, hit, horror, hybrid, intense",
                 "categories": "Select the corresponding track categories...",

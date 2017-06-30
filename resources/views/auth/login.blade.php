@@ -19,6 +19,7 @@
                     :stop-loading="false"
                     redirect="{{ route('admin') }}"
                     action="{{ route('login') }}"
+                    class="p-t-20"
                     :alert="false"
                     method="post">
                 <form-input name="email" :required="true"
@@ -27,7 +28,7 @@
                 <form-input name="password" type="password" :required="true"
                             icon="{{ config('icons.password') }}"></form-input>
 
-                <form-checkbox name="remember_me" :value="true"></form-checkbox>
+                <form-checkbox name="remember" :value="true"></form-checkbox>
 
                 <div class="btn-group center">
                     <button type="submit" class="btn btn-large btn-primary">{{ trans('action.login') }}</button>

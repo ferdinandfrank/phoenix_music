@@ -39,6 +39,7 @@
                                             </div>
                                             <div class="col xs-12">
                                                 <form-codearea name="description" lang-key="album" value="{{ $album->description }}"
+                                                               :stylesheets="['{{ elixir('assets/css/frontend.css') }}']"
                                                                :show-placeholder="true"></form-codearea>
                                             </div>
                                         </div>

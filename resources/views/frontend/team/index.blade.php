@@ -2,6 +2,10 @@
 
 @section('title', trans('labels.about_us'))
 
+@section('og-type', 'website')
+@section('og-title', trans('labels.about_us'))
+@section('og-description', strip_tags(Settings::pageDescription()))
+
 @section('breadcrumb')
     <li><a href="{{ route('users.index') }}">{{ trans('labels.about_us') }}</a></li>
 @stop

@@ -254,6 +254,10 @@ $row-margin-bottom: 20px !default;
     }
 }
 
+html:not(.ismobile) .mobile-only {
+    display: none;
+}
+
 /*********************
   4. Ordering
 **********************/

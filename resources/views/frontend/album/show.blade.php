@@ -2,6 +2,14 @@
 
 @section('title', $album->title)
 
+@section('og-type', 'website')
+@section('og-title', $album->title)
+@section('og-description', strip_tags($album->description))
+@if ($track->image)
+    @section('og-image', url($album->image))
+@endif
+@section('keywords', $album->tags)
+
 @section('breadcrumb')
     <li><a href="{{ route('library') }}">{{ trans('labels.albums') }}</a></li>
     <li><a href="{{ $album->getPath() }}">{{ $album->title }}</a></li>

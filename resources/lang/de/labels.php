@@ -63,6 +63,18 @@ return [
     'general'                      => 'Allgemein',
     'popular_tracks'               => 'Beliebte Tracks',
     'daily_views'                  => 'Tägliche Aufrufe',
+    'error_page'                   => 'Fehlerseite',
+    'logged_user'                  => 'Eingeloggter Benutzer',
+    'anonymous'                    => 'Anonym',
+    'words'                        => 'Wörter',
+    'chars'                        => 'Zeichen',
+    'font_size'                    => 'Schriftgröße',
+    'headings'                     => 'Überschriften',
+    'font_transformation'          => 'Schrifttransformation',
+    'font_color'                   => 'Schriftfarbe',
+    'insert_options'               => 'Einfügeoptionen',
+    'alignment'                    => 'Ausrichtung',
+    'lists'                        => 'Listen',
 
     // Frontend Specific
     'audiojungle_exclusive_author' => 'Exklusiver Autor auf Audiojungle',

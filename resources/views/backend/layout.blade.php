@@ -1,5 +1,9 @@
 @extends('shared.layout')
 
+@section('og-type', 'website')
+@section('og-title', Settings::pageTitle())
+@section('og-description', strip_tags(Settings::pageDescription()))
+
 @push('css')
     <link rel="stylesheet" type="text/css" href="{{ elixir('assets/css/backend.css') }}">
 @endpush

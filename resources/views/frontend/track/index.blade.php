@@ -2,6 +2,10 @@
 
 @section('title', trans('labels.library'))
 
+@section('og-type', 'website')
+@section('og-title', trans('labels.library'))
+@section('og-description', strip_tags(Settings::pageDescription()))
+
 @section('breadcrumb')
     <li><a href="{{ route('tracks.index') }}">{{ trans('labels.library') }}</a></li>
 @stop

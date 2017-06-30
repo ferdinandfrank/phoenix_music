@@ -39,6 +39,8 @@ return [
     'choose_favicon'           => 'Choose Favicon',
     'choose_intro_video'       => 'Choose Intro Video',
     'choose_file'              => 'Choose File',
+    'send_us_an_email'         => 'Send us an email',
+    'share'                    => 'Share',
 
     'upload_track' => 'Upload Track',
     'create_track' => 'Create Track',

@@ -54,6 +54,7 @@
             <div>
                 <div v-if="loading" class="text-center">
                     <span class="spinner icon-spinner2"></span>Loading...
+                    <span v-if="loadingPercentage">{{ loadingPercentage }}%</span>
                 </div>
 
                 <div v-else>
@@ -295,6 +296,8 @@
                  */
                 loading: true,
 
+                loadingPercentage: null,
+
                 /**
                  * Total files and folder count
                  */
@@ -403,12 +406,20 @@
                 form.append('folder', this.currentPath);
 
                 this.loading = true;
-                this.$http.post('/admin/browser/file', form).then(
+                this.$http.post('/admin/browser/file', form, {
+                    progress: (e) => {
+                        if (e.lengthComputable) {
+                            this.loadingPercentage = Math.round(e.loaded / e.total * 100);
+                        }
+                    }
+                }).then(
                     function (response) {
+                        this.loadingPercentage = null;
                         this.mediaManagerNotify(response.data.success);
                         this.loadFolder(this.currentPath);
                     },
                     function (response) {
+                        this.loadingPercentage = null;
                         var error = (response.data.error) ? response.data.error : response.statusText;
                         // when uploading we might have some files uploaded and others fail
                         if (response.data.notices) this.mediaManagerNotify(response.data.notices);

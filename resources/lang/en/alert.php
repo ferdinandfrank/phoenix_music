@@ -94,7 +94,7 @@ return [
     'user' => [
         'post'   => [
             'title'   => 'User created',
-            'content' => 'The user has been saved.'
+            'content' => 'The user has been created. A confirmation email has been sent for confirmation to his email address.'
         ],
         'put'    => [
             'title'   => 'User updated',
@@ -164,7 +164,7 @@ return [
 
     'send_test_mail' => [
         'post' => [
-            'title'   => 'Test Email sent',
+            'title'   => 'Test-Email sent',
             'content' => 'A test email has been successfully sent to ' . config('mail.from.address') . '.'
         ]
     ],

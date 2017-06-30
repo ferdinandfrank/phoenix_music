@@ -101,14 +101,16 @@ class TrackController extends Controller {
      * @return \Illuminate\Http\JsonResponse The stored track.
      */
     public function store(TrackCreateRequest $request) {
-        $track = Track::create($request->all());
-        $track->categories()->sync($request->get('categories', []));
-
-        if (!empty($track)) {
-            \Notification::send(User::ignore(Auth::id())->get(), (new TrackCreatedNotification($track, Auth::user())));
+        try {
+            $track = Track::create($request->all());
+            $track->categories()->sync($request->get('categories', []));
+        } catch (\Exception $exception) {
+            return response()->json($track, 500);
         }
 
-        return response()->json($track, empty($track) ? 500 : 200);
+        \Notification::send(User::ignore(Auth::id())->get(), (new TrackCreatedNotification($track, Auth::user())));
+
+        return response()->json($track, 200);
     }
 
     /**

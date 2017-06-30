@@ -2,6 +2,10 @@
 
 @section('title', trans('labels.licensing'))
 
+@section('og-type', 'website')
+@section('og-title', trans('labels.licensing'))
+@section('og-description', strip_tags(Settings::pageDescription()))
+
 @section('breadcrumb')
     <li><a href="{{ route('licensing') }}">{{ trans('labels.licensing') }}</a></li>
 @stop

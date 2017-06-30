@@ -51,6 +51,27 @@ body {
     justify-content: space-between;
 }
 
+body.codearea-body {
+    background: transparent;
+    color: $dark-color;
+
+    h1,h2,h3,h4,h5,h6,p,span {
+        color: $dark-color;
+    }
+
+    *:not(hr):empty:after {
+        content: '...';
+        color: $grey;
+        display: inline-block;
+        font-style: italic;
+        opacity: .5;
+    }
+
+    > .active {
+        background-color: rgba($info-color, .1);
+    }
+}
+
 .main {
     padding-left: $header-width + $header-padding-horizontal;
     padding-top: $content-padding-top;

@@ -1,16 +1,42 @@
-@extends('emails.layout')
+@component('mail::message')
 
-@section('content')
-    <h3>{{ trans('email.greeting', ['name' => $user->first_name]) }},</h3>
+@slot('title')
+    {{ trans('email.registration.title') }}
+@endslot
 
-    <p>{{ trans('email.registration_text', ['title' => Settings::pageTitle()]) }}</p>
+@slot('subtitle')
+    {{ \Carbon\Carbon::now()->formatLocalized('%d %B %Y') }}
+@endslot
 
-    <ul>
-        <li>{{ trans('input.email') }}: <span>{{ $user->email }}</span></li>
-        <li>{{ trans('input.password') }}: <span>{{ $password }}</span></li>
-    </ul>
+{{-- Greeting --}}
+# {{ trans('email.greeting', ['name' => $user->display_name]) }},
 
-    <div class="btn-group">
-        <a href="{{ route('login.show') }}" class="btn" target="_blank">{{ trans('action.sign_in_now') }}</a>
-    </div>
-@stop
+{{-- Content --}}
+@foreach ($introLines as $line)
+{{ $line }}
+@endforeach
+<br/>
+**{{ trans('input.email') }}:** {{ $user->email }}<br/>
+**{{ trans('input.password') }}:** {{ $password }}<br/>
+
+{{-- Action Button --}}
+@component('mail::button', ['url' => $actionUrl, 'color' => 'success'])
+    {{ $actionText }}
+@endcomponent
+
+<!-- Salutation -->
+{{ trans('email.salutation') }}<br>{{ Settings::pageTitle() }}
+
+<!-- Subcopy -->
+@slot('subcopy')
+    @component('mail::subcopy')
+        {{ trans('email.registration.receiving_info', ['title' => Settings::pageTitle()]) }}
+    @endcomponent
+    @component('mail::subcopy')
+        {{ trans('email.button_help', ['button' => $actionText]) }}: [{{ $actionUrl }}]({{ $actionUrl }})
+    @endcomponent
+@endslot
+
+@endcomponent
+
+

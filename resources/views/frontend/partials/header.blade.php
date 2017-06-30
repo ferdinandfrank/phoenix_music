@@ -104,4 +104,7 @@
     <p class="center small main-nav">
         <icon icon="{{ config('icons.copyright') }}"></icon> {{ \Carbon\Carbon::now()->year }} {{ Settings::pageTitle() }}
     </p>
+    @if(Auth::guest())
+        <a class="small link" href="{{ route('admin') }}">{{ trans('action.login') }}</a>
+    @endif
 </header>

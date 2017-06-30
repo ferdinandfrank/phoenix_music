@@ -1,19 +1,41 @@
-@extends('emails.layout')
+@component('mail::message')
 
-@section('content')
-    <h3>{{ trans('email.greeting_plain') }},</h3>
+@slot('title')
+    {{ trans('email.contact.title') }}
+@endslot
 
-    <p>{{ trans('email.contact_text') }}</p>
+@slot('subtitle')
+    {{ \Carbon\Carbon::now()->formatLocalized('%d %B %Y') }}
+@endslot
 
-    <ul>
-        <li>{{ trans('input.name') }}: <span>{{ $name }}</span></li>
-        <li>{{ trans('input.email') }}: <span>{{ $email }}</span></li>
-    </ul>
+{{-- Greeting --}}
+# {{ trans('email.greeting_plain') }},
 
-    <p>{{ $content }}</p>
+{{-- Content --}}
+{{ trans('email.contact.content', ['title' => Settings::pageTitle()]) }}<br/>
+**{{ trans('input.name') }}:** {{ $name }}<br/>
+**{{ trans('input.email') }}:** {{ $email }}<br/>
 
-    <div class="btn-group">
-        <a href="{{ route('home') }}" class="btn" target="_blank">{{ trans('action.to_website') }}</a>
-    </div>
-@stop
+*{{ $content }}*
+
+{{-- Action Button --}}
+@component('mail::button', ['url' => route('home'), 'color' => 'success'])
+    {{ trans('action.to_the_blog') }}
+@endcomponent
+
+<!-- Salutation -->
+{{ trans('email.salutation') }}<br>{{ Settings::pageTitle() }}
+
+<!-- Subcopy -->
+@slot('subcopy')
+    @component('mail::subcopy')
+        {{ trans('email.contact.receiving_info', ['title' => Settings::pageTitle()]) }}
+    @endcomponent
+    @component('mail::subcopy')
+        {{ trans('email.button_help', ['button' => trans('action.to_website')]) }}: [{{ route('home') }}]({{ route('home') }})
+    @endcomponent
+@endslot
+
+@endcomponent
+
 

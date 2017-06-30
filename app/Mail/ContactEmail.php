@@ -40,14 +40,14 @@ class ContactEmail extends Mailable {
         $email = $this->request->get('email');
         $name = $this->request->get('name');
         $content = $this->request->get('message');
+        $subject = \Lang::get('email.contact.subject', ['title' => \Settings::pageTitle()]);
 
         return $this->from($email, $name)
-            ->subject(\Lang::get('email.contact_subject'))
-            ->view('emails.contact')
-            ->with([
-                'email'   => $email,
-                'name'    => $name,
-                'content' => $content
-            ]);
+                    ->subject($subject)
+                    ->markdown('emails.contact', [
+                        'email'   => $email,
+                        'name'    => $name,
+                        'content' => $content
+                    ]);
     }
 }

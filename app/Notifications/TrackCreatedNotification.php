@@ -5,7 +5,9 @@ namespace App\Notifications;
 use App\Models\Track;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
+use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Settings;
 
 /**
  * TrackCreatedNotification
@@ -42,7 +44,22 @@ class TrackCreatedNotification extends Notification {
      * @return array
      */
     public function via($notifiable) {
-        return ['database'];
+        return ['mail', 'database'];
+    }
+
+    /**
+     * Gets the mail representation of the notification.
+     *
+     * @param  mixed $notifiable
+     *
+     * @return \Illuminate\Notifications\Messages\MailMessage
+     */
+    public function toMail($notifiable) {
+        return (new MailMessage)
+            ->subject(trans('email.track_created.subject', ['title' => Settings::pageTitle()]))
+            ->greeting(\Lang::get('email.greeting', ['name' => $notifiable->name]))
+            ->line(trans('email.track_created.content', ['title' => $this->track->title, 'author' => $this->uploader->name, 'composer' => $this->track->composer->name, 'name' => Settings::pageTitle()]))
+            ->action(\Lang::get('action.show_track'), $this->track->getPath());
     }
 
     /**

@@ -1,56 +1,68 @@
-@extends('emails.layout')
+@component('mail::message')
 
-@section('content')
-    <!-- Greeting -->
-    <h3>
-        @if (!empty($greeting))
-            {{ $greeting }},
-        @else
-            @if ($level == 'error')
-                Whoops!
-            @else
-                {{ trans('email.greeting_plain') }},
-            @endif
-        @endif
-    </h3>
+@slot('title')
+    {{ $subject }}
+@endslot
 
-    <!-- Intro -->
-    @foreach ($introLines as $line)
-        <p>{!! $line !!}</p>
-    @endforeach
+@slot('subtitle')
+    {{ \Carbon\Carbon::now()->formatLocalized('%d %B %Y') }}
+@endslot
 
-    <!-- Action Button -->
-    @if (isset($actionText))
-        <table align="center" width="100%" cellpadding="0" cellspacing="0">
-            <tr>
-                <td align="center">
-                    <a href="{{ $actionUrl }}" class="btn btn-{{ $level }}" target="_blank">
-                        {{ $actionText }}
-                    </a>
-                </td>
-            </tr>
-        </table>
-    @endif
+{{-- Greeting --}}
+@if (!empty($greeting))
+# {{ $greeting }},
+@else
+@if ($level == 'error')
+    # Whoops!
+@else
+    # {{ trans('email.greeting_plain') }}!
+@endif
+@endif
 
-    <!-- Outro -->
-    @foreach ($outroLines as $line)
-        <p>{!! $line !!}</p>
-    @endforeach
-@stop
+{{-- Intro Lines --}}
+@foreach ($introLines as $line)
+{{ $line }}
+@endforeach
 
-@section('extra')
-    @if (isset($actionText))
-        <table>
-            <tr>
-                <td>
-                    <p>
-                        {{ trans('email.extra', ['button' => $actionText]) }}:
-                        <a href="{{ $actionUrl }}" target="_blank">
-                            {{ $actionUrl }}
-                        </a>
-                    </p>
-                </td>
-            </tr>
-        </table>
-    @endif
-@stop
+{{-- Action Button --}}
+@if (isset($actionText))
+<?php
+switch ($level) {
+    case 'success':
+        $color = 'success';
+        break;
+    case 'error':
+        $color = 'danger';
+        break;
+    default:
+        $color = 'primary';
+}
+?>
+
+@component('mail::button', ['url' => $actionUrl, 'color' => $color])
+{{ $actionText }}
+@endcomponent
+@endif
+
+{{-- Outro Lines --}}
+@foreach ($outroLines as $line)
+{{ $line }}
+@endforeach
+
+<!-- Salutation -->
+@if (!empty($salutation))
+{{ $salutation }}
+@else
+{{ trans('email.salutation') }}<br>{{ Settings::pageTitle() }}
+@endif
+
+<!-- Subcopy -->
+@if (isset($actionText))
+    @slot('subcopy')
+        @component('mail::subcopy')
+            {{ trans('email.button_help', ['button' => $actionText]) }}: [{{ $actionUrl }}]({{ $actionUrl }})
+        @endcomponent
+    @endslot
+@endif
+
+@endcomponent

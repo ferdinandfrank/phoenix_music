@@ -11,7 +11,7 @@ return [
 
     'role'        => 'Job',
     'user_type'   => 'Type',
-    'remember_me' => 'Remember me',
+    'remember' => 'Remember me',
     'name'        => 'Name',
     'message'     => 'Message',
     'url'         => 'Website URL',

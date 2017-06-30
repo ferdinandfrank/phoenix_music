@@ -10,6 +10,7 @@
  *  4. Disabled Buttons
  *  5. Social Buttons
  *  6. Available Buttons
+ *  7. Share Buttons
  */
 
 /*********************
@@ -24,6 +25,12 @@ $social-buttons-size: 30px;
 
 $available-button-height: 45px;
 $available-button-margin: 7px;
+
+$share-button-border-radius: 4px;
+$share-button-font-size: 13px;
+$share-button-height: 28px;
+$share-button-padding: 0 6px;
+$share-button-margin-right: 5px;
 
 /*********************
   2. General
@@ -178,8 +185,56 @@ $available-button-margin: 7px;
     height: $available-button-height;
     overflow: hidden;
     margin: $available-button-margin;
+    border-radius: 10px;
+
+    &:first-of-type {
+        margin-left: 0;
+    }
 
     img {
         height: 100%;
+    }
+}
+
+/*********************
+  7. Share Buttons
+**********************/
+.share-buttons {
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 0;
+
+    .btn {
+        border: none;
+        color: $white;
+        border-radius: $share-button-border-radius;
+        font-size: $share-button-font-size;
+        height: $share-button-height;
+        padding: $share-button-padding;
+        margin-right: $share-button-margin-right;
+
+        &.twitter {
+            background-color: $twitter-color;
+
+            &:hover {
+                background-color: $twitter-hover-color !important;
+            }
+        }
+
+        &.facebook {
+            background-color: $facebook-color;
+
+            &:hover {
+                background-color: $facebook-hover-color !important;
+            }
+        }
+
+        &.whatsapp {
+            background-color: $whatsapp-color;
+
+            &:hover {
+                background-color: $whatsapp-hover-color !important;
+            }
+        }
     }
 }
