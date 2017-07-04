@@ -5,7 +5,7 @@
 @section('og-type', 'website')
 @section('og-title', $album->title)
 @section('og-description', strip_tags($album->description))
-@if ($track->image)
+@if ($album->image)
     @section('og-image', url($album->image))
 @endif
 @section('keywords', $album->tags)
@@ -29,7 +29,7 @@
                     <li>
                         <b>{{ trans('labels.published_at') }}: </b>{{ toDateString($album->published_at) }}
                     </li>
-                    @if(!empty($track->tags))
+                    @if(!empty($album->tags))
                     <li>
                         <b>{{ trans('labels.tags') }}: </b>{{ $album->tags }}
                     </li>
