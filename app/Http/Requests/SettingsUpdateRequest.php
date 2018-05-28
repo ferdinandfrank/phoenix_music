@@ -31,12 +31,13 @@ class SettingsUpdateRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'title'         => 'required',
-            'description'   => 'required',
-            'author'        => 'required',
-            'email_contact' => 'required',
-            'email_admin'   => 'required',
-            'imprint'       => 'required'
+            'title'          => 'required',
+            'description'    => 'required',
+            'author'         => 'required',
+            'email_contact'  => 'required',
+            'email_admin'    => 'required',
+            'imprint'        => 'required',
+            'privacy_policy' => 'required',
         ];
     }
 

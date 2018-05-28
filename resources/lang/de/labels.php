@@ -81,6 +81,7 @@ return [
     'under_contract_with_stye'     => 'Unter Vertrag mit SongsToYourEyes',
     'get_in_touch'                 => 'Schreibe uns',
     'imprint'                      => 'Impressum',
+    'privacy_policy'               => 'Datenschutzerklärung',
     'who_is_name'                  => 'Wer ist :name',
     'the_work_of_name'             => 'Die Tracks von :name',
     'the_tracks_of'                => 'Die Tracks von :name',

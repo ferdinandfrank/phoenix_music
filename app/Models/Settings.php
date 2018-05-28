@@ -8,7 +8,7 @@ use DB;
 /**
  * App\Models\Settings
  *
- * @property int $id
+ * @property int    $id
  * @property string $key
  * @property string $value
  * @method static \Illuminate\Database\Query\Builder|\App\Models\BaseModel ignore($id)
@@ -129,6 +129,17 @@ class Settings extends BaseModel {
         return self::getByName('background');
     }
 
+    public static function privacyPolicy($lang = null) {
+        if ($lang) {
+            if ($privacyPolicy = self::getByName('privacy_policy_' . $lang)) {
+                return $privacyPolicy;
+            }
+
+        }
+
+        return self::getByName('privacy_policy');
+    }
+
     /**
      * Gets the value settings by name.
      *
@@ -146,6 +157,7 @@ class Settings extends BaseModel {
      * @param  array $attributes
      *
      * @return bool
+     * @throws \Throwable
      */
     public static function updateAll(array $attributes = []) {
         DB::transaction(function () use ($attributes) {

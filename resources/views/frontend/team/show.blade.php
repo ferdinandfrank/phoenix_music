@@ -15,7 +15,7 @@
             </div>
             <div class="col xs-12 md-6">
                 <h1 class="m-b-none">{{ $user->name }} @if(!empty($user->birthday))({{ \Carbon\Carbon::now()->diffInYears($user->birthday) }}) @endif</h1>
-                <h3 class="secondary m-none">{{ $user->role }}</h3>
+                <h2 class="secondary m-none">{{ $user->role }}</h2>
                 <hr class="solid">
                 {!! $user->about !!}
                 <ul class="social-buttons">

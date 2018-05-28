@@ -44,6 +44,16 @@
                                                    :stylesheets="['{{ elixir('assets/css/frontend.css') }}']"
                                                    value="{{ $settings['imprint'] }}"></form-codearea>
                                 </div>
+                                <div class="col xs-12">
+                                    <form-codearea name="privacy_policy" help-path="{{ route('help') }}"
+                                                   :stylesheets="['{{ elixir('assets/css/frontend.css') }}']"
+                                                   value="{{ $settings['privacy_policy'] }}"></form-codearea>
+                                </div>
+                                <div class="col xs-12">
+                                    <form-codearea name="privacy_policy_de" help-path="{{ route('help') }}"
+                                                   :stylesheets="['{{ elixir('assets/css/frontend.css') }}']"
+                                                   value="{{ $settings['privacy_policy_de'] }}"></form-codearea>
+                                </div>
                             </div>
                         </panel>
                     </div>

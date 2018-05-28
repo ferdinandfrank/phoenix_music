@@ -39,6 +39,7 @@ export default {
             "choose_intro_video": "Intro Video auswählen",
             "choose_file": "Datei auswählen",
             "send_us_an_email": "Sende uns eine Mail",
+            "share": "Teilen",
             "upload_track": "Track hochladen",
             "create_track": "Track erstellen",
             "edit_track": "Track bearbeiten",
@@ -204,7 +205,7 @@ export default {
             "send_test_mail": {
                 "post": {
                     "title": "Test E-Mail versendet",
-                    "content": "Eine Testnachricht wurde erfolgreich an info@phoenixmusicproductions.de versendet."
+                    "content": "Eine Testnachricht wurde erfolgreich an ferdinand@spoferan.com versendet."
                 }
             },
             "media": {
@@ -404,7 +405,7 @@ export default {
             "clear_cache": "Caching der Daten verbessert die Performance des Systems, aber kann zu Problemen führen, wenn neue Features getestet werden und es sich alte Daten im Cache befinden. Um deshalb den Cache zu leeren klicke den folgenden Button.",
             "reset_index": "Der Suchindex ist dafür zuständig, dass bestimmte Daten der Datenbank von der Suche erfasst werden können. Um diesen zurückzusetzen klicke den folgenden Button.",
             "create_database_backup": "Erstelle ein Backup Skript der Datenbank, um bei einem Datenverlust die alten Daten der Datenbank wieder aufspielen zu können.",
-            "send_test_mail": "Sende eine Test E-Mail an die Sender E-Mail Adresse der Website \"info@phoenixmusicproductions.de\", um die E-Mail Einstellungen zu testen."
+            "send_test_mail": "Sende eine Test E-Mail an die Sender E-Mail Adresse der Website \"ferdinand@spoferan.com\", um die E-Mail Einstellungen zu testen."
         },
         "email": {
             "greeting": "Hallo {name}",
@@ -484,6 +485,8 @@ export default {
             "email_admin": "Technische Kontakt E-Mail-Adresse",
             "description": "Beschreibung",
             "imprint": "Impressum der Webseite",
+            "privacy_policy": "Datenschutzerklärung (Englisch)",
+            "privacy_policy_de": "Datenschutzerklärung (Deutsch)",
             "keywords": "Schlüsselwörter",
             "text_stye": "Individueller Text über SongsToYourEyes",
             "text_audiojungle": "Individueller Text über AudioJungle",
@@ -592,6 +595,7 @@ export default {
             "under_contract_with_stye": "Unter Vertrag mit SongsToYourEyes",
             "get_in_touch": "Schreibe uns",
             "imprint": "Impressum",
+            "privacy_policy": "Datenschutzerklärung",
             "who_is_name": "Wer ist {name}",
             "the_work_of_name": "Die Tracks von {name}",
             "the_tracks_of": "Die Tracks von {name}",
@@ -844,6 +848,7 @@ export default {
             "choose_intro_video": "Choose Intro Video",
             "choose_file": "Choose File",
             "send_us_an_email": "Send us an email",
+            "share": "Share",
             "upload_track": "Upload Track",
             "create_track": "Create Track",
             "edit_track": "Edit Track",
@@ -1009,7 +1014,7 @@ export default {
             "send_test_mail": {
                 "post": {
                     "title": "Test-Email sent",
-                    "content": "A test email has been successfully sent to info@phoenixmusicproductions.de."
+                    "content": "A test email has been successfully sent to ferdinand@spoferan.com."
                 }
             },
             "media": {
@@ -1209,7 +1214,7 @@ export default {
             "create_database_backup": "Create a backup of your database, so the data can be restored if an error occurs on the database.",
             "reset_index": "Regenerate the search index to make the data in the database searchable.",
             "clear_cache": "Clear the websites cache to regenerate the web routes, view files, and the general cache of the website. This may be used if an error occurred by visiting a page of the website to regenerate the file of the page.",
-            "send_test_mail": "Send a test mail to the application's sender email address \"info@phoenixmusicproductions.de\" to check the email configurations."
+            "send_test_mail": "Send a test mail to the application's sender email address \"ferdinand@spoferan.com\" to check the email configurations."
         },
         "email": {
             "greeting": "Hello {name}",
@@ -1289,6 +1294,8 @@ export default {
             "email_admin": "Technical Contact Email Address",
             "description": "Description",
             "imprint": "Imprint of the page",
+            "privacy_policy": "Privacy policy (English)",
+            "privacy_policy_de": "Privacy policy (German)",
             "keywords": "Keywords",
             "text_stye": "Individual text about SongsToYourEyes",
             "text_audiojungle": "Individual text about AudioJungle",
@@ -1397,6 +1404,7 @@ export default {
             "under_contract_with_stye": "Under contract with SongsToYourEyes",
             "get_in_touch": "Get in touch",
             "imprint": "Imprint",
+            "privacy_policy": "Privacy Policy",
             "who_is_name": "Who is {name}",
             "the_work_of_name": "The work of {name}",
             "the_tracks_of": "The tracks of {name}",

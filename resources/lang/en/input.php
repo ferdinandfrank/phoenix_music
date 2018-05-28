@@ -11,7 +11,7 @@ return [
 
     'role'        => 'Job',
     'user_type'   => 'Type',
-    'remember' => 'Remember me',
+    'remember'    => 'Remember me',
     'name'        => 'Name',
     'message'     => 'Message',
     'url'         => 'Website URL',
@@ -27,15 +27,17 @@ return [
     'instagram'   => 'Instagram Name',
     'audiojungle' => 'Audiojungle Slug',
 
-    'title'         => 'Website Title',
-    'author'        => 'Responsible Author',
-    'email_contact' => 'Contact Email Address',
-    'email_admin'   => 'Technical Contact Email Address',
-    'description'   => 'Description',
-    'imprint'       => 'Imprint of the page',
-    'keywords'      => 'Keywords',
-    'text_stye'        => 'Individual text about SongsToYourEyes',
-    'text_audiojungle' => 'Individual text about AudioJungle',
+    'title'             => 'Website Title',
+    'author'            => 'Responsible Author',
+    'email_contact'     => 'Contact Email Address',
+    'email_admin'       => 'Technical Contact Email Address',
+    'description'       => 'Description',
+    'imprint'           => 'Imprint of the page',
+    'privacy_policy'    => 'Privacy policy (English)',
+    'privacy_policy_de' => 'Privacy policy (German)',
+    'keywords'          => 'Keywords',
+    'text_stye'         => 'Individual text about SongsToYourEyes',
+    'text_audiojungle'  => 'Individual text about AudioJungle',
 
     'track' => [
         'title'        => 'Title',
@@ -66,9 +68,9 @@ return [
     ],
 
     'user_types' => [
-        'composer'     => 'Composer',
-        'manager'     => 'Manager',
-        'admin'       => 'Admin'
+        'composer' => 'Composer',
+        'manager'  => 'Manager',
+        'admin'    => 'Admin'
     ],
 
 ];

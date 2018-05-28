@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col xs-12 md-6">
 
-                <h2>{{ trans('labels.who_is_name', ['name' => Settings::pageTitle()]) }} ?</h2>
+                <h1>{{ trans('labels.who_is_name', ['name' => Settings::pageTitle()]) }} ?</h1>
                 <p class="large">{!! Settings::pageDescription() !!}</p>
 
                 <div class="row">

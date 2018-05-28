@@ -104,7 +104,9 @@
     <p class="center small main-nav">
         <icon icon="{{ config('icons.copyright') }}"></icon> {{ \Carbon\Carbon::now()->year }} {{ Settings::pageTitle() }}
     </p>
+    <a class="center small main-nav link" href="{{ route('contact') }}">{{ trans('labels.imprint') }}</a>
+    <a class="center m-t-5 small main-nav link" href="{{ route('privacy_policy') }}">{{ trans('labels.privacy_policy') }}</a>
     @if(Auth::guest())
-        <a class="small link" href="{{ route('admin') }}">{{ trans('action.login') }}</a>
+        <a class="center m-t-5 small main-nav link" href="{{ route('admin') }}">{{ trans('action.login') }}</a>
     @endif
 </header>

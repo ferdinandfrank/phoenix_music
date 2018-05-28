@@ -11,28 +11,31 @@ class DatabaseSeeder extends Seeder {
      * @return void
      */
     public function run() {
-//        $users = [
-//            [
-//                'name'     => 'Ferdinand Frank',
-//                'email'    => 'ferdinand.frank@phoenixmusicproductions.com',
-//                'password' => bcrypt('password'),
-//                'birthday' => Carbon::create(1994, 8, 25),
-//                'role'     => 'Composer / Web Developer',
-//                'about'    => 'Born with a huge passion for epic music, Ferdinand started to make music at the age of eigth through playing the trumpet. Seven years later he switched to the classical piano and started to compose epic music together with his friend Alexander. On the same year Phoenix Music was founded...<br/> After graduation from school, Ferdinand is now studying Internet Computing at the University of Passau.',
-//                'image'    => 'ferdinand_frank.jpg',
-//                'facebook' => 'ferdinandfrank717',
-//            ],
-//            [
-//                'name'     => 'Alexander Richstein',
-//                'email'    => 'alexander.richstein@phoenixmusicproductions.com',
-//                'password' => bcrypt('password'),
-//                'birthday' => Carbon::create(1990, 11, 24),
-//                'role'     => 'Composer',
-//                'about'    => null,
-//                'image'    => 'alexander_richstein.jpg',
-//                'facebook' => 'alexander.richstein',
-//            ]
-//        ];
+
+        $this->call(SettingsSeeder::class);
+
+        $users = [
+            [
+                'name'     => 'Ferdinand Frank',
+                'email'    => 'ferdinand.frank@phoenixmusicproductions.com',
+                'password' => bcrypt('password'),
+                'birthday' => Carbon::create(1994, 8, 25),
+                'role'     => 'Composer / Web Developer',
+                'about'    => 'Born with a huge passion for epic music, Ferdinand started to make music at the age of eigth through playing the trumpet. Seven years later he switched to the classical piano and started to compose epic music together with his friend Alexander. On the same year Phoenix Music was founded...<br/> After graduation from school, Ferdinand is now studying Internet Computing at the University of Passau.',
+                'image'    => 'ferdinand_frank.jpg',
+                'facebook' => 'ferdinandfrank717',
+            ],
+            [
+                'name'     => 'Alexander Richstein',
+                'email'    => 'alexander.richstein@phoenixmusicproductions.com',
+                'password' => bcrypt('password'),
+                'birthday' => Carbon::create(1990, 11, 24),
+                'role'     => 'Composer',
+                'about'    => null,
+                'image'    => 'alexander_richstein.jpg',
+                'facebook' => 'alexander.richstein',
+            ]
+        ];
 
         $categories = [
             ['title' => 'TrailerMusic'],
@@ -471,6 +474,11 @@ This track is also part of the first public album of Phoenix Music, called <i>Th
                 'itunes'       => 'phoenix-music/id936603454'
             ]
         ];
+
+        foreach ($users as $user) {
+            $user = new \App\Models\User($user);
+            $user->save();
+        }
 
         foreach ($categories as $categoryData) {
             $category = new \App\Models\Category($categoryData);

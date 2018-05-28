@@ -42,6 +42,9 @@ Route::group(['prefix' => 'contact'], function () {
     Route::post('/', 'ContactController@store')->name('contact.store');
 });
 
+// Privacy Policy Routes
+Route::get('/privacy', 'PrivacyPolicyController@index')->name('privacy_policy')->middleware('counter:privacy');
+
 // Licensing Routes
 Route::get('licensing', 'LicensingController@index')->name('licensing')->middleware('counter:licensing');
 

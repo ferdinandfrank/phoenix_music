@@ -13,7 +13,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h2 class="primary mt-lg">{{ trans('labels.get_in_touch') }}!</h2>
+            <h1 class="primary mt-lg">{{ trans('labels.get_in_touch') }}!</h1>
             <p class="large">{{ trans('descriptions.contact') }}</p>
             <div class="col xs-12 md-8">
                 <ajax-form

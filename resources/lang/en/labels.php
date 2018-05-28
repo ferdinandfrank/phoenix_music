@@ -81,6 +81,7 @@ return [
     'under_contract_with_stye'     => 'Under contract with SongsToYourEyes',
     'get_in_touch'                 => 'Get in touch',
     'imprint'                      => 'Imprint',
+    'privacy_policy'               => 'Privacy Policy',
     'who_is_name'                  => 'Who is :name',
     'the_work_of_name'             => 'The work of :name',
     'the_tracks_of'                => 'The tracks of :name',
